@@ -15,8 +15,11 @@ public class BstOperation {
     public  static void inorderTreeWalk1(Node x){
 
         if(x!=null){
+
             inorderTreeWalk1(x.getLeft());
+
             System.out.println(x);
+
             inorderTreeWalk1(x.getRight());
         }
 
