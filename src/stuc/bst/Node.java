@@ -3,7 +3,7 @@ package stuc.bst;
 /**
  * A node in a Binary Search Tree
  */
-public class Node {
+public class Node<T> {
 
 
 
@@ -13,9 +13,9 @@ public class Node {
     private Node parent;
 
 
-    private int value;
+    private T value;
 
-    public Node(Node left,Node right,Node parent,int value) {
+    public Node(Node left,Node right,Node parent,T value) {
 
         this.left = left;
         this.right = right;
@@ -49,11 +49,11 @@ public class Node {
         this.parent = parent;
     }
 
-    public int getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(T value) {
         this.value = value;
     }
 

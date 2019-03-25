@@ -7,7 +7,7 @@ public class Sort {
      * Insertion Sort
      * @param a
      */
-    public static void insertionSort(int[] a ){
+    public static int[] insertionSort(int[] a ){
 
         int i = 0;
         int key;
@@ -22,13 +22,15 @@ public class Sort {
             }
             a[i+1]=key; //每一个插入元素都会执行这一步，即使已经是有序的，也会有这个赋值的操作
         }
+
+        return a;
     }
 
     /**
      * Bubble Sort
      * @param a
      */
-    public static void bubbleSort(int[] a){
+    public static int[] bubbleSort(int[] a){
 
         for(int i = 0;i<a.length;i++){
 
@@ -41,27 +43,31 @@ public class Sort {
                 }
             }
         }
+
+        return a;
     }
 
     /**
      * Merge Sort
      */
-    public static void mergeSort(int[] a,int low,int high) {
+    public static int[] mergeSort(int[] a,int low,int high) {
 
         int mid = (low + high) / 2;
         if (low < high) {
             mergeSort(a, low, mid);
             mergeSort(a, mid + 1, high);
-            merge(a, low, mid, high);
+            a = merge(a, low, mid, high);
 
         }
+
+        return a;
 
     }
 
     /**
      * Merge Sort- merge method
      */
-    public static void merge(int[] a,int low,int mid,int high){
+    public static int[] merge(int[] a,int low,int mid,int high){
         int[] temp = new int[high-low+1];
         int i =low;
         int j = mid+1;
@@ -78,10 +84,12 @@ public class Sort {
         for(int x = 0;x<temp.length;x++){
             a[low+x] = temp[x];
         }
+
+        return a;
     }
 
     /**
-     * Quick Sort
+     * Quick Sort - Main Method
      */
     public static void quickSort(int[] a,int p,int r){
         if(p<r){
