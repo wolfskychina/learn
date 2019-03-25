@@ -18,7 +18,7 @@ public class BstOperation {
 
             inorderTreeWalk1(x.getLeft());
 
-            System.out.println(x);
+            System.out.println(x.getValue());
 
             inorderTreeWalk1(x.getRight());
         }
@@ -43,7 +43,7 @@ public class BstOperation {
 
             if(!s.empty()){  // 出栈的操作是每次一个
                 x = s.pop();
-                System.out.println(x);
+                System.out.println(x.getValue());
                 x = x.getRight();
             }
         }
@@ -69,6 +69,12 @@ public class BstOperation {
                 System.out.println(x.getValue());
             }
         }
+    }
+
+
+    public static void main(String [] args){
+
+
     }
 
 
