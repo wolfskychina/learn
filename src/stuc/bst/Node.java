@@ -6,13 +6,14 @@ package stuc.bst;
 public class Node<T> {
 
 
-
+    // Children Nodes
     private Node left;
     private Node right;
 
+    // Parent Node
     private Node parent;
 
-
+    // Value, can be any kind
     private T value;
 
     public Node(Node left,Node right,Node parent,T value) {
