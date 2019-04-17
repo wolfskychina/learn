@@ -1,5 +1,11 @@
 package sort;
 
+/**
+ * 常见的比较排序的总结
+ *
+ * java里面对象的传递是引用传递
+ * 因此数组a会被修改
+ */
 public class Sort {
 
 
@@ -81,6 +87,9 @@ public class Sort {
         while(i<=mid) temp[k++] = a[i++];
         while(j<=high) temp[k++] = a[j++];
 
+        // 书上的方法只需要一次循环，但是需要一个正无穷作为标记，在java里面没有无穷大整数这种常量
+        // 如果测试数据集中有Max_int值得话，原书上的方法就会有问题。
+
         for(int x = 0;x<temp.length;x++){
             a[low+x] = temp[x];
         }
@@ -101,6 +110,7 @@ public class Sort {
 
     /**
      * Quick Sort- Partation
+     * 分划方法是个很有用的子方法
      */
     public  static int partition(int[] a, int p,int r){
 
