@@ -10,6 +10,7 @@ public class QueueExample {
 
         Queue<String> s1 = new LinkedList<>();
 
+        // Queue的操作  offer是入队
         s1.offer("111");
         s1.offer("222");
         s1.offer("333");
@@ -20,6 +21,7 @@ public class QueueExample {
             s1.offer(s1.peek()+"a");
             s1.offer(s1.peek()+"b");
             s1.offer(s1.peek()+"c");
+            // Queue的操作，poll是出队
             s1.poll();
         }
 
