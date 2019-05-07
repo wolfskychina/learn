@@ -6,7 +6,7 @@ package sort;
  * java里面对象的传递是引用传递
  * 因此数组a会被修改
  */
-public class Sort {
+public class SortUtil {
 
 
     /**
