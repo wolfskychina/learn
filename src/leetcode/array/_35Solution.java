@@ -6,10 +6,8 @@ public class _35Solution {
         int low =0;
         int high = nums.length;
         while(low<high){
-            System.out.println("low is :"+low);
-            System.out.println("high is :"+high);
+
             int mid = (high+low)/2;
-            System.out.println("mid is :"+mid);
 
             if(nums[mid]>=target){
                 high=mid;
