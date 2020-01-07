@@ -6,17 +6,24 @@ public class _44Solution {
         int i = 0, j =0, iStar = -1, jStar = -1,m = s.length(), n = p.length();
         while(i<m){
             if(j<n && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '?')){
+                // 1
                 i++;
                 j++;
             }else if( j<n && p.charAt(j)=='*'){
+                // 2
                 iStar = i;
                 jStar = j++;
+                // j是×号的情况，i不变，j往后移一位
             }else if(iStar >= 0) {
+                // 3
                 i = ++iStar;
                 j = jStar +1;
                 // 发生了i和j不匹配的情况，但是iStar不是负值
                 // 说明有一个有效的*可以吃掉这个不匹配
-                //
+                // i,j都移动到iStar和jStar后面的一个位置
+                // 分支3的上一步可能是分支23，也可能是1
+                // 如果是分支2.3说明一直没有匹配上
+                // 如果是分支1，说明中间有几个匹配上了，但是这个没有匹配上
             }else return false;
         }
 
