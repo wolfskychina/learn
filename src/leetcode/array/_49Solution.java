@@ -15,7 +15,7 @@ public class _49Solution {
             ans.get(key).add(s);
         }
 
-        return new ArrayList<>(ans.values());
+        return new ArrayList(ans.values());
     }
 
 }
