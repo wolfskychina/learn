@@ -67,6 +67,7 @@ public class BstOperation {
             }else{
                 x= s.pop();
                 System.out.println(x.getValue());
+                x = x.getRight();
             }
         }
     }
