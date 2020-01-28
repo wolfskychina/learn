@@ -25,7 +25,7 @@ public class _34Solution {
         if(leftIdx == nums.length|| target!=nums[leftIdx]) return targetRange;
 
         targetRange[0] = leftIdx;
-        targetRange[1] = extremeInsertionIndex(nums,target,false);
+        targetRange[1] = extremeInsertionIndex(nums,target,false)-1;
 
         return targetRange;
     }
