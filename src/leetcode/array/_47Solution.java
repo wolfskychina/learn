@@ -42,7 +42,7 @@ public class _47Solution {
     public static void main(String[] args){
 
         _47Solution so = new _47Solution();
-        int[] a = {1,1,1,2,3,4};
+        int[] a = {1,1,1,2,3,4,4,4};
         so.permuteUnique(a);
     }
 }
