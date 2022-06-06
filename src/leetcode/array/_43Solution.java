@@ -16,14 +16,14 @@ public class _43Solution {
                 int sum = pos[p2]+mul;
                 pos[p1]+=sum/10;
                 pos[p2]=sum%10;
-                System.out.println("pos[p1] = "+pos[p1]);
-                System.out.println("pos[p2] = "+pos[p2]);
+                //System.out.println("pos[p1] = "+pos[p1]);
+                //System.out.println("pos[p2] = "+pos[p2]);
 
             }
         }
 
         StringBuilder sb = new StringBuilder();
-        for(int p:pos) if (!(sb.length()==0)&&p==0) sb.append(p);
+        for(int p:pos) {System.out.println(p);sb.append(p);}
 
         return sb.length()==0?"0":sb.toString();
     }
@@ -31,6 +31,6 @@ public class _43Solution {
     public static void main(String [] args){
 
         _43Solution so = new _43Solution();
-        so.multply("87898798","99999");
+        System.out.println(so.multply("123456","01"));
     }
 }
