@@ -58,7 +58,7 @@ public class SortUtil {
      */
     public static int[] mergeSort(int[] a,int low,int high) {
 
-        int mid = (low + high) / 2;
+        int mid = (low + high) >> 2;
         if (low < high) {
             mergeSort(a, low, mid);
             mergeSort(a, mid + 1, high);
