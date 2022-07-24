@@ -14,11 +14,12 @@ public class _3Solution {
 
         int ans =0;
         int i = 0;
-        int j =0;
+        int j = 0;
 
+        // a sliding window between i and j
         while(i<s.length() &&j<s.length()){
 
-            if(!set.contains(s.charAt(j))){
+            if(!set.contains(s.charAt(j++))){
                 set.add(s.charAt(j));
                 ans = Math.max(ans,j-i);
             }else{
