@@ -22,6 +22,7 @@ public class Main {
             s1.offer(s1.peek()+"c");
             s1.poll();
         }
+        // change
 
         System.out.println(s1.size());
 
