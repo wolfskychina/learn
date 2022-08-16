@@ -7,11 +7,11 @@ public class Node<T> {
 
 
     // Children Nodes
-    private Node left;
-    private Node right;
+    private Node<T> left;
+    private Node<T> right;
 
     // Parent Node
-    private Node parent;
+    private Node<T> parent;
 
     // Value, can be any kind
     private T value;
@@ -26,7 +26,7 @@ public class Node<T> {
     }
 
 
-    public Node getLeft() {
+    public Node<T> getLeft() {
         return left;
     }
 

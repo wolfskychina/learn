@@ -58,7 +58,7 @@ public class BstOperation {
 
         Stack<Node> s = new Stack<>();
 
-        while(x!=null && !s.isEmpty()){
+        while(x!=null || !s.isEmpty()){
 
             if(x!=null){
                 s.push(x);
