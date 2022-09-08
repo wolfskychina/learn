@@ -10,7 +10,7 @@ public class BstOperation {
     /**
      * Inorder Tree Walk - Recursive version
      * 
-     * @param x
+     * @param Node x
      */
     public static void inorderTreeWalk1(Node x) {
 
@@ -28,7 +28,7 @@ public class BstOperation {
     /**
      * Inorder Tree Walk - Non-recursive version
      * 
-     * @param x
+     * @param Node x
      */
     public static void inorderTreeWalk2(Node x) {
 
