@@ -16,7 +16,7 @@ public class QueueExample {
         s1.offer("333");
 
         for(int i = s1.size();i>0;i--){
-// 说明s1.size()是一次获取值，后续不会更新
+// 这种情况i只在初始化的情况下s1.size()获取一次值，后续不会更新
 // for(int i = 0; i<s1.size();i++) <= 此时s1.size（）大小在动态变化
 
             s1.offer(s1.peek()+"a");

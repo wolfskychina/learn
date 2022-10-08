@@ -31,6 +31,7 @@ public class SortUtil {
 
         return a;
     }
+    // 稳定排序
 
     /**
      * Bubble Sort

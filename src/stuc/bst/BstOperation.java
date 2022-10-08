@@ -8,6 +8,10 @@ import java.util.Stack;
 public class BstOperation {
 
     /**
+     * bst的中根遍历可以按大小输出树中的元素
+     * @param x
+     */
+    /**
      * Inorder Tree Walk - Recursive version
      * 
      * @param Node x
