@@ -35,7 +35,7 @@ public class _131Solution {
 
             if(isValid(list.get(i)+list.get(i+1))){
 
-                List list1 = new ArrayList(list);
+                List list1 = new ArrayList<String>(list);
                 list1.set(i,list.get(i)+list.get(i+1));
                 list1.remove(i+1);
                 res.add(list1);
