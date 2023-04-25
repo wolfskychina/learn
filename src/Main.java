@@ -9,6 +9,7 @@ public class Main {
 
 
         Queue<String> s1 = new LinkedList<>();
+        Queue<String> s2 = new Queue<String>();
 
         s1.offer("111");
         s1.offer("222");
