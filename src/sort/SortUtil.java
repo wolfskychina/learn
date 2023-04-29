@@ -13,7 +13,7 @@ public class SortUtil {
      * Insertion Sort
      * @param a
      */
-    public static int[] insertionSort(int[] a ){
+    public static void insertionSort(int[] a ){
 
         int i = 0;
         int key;
@@ -29,7 +29,6 @@ public class SortUtil {
             a[i+1]=key; //每一个插入元素都会执行这一步，即使已经是有序的，也会有这个赋值的操作
         }
 
-        return a;
     }
     // 稳定排序
 
@@ -37,7 +36,7 @@ public class SortUtil {
      * Bubble Sort
      * @param a
      */
-    public static int[] bubbleSort(int[] a){
+    public static void bubbleSort(int[] a){
 
         for(int i = 0;i<a.length;i++){
 
@@ -51,30 +50,27 @@ public class SortUtil {
             }
         }
 
-        return a;
     }
 
     /**
      * Merge Sort
      */
-    public static int[] mergeSort(int[] a,int low,int high) {
+    public static void mergeSort(int[] a,int low,int high) {
 
         int mid = (low + high) >> 2;
         if (low < high) {
             mergeSort(a, low, mid);
             mergeSort(a, mid + 1, high);
-            a = merge(a, low, mid, high);
+            merge(a, low, mid, high);
 
         }
-
-        return a;
 
     }
 
     /**
      * Merge Sort- merge method
      */
-    public static int[] merge(int[] a,int low,int mid,int high){
+    private static void merge(int[] a,int low,int mid,int high){
         int[] temp = new int[high-low+1];
         int i =low;
         int j = mid+1;
@@ -95,7 +91,6 @@ public class SortUtil {
             a[low+x] = temp[x];
         }
 
-        return a;
     }
 
     /**
