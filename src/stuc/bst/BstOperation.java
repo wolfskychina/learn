@@ -16,7 +16,7 @@ public class BstOperation {
      * 
      * @param Node x
      */
-    public static void inorderTreeWalk1(Node x) {
+    public static <T> void inorderTreeWalk1(Node<T> x) {
 
         if (x != null) {
 
@@ -34,9 +34,9 @@ public class BstOperation {
      * 
      * @param Node x
      */
-    public static void inorderTreeWalk2(Node x) {
+    public static <T> void inorderTreeWalk2(Node<T> x) {
 
-        Stack<Node> s = new Stack<>();
+        Stack<Node<T>> s = new Stack<>();
 
         while (x != null || !s.isEmpty()) {
 
@@ -58,9 +58,9 @@ public class BstOperation {
      * 
      * @param x
      */
-    public static void inorderTreeWalk3(Node x) {
+    public static <T> void inorderTreeWalk3(Node<T> x) {
 
-        Stack<Node> s = new Stack<>();
+        Stack<Node<T>> s = new Stack<>();
 
         while (x != null || !s.isEmpty()) {
 
