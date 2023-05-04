@@ -57,7 +57,7 @@ public class SortUtil {
      */
     public static void mergeSort(int[] a,int low,int high) {
 
-        int mid = (low + high) >> 2;
+        int mid = (low + high) >> 1;
         if (low < high) {
             mergeSort(a, low, mid);
             mergeSort(a, mid + 1, high);
@@ -130,4 +130,67 @@ public class SortUtil {
 
     }
 
+    /**
+     * Heap Sort
+     * 堆排序
+     * 堆排序算法主要包括：递归的堆维护函数、建堆函数、堆排序函数
+     */
+
+     /**
+      * Maintain Heap
+        堆维护函数
+        当堆顶的节点发生改变时，用来维护堆的单调性质
+        堆维护函数是递归调用的
+      */
+    private static int heapSize = 0;
+
+    private static void maintainHeap(int[] a, int root){
+
+        int left = root*2+1;
+        int right = root*2+2;
+        int larger ;
+
+        larger = (left< heapSize && a[root]<a[left])?left:root;
+
+        if(right< heapSize && a[larger]<a[right]) larger = right;
+
+        if(larger!=root){
+
+            int tmp = a[root];
+            a[root] = a[larger];
+            a[larger] = tmp;
+
+            maintainHeap(a,larger);
+        }
+
+    }
+
+    /**
+     * 建堆函数
+     * @param a
+     */
+    private static void buildHeap(int [] a){
+
+        for(int i = (heapSize-1)>>1 ; i>=0;i--){
+
+            maintainHeap(a, i);
+
+        }
+    }
+
+    /**
+     * 堆排序函数
+     */
+    public static void heapSort(int[] a,int size){
+
+        heapSize = size;
+        buildHeap(a);
+        for(int i = heapSize-1;i>=0;i--){
+            int tmp = a[i];
+            a[i] = a[0];
+            a[0] = tmp;
+            heapSize --;
+            maintainHeap(a, 0);
+        }
+    }
 }
