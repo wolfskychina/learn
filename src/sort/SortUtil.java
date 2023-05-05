@@ -138,6 +138,7 @@ public class SortUtil {
      * Heap Sort
      * 堆排序
      * 堆排序算法主要包括：递归的堆维护函数、建堆函数、堆排序函数
+     * 堆是连续的内存空间，可以方便的进行随机访问
      */
 
      /**
@@ -154,6 +155,7 @@ public class SortUtil {
         int right = root*2+2;
         int larger ;
 
+        // 通过两次比较确定三个值中的最大值
         larger = (left< heapSize && a[root]<a[left])?left:root;
 
         if(right< heapSize && a[larger]<a[right]) larger = right;
@@ -190,9 +192,11 @@ public class SortUtil {
         heapSize = size;
         buildHeap(a);
         for(int i = heapSize-1;i>=0;i--){
+            // 每次都取最大的root节点
             int tmp = a[i];
             a[i] = a[0];
             a[0] = tmp;
+            // 通过缩小堆的大小，从而不影响已经排好的部分
             heapSize --;
             maintainHeap(a, 0);
         }

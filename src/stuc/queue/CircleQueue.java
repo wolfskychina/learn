@@ -4,32 +4,20 @@ import java.util.Iterator;
 
 /**
  * CircleQueue<T>
- * 环形队列，实现了算法4上习题要求的用一个环做的队列
+ * 环形队列，实现了要求的用一个环做的队列
+ * 算法4 习题
  *
  * @param <T>
  */
-public class CircleQueue<T> implements Iterable {
+public class CircleQueue<T> implements Iterable<T> {
 
     /**
      * 标记队列内最后一个节点的位置
      */
     private Node<T> last;
 
-    /**
-     * 环形队列的构造函数
-     * 对last进行初始化
-     */
-    public CircleQueue() {
-        last = new Node<T>();
-        last.next = last;
-    }
-
-    public Node<T> getLast() {
+    private Node<T> getLast() {
         return last;
-    }
-
-    public void setLast(Node<T> node) {
-        this.last = node;
     }
 
     /**
@@ -40,6 +28,7 @@ public class CircleQueue<T> implements Iterable {
     public void offer(T item) {
         Node<T> node = new Node<>(item);
         if (last == null) {
+            // 队列为空
             last = node;
             last.next = node;
         } else {
@@ -55,9 +44,11 @@ public class CircleQueue<T> implements Iterable {
      * @return
      */
     public T poll() {
-        if (null == last) return null;
+        if (null == last)
+            return null;
         if (last.next == last) {
-            Node<T> node = last;
+            // 只剩下最后一个节点的情况
+            Node<T> node = last.next;
             last = null;
             return node.value;
         }
@@ -68,7 +59,7 @@ public class CircleQueue<T> implements Iterable {
 
     @Override
     public Iterator<T> iterator() {
-        return new CircleIterator<T>();
+        return new CircleIterator();
     }
 
     /**
@@ -77,13 +68,13 @@ public class CircleQueue<T> implements Iterable {
      * @param item
      * @return
      */
-    public CircleQueue append(T item) {
+    public CircleQueue<T> append(T item) {
 
         Node<T> node = new Node<T>(item);
 
         if (this.last == null) {
             last = node;
-            last = last.next;
+            last.next = last;
         } else {
             node.next = last.next;
             last.next = node;
@@ -98,18 +89,15 @@ public class CircleQueue<T> implements Iterable {
      *
      * @param <T>
      */
-    private class Node<T> {
+    private class Node<Item> {
 
-        T value;
-        Node next;
+        Item value;
+        Node<Item> next;
 
-        public Node(T value) {
+        public Node(Item value) {
             this.value = value;
         }
 
-        public Node() {
-
-        }
     }
 
     /**
@@ -117,8 +105,8 @@ public class CircleQueue<T> implements Iterable {
      *
      * @param <T>
      */
-    private class CircleIterator<T> implements Iterator<T> {
-        Node node = last;
+    private class CircleIterator implements Iterator<T> {
+        Node<T> node = last;
 
         @Override
         public boolean hasNext() {
@@ -128,38 +116,39 @@ public class CircleQueue<T> implements Iterable {
         @Override
         public T next() {
 
-            if (node == null || null == node.next) return null;
+            if (node == null)
+                return null;
 
-            if (node.next == node) {
+            if (node.next == last) {
 
                 Node<T> n = node.next;
-                node.next = null;
+                node = null;
                 return n.value;
             }
 
             Node<T> n = node.next;
-            node.next = node.next.next;
+            node = node.next;
             return n.value;
         }
     }
 
-
     public static void main(String[] args) {
-        CircleQueue cq = new CircleQueue<Integer>();
-        cq.append(221).append(333).append(444);
+        CircleQueue<Integer> cq = new CircleQueue<Integer>();
+        cq.append(1);
         cq.poll();
-        cq.offer(123122);
+        cq.poll();
+        cq.offer(88);
 
         for (String arg : args) {
             cq.append(Integer.parseInt(arg));
         }
 
-   /*Iterator it = cq.iterator();
-   while(it.hasNext()) {
-           System.out.println(it.next());
-   }
-   */
-        while (cq.getLast() != null) {
+        Iterator<Integer> it = cq.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+
+        while (cq.getLast()!=null) {
             System.out.println(cq.poll());
         }
     }
