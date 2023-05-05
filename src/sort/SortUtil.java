@@ -54,6 +54,7 @@ public class SortUtil {
 
     /**
      * Merge Sort
+     * 左右都是全闭区间
      */
     public static void mergeSort(int[] a,int low,int high) {
 
@@ -95,6 +96,7 @@ public class SortUtil {
 
     /**
      * Quick Sort - Main Method
+     * 左右为全闭区间
      */
     public static void quickSort(int[] a,int p,int r){
         if(p<r){
