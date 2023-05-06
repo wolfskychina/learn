@@ -143,9 +143,8 @@ public class CircleQueue<T> implements Iterable<T> {
             cq.append(Integer.parseInt(arg));
         }
 
-        Iterator<Integer> it = cq.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next());
+        for (Integer integer : cq) {
+            System.out.println(integer);
         }
 
         while (cq.getLast()!=null) {

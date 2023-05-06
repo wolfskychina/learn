@@ -1,11 +1,35 @@
 package stuc.queue;
 
+import java.util.Iterator;
+
 /**
  * 自定义的双向队列
  */
-public class DeQueue<T> {
+public class DeQueue<T> implements Iterable<T>{
     Node<T> dummyHead = new Node<>();
 	Node<T> dummyTail = new Node<>();
+
+	@Override
+	public Iterator<T> iterator() {
+		return new DeQueueIterator();
+	}
+
+	private class DeQueueIterator implements Iterator<T>{
+
+		private Node<T> node = dummyHead.next;
+
+		@Override
+		public boolean hasNext() {
+			return node != null ;
+		}
+
+		@Override
+		public T next() {
+			Node<T> n = node;
+			node = node.next;
+			return n.value;
+		}
+	}
 
 	public static class Node<T>{
 
@@ -18,7 +42,6 @@ public class DeQueue<T> {
 		}
 
         public Node(){
-
         }
 
 	}
@@ -75,9 +98,9 @@ public class DeQueue<T> {
 		dq.dummyTail.prev.next =null;
 		dq.dummyTail.prev = nextTail;
 		if(nextTail!=null)
-		nextTail.next =null;
+			nextTail.next =null;
         else
-        dq.dummyHead.next = null;
+        	dq.dummyHead.next = null;
 	}
 
 	public static <T> boolean addBefore(DeQueue<T> dq, T target , T value){
@@ -163,14 +186,12 @@ public class DeQueue<T> {
 
     public static <T> void printQueue(DeQueue<T> dq){
         if(dq == null || dq.dummyHead.next ==null) return;
-        
-        Node<T> p = dq.dummyHead.next;
+
         System.out.println("start print queue:");
-        while(p!=null){
-            System.out.println(p.value);
-            p = p.next;
-        }
-        System.out.println("ending print queue.");
+        for(T p: dq){
+			System.out.println(p);
+		}
+		System.out.println("ending print queue.");
     }
 
     public static void main(String[] args){
