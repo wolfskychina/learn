@@ -1,5 +1,8 @@
 package stuc.queue;
 
+/**
+ * 自定义的双向队列
+ */
 public class DeQueue<T> {
     Node<T> dummyHead = new Node<>();
 	Node<T> dummyTail = new Node<>();
