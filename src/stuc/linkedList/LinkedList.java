@@ -107,11 +107,10 @@ public class LinkedList<Item> implements Iterable<Item>{
 
 	}
 
-	Iterator<Integer> it = list.iterator();
-	while(it.hasNext()){
-		System.out.println(it.next());
+		for (Integer integer : list) {
+			System.out.println(integer);
 
-	}
+		}
 	}
 
 }
