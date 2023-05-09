@@ -1,5 +1,7 @@
 package stuc.bst;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTree {
@@ -42,6 +44,28 @@ public class BinaryTree {
         }
 
 
+    }
+
+    /**
+     * Binary Tree Level Order Traversal
+     */
+    public static <T> void levelOrderTraversal(Node<T> node){
+
+        if(node == null) return ;
+
+        Queue<Node<T>> queue = new ArrayDeque<>();
+        queue.add(node);
+
+        while(!queue.isEmpty()){
+
+            Node<T> n = queue.poll();
+            System.out.println(n.getValue());
+            if(n.getLeft()!=null) queue.add(n.getLeft());
+            if(n.getRight()!=null) queue.add(n.getRight());
+
+        }
+
+               
     }
 
 
