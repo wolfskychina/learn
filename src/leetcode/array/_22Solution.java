@@ -3,6 +3,9 @@ package leetcode.array;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 生成N对括号的所有可能组合
+ */
 public class _22Solution {
 
     public int max = 0;
