@@ -21,6 +21,7 @@ public class _29Solution {
 
         while(dividend>=divisor){
             int tmp = divisor,count =1;
+            // 指数级的降低需要减的次数
             while(dividend-tmp>=tmp){
                 tmp <<= 1;
                 count <<= 1;

@@ -24,6 +24,7 @@ public class _30Solution {
             while(j<num){
                 final String word = s.substring(i +j*len, i+(j+1)*len);
                 if(counts.containsKey(word)){
+                    // 存在匹配的情况下还要看出现的次数是否和字符串数组中的一样
                     seen.put(word, seen.getOrDefault(word, 0)+1);
                     if(seen.get(word)>counts.getOrDefault(word,0)) break;
                 }else{

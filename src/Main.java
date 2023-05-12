@@ -32,6 +32,9 @@ public class Main {
             System.out.println(e);
         }
 
+        String str ="fnreikfscdldkjf";
+        str.contains("eik");
+
 
     }
 }
