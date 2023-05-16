@@ -16,4 +16,21 @@ public class _50Solution {
 
         return n%2 == 0 ? myPow(x*x,n/2):x*myPow(x*x,n/2);
     }
+
+    double myPow2(double x, int n) {
+        if (n < 0) {
+            x = 1 / x;
+            n = -n;
+        }
+        double result = 1;
+        while (n > 0) {
+            if ((n & 1)==0)
+                result *= x;
+            x *= x;
+            n >>= 1;
+        }
+        return result;
+    }
+
+    
 }

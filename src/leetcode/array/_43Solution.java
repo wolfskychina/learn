@@ -7,8 +7,8 @@ public class _43Solution {
         int n = num2.length();
         int[] pos =new int[m+n];
 
-        for(int i=m-1;i>0;i--){
-            for(int j=n-1;j>0;j--){
+        for(int i=m-1;i>=0;i--){
+            for(int j=n-1;j>=0;j--){
                 int mul = (num1.charAt(i)-'0')*(num2.charAt(j)-'0');
                 int p1 = i+j;
                 int p2 = i+j+1;
@@ -23,7 +23,9 @@ public class _43Solution {
         }
 
         StringBuilder sb = new StringBuilder();
-        for(int p:pos) {System.out.println(p);sb.append(p);}
+        for(int p:pos) {System.out.println(p);
+            if(sb.length() != 0 || p != 0)
+            sb.append(p);}
 
         return sb.length()==0?"0":sb.toString();
     }

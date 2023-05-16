@@ -42,7 +42,13 @@ public class _47Solution {
     public static void main(String[] args){
 
         _47Solution so = new _47Solution();
-        int[] a = {1,1,1,2,3,4,4,4};
-        so.permuteUnique(a);
+        int[] a = {1,1,1,1,1,1,1};
+        List<List<Integer>> list = so.permuteUnique(a);
+        for(List<Integer> l: list){
+            for(Integer i :l){
+                System.out.print(i);
+            }
+            System.out.println();
+        }
     }
 }
