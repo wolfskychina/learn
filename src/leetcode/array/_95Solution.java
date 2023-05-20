@@ -5,7 +5,7 @@ import java.util.List;
 
 public class _95Solution {
 
-    public class TreeNode {
+    public static class TreeNode {
       int val;
       TreeNode left;
       TreeNode right;
