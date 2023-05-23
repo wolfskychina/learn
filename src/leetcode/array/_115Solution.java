@@ -1,3 +1,4 @@
+package leetcode.array;
 import java.util.ArrayList;
 
 public class _115Solution {
