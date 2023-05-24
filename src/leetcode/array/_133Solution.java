@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * 深拷贝一颗邻接表表示的树
+ */
 public class _133Solution {
 
  // Definition for a Node.
