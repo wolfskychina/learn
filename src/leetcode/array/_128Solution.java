@@ -1,4 +1,8 @@
 package leetcode.array;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 数组中的最长连续序列长度
  * 数组可能是未排序的
