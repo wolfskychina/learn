@@ -1,35 +1,33 @@
 package leetcode.array;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 class LRUCache2 {
 
-    private class Node{
+    private class Node {
         int key;
         int value;
         Node pre;
         Node next;
 
-        Node(int key, int value){
+        Node(int key, int value) {
             this.key = key;
             this.value = value;
         }
     }
 
-
     private Node dummy;
     private Node tail;
 
-    private Map<Integer, Node> map ;
+    private Map<Integer, Node> map;
 
     private int capacity = 0;
 
     public LRUCache2(int capacity) {
 
         this.capacity = capacity;
-        dummy = new Node(-1,-1);
+        dummy = new Node(-1, -1);
         dummy.next = null;
         map = new HashMap<>(capacity);
     }
@@ -38,8 +36,9 @@ class LRUCache2 {
 
         Node a = map.get(key);
 
-        if(a == null ) return -1;
-        if(a!=dummy.next){
+        if (a == null)
+            return -1;
+        if (a != dummy.next) {
             remove(a);
             add(a);
         }
@@ -49,14 +48,14 @@ class LRUCache2 {
 
     public void put(int key, int value) {
 
-        if(map.get(key)!=null){
+        if (map.get(key) != null) {
             Node a = map.get(key);
             a.value = value;
             remove(a);
             add(a);
-        }else{
-            if(map.size()==capacity){
-                int headKey= tail.key;
+        } else {
+            if (map.size() == capacity) {
+                int headKey = tail.key;
                 map.remove(headKey);
                 Node newTail = tail.pre;
                 tail.pre = null;
@@ -69,21 +68,23 @@ class LRUCache2 {
         }
     }
 
-    private void remove(Node a){
+    private void remove(Node a) {
         Node pre = a.pre;
         Node next = a.next;
-        a.pre =null;
-        a.next =null;
+        a.pre = null;
+        a.next = null;
         pre.next = next;
-        next.pre = pre;
+        if (null != next)
+            next.pre = pre;
     }
 
-    private void add(Node a ){
+    private void add(Node a) {
         Node head = dummy.next;
-        dummy.next =a;
-        a.next =head;
+        dummy.next = a;
+        a.next = head;
         a.pre = dummy;
-        head.pre = a;
+        if (null != head)
+            head.pre = a;
     }
 
 }
