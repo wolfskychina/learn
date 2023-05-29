@@ -1,7 +1,14 @@
 package leetcode.array;
-
+/**
+ * 找一个无序数组中，按顺序排列后两个相邻数字相差的最大值
+ */
 public class _164Solution {
-
+    /**
+     * 要求on的时间复杂度，不能用比较排序
+     * 只能用计数排序
+     * @param nums
+     * @return
+     */
     public int maximumGap(int[] nums) {
         // 首先需要知道数组中，最高位的数字有多少位
         int n = 0;
