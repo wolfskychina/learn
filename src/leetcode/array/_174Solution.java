@@ -27,5 +27,7 @@ public class _174Solution {
                 dp[i][j] = (minHp <= 0) ? 1 : minHp;
             }
         }
+
+        return dp[0][0];
     }
 }
