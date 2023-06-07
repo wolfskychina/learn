@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 打印帕斯卡三角形的第N行
  */
-public class _119Solutin {
+public class _119Solution {
     public List<Integer> getRow(int rowIndex) {
 
 
