@@ -24,10 +24,13 @@ public class LinkedList<Item> implements Iterable<Item>{
 	private class ListIterator implements Iterator<Item>{
 		
 		Node<Item> p = dummy.next;
+
+		@Override
 		public boolean hasNext(){
 			return p !=null;
 		}
 
+		@Override
 		public Item next(){
 			Item a = (Item)p.value;
 			p = p.next;

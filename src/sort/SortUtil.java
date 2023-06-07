@@ -158,7 +158,7 @@ public class SortUtil {
         // 通过两次比较确定三个值中的最大值
         larger = (left< heapSize && a[root]<a[left])?left:root;
 
-        if(right< heapSize && a[larger]<a[right]) larger = right;
+        larger = (right< heapSize && a[larger]<a[right]) ?right:larger;
 
         if(larger!=root){
 
