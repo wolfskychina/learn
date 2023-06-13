@@ -116,7 +116,8 @@ public class DeQueue<T> implements Iterable<T>{
 				addHead(dq, value);
 				return true;
 			}
-		
+			// 先把node并联到链表上，最后修改p的指向
+			// 可以节省一个辅助指针
 			Node<T> node = new Node<T>(value);
 			node.next = pi.next;
 			node.prev = pi;
@@ -144,13 +145,11 @@ public class DeQueue<T> implements Iterable<T>{
 				return true;
 			}
 
-			Node<T> preNext = p.next;
 			Node<T> node = new Node<>(value);
-			p.next = node;
+			node.next = p.next;
 			node.prev = p;
-			node.next = preNext;
-			preNext.prev = node;
-
+			p.next.prev = node;
+			p.next = node;
 			return true;
 		}
 
