@@ -28,6 +28,6 @@ public class _5Solution {
             L--;
             R++;
         }
-        return R - L - 1;//r+l-1+2
+        return R - L - 1;//r-l+1-2
     }
 }

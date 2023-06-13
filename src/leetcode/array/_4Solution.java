@@ -18,6 +18,7 @@ public class _4Solution {
         int iMin = 0;
         int iMax = m;
         int halfLen = (m+n+1)/2;
+        // halflen 是一半或者一半多一个
         // i + j = halfLen
         // i + j = (m+n+1)/2 ? TODO
         // 左边是 a0,a1,...,ai-1, b0,b1...bj-1,总共是i+j个元素。

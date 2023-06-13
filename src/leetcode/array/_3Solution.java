@@ -19,8 +19,8 @@ public class _3Solution {
         // a sliding window between i and j
         while(i<s.length() &&j<s.length()){
 
-            if(!set.contains(s.charAt(j++))){
-                set.add(s.charAt(j));
+            if(!set.contains(s.charAt(j))){
+                set.add(s.charAt(j++));
                 ans = Math.max(ans,j-i);
             }else{
                 set.remove(s.charAt(i++));
