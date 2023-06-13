@@ -78,10 +78,9 @@ public class LinkedList<Item> implements Iterable<Item>{
 
 			if(p.next.value.equals(item)) {
 				p.next = p.next.next;
-				continue;//!the new p.next has not been tested.
+			}else{
+				p = p.next;
 			}
-
-			p = p.next;
 		}
 	}
 

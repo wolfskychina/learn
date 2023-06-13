@@ -1,6 +1,8 @@
 package stuc.bst;
 
 import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -45,6 +47,28 @@ public class BinaryTree {
 
 
     }
+
+    public static <T> List<T> postorderTraversal(Node<T> root) {
+        // 首先如果要插入元素操作，链表比数组肯定快
+        List<T> list = new LinkedList<>();
+        if(root == null) return list;
+        Stack<Node<T>> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+
+            Node<T> curr = stack.pop();
+            list.add(0,curr.getValue());
+
+            if(curr.getLeft()!=null) {
+              stack.push(curr.getLeft());
+            }
+            if(curr.getRight()!=null) {
+               stack.push(curr.getRight());
+            }
+        }
+        return list;
+    }
+
 
     /**
      * Binary Tree Level Order Traversal

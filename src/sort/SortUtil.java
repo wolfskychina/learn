@@ -58,7 +58,8 @@ public class SortUtil {
      */
     public static void mergeSort(int[] a,int low,int high) {
 
-        int mid = (low + high) >> 1;
+        // int mid = (low + high) >> 1; 有可能溢出
+        int mid = low + (high -low) >>1;
         if (low < high) {
             mergeSort(a, low, mid);
             mergeSort(a, mid + 1, high);
@@ -177,7 +178,7 @@ public class SortUtil {
      */
     private static void buildHeap(int [] a){
 
-        for(int i = (heapSize-1)>>1 ; i>=0;i--){
+        for(int i = (heapSize-2)>>1 ; i>=0;i--){
 
             maintainHeap(a, i);
 
