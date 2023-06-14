@@ -18,7 +18,7 @@ public class _17Solution {
 
             while(ans.peek() == null || ans.peek().length()==i){
                 String t = ans.peek() ==null?"":ans.peek();
-                for(char a: mapping[i].toCharArray()){
+                for(char a: mapping[x].toCharArray()){
                     ans.add(t+a);
                 }
             }

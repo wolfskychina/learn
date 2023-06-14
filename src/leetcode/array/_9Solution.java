@@ -3,7 +3,6 @@ package leetcode.array;
 public class _9Solution {
     public boolean isPalindrome(int x) {
         
-        
         // Special cases:
         // As discussed above, when x < 0, x is not a palindrome.
         // Also if the last digit of the number is 0, in order to be a palindrome,
@@ -13,13 +12,11 @@ public class _9Solution {
             return false;
         }
 
-
         int revertedNumber = 0;
         while(x > revertedNumber) {
             revertedNumber = revertedNumber * 10 + x % 10;
             x /= 10;
         }
-
 
         // When the length is an odd number, we can get rid of the middle digit by revertedNumber/10
         // For example when the input is 12321, at the end of the while loop we get x = 12, revertedNumber = 123,

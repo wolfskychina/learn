@@ -34,6 +34,7 @@ public class _10Solution {
                 {
                     //当p[j-1]出现0次时，前i位和前j-2位是匹配的
                     //当p[j-1]出现1次或多次时，第i位一定匹配第j-1位，且前i-1位一定和前j位是匹配的。
+                    //p可能出现.*这种序列的情况
                     dp[i][j] = dp[i][j - 2] || dp[i - 1][j] && (s.charAt(i-1)== p.charAt(j-2) || p.charAt(j-2) == '.');
                 }
             }
