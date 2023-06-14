@@ -21,9 +21,7 @@ public class _23Solution {
         Queue<ListNode> queue = new PriorityQueue<>(lists.size(), new Comparator<ListNode>() {
             @Override
             public int compare(ListNode o1, ListNode o2) {
-                if(o1.val == o2.val) return 0;
-                if(o1.val < o2.val) return -1;
-                return 1;
+                return Integer.compare(o1.val, o2.val);
             }
         }
         );

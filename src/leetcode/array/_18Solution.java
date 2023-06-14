@@ -47,7 +47,7 @@ public class _18Solution {
 
                 ArrayList<List<Integer>> temp = kSum(nums,target -nums[i],k-1,i+1);
 
-                if(temp!=null){
+                if(!temp.isEmpty()){
                     for(List<Integer> t:temp){
                         t.add(0,nums[i]);
                     }
