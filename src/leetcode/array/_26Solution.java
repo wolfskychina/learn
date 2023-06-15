@@ -12,7 +12,7 @@ public class _26Solution {
                 nums[i] = nums[j];
             }
         }
-
+        // return the length of the new array
         return i+1;
     }
 

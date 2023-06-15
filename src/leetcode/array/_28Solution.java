@@ -1,16 +1,13 @@
 package leetcode.array;
-
+/**
+ * 字符串匹配方法
+ */
 public class _28Solution {
 
-    public int removeDuplicates(int[] nums){
-        if(nums.length == 0) return 0;
-        int i=0;
-        for(int j=1;j<nums.length;j++){
-            if(nums[i]!=nums[j]){
-                i++;
-                nums[i] = nums[j];
-            }
-        }
-        return i+1;
-    }
+        public int strStr(String haystack, String needle) {
+          if (!haystack.contains(needle)){
+              return -1;
+          }
+          return haystack.indexOf(needle);
+      }
 }

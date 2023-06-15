@@ -14,6 +14,7 @@ public class _29Solution {
             quotient++;
         }
 
+        // Min_value太大了，除了本身，任何数除以它都是0
         if(divisor == Integer.MIN_VALUE) return 0;
 
         dividend = Math.abs(dividend);
