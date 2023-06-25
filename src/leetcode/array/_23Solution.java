@@ -18,12 +18,7 @@ public class _23Solution {
 
         if(null == lists || 0== lists.size()) return null;
 
-        Queue<ListNode> queue = new PriorityQueue<>(lists.size(), new Comparator<ListNode>() {
-            @Override
-            public int compare(ListNode o1, ListNode o2) {
-                return Integer.compare(o1.val, o2.val);
-            }
-        }
+        Queue<ListNode> queue = new PriorityQueue<>(lists.size(), (o1, o2) -> Integer.compare(o1.val, o2.val)
         );
 
         ListNode dummy = new ListNode(0);
