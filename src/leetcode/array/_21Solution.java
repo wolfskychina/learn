@@ -24,6 +24,7 @@ public class _21Solution {
         }
     }
 
+    // pass leetcode
     public ListNode mergeTwoListNonRecur(ListNode l1, ListNode l2){
         if(null == l1) return l2;
         if(null == l2) return l1;

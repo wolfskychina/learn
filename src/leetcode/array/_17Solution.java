@@ -17,7 +17,7 @@ public class _17Solution {
             int x=Character.getNumericValue(digits.charAt(i));
 
             while(ans.peek() == null || ans.peek().length()==i){
-                String t = ans.peek() ==null?"":ans.peek();
+                String t = ans.peek() ==null?"":ans.remove();
                 for(char a: mapping[x].toCharArray()){
                     ans.add(t+a);
                 }
