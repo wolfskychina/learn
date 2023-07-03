@@ -18,6 +18,11 @@ public class _50Solution {
     }
 
     double myPow2(double x, int n) {
+       
+        if(n == Integer.MIN_VALUE){
+            x = x*x;
+            n = n/2;
+        }
         if (n < 0) {
             x = 1 / x;
             n = -n;
@@ -30,6 +35,13 @@ public class _50Solution {
             n >>= 1;
         }
         return result;
+    }
+
+    public static void main(String[] args){
+
+        _50Solution so = new _50Solution();
+        System.out.println(so.myPow(4.0, 222));
+
     }
 
     

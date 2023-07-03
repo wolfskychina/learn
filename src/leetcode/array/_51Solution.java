@@ -35,7 +35,7 @@ public class _51Solution {
     private boolean validate(char[][] board, int x, int y){
         for(int i=0;i<board.length;i++){
             for(int j=0;j<y;j++){
-                if(board[i][j]=='Q'&&(x==j||x+j==y+i||x+y==i+j))
+                if(board[i][j]=='Q'&&(x==i||x+j==y+i||x+y==i+j))
                     return false;
             }
         }

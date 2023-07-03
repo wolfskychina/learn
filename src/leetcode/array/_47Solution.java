@@ -25,6 +25,8 @@ public class _47Solution {
         for(int i=0;i<nums.length;i++){
             if(used[i]) continue;
             if(i>0&&nums[i-1] == nums[i]&&!used[i-1]) {
+                // 保证相同大小的数字的前后相对顺序
+                // 防止相同大小的数字生成重复的序列
                 System.out.println("list is "+list.toString());
                 System.out.println("!!!!");
                 continue;
@@ -42,7 +44,7 @@ public class _47Solution {
     public static void main(String[] args){
 
         _47Solution so = new _47Solution();
-        int[] a = {1,1,1,1,1,1,1};
+        int[] a = {2,1,2,4,1,1,1,1,1};
         List<List<Integer>> list = so.permuteUnique(a);
         for(List<Integer> l: list){
             for(Integer i :l){
