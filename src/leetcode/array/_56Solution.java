@@ -21,7 +21,7 @@ public class _56Solution {
             }
         }); */
 
-        Collections.sort(intervals, (a,b) -> a.start -b.start);
+        intervals.sort((a, b) -> a.start - b.start);
 
         LinkedList<Interval> merged = new LinkedList<>();
         for(Interval interval : intervals){
