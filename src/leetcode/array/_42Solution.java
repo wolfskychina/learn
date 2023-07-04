@@ -54,7 +54,6 @@ public class _42Solution {
             right--;
         }
 
-
         return max * height.length - sum - sum2;
     }
 
@@ -67,8 +66,13 @@ public class _42Solution {
                 // 一个挡板当完右挡板还可以当左挡板
                 s.push(i++);
             } else {
+                // 这个分支中i不会增加,会一直出栈，直到把左边的容量全部计算出来
                 int t = s.pop();
                 if (s.isEmpty()) continue;
+                System.out.println("left height is :"+ height[s.peek()]);
+                System.out.println("right height is :"+ height[i]);
+                System.out.println("bottom is :"+height[t]);
+                System.out.println("left index is:"+s.peek()+" right index is:"+i);
                 res += (Math.min(height[i], height[s.peek()]) - height[t]) * (i - s.peek() - 1);
             }
         }
@@ -77,7 +81,7 @@ public class _42Solution {
 
     public static void main(String[] args){
             _42Solution so = new _42Solution();
-            int[] a = {1,1,1,0,1,0,1};
+            int[] a = {1,1,1,2,1,0,2};
             System.out.println(so.trap2(a));
 
 

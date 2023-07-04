@@ -24,7 +24,7 @@ public class _138Solution {
         // and link them together side-by-side in a single list.
         while (iter != null) {
             next = iter.next;
-            RandomListNode copy = new RandomListNode(iter.label);
+            RandomListNode copy = new RandomListNode(iter.val);
             iter.next = copy;
             copy.next = next;
             iter = next;
