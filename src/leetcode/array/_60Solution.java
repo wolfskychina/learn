@@ -15,7 +15,7 @@ public class _60Solution {
         for(int i=1; i<n; i++) fact[i] = fact[i-1]*i;
         k--;
         StringBuilder sb = new StringBuilder();
-        for(int i=n; i>0; i++){
+        for(int i=n; i>0; i--){
             int ind = k/fact[i-1];
             k = k%fact[i-1];
             sb.append(num.remove(ind));

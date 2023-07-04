@@ -1,7 +1,9 @@
 package leetcode.array;
 
 import java.util.LinkedList;
-
+/**
+ * 将路径字符串简化
+ */
 public class _71Solution {
 
     public String simplifyPath(String path){
@@ -16,7 +18,6 @@ public class _71Solution {
                 if(!s.equals("..")){
                     stack.add(s);
                 }
-                stack.add(s);
             }
 
         }

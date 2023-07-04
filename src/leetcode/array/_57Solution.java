@@ -4,19 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class _57Solution {
-
   
     public int[][] insert(int[][] intervals, int[] newInterval){
-
 
         int start = newInterval[0];
         int end = newInterval[1];
         // start,end是未被加入到最终集合中的临时区间
         List<int[]> list = new ArrayList<>();
 
-
+        // 核心是从头开始将所有的区间重新插入
         for(int[] interval:intervals){
-
 
             int curStart = interval[0];
             int curEnd = interval[1];

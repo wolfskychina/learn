@@ -1,7 +1,5 @@
 package leetcode.array;
 
-import java.util.ArrayList;
-
 public class _58Solution {
 
     public int[][] generateMatrix(int n) {
