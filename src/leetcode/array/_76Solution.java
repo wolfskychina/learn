@@ -45,7 +45,7 @@ public class _76Solution {
 
                 // If the frequency of the current character added equals to the
                 // desired count in t then increment the formed count by 1.
-                if (dictT.containsKey(c) && windowCounts.get(c).intValue() == dictT.get(c).intValue()) {
+                if (dictT.containsKey(c) && windowCounts.get(c).equals(dictT.get(c))) {
                     formed++;
                 }
 
