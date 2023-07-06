@@ -33,7 +33,7 @@ public class _112Solution {
     }
     
     private void countSum(TreeNode p, int sum2, int sum){
-        if(p==null) return ;
+        if(p==null || res == true) return ;
         
         if(p.left ==null &&p.right ==null && sum2+p.val == sum) {
             res = true;

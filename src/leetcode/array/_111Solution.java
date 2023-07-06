@@ -35,7 +35,7 @@ public class _111Solution {
         inOrder(root);
         return max;
     }
-    
+    // 实际上是层次遍历 
     private void inOrder(TreeNode p){
         
         if(p==null) return ;

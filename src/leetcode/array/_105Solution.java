@@ -28,7 +28,6 @@ public class _105Solution {
     
         Map<Integer, Integer> inMap = new HashMap<Integer, Integer>();
     
-    
         for(int i = 0; i < inorder.length; i++) {
             inMap.put(inorder[i], i);
         }
@@ -36,7 +35,6 @@ public class _105Solution {
         return helper(0, 0, inorder.length-1, preorder, inorder,inMap);
       }
 
-    
       // 中根序列的两个索引只是起到固定递归调用的边界，计算终止条件的作用
       public TreeNode helper(int preStart, int inStart, int inEnd, int[] preorder, int[] inorder, Map<Integer, Integer> inMap){
         

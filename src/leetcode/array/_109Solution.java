@@ -65,20 +65,16 @@ public class _109Solution {
           return null;
         }
     
-    
         // Find the middle element for the list.
         ListNode mid = this.findMiddleElement(head);
     
-    
         // The mid becomes the root of the BST.
         TreeNode node = new TreeNode(mid.val);
-    
     
         // Base case when there is just one element in the linked list
         if (head == mid) {
           return node;
         }
-    
     
         // Recursively form balanced BSTs using the left and right halves of the original list.
         node.left = this.sortedListToBST(head);

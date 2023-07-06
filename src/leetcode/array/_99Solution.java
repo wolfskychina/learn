@@ -8,100 +8,106 @@ import java.util.Stack;
  */
 public class _99Solution {
 
- public class TreeNode {
-             int val;
-         TreeNode left;
-             TreeNode right;
-             TreeNode(int x) { val = x; }
-         }
-          
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
     public void recoverTree(TreeNode root) {
-        
+
         TreeNode p = root;
-        
-        TreeNode[] p1 = {null,null};
-        TreeNode[] p2 = {null,null};
+
+        TreeNode[] p1 = { null, null };
+        TreeNode[] p2 = { null, null };
         TreeNode last = null;
         int index = 0;
-        
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        
-        while(p!=null || !stack.empty()){
-            
-            while(p!=null){
+
+        while (p != null || !stack.empty()) {
+
+            while (p != null) {
                 stack.push(p);
                 p = p.left;
             }
-            
+
             p = stack.pop();
-            
-            if(last !=null ){
-                
-                if(last.val >= p.val){
+
+            if (last != null) {
+
+                if (last.val >= p.val) {
                     // found a reverse pair
                     p1[index] = last;
                     p2[index] = p;
-                    index ++;
+                    index++;
                 }
             }
-            
+
             last = p;
             p = p.right;
         }
-        
-        if(index == 1){
+
+        if (index == 1) {
+            // 恰好交换位置的节点是相邻的
             int tmp = p1[0].val;
             p1[0].val = p2[0].val;
             p2[0].val = tmp;
-        }else if(index ==2){
+        } else if (index == 2) {
+            // 交换位置的节点是不相邻的
             int tmp = p1[0].val;
             p1[0].val = p2[1].val;
             p2[1].val = tmp;
-        }  
-        
+        }
+
     }
 
     TreeNode firstElement = null;
     TreeNode secondElement = null;
-    // The reason for this initialization is to avoid null pointer exception in the first comparison when prevElement has not been initialized
+    // The reason for this initialization is to avoid null pointer exception in the
+    // first comparison when prevElement has not been initialized
     TreeNode prevElement = null;
-    
+
     public void recoverTree2(TreeNode root) {
-        
+
         // In order traversal to find the two elements
         traverse(root);
-        
+
         // Swap the values of the two nodes
         int temp = firstElement.val;
         firstElement.val = secondElement.val;
         secondElement.val = temp;
     }
-    
+
     private void traverse(TreeNode root) {
-        
+
         if (root == null)
             return;
-            
+
         traverse(root.left);
-        
-        if(prevElement != null ){
+
+        if (prevElement != null) {
             // Start of "do some business",
-            // If first element has not been found, assign it to prevElement (refer to 6 in the example above)
+            // If first element has not been found, assign it to prevElement (refer to 6 in
+            // the example above)
             if (firstElement == null && prevElement.val >= root.val) {
                 firstElement = prevElement;
             }
-    
-            // If first element is found, assign the second element to the root (refer to 2 in the example above)
+
+            // If first element is found, assign the second element to the root (refer to 2
+            // in the example above)
             if (firstElement != null && prevElement.val >= root.val) {
                 secondElement = root;
-            }        
+            }
         }
 
         prevElement = root;
 
         // End of "do some business"
-
-
         traverse(root.right);
     }
 }
