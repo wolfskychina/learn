@@ -36,6 +36,8 @@ public class _116Solution {
         
         while(!q.isEmpty()){
             int size = q.size();
+            // 每层队列的第一个节点是头部
+            // 需要特殊处理一下
             Node p = q.poll();
             if(p.left!=null) q.offer(p.left);
             if(p.right!=null) q.offer(p.right);
