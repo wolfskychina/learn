@@ -5,6 +5,13 @@ import java.util.Set;
 
 public class _127Solution {
 
+    /**
+     * 广度优先搜索
+     * @param beginWord
+     * @param endWord
+     * @param wordDict
+     * @return
+     */
     public int ladderLength(String beginWord, String endWord, Set<String> wordDict){
 
         Set<String> reached = new HashSet<String>();

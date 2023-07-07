@@ -15,6 +15,7 @@ public class _122Solution {
         int sum =0;
         
         int  i =1;
+        // 一种模式匹配
         while(i<prices.length){
             
             while(i<prices.length && prices[i]<=prices[i-1]){

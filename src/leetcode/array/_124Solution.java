@@ -24,6 +24,7 @@ public class _124Solution {
     }
     
     // 通过遍历每个节点，计算出最大值
+    // 符合贪心规则
     private int maxPathDown(TreeNode node) {
         if (node == null) return 0;
         int left = Math.max(0, maxPathDown(node.left));
