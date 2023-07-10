@@ -13,7 +13,6 @@ public class _139Solution {
         dp[0] = true;
         
         //dp[i] true ==   s.substring(0,i) true
-        
         for (int i = 0; i < s.length()+1; i++) {
             for (int j = 0; j < i; j++) {
                 if (dp[j] && wordDict.contains(s.substring(j,i))){
@@ -24,5 +23,4 @@ public class _139Solution {
         }
         return dp[s.length()];
     }
-}
 }

@@ -59,6 +59,7 @@ public class _133Solution {
 
             return newNode;
         }else{
+            // 如果map中已经有该节点，只需要返回引用
             return map.get(node.val);
         }
     }

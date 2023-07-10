@@ -15,7 +15,8 @@ public class _152Solution {
         
         int max = Integer.MIN_VALUE;
         int prod = 1;
-        
+       
+        // 除了0或者负数，其他的相乘都不会变小
         for (int i = 0; i < nums.length; i++) {
             prod *= nums[i];
             max = Math.max(max, prod);
