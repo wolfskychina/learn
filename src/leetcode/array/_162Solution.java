@@ -10,6 +10,8 @@ public class _162Solution {
     
     /**
      * 二分查找
+     * 寻找切点，使用二分查找更快收敛
+     * 类似的可以寻找局部最小值
      */
     public int findPeakElement(int[] nums) {
         int l = 0, r = nums.length - 1;
