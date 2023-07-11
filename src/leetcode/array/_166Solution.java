@@ -30,6 +30,7 @@ public class _166Solution {
             res.append(num/den);
             num %=den;
             if(map.containsKey(num)){
+                // 开始出现重复的循环
                 int index = map.get(num);
                 res.insert(index, "(");
                 res.append(")");
