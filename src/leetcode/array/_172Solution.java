@@ -10,7 +10,7 @@ public class _172Solution {
         int k = 1;
         int sum =0;
 
-        while( Math.pow(5,i)*k<=n) {
+        while( Math.pow(5,i)<=n) {
             double sub = Math.pow(5,i);
 
 
