@@ -13,15 +13,14 @@ public class _179Solution {
         for (int i = 0; i < num.length; i++)
             s_num[i] = String.valueOf(num[i]);
         // Comparator to decide which string should come first in concatenation
-        Comparator<String> comp = new Comparator<String>() {
+        Arrays.sort(s_num, new Comparator<String>() {
             @Override
             public int compare(String str1, String str2) {
                 String s1 = str1 + str2;
                 String s2 = str2 + str1;
                 return s2.compareTo(s1); // reverse order here, so we can do append() later
             }
-        };
-        Arrays.sort(s_num, comp);
+        });
         // An extreme edge case by lc, say you have only a bunch of 0 in your int array
         if (s_num[0].charAt(0) == '0')
             return "0";
