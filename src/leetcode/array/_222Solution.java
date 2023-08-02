@@ -1,5 +1,7 @@
 package leetcode.array;
 
+import leetcode.util.TreeNode;
+
 /**
  * 求一个完全二叉树的节点数
  * 
@@ -8,6 +10,7 @@ public class _222Solution {
 
     /**
      * 可以根据子树的高度差来定位
+     * 是真正的统计所有的节点个数
      * @return
      */
     public int countNodes(TreeNode root) {
