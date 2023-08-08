@@ -4,7 +4,7 @@ package leetcode.array;
  * 求low到high之间总共有多少个strobogrammatic数
  */
 public class _248Solution {
-    private static final char[][] pairs = { { '0', '0' }, { '1', '1' }, { '6', '9' }, { '8', '8' }, { '9', '6' } };
+    private static final char[][] PAIRS = { { '0', '0' }, { '1', '1' }, { '6', '9' }, { '8', '8' }, { '9', '6' } };
 
  int count =0;
 
@@ -26,7 +26,7 @@ public class _248Solution {
             count++;
             return;
         }
-        for (char[] p : pairs) {
+        for (char[] p : PAIRS) {
             c[left] = p[0];
             c[right] = p[1];
             if (c.length != 1 && c[0] == '0') {
