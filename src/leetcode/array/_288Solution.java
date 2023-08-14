@@ -59,11 +59,36 @@ public class _288Solution {
             if (!dict.containsKey(ab))
                 return true;
 
-            if (dict.get(ab).size() ==1&&dict.get(ab).contains(word))
-                return true;
+            return dict.get(ab).size() == 1 && dict.get(ab).contains(word);
 
-            return false;
+        }
 
+        /**
+         * 另外一种更快的方法
+         */
+        class ValidWordAbbr2 {
+            String[] map = new String[12870];
+
+            public ValidWordAbbr2(String[] dictionary) {
+                for (String s : dictionary) {
+                    int idx = getAbbrIdx(s);
+                    if (map[idx] == null) {
+                        map[idx] = s;
+                    } else if (!s.equals(map[idx])) {
+                        map[idx] = "DISTINCT";
+                    }
+                }
+            }
+
+            public boolean isUnique(String word) {
+                String value = map[getAbbrIdx(word)];
+                return value == null || value.equals(word);
+            }
+
+            private int getAbbrIdx(String s) {
+                int length = s.length();
+                return length <= 1 ? s.charAt(0) - 'a' : 26 + (s.charAt(0) - 'a') * 494 + (length - 2) * 26 + (s.charAt(length - 1) - 'a');
+            }
         }
     }
 
