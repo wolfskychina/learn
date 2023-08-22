@@ -11,6 +11,9 @@ public class _268Solution {
     public int missingNumber(int[] nums) {
         int n = nums.length;
         for (int i = 0; i < n; i++) {
+            // 不能把n放到nums[n]的位置上，会溢出
+            // n可能会被换来换去
+            // 最终停留在
             if (nums[i] != i && nums[i] < n) {
 
                     int j = nums[i];
