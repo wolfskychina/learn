@@ -25,6 +25,7 @@ public class _34Solution {
         if(leftIdx == nums.length|| target!=nums[leftIdx]) return targetRange;
 
         targetRange[0] = leftIdx;
+        // 这里没有判断target是否存在是因为在前面寻找最左侧节点时已经判断过了
         targetRange[1] = extremeInsertionIndex(nums,target,false)-1;
 
         return targetRange;
