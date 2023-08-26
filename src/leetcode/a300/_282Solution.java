@@ -41,7 +41,8 @@ public class _282Solution {
             for (int j = i; j < n && (j == i || num.charAt(i) != '0'); ++j) {
                 val = val * 10 + num.charAt(j) - '0';
                 expr.append(num.charAt(j));
-                if (i == 0) { // 表达式开头不能添加符号
+                if (i == 0) {
+                    // 表达式开头不能添加符号
                     backtrack(expr, j + 1, val, val);
                 } else { // 枚举符号
                     expr.setCharAt(signIndex, '+');
