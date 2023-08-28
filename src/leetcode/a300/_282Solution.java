@@ -46,6 +46,7 @@ public class _282Solution {
                     backtrack(expr, j + 1, val, val);
                 } else { // 枚举符号
                     expr.setCharAt(signIndex, '+');
+                    // 插入符号之后，开始新一轮b从长度1开始的递归
                     backtrack(expr, j + 1, res + val, val);
                     expr.setCharAt(signIndex, '-');
                     backtrack(expr, j + 1, res - val, -val);

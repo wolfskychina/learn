@@ -9,6 +9,7 @@ public class _284Solution {
 
     /**
      * 使用一个额外存储，提前保存next值
+     * 相当于缓存预取的思想，提前取出一个来
      */
     class PeekingIterator implements Iterator<Integer> {
         private Iterator<Integer> iterator;
