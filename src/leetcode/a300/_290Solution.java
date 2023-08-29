@@ -1,7 +1,7 @@
 package leetcode.a300;
 
 /**
- * 判断一个单词数组的排列顺序是否蛮族pattern的形式
+ * 判断一个单词数组的排列顺序是否满足pattern的形式
  */
 public class _290Solution {
     /**
