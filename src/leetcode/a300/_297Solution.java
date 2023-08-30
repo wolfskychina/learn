@@ -14,6 +14,10 @@ import leetcode.util.TreeNode;
 /**
  * 二叉树序列化与反序列化
  * TODO
+ * 这个题的难点在于需要保存树的结构而不只是遍历顺序
+ * 因此只遍历非空节点的遍历方法无法保存树的结构
+ * 必须在遍历的时候保存空的叶子节点，才能保证在恢复二叉树的时候
+ * 正确识别二叉树的结构（标记子树为空）
  */
 public class _297Solution {
 
@@ -191,22 +195,64 @@ public class _297Solution {
                 dataList.remove(0);
                 return null;
             }
-      
+
             TreeNode root = new TreeNode(Integer.valueOf(dataList.get(0)));
             dataList.remove(0);
             root.left = rdeserialize(dataList);
             root.right = rdeserialize(dataList);
-        
+
             return root;
         }
-    
+
     }
 
-    public static void main(String[] args){
+    /**
+     * 官方使用先根遍历的解法
+     * 注意跟普通先根遍历的区别在于保存了null的叶子节点
+     * 实际上只多使用的n+1的存储空间
+     */
+    public class Codec3 {
+        public String serialize(TreeNode root) {
+            return rserialize(root, "");
+        }
+
+        public TreeNode deserialize(String data) {
+            String[] dataArray = data.split(",");
+            List<String> dataList = new LinkedList<String>(Arrays.asList(dataArray));
+            return rdeserialize(dataList);
+        }
+
+        public String rserialize(TreeNode root, String str) {
+            if (root == null) {
+                str += "None,";
+            } else {
+                str += str.valueOf(root.val) + ",";
+                str = rserialize(root.left, str);
+                str = rserialize(root.right, str);
+            }
+            return str;
+        }
+
+        public TreeNode rdeserialize(List<String> dataList) {
+            if (dataList.get(0).equals("None")) {
+                dataList.remove(0);
+                return null;
+            }
+
+            TreeNode root = new TreeNode(Integer.valueOf(dataList.get(0)));
+            dataList.remove(0);
+            root.left = rdeserialize(dataList);
+            root.right = rdeserialize(dataList);
+
+            return root;
+        }
+    }
+
+    public static void main(String[] args) {
 
         _297Solution s = new _297Solution();
         Codec2 co = s.codec2;
-        String[] dataArray = {"1","2","3","NONE","NONE","NONE","NONE"};
+        String[] dataArray = {"1", "2", "3", "NONE", "NONE", "NONE", "NONE"};
         List<String> dataList = new LinkedList<String>(Arrays.asList(dataArray));
 
         TreeNode no = co.rdeserialize(dataList);
