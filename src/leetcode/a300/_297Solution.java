@@ -1,7 +1,9 @@
 package leetcode.a300;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
@@ -16,6 +18,7 @@ import leetcode.util.TreeNode;
 public class _297Solution {
 
     public Codec codec = new Codec();
+    public Codec2 codec2= new Codec2();
    
     public class Codec {
 
@@ -182,9 +185,32 @@ public class _297Solution {
 
             return root;
         }
+
+        public TreeNode rdeserialize(List<String> dataList) {
+            if (dataList.get(0).equals("NONE")) {
+                dataList.remove(0);
+                return null;
+            }
+      
+            TreeNode root = new TreeNode(Integer.valueOf(dataList.get(0)));
+            dataList.remove(0);
+            root.left = rdeserialize(dataList);
+            root.right = rdeserialize(dataList);
+        
+            return root;
+        }
+    
     }
 
     public static void main(String[] args){
+
+        _297Solution s = new _297Solution();
+        Codec2 co = s.codec2;
+        String[] dataArray = {"1","2","3","NONE","NONE","NONE","NONE"};
+        List<String> dataList = new LinkedList<String>(Arrays.asList(dataArray));
+
+        TreeNode no = co.rdeserialize(dataList);
+
         // [1,2,3,null,null,4,5]
         TreeNode n4 = new TreeNode(4);
         TreeNode n5 = new TreeNode(5);
