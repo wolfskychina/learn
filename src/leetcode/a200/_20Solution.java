@@ -1,4 +1,4 @@
-package leetcode.stack;
+package leetcode.a200;
 
 import java.util.Stack;
 
@@ -9,7 +9,7 @@ public class _20Solution {
 
     public boolean isValid(String s) {
 
-        Stack stack= new Stack();
+        Stack<Character> stack= new Stack<>();
 
         for(int index = 0 ;index<s.length();index++){
 
