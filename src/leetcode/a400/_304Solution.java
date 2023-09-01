@@ -16,7 +16,7 @@ public class _304Solution {
         sums = new int[matrix.length][matrix[0].length];
         for(int i =0;i<sums.length;i++){
             for(int j=0;j<sums[0].length;j++){
-                sums[i][j] = ;
+                sums[i][j] = sums[i][j-1]+;//加上nums[i,0]-nums[i,j] 
             }
         }
     }
