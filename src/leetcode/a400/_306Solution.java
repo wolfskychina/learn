@@ -25,11 +25,12 @@ public class _306Solution {
                     continue;
                 }
                 Long sum = Long.parseLong(str1) + Long.parseLong(str2);
-                //计算sum的位数
+                // 计算sum的位数
                 int bits = countbits(sum);
                 String sumStr = String.valueOf(sum);
-                if (num.substring(j).startsWith(sumStr)) {    //登记新的ij的位置，开始新一轮的递归
-                    if (j + bits == num.length()) return true;
+                if (num.substring(j).startsWith(sumStr)) { // 登记新的ij的位置，开始新一轮的递归
+                    if (j + bits == num.length())
+                        return true;
                     res = res || find(Long.parseLong(str2), sum, j + bits, num);
                 }
             }
@@ -68,10 +69,41 @@ public class _306Solution {
 
     }
 
+    /**
+     * 更快的解法，基于v和sum的大小比较，不需要计算sum的位数
+     */
+    public boolean isAdditiveNumber2(String num) {
+        return dfs(num.toCharArray(), 0, 0, 0, 0);
+    }
+
+    private boolean dfs(char[] cs, int start, long prev1, long prev2, int count) {
+        if (start == cs.length) {
+            return count >= 3;
+        }
+
+        long v = 0;
+        for (int i = start; i < cs.length; i++) {
+            if (i != start && cs[start] == '0')
+                break;
+            v = v * 10 + cs[i] - '0';
+            if (count >= 2) {
+                long sum = prev1 + prev2;
+                if (v > sum)
+                    break;
+                else if (v < sum)
+                    continue;
+            }
+
+            if (dfs(cs, i + 1, prev2, v, count + 1) == true)
+                return true;
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         _306Solution so = new _306Solution();
         so.isAdditiveNumber("123");
-
 
     }
 }
