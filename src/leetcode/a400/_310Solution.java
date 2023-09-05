@@ -7,7 +7,7 @@ import java.util.*;
  * 使得根节点到所有其他节点的高度之和最小
  * 求满足这个条件的根节点
  */
-public class _309Solution {
+public class _310Solution {
 
     /**
      * 关键在于找到无向图中的最长路径
