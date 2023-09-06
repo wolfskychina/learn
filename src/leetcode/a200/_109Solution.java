@@ -1,6 +1,6 @@
 package leetcode.a200;
 
-import leetcode.a200._21Solution.ListNode;
+import leetcode.a0._21Solution.ListNode;
 /**
  * 根据一个有序链表构建平衡bst
  */
