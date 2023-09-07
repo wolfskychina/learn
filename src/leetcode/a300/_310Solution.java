@@ -54,6 +54,14 @@ public class _310Solution {
         return ans;
     }
 
+    /**
+     * 广度优先搜索，最后一个被遍历的节点就是离起始节点最远的节点
+     * 在广度优先搜索的同时，构建了指向父节点的数组
+     * @param u
+     * @param parent
+     * @param adj
+     * @return
+     */
     public int findLongestNode(int u, int[] parent, List<Integer>[] adj) {
         int n = adj.length;
         Queue<Integer> queue = new ArrayDeque<Integer>();

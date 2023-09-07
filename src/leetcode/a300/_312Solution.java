@@ -21,6 +21,7 @@ public class _312Solution {
         }
         for (int i = n - 1; i >= 0; i--) {
             for (int j = i + 2; j <= n + 1; j++) {
+                // 选择k作为分划点,rec[i][k]和rec[k][j]均为之前已经求出
                 for (int k = i + 1; k < j; k++) {
                     int sum = val[i] * val[k] * val[j];
                     sum += rec[i][k] + rec[k][j];
