@@ -2,80 +2,98 @@ package leetcode.a300;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 寻找数组中每个元素右侧比这个元素小的元素的个数
+ * TODO 
+ */
 public class _315Solution {
 
-    int[] tmpIdx;
-    int[] idx;
-    int[] ans;
+    private int[] index;
+    private int[] temp;
+    private int[] tempIndex;
+    private int[] ans;
 
-    public List<Integer> countSmaller(int[] nums) {
-        tmpIdx = new int[nums.length];
-        idx = new int[nums.length];
-        ans = new int[nums.length];
-
-        mergeSort(nums, 0, nums.length - 1);
-        List<Integer> list = new ArrayList<>();
-        for (int i : ans) {
-            list.add(i);
-
+    /**
+     * 利用归并排序，找出所有的逆序对
+     * 
+     * @param nums
+     * @return
+     */
+    public List<Integer> countSmaller2(int[] nums) {
+        this.index = new int[nums.length];
+        this.temp = new int[nums.length];
+        this.tempIndex = new int[nums.length];
+        this.ans = new int[nums.length];
+        for (int i = 0; i < nums.length; ++i) {
+            index[i] = i;
+        }
+        int l = 0, r = nums.length - 1;
+        mergeSort2(nums, l, r);
+        List<Integer> list = new ArrayList<Integer>();
+        for (int num : ans) {
+            list.add(num);
         }
         return list;
-
     }
 
-    private void mergeSort(int[] nums, int l, int r) {
-
-        if (l >= r)
+    public void mergeSort2(int[] a, int l, int r) {
+        if (l >= r) {
             return;
-        int mid = l + (r - l) / 2;
-        mergeSort(nums, l, mid);
-        mergeSort(nums, mid + 1, r);
-        merge(nums, l, mid, r);
+        }
+        int mid = (l + r) >> 1;
+        mergeSort2(a, l, mid);
+        mergeSort2(a, mid + 1, r);
+        merge2(a, l, mid, r);
     }
 
-    private void merge(int[] nums, int ll, int mid, int rr) {
-
-        int[] tmp = new int[rr - ll + 1];
-        int l = ll;
-        int r = rr;
-        int k = 0;
-        while (l <= mid && r <= rr) {
-
-            if (nums[l] <= nums[r]) {
-                tmp[k] = nums[l];
-                tmpIdx[k] = idx[l];
-
-                k++;
-                l++;
+    public void merge2(int[] a, int l, int mid, int r) {
+        int i = l, j = mid + 1, p = l;
+        while (i <= mid && j <= r) {
+            if (a[i] <= a[j]) {
+                temp[p] = a[i];
+                tempIndex[p] = index[i];
+                //a[i] <= a[j]时，a[i]和a[mid+1]...a[j-1]均为逆序对 
+                ans[index[i]] += (j - mid - 1);
+                ++i;
+                ++p;
             } else {
-                // mid-l+1 reverse found !
-                tmp[k] = nums[r];
-                tmpIdx[k] = idx[r];
-                ans[idx[r]] += mid - l + 1;
-                k++;
-                r++;
-
+                temp[p] = a[j];
+                tempIndex[p] = index[j];
+                ++j;
+                ++p;
             }
         }
+        while (i <= mid)  {
+            temp[p] = a[i];
+            tempIndex[p] = index[i];
+            // 最后前半段有多余元素的话
+            // a[i]同a[mid+1]...a[r]即右半边所有元素全部构成逆序对
+            ans[index[i]] += (j - mid - 1);
+            ++i;
+            ++p;
+        }
+        while (j <= r) {
+            temp[p] = a[j];
+            tempIndex[p] = index[j];
+            ++j;
+            ++p;
+        }
+        for (int k = l; k <= r; ++k) {
+            index[k] = tempIndex[k];
+            a[k] = temp[k];
+        }
+    }
 
-        while (l <= mid) {
-            tmp[k] = nums[l];
-            tmpIdx[k] = idx[l];
-            k++;
-            l++;
+   
+
+    public static void main(String[] args){
+
+        int [] a = {1,2,3,7,8,9,4,5,6,10,11,12};
+        _315Solution so = new _315Solution();
+        List<Integer> list = so.countSmaller2(a);
+        for(Integer i :list){
+            System.out.print(i+" ");
         }
 
-        while (r <= rr) {
-            tmp[k] = nums[r];
-            tmpIdx[k] = idx[r];
-            k++;
-            r++;
-        }
-
-        for (int i = 0; i <= rr - ll; i++) {
-            nums[ll + i] = tmp[i];
-            idx[i] = tmpIdx[i];
-        }
     }
 }
