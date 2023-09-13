@@ -33,6 +33,7 @@ public class _325Solution {
             // 累加前缀和
             preSum += nums[i];
             // 确保记录的是第一次出现的位置
+            // 实际上这个放在检查后面也可以
             if (!preSumIndex.containsKey(preSum)) {
                 preSumIndex.put(preSum, i);
             }
