@@ -1,6 +1,7 @@
 package leetcode.a300;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 给出一颗二叉树的前序遍历序列，空节点用#号代替
@@ -20,7 +21,7 @@ public class _331Solution {
 
         // 如果用arrayDeque比Stack要快
         // Stack是线程安全的
-        Stack<String> stack = new Stack<>();
+        Deque<String> stack = new LinkedList<>();
         int i = 0;
         while (i < n) {
             String c = str[i];
