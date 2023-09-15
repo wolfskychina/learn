@@ -44,4 +44,39 @@ public class _331Solution {
         }
         return stack.size() == 1 && "#".equals(stack.peek());
     }
+
+    /**
+     * 另外一种解法，判断二叉树应该有的位置数量和数列中元素占据的位置是否相等
+     * 
+     * @param preorder
+     * @return
+     */
+    public boolean isValidSerialization2(String preorder) {
+        int n = preorder.length();
+        int i = 0;
+        int slots = 1;
+        while (i < n) {
+            if (slots == 0) {
+                return false;
+            }
+            if (preorder.charAt(i) == ',') {
+                i++;
+            } else if (preorder.charAt(i) == '#') {
+                slots--;
+                i++;
+            } else {
+                // 读一个数字
+                while (i < n && preorder.charAt(i) != ',') {
+                    i++;
+                }
+            }
+        }
+        return slots == 0;
+    }
+
+    public static void main(String[] args){
+        _331Solution so = new _331Solution();
+        so.isValidSerialization2("9,#,92,#,#");
+        
+    }
 }
