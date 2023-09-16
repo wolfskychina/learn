@@ -17,6 +17,7 @@ public class _330Solution {
      */
     public int minPatches(int[] nums, int n) {
         int patches = 0;
+        // x-1是目前能够覆盖到的最大的数
         long x = 1;
         int length = nums.length, index = 0;
         while (x <= n) { // 能连续覆盖的重量还没到n，有两种情况：断码(缺砝码)，或者还有砝码没加
