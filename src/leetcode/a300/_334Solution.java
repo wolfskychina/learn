@@ -52,7 +52,7 @@ public class _334Solution {
             if (num > second) {
                 return true;
             } else if (num > first) {
-                // second的意思是，当前最小的二元组序列的第二个元素
+                // second的意思是，当前遍历过的所有二元组的第二个元素中最小的
                 second = num;
             } else {
                 // first是当前最小的元素
