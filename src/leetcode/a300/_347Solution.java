@@ -36,6 +36,7 @@ public class _347Solution {
 
     public void qsort(List<int[]> values, int start, int end, int[] ret, int retIndex, int k) {
         int picked = (int) (Math.random() * (end - start + 1)) + start;
+        // list也可以交换元素
         Collections.swap(values, picked, start);
 
         int pivot = values.get(start)[1];
