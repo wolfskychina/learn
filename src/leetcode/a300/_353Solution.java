@@ -7,6 +7,7 @@ import java.util.Set;
 
 /**
  * 353. Design Snake Game
+ * TODO 
  */
 public class _353Solution {
 
@@ -67,8 +68,8 @@ public class _353Solution {
             Entry<Integer, Integer> currTail = this.snake.peekLast();
 
             // 是否走到边界
-            boolean horiBoundary = newHeadRow < 0 || newHeadRow >= width;
-            boolean vetiBoundary = newHeadCol < 0 || newHeadCol >= height;
+            boolean horiBoundary = newHeadRow < 0 || newHeadRow >= height;
+            boolean vetiBoundary = newHeadCol < 0 || newHeadCol >= width;
 
             // 是否走到自己身上
             boolean ifBiteSelf = this.snakeSet.contains(newHead)
