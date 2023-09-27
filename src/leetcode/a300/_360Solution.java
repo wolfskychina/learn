@@ -1,7 +1,20 @@
 package leetcode.a300;
-
+/**
+ * 360. Sort Transformed Array
+ * 一个递增的数组，将其中的元素映射为一个一元二次函数之后，
+ * 返回f(x)的递增排序
+ */
 public class _360Solution {
 
+    /**
+     * 一元二次函数的y变化规律，寻找对称轴
+     * 归并排序
+     * @param nums
+     * @param a
+     * @param b
+     * @param c
+     * @return
+     */
     public int[] sortTransformedArray(int[] nums, int a, int b, int c) {
 
         if (a == 0) {
