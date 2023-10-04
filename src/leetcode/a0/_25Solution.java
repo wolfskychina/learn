@@ -1,16 +1,9 @@
 package leetcode.a0;
 
+import leetcode.util.ListNode;
+
 public class _25Solution {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
-    public ListNode reverseKGroup(ListNode head, int k) {
+        public ListNode reverseKGroup(ListNode head, int k) {
         int n = 0;
         // 统计节点总的数量
         for (ListNode i = head; i != null; n++, i = i.next)

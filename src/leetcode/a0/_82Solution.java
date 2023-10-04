@@ -1,18 +1,12 @@
 package leetcode.a0;
 
+import leetcode.util.ListNode;
+
 /**
  * 从已经排好序的链表中删掉冗余的元素
  * 只要有冗余元素，那么所有这个元素都删掉。
  */
 public class _82Solution {
-public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode deleteDuplicates(ListNode head) {
 

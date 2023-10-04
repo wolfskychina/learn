@@ -1,12 +1,9 @@
 package leetcode.a0;
 
+import leetcode.util.ListNode;
+
 public class _86Solution {
    
-    public class ListNode {
-        int val;
-          ListNode next;
-            ListNode(int x) { val = x; }
-      }
 
     public ListNode partition(ListNode head, int x) {
         

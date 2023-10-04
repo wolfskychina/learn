@@ -1,18 +1,11 @@
 package leetcode.a0;
 
+import leetcode.util.ListNode;
+
 /**
  * 将链表中第m和n之间的节点进行反转
  */
 public class _92Solution {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode reverseBetween(ListNode head, int m, int n) {
 

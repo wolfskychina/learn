@@ -1,18 +1,13 @@
 package leetcode.a0;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+import leetcode.util.ListNode;
+
 public class _23Solution {
-    public class ListNode{
-        public int val;
-        public ListNode next;
-        public ListNode(int val) {
-            this.val = val;
-        }
-    }
+   
 
     public ListNode mergeLists(List<ListNode> lists){
 

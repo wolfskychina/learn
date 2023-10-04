@@ -1,15 +1,12 @@
 package leetcode.a0;
 
+import leetcode.util.ListNode;
+
 /**
  * 删除链表中的冗余元素，只保留一份
  */
 public class _83Solution {
    
-    public class ListNode {
-       int val;
-         ListNode next;
-           ListNode(int x) { val = x; }
-     }
 
      public ListNode deleteDuplicates(ListNode head) {
         
