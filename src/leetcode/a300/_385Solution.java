@@ -1,7 +1,5 @@
 package leetcode.a300;
 
-import java.util.List;
-
 import leetcode.util.NestedInteger;
 import leetcode.util.NestedIntegerMock;
 /**
