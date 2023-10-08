@@ -10,7 +10,15 @@ import java.util.Set;
 
 public class _399Solution {
 
-    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+    /**
+     * TODO 没有处理<b,a>和<a,a>的情况
+     * 不如直接抽象成图结构进行处理
+     * @param equations
+     * @param values
+     * @param queries
+     * @return
+     */
+    public double[] calcEquation2(List<List<String>> equations, double[] values, List<List<String>> queries) {
 
         List<Double> ans = new ArrayList<>();
 
@@ -118,6 +126,68 @@ public class _399Solution {
         return found;
 
     }
+
+    /**
+     * 
+     * @param equations
+     * @param values
+     * @param queries
+     * @return
+     */
+    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+
+        Map<String, List<Edge>> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
+
+        for(int i =0;i<equations.size();i++){
+            if(!equations.get(i).get(0).equals(equations.get(i).get(1))){
+                List<Edge> list = map.getOrDefault(equations.get(i).get(0), new LinkedList<Edge>());
+                list.add(new Edge(equations.get(i).get(1),values[i]));
+                map.put(equations.get(i).get(0),list);
+                List<Edge> list2 = map.getOrDefault(equations.get(i).get(1), new LinkedList<Edge>());
+                list2.add(new Edge(equations.get(i).get(0),1/values[i]));
+                map.put(equations.get(i).get(1),list2);
+                set.add(equations.get(i).get(0));
+                set.add(equations.get(i).get(1));
+            }
+
+        }
+
+        List<Double> ans =new LinkedList<>();
+
+        for(List<String> qu : queries){
+
+            if(qu.get(0).equals(qu.get(1))){
+                ans.add(1.0);
+                continue;
+            }
+            if(!set.contains(qu.get(0)) ||
+            !set.contains(qu.get(1))){
+                ans.add(-1.0);
+                continue;
+            }
+
+            if(map.get(qu.get(0))
+            for()
+
+
+
+        }
+       
+    }
+
+    private class Edge{
+        public Edge(String string, double d) {
+            this.v = string;
+            this.value =d;
+        }
+        String v;
+        double value;
+
+    }
+
+
+
 
     public static void main(String[] args){
 
