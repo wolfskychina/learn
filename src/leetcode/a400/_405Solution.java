@@ -1,5 +1,7 @@
 package leetcode.a400;
-
+/**
+ * 十进制转换二进制
+ */
 public class _405Solution {
 
     public String toHex(int num) {
