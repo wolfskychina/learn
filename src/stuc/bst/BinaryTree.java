@@ -34,7 +34,7 @@ public class BinaryTree {
 
         Stack<Node<T>> s = new Stack<>();
 
-        while(!s.isEmpty()){
+        while(!s.isEmpty()||x!=null){
             if(x!=null){
                 s.push(x);
                 x = x.getLeft();
