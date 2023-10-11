@@ -158,6 +158,7 @@ public class _417Solution {
     }
 
     public void dfs(int row, int col, boolean[][] ocean) {
+        // 已经在之前的递归中访问到了
         if (ocean[row][col]) {
             return;
         }
