@@ -1,64 +1,44 @@
 package leetcode.a400;
-
+/**
+ * 字符串最多允许替换k个字符，替换后最长的单字符连续子串的长度
+ */
 public class _424Solution {
 
+    /**
+     * 滑动窗口，保留当前窗口中各字符出现的次数
+     * @param s
+     * @param k
+     * @return
+     */
     public int characterReplacement(String s, int k) {
-        int max = 1;
-        if (null == s || s.isEmpty())
+        if (s == null) {
             return 0;
-
-        char[] carray = s.toCharArray();
-        int i = 0;
-        int j = 1;
-        char currentC = carray[0];
-        int starNum = 0;
-        for (; j < carray.length; j++) {
-            if (currentC == carray[j]) {
-                max = Math.max(max, j - i + 1);
-                continue;
-            }
-
-            if (currentC != carray[j] && starNum < k) {
-                carray[j] = '*';
-                starNum++;
-                max = Math.max(max, j - i + 1);
-                continue;
-            }
-
-            // found the last continues *
-            int p = j - 1;
-            starNum = 0;
-            while ( p >= 0) {
-                int pp =p;
-                while (p>=0&&carray[p] == '*' && carray[j] == s.charAt(p)) {
-
-                    carray[p] = carray[j];
-                    p--;
-                }
-                while (p>=0&&carray[p] == carray[j]) {
-                    p--;
-                }
-                while (p>=0 && carray[p] != carray[j] && starNum < k) {
-                    carray[p] = '*';
-                    starNum++;
-                    p--;
-                }
-                if(pp ==p) break;
-
-            }
-
-            i = p + 1;
-            currentC = carray[j];
-            max = Math.max(max, j - i + 1);
-
         }
-
-        return max;
+        int[] map = new int[26];
+        char[] chars = s.toCharArray();
+        int left = 0;
+        int right = 0;
+        int historyCharMax = 0;
+        for (right = 0; right < chars.length; right++) {
+            int index = chars[right] - 'A';
+            map[index]++;
+            historyCharMax = Math.max(historyCharMax, map[index]);
+            if (right - left + 1 > historyCharMax + k) {
+                // 窗口无法保证全部替换后只有一种字符
+                // 需要向右滑动
+                map[chars[left] - 'A']--;
+                left++;
+            }
+            // 向右增长
+        }
+        return chars.length - left;
     }
 
     public static void main(String[] args) {
 
         _424Solution so = new _424Solution();
-        so.characterReplacement("ABAA", 0);
+        so.characterReplacement(
+                "EOEMQLLQTRQDDCOERARHGAAARRBKCCMFTDAQOLOKARBIJBISTGNKBQGKKTALSQNFSABASNOPBMMGDIOETPTDICRBOMBAAHINTFLH",
+                7);
     }
 }
