@@ -8,6 +8,12 @@ import java.util.Set;
 
 public class _438Solution {
 
+    /**
+     * 内存溢出
+     * @param s
+     * @param p
+     * @return
+     */
     public List<Integer> findAnagrams(String s, String p) {
 
         Set<Character> set = new HashSet<>();
@@ -23,7 +29,7 @@ public class _438Solution {
         }
 
         int l = 0;
-        while (l < s.length() - len + 1) {
+        while (l < s.length() - len) {
 
             int scount = 0;
             int ll = l;
@@ -58,13 +64,14 @@ public class _438Solution {
                 list.add(ll - len);
             }
 
-            if (!set.contains(s.charAt(ll))) {
-                l = ll;
+            if (ll < s.length() && !set.contains(s.charAt(ll))) {
+                l = ll+1;
             } else {
+                l = ll-len-1;
 
-                while (set.contains(s.charAt(ll)) && ll < s.length()) {
-                    check[s.charAt(l)]++;
-                    check[s.charAt(ll)]--;
+                while (ll < s.length() && set.contains(s.charAt(ll))) {
+                    check[s.charAt(l) - 'a']++;
+                    check[s.charAt(ll) - 'a']--;
 
                     ifValid = true;
                     for (int i = 0; i < 26; i++) {
@@ -74,7 +81,7 @@ public class _438Solution {
                         }
                     }
                     if (ifValid) {
-                        list.add(ll - len);
+                        list.add(ll - len +1);
                     }
                     l++;
                     ll++;
@@ -87,4 +94,11 @@ public class _438Solution {
         return list;
 
     }
+
+    public static void main(String[] args){
+
+        _438Solution so = new _438Solution();
+        so.findAnagrams("cbaebabacd", "abc");
+    }
+
 }
