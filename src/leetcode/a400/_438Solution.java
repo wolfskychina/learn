@@ -9,7 +9,7 @@ import java.util.Set;
 public class _438Solution {
 
     /**
-     * 内存溢出
+     * 滑动窗口
      * @param s
      * @param p
      * @return
@@ -29,7 +29,7 @@ public class _438Solution {
         }
 
         int l = 0;
-        while (l < s.length() - len) {
+        while (l <= s.length() - len) {
 
             int scount = 0;
             int ll = l;
@@ -67,7 +67,7 @@ public class _438Solution {
             if (ll < s.length() && !set.contains(s.charAt(ll))) {
                 l = ll+1;
             } else {
-                l = ll-len-1;
+                l = ll-len;
 
                 while (ll < s.length() && set.contains(s.charAt(ll))) {
                     check[s.charAt(l) - 'a']++;
@@ -81,11 +81,13 @@ public class _438Solution {
                         }
                     }
                     if (ifValid) {
-                        list.add(ll - len +1);
+                        list.add(l +1);
                     }
                     l++;
                     ll++;
                 }
+
+                l = ll+1;
 
             }
 
@@ -98,7 +100,7 @@ public class _438Solution {
     public static void main(String[] args){
 
         _438Solution so = new _438Solution();
-        so.findAnagrams("cbaebabacd", "abc");
+        so.findAnagrams("beeaaedcbc", "c");
     }
 
 }
