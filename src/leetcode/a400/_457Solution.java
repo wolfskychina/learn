@@ -13,15 +13,19 @@ public class _457Solution {
 
             if (failSet.contains(i))
                 continue;
+            if(i==(i + nums[i] % nums.length+nums.length) % nums.length)
+                continue;
             Set<Integer> tmpSucc = new HashSet<>();
-            int idx = i;
+            int idx = (i + nums[i] % nums.length +nums.length) % nums.length;
             int flag = nums[i]>0?1:-1;
+            tmpSucc.add(i);
             while (true) {
 
                 if ((nums[idx] > 0 && flag>0) || 
-                        (nums[idx] < 0 && flag<0)) {
-                    int newidx =(idx + nums[idx]+nums.length) % nums.length;
-                    if (failSet.contains(newidx)||newidx == idx) {
+                        (nums[idx] < 0 && flag<0)) 
+                        {
+                    int newidx = (idx + nums[idx] % nums.length+nums.length) % nums.length;
+                    if (failSet.contains(newidx)||idx ==newidx) {
                         for (int node : tmpSucc) {
                             failSet.add(node);
                         }
@@ -52,7 +56,7 @@ public class _457Solution {
     public static void main(String[] args){
 
         _457Solution so = new _457Solution();
-        int[] array = new int[]{-1,2,1,2};
+        int[] array = new int[]{-2,-3,-9};
         so.circularArrayLoop(array);
     }
 }
