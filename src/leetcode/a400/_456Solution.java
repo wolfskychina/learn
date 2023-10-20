@@ -1,5 +1,7 @@
 package leetcode.a400;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.TreeMap;
 
 public class _456Solution {
@@ -102,12 +104,14 @@ public class _456Solution {
 
         for (int j = 1; j < n - 1; ++j) {
             if (leftMin < nums[j]) {
+                // 找到treemap中大于leftMin的最小值
                 Integer next = rightAll.ceilingKey(leftMin + 1);
                 if (next != null && next < nums[j]) {
                     return true;
                 }
             }
             leftMin = Math.min(leftMin, nums[j]);
+            // j往右侧移动，占用j+1的位置当做3，需要将nums[j+1]从Treemap中去掉
             rightAll.put(nums[j + 1], rightAll.get(nums[j + 1]) - 1);
             if (rightAll.get(nums[j + 1]) == 0) {
                 rightAll.remove(nums[j + 1]);
@@ -118,6 +122,39 @@ public class _456Solution {
 
     }
 
+    /**
+     * 使用单调栈，时间复杂度on
+     * 遍历顺序为，对于nums[i]判断能否当3-》获取2的最大值-》下一轮比较1和上一轮找到的2和3
+     * @param nums
+     * @return
+     */
+    public boolean find132pattern3(int[] nums) {
+        int n = nums.length;
+        Deque<Integer> candidateK = new LinkedList<Integer>();
+        candidateK.push(nums[n - 1]);
+        // 当前2的最大可能值
+        int maxK = Integer.MIN_VALUE;
+
+        for (int i = n - 2; i >= 0; --i) {
+            // 先看nums[i]能不能当1
+            if (nums[i] < maxK) {
+                return true;
+            }
+            // 如果nums[i]不能当1，就将nums[i]当做3的候选项，去单调栈中看看
+            // 能不能找到一个可能的2
+            while (!candidateK.isEmpty() && nums[i] > candidateK.peek()) {
+                maxK = candidateK.pop();
+            }
+            // 发现一个可能的2，且因为nums[i]大于已经出栈的2，将nums[i]入栈，之后nums[i]将
+            // 成为下一轮的2的候选项，而被弹出的2的候选项，因为最大值已经被标记为maxK，在下一轮对1
+            // 的比较时候，可以直接比较
+            if (nums[i] > maxK) {
+                candidateK.push(nums[i]);
+            }
+        }
+
+        return false;
+    }
 
 
 }
