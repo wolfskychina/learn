@@ -10,9 +10,9 @@ public class _468Solution {
         } else {
             String[] v4 = queryIP.split("\\.");
             if (v4.length == 4) {
-                for (int i = 1; i < 4; i++) {
+                for (int i = 0; i < 4; i++) {
                     char[] seg = v4[i].toCharArray();
-                    if ((seg.length != 1 && seg[0] == '0') || (seg.length > 3)) {
+                    if (seg.length ==0 || (seg.length != 1 && seg[0] == '0') || (seg.length > 3)) {
                         if4 = false;
                         break;
                     }
@@ -46,7 +46,7 @@ public class _468Solution {
             char c = queryIP.charAt(i);
             if (c == ':')
                 continue;
-            if ((c - '0' >= 0 && c - '0' <= 9) || (c - 'a' >= 0 && c - 'a' <= 25) || (c - 'A' >= 0 && c - 'A' <= 25)) {
+            if ((c - '0' >= 0 && c - '0' <= 9) || (c - 'a' >= 0 && c - 'a' <= 5) || (c - 'A' >= 0 && c - 'A' <= 5)) {
                 continue;
             } else {
                 return "Neither";
@@ -70,8 +70,8 @@ public class _468Solution {
     public static void main(String[] args) {
 
         _468Solution so = new _468Solution();
-        so.validIPAddress("x1.x2.x3.x4");
-        so.validIPAddress("1920.168.0.1");
-        so.validIPAddress("192.168.00.1");
+        so.validIPAddress("20EE:FGb8:85a3:0:0:8A2E:0370:7334");
+        //so.validIPAddress("1920.168.0.1");
+        //so.validIPAddress("192.168.00.1");
     }
 }
