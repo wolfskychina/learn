@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * n根线段是否能够围成正方形
+ * TODO
+ * 
  */
 public class _473Solution {
 
@@ -37,6 +39,7 @@ public class _473Solution {
         }
         for (int i = 0; i < edges.length; i++) {
             edges[i] += matchsticks[index];
+            // 因为所有的输入都要用到，所以不能跳过某一个，必须要放到某一条边上
             if (edges[i] <= len && dfs(index + 1, matchsticks, edges, len)) {
                 return true;
             }
