@@ -1,5 +1,7 @@
 package leetcode.a400;
-
+/**
+ * 注册码格式转换
+ */
 public class _482Solution {
 
     public String licenseKeyFormatting(String s, int k) {
@@ -14,7 +16,7 @@ public class _482Solution {
                 sb.append(c);
                 j++;
             } else if (c >= 'a' && c <= 'z') {
-                // sb.append()函数 'A' + c - 'a'默认返回是int类型
+                // TODO sb.append()函数 'A' + c - 'a'默认返回是int类型
                 sb.append((char) ('A' + c - 'a'));
                 j++;
             }
