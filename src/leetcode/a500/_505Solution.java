@@ -3,7 +3,11 @@ package leetcode.a500;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
-
+/**
+ * 迷宫中滚动的小球，需要求出最短走到终点的距离
+ * 如果走不到，返回-1
+ * {dfs},{bfs}
+ */
 public class _505Solution {
 
     /**
