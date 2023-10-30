@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 /**
- * 
+ * 输出一个数组的所有上升子序列（子序列节点数至少有两个） 
  */
 public class _491Solution {
 
