@@ -1,5 +1,7 @@
 package leetcode.a500;
-
+/**
+ * bst中序遍历的后继节点
+ */
 public class _510Solution {
 
     class Node {
@@ -24,10 +26,11 @@ public class _510Solution {
         if (p == null)
             return null;
 
-        while (p != null && p.right == p) {
+        while (p != null && p.right == node) {
             p = p.parent;
+            node = node.parent;
         }
-        return p == null ? null : p.parent;
+        return p;
 
     }
 }
