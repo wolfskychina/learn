@@ -1,6 +1,7 @@
 package leetcode.a500;
 /**
  * 两个字符串的最长非共享子序列的长度
+ * {subsquence}
  */
 public class _521Solution {
 
