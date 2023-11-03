@@ -24,7 +24,7 @@ public class _530Solution {
         inOrderTravel(node.left);
 
         if (last != -1) {
-            min = Math.min(min, Math.abs(node.val - last);
+            min = Math.min(min, Math.abs(node.val - last));
         }
 
         last = node.val;
