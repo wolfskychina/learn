@@ -19,7 +19,7 @@ public class _592Solution {
             num[0] = Long.parseLong(tmps[0]);
             num[1] = Long.parseLong(tmps[1]);
 
-            res = fractionAdd(res, num);
+            fractionAdd(res, num);
             idx = r;
 
         }
@@ -45,15 +45,19 @@ public class _592Solution {
 
     }
 
-    private long[] fractionAdd(long[] res, long[] num) {
+    private void fractionAdd(long[] res, long[] num) {
 
-        if(res[0] ==0) return num;
-        if(num[0] ==0) return res;
+        if(res[0] ==0) {
+            res[0] =num[0];
+            res[1] =num[1];
+            return ;
+        }
+        if(num[0] ==0) return ;
 
         long tmp = res[1];
         res[1] = res[1] * num[1];
         res[0] = res[0] * num[1] + num[0] * tmp;
-        return res;
+        return ;
     }
 
     public static void main(String[] args){
