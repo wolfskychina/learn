@@ -1,7 +1,11 @@
 package leetcode.a500;
-
+/**
+ * 分数的加减运算
+ * 
+ */
 public class _592Solution {
 
+    // {gcd}
     public String fractionAddition(String s) {
         // "-1/2+1/2"
         long[] res = { 0, 0 };
