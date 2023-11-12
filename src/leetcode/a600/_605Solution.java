@@ -1,4 +1,4 @@
-package leetcode.a500;
+package leetcode.a600;
 
 /**
  * 种花问题，相邻的花盆不能种花，已经种了一部分花，

@@ -1,4 +1,4 @@
-package leetcode.a500;
+package leetcode.a600;
 
 import leetcode.util.TreeNode;
 /**
