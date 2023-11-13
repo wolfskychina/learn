@@ -3,9 +3,17 @@ package leetcode.a600;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
+/**
+ * 给文本中的目标字符串标记加粗
+ */
 public class _616Solution {
 
+    /**
+     * 自己的解法比较慢
+     * @param s
+     * @param words
+     * @return
+     */
     public String addBoldTag(String s, String[] words) {
 
         List<int[]> seg = new LinkedList<>();
@@ -16,6 +24,7 @@ public class _616Solution {
             int l = -1;
             while (l + 1 < s.length()) {
                 int r = s.indexOf(str, l + 1);
+                if(r==-1) break;
                 seg.add(new int[] { r, r + len });
                 l = r;
             }
@@ -36,7 +45,7 @@ public class _616Solution {
             int r = seg.get(i)[1];
             if (l >= curL && r <= curR)
                 continue;
-            if (l >= curL && l <= r) {
+            if (l >= curL && l <= curR) {
                 curR = r;
             } else {
                 newseg.add(new int[] { curL, curR });
@@ -53,12 +62,48 @@ public class _616Solution {
             sb.append(s.substring(last, part[0]));
             sb.append("<b>");
             sb.append(s.substring(part[0], part[1]));
-            sb.append("<//b>");
+            sb.append("</b>");
             last = part[1];
         }
         sb.append(s.substring(last, s.length()));
 
         return sb.toString();
+    }
+
+    /**
+     * 空间换时间，每个字符都记录是否需要加速
+     *  */
+    public String addBoldTag1(String s, String[] words) {
+        int len = s.length();
+        boolean[] needadd = new boolean[len];
+        for (String word :words) {
+            int i = s.indexOf(word);
+            int wlen = word.length();
+            while(i != -1){
+                for (int j = i; j < i + wlen; j++) {
+                    needadd[j] = true;
+                }
+                i = s.indexOf(word, i + 1);
+            }
+        }
+       
+        // 因为有保存每个字符是否加粗，所以连续需要加粗的就可以一起跳过
+        StringBuilder ans = new StringBuilder();
+        int left = 0;
+        while(left < len){
+            if(needadd[left]){
+                ans.append("<b>");
+                while(left < len && needadd[left]){
+                    ans.append(s.charAt(left));
+                    left++;
+                }
+                ans.append("</b>");
+            } else {
+                ans.append(s.charAt(left));
+                left++;
+            }
+        }
+        return ans.toString();
     }
 
     public static void main(String[] args){
