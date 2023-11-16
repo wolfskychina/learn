@@ -30,11 +30,11 @@ public class _638Solution {
             }
         }
 
-        return dfs(price, special, needs, filterSpecial, n);
+        return dfs(price, needs, filterSpecial, n);
     }
 
     // 记忆化搜索计算满足购物清单所需花费的最低价格
-    public int dfs(List<Integer> price, List<List<Integer>> special, List<Integer> curNeeds, List<List<Integer>> filterSpecial, int n) {
+    public int dfs(List<Integer> price, List<Integer> curNeeds, List<List<Integer>> filterSpecial, int n) {
         if (!memo.containsKey(curNeeds)) {
             int minPrice = 0;
             for (int i = 0; i < n; ++i) {
@@ -50,9 +50,11 @@ public class _638Solution {
                     nxtNeeds.add(curNeeds.get(i) - curSpecial.get(i));
                 }
                 if (nxtNeeds.size() == n) { // 大礼包可以购买
-                    minPrice = Math.min(minPrice, dfs(price, special, nxtNeeds, filterSpecial, n) + specialPrice);
+                    minPrice = Math.min(minPrice, dfs(price, nxtNeeds, filterSpecial, n) + specialPrice);
                 }
             }
+            // curNeeds里面的值修改后，list的hashcode变了，映射到的位置也发生了改变
+            // 只要list里面的数量一致且每个值都相同，那么两个list的hashcode就相同
             memo.put(curNeeds, minPrice);
         }
         return memo.get(curNeeds);
