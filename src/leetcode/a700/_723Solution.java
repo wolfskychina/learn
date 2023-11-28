@@ -2,9 +2,18 @@ package leetcode.a700;
 
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * 简单版的消消乐
+ * 每一回合结束同时消除所有可以消除的连续方块，然后再按照中立掉落
+ */
 public class _723Solution {
 
+        /**
+         * 非常巧妙，在两个方向，三个三个的判断, 如果是三个连续的相同数就变成负数
+         * TODO
+         * @param board
+         * @return
+         */
         public int[][] candyCrush1(int[][] board) {
             int R = board.length, C = board[0].length;
             boolean todo = false;
@@ -26,10 +35,12 @@ public class _723Solution {
                     }
                 }
             }
-    
+   
+            // 逐列处理新形成的-值
             for (int c = 0; c < C; ++c) {
                 int wr = R - 1;
                 for (int r = R-1; r >= 0; --r)
+                    // 正值是需要保留的
                     if (board[r][c] > 0)
                         board[wr--][c] = board[r][c];
                 while (wr >= 0)
