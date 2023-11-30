@@ -22,8 +22,9 @@ public class _751Solution {
         int start = toInt(ip);// 将ip转化为整数
         List<String> ans = new ArrayList<>();
         while (n > 0) {
+            // Integer.numberOfTrailingZeros()方法
             int trailingZeros = Integer.numberOfTrailingZeros(start);
-            // System.out.println(trailingZeros);
+            
             int mask = 0, bitsInCIDR = 1;
             // 计算mask
             while (bitsInCIDR < n && mask < trailingZeros) {
