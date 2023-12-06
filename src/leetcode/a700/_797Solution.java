@@ -87,7 +87,7 @@ public class _797Solution {
 
             
             list.add(next);
-            dfs(next, graph, list, tar);
+            dfs1(next, graph, list, tar);
             list.remove(list.size() - 1);
         }
         return;
