@@ -1,36 +1,53 @@
 package leetcode.a200;
+
+import java.util.Deque;
+import java.util.LinkedList;
 /**
- * 计算两个长方形覆盖的总面积
+ * 基本计算器，只有加减法和括号的运算
  */
 public class _224Solution {
    
     /**
-     * 判断两个长方形是否有重叠部分的方法
-     * @param A
-     * @param B
-     * @param C
-     * @param D
-     * @param E
-     * @param F
-     * @param G
-     * @param H
+     * 因为加减法优先级一样的，所以括号最多改变口号内每个数字的正负
+     * 思路：模拟拆括号的操作，将所有括号拆掉，然后再运算
+     * 栈里面只存正负号，表示左括号前面的正负号对该括号内数字的影响
+     * （不变或者取反）TODO
+     * @param s
      * @return
      */
-    public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
-        
-        int areaOfSqrA = (C-A) * (D-B);
-         int areaOfSqrB = (G-E) * (H-F);
-        
-        int left = Math.max(A, E);
-        int right = Math.min(G, C);
-        int bottom = Math.max(F, B);
-        int top = Math.min(D, H);
-        
-        //If overlap
-        int overlap = 0;
-        if(right > left && top > bottom)
-             overlap = (right - left) * (top - bottom);
-        
-        return areaOfSqrA + areaOfSqrB - overlap;
+    public int calculate(String s) {
+        Deque<Integer> ops = new LinkedList<Integer>();
+        ops.push(1);
+        int sign = 1;
+
+        int ret = 0;
+        int n = s.length();
+        int i = 0;
+        while (i < n) {
+            if (s.charAt(i) == ' ') {
+                i++;
+            } else if (s.charAt(i) == '+') {
+                sign = ops.peek();
+                i++;
+            } else if (s.charAt(i) == '-') {
+                sign = -ops.peek();
+                i++;
+            } else if (s.charAt(i) == '(') {
+                ops.push(sign);
+                i++;
+            } else if (s.charAt(i) == ')') {
+                ops.pop();
+                i++;
+            } else {
+                long num = 0;
+                while (i < n && Character.isDigit(s.charAt(i))) {
+                    num = num * 10 + s.charAt(i) - '0';
+                    i++;
+                }
+                ret += sign * num;
+            }
+        }
+        return ret;
     }
+
 }
