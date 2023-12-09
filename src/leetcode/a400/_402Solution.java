@@ -1,56 +1,32 @@
 package leetcode.a400;
-
+/**
+ * 从一个数字字符串中删除k个字符，使得剩下的字符组成的数字最小
+ */
 public class _402Solution {
 
-    String res = "0";
-
+  /**
+   * {greedy},{monotonic stack}
+   * @param num
+   * @param k
+   * @return
+   */
     public String removeKdigits(String num, int k) {
-        if (num.length() <= k)
-            return "0";
 
-        StringBuilder sb = new StringBuilder();
-        char[] array = num.toCharArray();
-        int i = 0;
-        int kk =k;
-        for (; i < array.length-1 && k != 0; i++) {
-
-            if (array[i] > array[i + 1]) {
-                // del i
-                k--;
-            } else {
-                sb.append(array[i]);
+        int length = num.length(), index_stack = 0, index_chars = 0;
+        char[] chars = num.toCharArray();
+        char[] stack = new char[length + 1];
+        stack[0] = '0';
+        for (int i = 0; i < k; i++) {
+            for (; index_chars < length && stack[index_stack] <= chars[index_chars]; ) {
+                stack[++index_stack] = chars[index_chars++];
             }
+            index_stack--;
         }
+        for (; index_chars < length; index_chars++) stack[++index_stack] = chars[index_chars];
+        int left = 0;
+        for (; left < index_stack && stack[left] == '0'; left++);
+        return new String(stack, left, index_stack - left + 1);
 
-        sb.append(num.substring(i));
-        String ans = "";
-
-        if(kk==k && k!=0){
-            // 当前的剩余num不存在逆序对
-            // 直接从后往前删除，返回
-            sb.setLength(sb.length()-k);
-            ans = sb.toString();
-            int j = 0;
-            for (; j < ans.length() - 1; j++) {
-                if (ans.charAt(j) != '0')
-                    break;
-            }
-            res = ans.substring(j);       
-            return this.res;
-        }
-
-        if (k != 0) {
-            removeKdigits(sb.toString(), k);
-        } else {
-            ans = sb.toString();
-            int j = 0;
-            for (; j < ans.length() - 1; j++) {
-                if (ans.charAt(j) != '0')
-                    break;
-            }
-            res = ans.substring(j);
-        }
-        return this.res;
     }
 
     public static void main(String[] args){
