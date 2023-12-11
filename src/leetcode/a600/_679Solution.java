@@ -18,11 +18,33 @@ public class _679Solution {
 
     public boolean judgePoint24(int[] cards) {
 
-        int num[][] = new int[4][2];
-        for (int i = 0; i < num.length; i++) {
-            num[i][0] = cards[i];
-            num[i][1] = 1;
+        //
+        Set<Integer> set = new HashSet<>();
+        set.add(0);
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        Queue<Integer> q = new ArrayDeque<>();
+        for (int i : set) {
+            q.offer(i);
         }
+        int size = q.size();
+        for (int i = 0; i < size; i++) {
+            int idx = q.poll();
+            int seq[] = new int[4];
+            seq[0] = cards[idx];
+            set.remove(idx);
+            perform(1, cards, set, seq);
+            set.add(idx);
+        }
+
+        for (int[] card : list) {
+
+            int num[][] = new int[4][2];
+            for (int i = 0; i < num.length; i++) {
+                num[i][0] = card[i];
+                num[i][1] = 1;
+            }
 
             for (int i = 0; i < 3; i++) {
 
