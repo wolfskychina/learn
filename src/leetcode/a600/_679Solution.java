@@ -13,6 +13,7 @@ public class _679Solution {
             num[i][1] = 1;
         }
 
+        // 应该是任选两个数字进行计算
         for (int i = 0; i < 3; i++) {
 
             // 四种运算
