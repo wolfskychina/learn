@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 public class SortTest {
     
     public static void main(String[] args){
@@ -14,5 +16,16 @@ public class SortTest {
         for(int i:a){
             System.out.println(i);
         }
+
+        
+            int[] arr = {5, 2, 8, 1, 9}; // 定义一个int类型的数组
+            
+            Arrays.sort(arr); // 调用Arrays类的sort()方法对数组进行降序排列
+            
+            System.out.println("降序后的结果为：");
+            for (int num : arr) {
+                System.out.print(num + " ");
+            }
+    
     }
 }
