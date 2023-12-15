@@ -1,7 +1,23 @@
 package leetcode.a400;
 
+/**
+ * 一组由01所组成的字符串所组成的数组
+ * 选择的字符串中各位的0不超过m，1不超过n的条件下
+ * 能够选择的最多的字符串是多少
+ */
 public class _474Solution {
 
+    /**
+     * {01 package},{dp}
+     * 01背包问题，选择的字符串中各位的0不超过m，1不超过n的条件下
+     * 能够选择的最多的字符串是多少
+     * 用dp来解
+     * 
+     * @param strs
+     * @param m
+     * @param n
+     * @return
+     */
     public int findMaxForm(String[] strs, int m, int n) {
         int length = strs.length;
         // dp[i][j][k] 表示在前 i 个字符串中，
