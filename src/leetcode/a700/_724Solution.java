@@ -1,7 +1,7 @@
 package leetcode.a700;
 /**
  * 寻找数组的中心元素，使得元素左边的子数组之和等于右边的子数组之和
- * {easy}
+ * {easy},{prefix sum}
  */
 public class _724Solution {
 
