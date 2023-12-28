@@ -1,6 +1,7 @@
 package leetcode.a800;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * 优势洗牌
@@ -39,5 +40,37 @@ public class _870Solution {
             }
         }
         return ans;
+    }
+
+    /**
+     * 更快的方法 {PriorityQueue}
+     * @param A
+     * @param B
+     * @return
+     */
+    public int[] advantageCount1(int[] A, int[] B) {
+        int n = A.length;
+        int[] res = new int[n];
+        
+        Arrays.sort(A);
+        
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->b[1]-a[1]);
+        
+        for (int i = 0; i < n; i++) {
+            pq.offer(new int[]{i, B[i]});
+        }
+        
+        int l = 0, r = n-1;
+        while(!pq.isEmpty()) {
+            int[] b = pq.poll();
+            
+            if (b[1]>=A[r]) {
+                res[b[0]] = A[l++];
+            } else {
+                res[b[0]] = A[r--];
+            }
+        }
+        
+        return res;
     }
 }
