@@ -1,9 +1,6 @@
 package leetcode.a800;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.PriorityQueue;
-import java.util.Set;
 /**
  * 卡车所能容纳的最大单元数
  * {easy}
