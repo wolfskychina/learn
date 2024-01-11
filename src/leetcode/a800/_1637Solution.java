@@ -1,4 +1,7 @@
 package leetcode.a800;
+
+import java.util.Arrays;
+
 /**
  * 任意两个符合到x轴的投影之间没有其他点的点的最远间隔距离
  * {easy}
