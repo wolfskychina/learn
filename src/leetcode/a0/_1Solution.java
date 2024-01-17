@@ -1,5 +1,7 @@
 package leetcode.a0;
-
+/**
+ * {easy}
+ */
 public class _1Solution {
 
     public int[] twoSum(int[] nums, int target) {

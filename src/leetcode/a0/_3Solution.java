@@ -5,6 +5,7 @@ import java.util.*;
 /**
  * Longest Substring Without Repeating Characters
  * 最长无重复子串
+ * {sliding window},{two pointers}
  */
 public class _3Solution {
 

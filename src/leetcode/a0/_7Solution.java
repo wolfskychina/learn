@@ -19,6 +19,6 @@ public class _7Solution {
     public static void main(String[] args){
 
         _7Solution so = new _7Solution();
-        System.out.println(so.reverse(2147483646));
+        System.out.println(so.reverse(1563847412));
     }
 }
