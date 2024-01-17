@@ -1,4 +1,4 @@
 {
-    "github.gitProtocol": "ssh",
+    "github.gitProtocol": "https",
     "java.dependency.packagePresentation": "hierarchical"
 }
