@@ -3,6 +3,7 @@ package leetcode.a800;
 import java.util.Arrays;
 /**
  * 按照数字中各位上1的数量进行排序
+ * {bit manuplation}
  */
 public class _1356Solution {
    
