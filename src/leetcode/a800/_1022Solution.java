@@ -34,4 +34,28 @@ public class _1022Solution {
         TreeNode p = new TreeNode(0);
         so.sumRootToLeaf(p);
     }
+
+    /**
+     * 直接将上层的数值*2，避免对字符串拼接
+     * @param root
+     * @return
+     */
+    public int sumRootToLeaf1(TreeNode root) {
+        visit(root, 0);
+        return sum;
+    }
+
+    public void visit(TreeNode root, int parentSum){
+        if(root == null)
+            return;
+        
+        int temp = parentSum * 2 + root.val;
+        if(root.left == null && root.right == null){
+            sum += temp;
+            return ;
+        }
+
+        visit(root.left, temp);
+        visit(root.right, temp);
+    }
 }
