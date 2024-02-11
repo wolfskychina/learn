@@ -48,8 +48,6 @@ public class _1592Solution {
 
     public static void main(String[] args) {
 
-        String str = "  this   is  a sentence ";
-        String[] words = str.split(" +");
         return;
     }
 }
