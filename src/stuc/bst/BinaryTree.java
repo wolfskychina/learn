@@ -48,6 +48,12 @@ public class BinaryTree {
 
     }
 
+    /**
+     * post order traverse
+     * @param <T>
+     * @param root
+     * @return
+     */
     public static <T> List<T> postorderTraversal(Node<T> root) {
         // 首先如果要插入元素操作，链表比数组肯定快
         List<T> list = new LinkedList<>();
