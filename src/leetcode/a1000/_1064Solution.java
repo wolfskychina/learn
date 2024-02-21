@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 不动点
  * 升序数组中，第一个和元素值不相等的索引

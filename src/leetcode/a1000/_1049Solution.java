@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 石头对对碰，最后剩下的石头的最小重量是多少
  */

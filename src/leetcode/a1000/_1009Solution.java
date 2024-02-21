@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 求数字的反码
  * {easy}

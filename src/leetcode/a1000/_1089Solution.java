@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 复写零
  * {easy}

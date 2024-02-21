@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 判断3个点是否在一条直线上
  * {easy}

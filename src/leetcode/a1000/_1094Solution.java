@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 拼车方案是否可行
  * 对于一个capacity空座的车和沿途上下车旅客的方案

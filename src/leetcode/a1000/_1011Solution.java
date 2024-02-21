@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * D天内运送所有包裹所需要的最小吨位船
  * 和koko吃香蕉类似875

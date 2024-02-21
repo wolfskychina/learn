@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 能否将数组分成和相等的三个非空子数组
  */

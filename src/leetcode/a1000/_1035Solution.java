@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 两个字符串之间，相同的字符之间可以连一条线
  * 问最多能画出多少条不相交的线

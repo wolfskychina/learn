@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 01序列中，最多允许反转k个0成为1
  * 问能够构成的最长的连续1有多长

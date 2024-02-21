@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 
 /**
  * 删除每个合法括号字符子串的最外层的括号

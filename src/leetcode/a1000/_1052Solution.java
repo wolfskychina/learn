@@ -1,4 +1,4 @@
-package leetcode.a800;
+package leetcode.a1000;
 /**
  * 爱生气的书店老板
  * 可以将一段长度为min的连续时间内的脾气改为不生气
