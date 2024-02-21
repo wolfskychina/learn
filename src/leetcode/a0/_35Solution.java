@@ -1,5 +1,7 @@
 package leetcode.a0;
-
+/**
+ * {binary search}
+ */
 public class _35Solution {
 
     public int searchInsert(int[] nums, int target){

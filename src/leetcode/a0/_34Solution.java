@@ -1,5 +1,7 @@
 package leetcode.a0;
-
+/**
+ * {binary search}
+ */
 public class _34Solution {
 
     private int extremeInsertionIndex(int[] nums,int target, boolean left){
