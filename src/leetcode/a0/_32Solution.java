@@ -1,12 +1,16 @@
 package leetcode.a0;
 
 import java.util.Stack;
-
+/**
+ * 计算括号串中最长的合法字符串
+ * {stack}
+ */
 public class _32Solution {
 
     public int longestValidParentheses(String s){
         int maxans = 0;
         Stack<Integer> stack = new Stack<>();
+        // 这里只能填-1，计算长度才正确
         stack.push(-1);
         for(int i=0;i<s.length();i++){
             if(s.charAt(i)=='('){
