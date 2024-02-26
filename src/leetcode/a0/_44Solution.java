@@ -1,5 +1,8 @@
 package leetcode.a0;
-
+/**
+ * 模式匹配,包含？和*号的通配符
+ * {pattern matching},{wildcard matching}
+ */
 public class _44Solution {
 
     public boolean isMatch(String s, String p){
@@ -22,7 +25,7 @@ public class _44Solution {
                 // 发生了i和j不匹配的情况，但是iStar不是负值
                 // 说明有一个有效的*可以吃掉这个不匹配
                 // i,j都移动到iStar和jStar后面的一个位置，i和istar增大表示跳过，但是jStar是不变的
-                // 也就是说如果匹配不上，就总是和jstar后面的这个字符比较
+                // 也就是说如果匹配不上，jstar这个*号就可以吞掉所有不匹配，就总是和jstar后面的这个字符比较
                 // 分支3的上一步可能是分支23，也可能是1
                 // 如果是分支2.3说明一直没有匹配上
                 // 如果是分支1，说明中间有几个匹配上了，但是这个没有匹配上

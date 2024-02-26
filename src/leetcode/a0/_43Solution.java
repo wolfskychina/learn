@@ -1,5 +1,9 @@
 package leetcode.a0;
-
+/**
+ * 大整数乘法
+ * num1 num2 均是从高位到低位的表示
+ * 
+ */
 public class _43Solution {
 
     public String multply(String num1, String num2){
@@ -10,6 +14,7 @@ public class _43Solution {
         for(int i=m-1;i>=0;i--){
             for(int j=n-1;j>=0;j--){
                 int mul = (num1.charAt(i)-'0')*(num2.charAt(j)-'0');
+                // p1是高位 p2是低位
                 int p1 = i+j;
                 int p2 = i+j+1;
 

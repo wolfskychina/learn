@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * 回溯法解组合数问题
  * 组合数，候选数组中没有重复的数字，但是每个数字可以重复出现
+ * {backtrace}
  */
 public class _39Solution {
 
