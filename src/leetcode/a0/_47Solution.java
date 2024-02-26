@@ -3,9 +3,11 @@ package leetcode.a0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * 存在重复元素的一组数，生成这组数的全排列
+ * {permutation},{backtrace}
+ */
 public class _47Solution {
-
 
     public List<List<Integer>> permuteUnique(int[] nums){
         List<List<Integer>> res = new ArrayList<>();

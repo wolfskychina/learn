@@ -1,5 +1,8 @@
 package leetcode.a0;
-
+/**
+ * 实现pow(double x, int n)函数，计算n次方
+ * {math}
+ */
 public class _50Solution {
 
     public double myPow(double x, int n){
@@ -9,6 +12,7 @@ public class _50Solution {
             x = x * x;
             n = n/2;
         }
+        // 提前处理Min_value的情况，防止在取反的时候
         if(n<0){
             n = -n;
             x = 1/x;
@@ -41,6 +45,11 @@ public class _50Solution {
 
         _50Solution so = new _50Solution();
         System.out.println(so.myPow(4.0, 222));
+        int min = Integer.MIN_VALUE;
+        int abs = Math.abs(min);
+        int negmin = -min;
+        System.out.println(abs);
+        System.out.println(negmin);
 
     }
 
