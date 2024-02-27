@@ -3,7 +3,10 @@ package leetcode.a0;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
+/**
+ * 生成所有的的N皇后排布方案
+ * {backtrace}
+ */
 public class _51Solution {
 
     public List<List<String>> solveNQueen(int n){

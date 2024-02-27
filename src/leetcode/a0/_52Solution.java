@@ -2,7 +2,10 @@ package leetcode.a0;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * N皇后问题不同的解的数量
+ * {easy}
+ */
 public class _52Solution {
 
     int count =0;
