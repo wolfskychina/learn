@@ -2,7 +2,10 @@ package leetcode.a0;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 往一个不重合的区间集合中插入一个新的闭区间
+ * 返回合并后的新的区间集合
+ */
 public class _57Solution {
   
     public int[][] insert(int[][] intervals, int[] newInterval){

@@ -1,6 +1,9 @@
 package leetcode.a0;
-
-public class _58Solution {
+/**
+ * 从外层往内填充方形矩阵
+ * {matrix traverse}
+ */
+public class _59Solution {
 
     public int[][] generateMatrix(int n) {
         int[][] resArray = new int[n][n];
@@ -33,7 +36,7 @@ public class _58Solution {
     }
 
     public static void main(String[] args){
-        _58Solution so = new _58Solution();
+        _59Solution so = new _59Solution();
         int [][] res = so.generateMatrix(7);
         for(int[] r:res){
             for(int i:r){
