@@ -1,5 +1,7 @@
 package leetcode.a0;
-
+/**
+ * 模拟二进制相加
+ */
 public class _67Solution {
 
     public String addBinary(String a, String b){

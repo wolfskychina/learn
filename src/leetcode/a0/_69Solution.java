@@ -1,5 +1,8 @@
 package leetcode.a0;
-
+/**
+ * 实现sqrt()函数
+ * {binary search}
+ */
 public class _69Solution {
 
     public int mySqrt(int x) {

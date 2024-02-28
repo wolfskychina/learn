@@ -1,6 +1,9 @@
 package leetcode.a0;
 
-
+/**
+ * 从矩阵左上角到右下角的最短路径和
+ * {dp}
+ */
 public class _64Solution {
 
     public int minPathSum(int[][] grid) {

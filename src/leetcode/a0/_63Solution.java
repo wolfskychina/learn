@@ -1,6 +1,7 @@
 package leetcode.a0;
 /**
  * 带有障碍格子的棋盘最多有多少种路径
+ * {dp}
  */
 public class _63Solution {
 
@@ -13,7 +14,7 @@ public class _63Solution {
                 if(row[j]==1){
                     dp[j] = 0;
                 }else if(j>0){
-                    dp[j] += dp[j];
+                    dp[j] += dp[j-1];
                 }
             }
         }

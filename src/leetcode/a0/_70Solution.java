@@ -1,5 +1,8 @@
 package leetcode.a0;
-
+/**
+ * 爬台阶
+ * {dp}
+ */
 public class _70Solution {
 
     public int climbStairs(int n) {
