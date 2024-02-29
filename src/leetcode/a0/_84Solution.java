@@ -1,5 +1,7 @@
 package leetcode.a0;
-
+/**
+ * 柱状图中的连续的最大矩形
+ */
 public class _84Solution {
 
     public static int largestRectangleArea(int[] height){

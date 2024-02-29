@@ -2,6 +2,7 @@ package leetcode.a0;
 
 /**
  * 去掉有序数组中的重复元素，使得结果数组中每个不同的元素最多出现两次。
+ * {double pointers}
  */
 public class _80Solution {
    

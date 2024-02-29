@@ -1,7 +1,9 @@
 package leetcode.a0;
-
+/**
+ * 检查棋盘中是否目标单词
+ * {backtrace}
+ */
 public class _79Solution {
-
 
     public boolean exist = false;
     int [] diX ={-1,1,0,0};

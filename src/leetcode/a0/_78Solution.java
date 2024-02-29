@@ -2,15 +2,18 @@ package leetcode.a0;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 输出一个数组的所有子集，包括空集
+ * {combination math}
+ */
 public class _78Solution {
 
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         result.add(new ArrayList<>());
-        for(int n : nums){
+        for (int n : nums) {
             int size = result.size();
-            for(int i=0; i<size; i++){
+            for (int i = 0; i < size; i++) {
                 List<Integer> subset = new ArrayList<>(result.get(i));
                 subset.add(n);
                 result.add(subset);

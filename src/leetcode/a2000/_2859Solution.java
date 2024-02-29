@@ -1,4 +1,4 @@
-package leetcode.a0;
+package leetcode.a2000;
 
 import java.util.List;
 /**

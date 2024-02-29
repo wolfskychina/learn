@@ -2,7 +2,10 @@ package leetcode.a0;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 从n个数里面挑k个数，一共有多少种组合
+ * {backtrace}
+ */
 public class _77Solution {
 
     public List<List<Integer>> combine(int n, int k) {
@@ -31,6 +34,12 @@ public class _77Solution {
         }
     }
 
+    /**
+     * 如果从n个数里面挑k个并排序，共有多少不同排列
+     * @param n
+     * @param k
+     * @return
+     */
     public List<List<Integer>> sort(int n, int k) {
 
         List<List<Integer>> res = new ArrayList<>();
