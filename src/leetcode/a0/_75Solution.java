@@ -1,5 +1,8 @@
 package leetcode.a0;
-
+/**
+ * 按照颜色排序
+ * {insert sorting}
+ */
 public class _75Solution {
 
     public void sortColors(int[] nums) {

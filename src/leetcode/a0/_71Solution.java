@@ -3,6 +3,7 @@ package leetcode.a0;
 import java.util.LinkedList;
 /**
  * 将路径字符串简化
+ * {stack}
  */
 public class _71Solution {
 
