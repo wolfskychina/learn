@@ -2,6 +2,7 @@ package leetcode.a0;
 /**
  * 数字转字符的编码方式
  * 1->a 26->z
+ * {dp}
  */
 public class _90Solution {
    
@@ -12,13 +13,11 @@ public class _90Solution {
         int n = s.length();
         int[] dp = new int[n+1];
 
-
         // dp[0]这里是一个trick，主要是为了计算dp[2]
         // 因为下面递推式dp[i] += dp[i-2]; 当i=2时且前两位能解码时，相当于新增了一种解码方式
         // 因此dp[0]需要等于1，否则根据递推式，少了一种解码方式
         // 这个递推的边界条件有点trick
         dp[0] = 1;
-
 
         dp[1] = s.charAt(0) != '0' ? 1 : 0;
         if(n>=2){
