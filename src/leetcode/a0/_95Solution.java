@@ -3,42 +3,50 @@ package leetcode.a0;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 生成所有可能的bst
+ * {binary tree},{bst}
+ */
 public class _95Solution {
 
     public static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    public List<TreeNode> generateTrees(int n){
-        if(n==0) return new ArrayList<TreeNode>();
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 
-        return genTrees(1,n);
+    public List<TreeNode> generateTrees(int n) {
+        if (n == 0)
+            return new ArrayList<TreeNode>();
+
+        return genTrees(1, n);
     }
 
     private List<TreeNode> genTrees(int start, int end) {
-        List<TreeNode> list =new ArrayList<>();
+        List<TreeNode> list = new ArrayList<>();
 
-        if(start>end) {
+        if (start > end) {
             list.add(null);
             return list;
         }
 
-        if(start ==end){
+        if (start == end) {
             list.add(new TreeNode(start));
             return list;
         }
 
         List<TreeNode> left, right;
-        for(int i=start;i<=end;i++){
+        for (int i = start; i <= end; i++) {
 
-            left = genTrees(start, i-1);
-            right = genTrees(i+1, end);
+            left = genTrees(start, i - 1);
+            right = genTrees(i + 1, end);
 
-            for(TreeNode lnode:left){
-                for(TreeNode rnode:right){
+            for (TreeNode lnode : left) {
+                for (TreeNode rnode : right) {
 
                     TreeNode root = new TreeNode(i);
                     root.left = lnode;
