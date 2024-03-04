@@ -2,7 +2,10 @@ package leetcode.a0;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
-
+/**
+ * 一个字符串能否通过其他两个字符串的片段依次拼接起来
+ * {dp},{2d dp}
+ */
 public class _97Solution {
 
     /**

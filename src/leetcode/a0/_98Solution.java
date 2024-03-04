@@ -4,6 +4,7 @@ import java.util.Stack;
 
 /**
  * 判断一个bst是否合法
+ * {bst}
  */
 public class _98Solution {
 
