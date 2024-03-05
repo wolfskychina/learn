@@ -2,6 +2,7 @@ package leetcode.a100;
 
 /**
  * 判断二叉树中是否有节点数值之和为sum的路径
+ * {binary tree}
  */
 public class _112Solution {
     public class TreeNode {
