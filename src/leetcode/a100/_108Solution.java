@@ -20,7 +20,6 @@ public class _108Solution {
         if(l>r) return null;
         
         // 注意这个地方的括号，一开始写成了 l+(r-l)>>1  ,这个>>的优先级很低。
-
         // 先算术运算，后移位运算，最后位运算
         int rootIdx = l+((r-l)>>1);
         TreeNode root= new TreeNode(nums[rootIdx]);
