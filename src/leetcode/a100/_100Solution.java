@@ -1,28 +1,13 @@
 package leetcode.a100;
 
+import leetcode.util.TreeNode;
+
 /**
- * 判断两棵BST是否相同
+ * 判断两棵BST是否相同，只要值和结构相同就认为相同
+ * 类似的任何二叉树也可以这么判断
+ * {bst},{binary tree}
  */
 public class _100Solution {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public boolean isSameTree(TreeNode p, TreeNode q) {
 

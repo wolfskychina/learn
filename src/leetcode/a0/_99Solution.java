@@ -2,22 +2,14 @@ package leetcode.a0;
 
 import java.util.Stack;
 
+import leetcode.util.TreeNode;
+
 /**
  * 一个bst中，有两个节点对换了位置，破坏了bst的性质
  * 需要恢复bst的特性，但是不能改变bst的结构
  * {bst}
  */
 public class _99Solution {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public void recoverTree(TreeNode root) {
 

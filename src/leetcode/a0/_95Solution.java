@@ -3,21 +3,13 @@ package leetcode.a0;
 import java.util.ArrayList;
 import java.util.List;
 
+import leetcode.util.TreeNode;
+
 /**
  * 生成所有可能的bst
  * {binary tree},{bst}
  */
 public class _95Solution {
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public List<TreeNode> generateTrees(int n) {
         if (n == 0)

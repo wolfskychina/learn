@@ -5,27 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import leetcode.util.TreeNode;
+/**
+ * 二叉树的层次遍历
+ * {binary tree}
+ */
 public class _102Solution {
     
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     public List<List<Integer>> levelOrder(TreeNode root) {
         
         if(root == null) return new ArrayList<List<Integer>>();

@@ -2,21 +2,13 @@ package leetcode.a0;
 
 import java.util.Stack;
 
+import leetcode.util.TreeNode;
+
 /**
  * 判断一个bst是否合法
  * {bst}
  */
 public class _98Solution {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     /**
      * 中序遍历的解法

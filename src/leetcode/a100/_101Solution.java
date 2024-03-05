@@ -1,25 +1,12 @@
 package leetcode.a100;
 
+import leetcode.util.TreeNode;
+/**
+ * 判断两棵二叉树是不是对称的
+ * {binary tree}
+ */
 public class _101Solution {
    
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
     public boolean isSymmetric(TreeNode root) {
        
         return isSameTree(root, root);
