@@ -1,5 +1,8 @@
 package leetcode.a100;
-
+/**
+ * 两个字符串中相同的子序列的数量
+ * {subsequence},{dp} 
+ */
 public class _115Solution {
    
     public int numDistinct(String s, String t) {
@@ -11,10 +14,12 @@ public class _115Solution {
         for (int i = 0; i < n+1; i++) {
             dp[i][0] = 1;
         }
-        
+
+        /* 
         for (int j = 1; j < m+1; j++) {
             dp[0][j] = 0;
         }
+        */ 
         
         // ij两行遍历互换位置也可以
         for (int i = 1; i < n+1; i++) {
