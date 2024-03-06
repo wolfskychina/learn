@@ -2,6 +2,7 @@ package leetcode.a100;
 
 /**
  * 给一颗非满二叉树增加层次遍历的指针
+ * {binary tree}
  */
 public class _117Solution {
     class Node {

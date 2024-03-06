@@ -5,6 +5,7 @@ import java.util.Queue;
 
 /**
  * 给满二叉树增加层次遍历的节点指针
+ * {binary tree}
  */
 public class _116Solution {
     class Node {
