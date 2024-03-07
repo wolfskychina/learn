@@ -1,11 +1,13 @@
 package leetcode.a100;
 /**
- * 计算折线图中所有收益的总和
+ * 计算折线图中所有可能收益的总和
+ * {stock}
  */
 public class _122Solution {
   
     /**
      * 找所有的上升序列
+     * {stock},{greedy},{two pointers}
      * @param prices
      * @return
      */

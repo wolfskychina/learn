@@ -3,6 +3,7 @@ package leetcode.a100;
 import java.util.List;
 /**
  * 金字塔自上而下最短的路径和
+ * 每一层只能向下或者向后移动到相邻的格子
  * {dp}
  */
 public class _120Solution {
