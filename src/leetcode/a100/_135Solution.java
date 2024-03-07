@@ -6,6 +6,7 @@ import java.util.Arrays;
  * 小朋友分糖果，每个人有一个权重
  * 每个人糖果数量符合左右人的相对权重大小
  * 求最少需要多少糖果
+ * {greedy}
  */
 public class _135Solution {
   // 符合贪心规则 

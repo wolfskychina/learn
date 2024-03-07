@@ -2,6 +2,7 @@ package leetcode.a100;
 
 /**
  * 环形路线的加油站，能否跑完一圈
+ * {greedy}
  */
 public class _134Solution {
    
