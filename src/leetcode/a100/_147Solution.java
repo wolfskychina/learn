@@ -1,15 +1,12 @@
 package leetcode.a100;
 
+import leetcode.util.ListNode;
+
+/**
+ * 基于链表的插入排序
+ * {linked list},{sorting}
+ */
 public class _147Solution {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode insertionSortList(ListNode head) {
         if (head == null) {

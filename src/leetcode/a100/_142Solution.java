@@ -1,20 +1,13 @@
 package leetcode.a100;
 
+import leetcode.util.ListNode;
+
 /**
  * 判断一个链表是否有回路
  * 如果有，找到回路的起始点
  */
 public class _142Solution {
    
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
     public ListNode detectCycle(ListNode head) {
         
         ListNode p1 = head;

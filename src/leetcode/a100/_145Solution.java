@@ -4,28 +4,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
+import leetcode.util.TreeNode;
+
 /**
  * 后根遍历二叉树
+ * {binary tree}
  */
 public class _145Solution {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public List<Integer> postorderTraversal(TreeNode root) {
         // 首先如果要插入元素操作，链表比数组肯定快

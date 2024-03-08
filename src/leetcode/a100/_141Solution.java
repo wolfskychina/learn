@@ -1,19 +1,12 @@
 package leetcode.a100;
 
+import leetcode.util.ListNode;
+
 /**
  * 判断一个链表是否有环
  */
 public class _141Solution {
    
- class ListNode {
-             int val;
-             ListNode next;
-             ListNode(int x) {
-                 val = x;
-                 next = null;
-             }
-         }
-
     public boolean hasCycle(ListNode head) {
         ListNode p1 =head;
         ListNode p2 =head;

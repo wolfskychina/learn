@@ -4,31 +4,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import leetcode.util.TreeNode;
 /**
  * 自底向上的层次遍历二叉树
  * {binary tree}
  */
 public class _107Solution {
    
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         
         LinkedList<List<Integer>> res= new LinkedList<List<Integer>>();
