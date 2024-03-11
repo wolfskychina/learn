@@ -3,7 +3,7 @@ package leetcode.a100;
 import leetcode.util.TreeNode;
 
 /**
- * 树中所有节点对之间距离的最大值
+ * 二叉树中所有节点对之间距离的最大值
  * {binary tree},{greedy}
  */
 public class _124Solution {
