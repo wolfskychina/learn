@@ -5,6 +5,7 @@ import leetcode.util.ListNode;
 /**
  * 判断一个链表是否有回路
  * 如果有，找到回路的起始点
+ * {linked list}
  */
 public class _142Solution {
    

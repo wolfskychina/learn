@@ -2,6 +2,7 @@ package leetcode.a100;
 
 /**
  * 将链表从中间对折，合并成一个新链表
+ * {linked list}
  */
 public class _143Solution {
 
