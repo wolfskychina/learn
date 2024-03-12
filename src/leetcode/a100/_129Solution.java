@@ -4,7 +4,7 @@ import leetcode.util.TreeNode;
 
 /**
  * 求树中所有路径所代表的数字之和
- * {binary tree}
+ * {binary tree},{prefix sum}
  */
 public class _129Solution {
     
