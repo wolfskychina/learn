@@ -24,7 +24,6 @@ public class _150Solution {
               stack.push(stack.pop() * stack.pop());
               break;
       
-      
             case "/":
               int n1 = stack.pop(), n2 = stack.pop();
               stack.push(n2 / n1);
