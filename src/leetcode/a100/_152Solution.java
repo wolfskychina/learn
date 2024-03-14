@@ -9,6 +9,8 @@ public class _152Solution {
      * 只要数组里面没有0，那么最大的子数列必然能够
      * 到达最左侧或者最右侧。如果有0，那么到达0的时候乘积清零，
      * 所以0可以作为一个边界。
+     * {greedy}
+     * on时间复杂度
      */
     public int maxProduct(int[] nums) {
         if (nums.length == 0) return 0;
@@ -38,6 +40,8 @@ public class _152Solution {
 
     /**
      * 基于动态规划的解法 
+     * {dp}
+     * 时间复杂度也是on，但是系数的计算更多
      */
     public int maxProduct2(int[] nums) {
         if(nums.length == 1)

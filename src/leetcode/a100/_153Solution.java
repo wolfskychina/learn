@@ -3,6 +3,7 @@ package leetcode.a100;
 /**
  * 一个有序数组被从中间分开前后两段调换了顺序
  * 找到数组最小元素的位置
+ * {binary search}
  */
 public class _153Solution {
    

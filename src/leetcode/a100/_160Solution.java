@@ -2,6 +2,7 @@ package leetcode.a100;
 
 /**
  * 找到两个链表的交点
+ * {linkedlist}
  */
 public class _160Solution {
 

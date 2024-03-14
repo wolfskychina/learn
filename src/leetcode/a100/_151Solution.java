@@ -3,6 +3,7 @@ package leetcode.a100;
 /**
  * 将字符串里的单词顺序进行反转
  * 句子的前后没有空格
+ * {two pointers}
  */
 public class _151Solution {
    
@@ -33,7 +34,8 @@ public class _151Solution {
       // trim leading, trailing and multiple spaces
       String cleanSpaces(char[] a, int n) {
         int i = 0, j = 0;
-          
+
+        // inner space traverse
         while (j < n) {
           while (j < n && a[j] == ' ') j++;             // skip spaces
           while (j < n && a[j] != ' ') a[i++] = a[j++]; // keep non spaces
