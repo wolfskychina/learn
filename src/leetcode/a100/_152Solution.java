@@ -60,5 +60,4 @@ public class _152Solution {
         return totalMax;
      }
 
-
 }
