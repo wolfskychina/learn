@@ -1,7 +1,9 @@
 package leetcode.a100;
 
 import java.util.HashMap;
-
+/**
+ * 将分数形式改为小数带括号循环的写法
+ */
 public class _166Solution {
 
     public String fractionToDecimal(int numerator, int denominator){

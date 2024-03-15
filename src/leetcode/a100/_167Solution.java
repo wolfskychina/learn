@@ -3,6 +3,7 @@ package leetcode.a100;
 /**
  * Two sum.
  * 数组是排好序的
+ * {easy}
  */
 public class _167Solution {
 
@@ -10,7 +11,8 @@ public class _167Solution {
 
         int[] indice = new int[2];
 
-        if (num == null || num.length < 2) return indice;
+        if (num == null || num.length < 2)
+            return indice;
 
         int left = 0, right = num.length - 1;
 
@@ -23,9 +25,9 @@ public class _167Solution {
                 indice[1] = right + 1;
                 break;
             } else if (v > target) {
-                right --;
+                right--;
             } else {
-                left ++;
+                left++;
             }
         }
 
