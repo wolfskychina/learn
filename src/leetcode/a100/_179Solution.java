@@ -2,7 +2,10 @@ package leetcode.a100;
 
 import java.util.Arrays;
 import java.util.Comparator;
-
+/**
+ * 数组里面的数字按照任意顺序连接起来所能得到的最大数
+ * {sorting},{greedy}
+ */
 public class _179Solution {
 
     public String largestNumber(int[] num) {

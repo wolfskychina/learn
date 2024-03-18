@@ -16,5 +16,5 @@ Output:
 +----------+
 Explanation: Joe is the only employee who earns more than his manager.
 
--- sql:
+-- {sql:easy} 
 select a.name as Employee from employee a, employee b where b.id = a. managerId and a.salary > b.salary;
