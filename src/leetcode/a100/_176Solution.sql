@@ -1,3 +1,5 @@
+-- 第二高的薪水
+
 Input: 
 Employee table:
 +----+--------+

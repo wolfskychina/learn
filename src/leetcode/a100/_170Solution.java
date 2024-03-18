@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 /**
  * 设计一个判断是否有两个元素之和等于value的方法
+ * {design}
  */
 public class _170Solution {
    

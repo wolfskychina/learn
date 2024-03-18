@@ -2,6 +2,7 @@ package leetcode.a100;
 /**
  * 寻找一个数组中的优势元素
  * 出现数量超过数组元素个数一半的元素
+ * {game theory}
  */
 public class _169Solution {
    
