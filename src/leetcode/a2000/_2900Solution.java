@@ -9,7 +9,8 @@ import java.util.List;
  */
 public class _2900Solution {
 
-    public List<String> getWordsInLongestSubsequence(int n, String[] words, int[] groups) {
+    public List<String> getLongestSubsequence(String[] words, int[] groups) {
+        int n = words.length;
         List<String> ans = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             if (i == n - 1 || groups[i] != groups[i + 1]) {
