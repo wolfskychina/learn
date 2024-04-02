@@ -4,7 +4,7 @@ import leetcode.util.ListNode;
 
 /**
  * 判断一个链表是否有环
- * {linked list}
+ * {linked list},{two pointers}
  */
 public class _141Solution {
    

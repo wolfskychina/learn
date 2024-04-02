@@ -8,51 +8,53 @@ import leetcode.util.ListNode;
  * {linked list}
  */
 public class _142Solution {
-   
+
     public ListNode detectCycle(ListNode head) {
-        
+
         ListNode p1 = head;
         ListNode p2 = head;
-        if(p1==null||p1.next == null||p1.next.next ==null){
+        if (p1 == null || p1.next == null || p1.next.next == null) {
             return null;
         }
-        
+
         ListNode p = null;
-        while(p1.next!=null&&p2.next!=null&&p2.next.next!=null){
-            
+        while (p1.next != null && p2.next != null && p2.next.next != null) {
+
             p1 = p1.next;
             p2 = p2.next.next;
-            
-            if(p1==p2) {
-                p =p1;
-                break;}
-            
+
+            if (p1 == p2) {
+                p = p1;
+                break;
+            }
+
         }
-        
-        if(p ==null) return null;
-        
+
+        if (p == null)
+            return null;
+
         int circleNum = 1;
         p1 = p.next;
-        while(p!=p1){
+        while (p != p1) {
             p1 = p1.next;
-            circleNum ++;
+            circleNum++;
         }
-        
+
         p1 = head;
         p2 = head;
-        for(int i=0;i<circleNum-1;i++){
-            
+        for (int i = 0; i < circleNum - 1; i++) {
+
             p2 = p2.next;
-            
+
         }
-        
-        while(p2.next !=p1){
-            
+
+        while (p2.next != p1) {
+
             p1 = p1.next;
             p2 = p2.next;
         }
-        
+
         return p2.next;
-        
+
     }
 }

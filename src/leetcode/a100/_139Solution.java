@@ -3,7 +3,7 @@ package leetcode.a100;
 import java.util.Set;
 /**
  * 判断一个单词能否分拆成字典里面的单词
- * {dp}
+ * {dp} on2的时间复杂度
  */
 public class _139Solution {
    
