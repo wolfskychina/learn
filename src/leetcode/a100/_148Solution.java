@@ -9,7 +9,7 @@ import leetcode.util.ListNode;
  * {linkedlist},{merge sort}
  */
 public class _148Solution {
-    
+
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
             return head;
