@@ -27,7 +27,8 @@ public class _152Solution {
         }
         
         prod = 1;
-        
+       
+        // 从左右分别遍历是考虑到负数的数量为奇数的情况
         for (int i = nums.length - 1; i >= 0; i--) {
             prod *= nums[i];
             max = Math.max(max, prod);

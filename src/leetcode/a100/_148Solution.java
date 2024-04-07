@@ -23,6 +23,7 @@ public class _148Solution {
             fast = fast.next.next;
         }
 
+        // l1,l2 之间断开
         prev.next = null;
 
         // step 2. sort each half
