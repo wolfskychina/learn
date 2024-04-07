@@ -34,6 +34,7 @@ public class _166Solution {
             if(map.containsKey(num)){
                 // 开始出现重复的循环
                 int index = map.get(num);
+                // TODO StringBuilder.insert(indxt,str);
                 res.insert(index, "(");
                 res.append(")");
                 break;
