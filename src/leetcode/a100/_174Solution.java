@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 走到终点所需要的最少HP值
- * {dp}
+ * {dp},{hard}
  */
 public class _174Solution {
 

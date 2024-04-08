@@ -25,7 +25,7 @@ public class _166Solution {
 
         res.append(".");
         HashMap<Long, Integer> map = new HashMap<Long, Integer>();
-        // 整数部分冗余的余数作为map中的第一个值
+        // 整数部分冗余的余数作为map中的第一个值,value标记左括号需要插入的位置
         map.put(num, res.length());
         while(num!=0){
             num *=10;
