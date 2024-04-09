@@ -10,6 +10,7 @@ import java.util.Queue;
  * 实际上是判断有向图里面是否有回路
  * 拓扑排序，发现（入队列）的节点数是否等于图中所有节点数，
  * 如果发现（入队列）的节点数多于图中的节点数，则有回路
+ * {graphic},{topologic sorting}
  */
 public class _207Solution {
 
@@ -31,6 +32,7 @@ public class _207Solution {
             neighbor[prerequisites[i][0]].add(prerequisites[i][1]);
         }
 
+        // 所有入度为0的节点入队，起点
         for(int i=0; i<inDegree.length;i++){
             if(inDegree[i] == 0){
                 queue.add(i);

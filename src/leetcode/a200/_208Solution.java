@@ -1,6 +1,7 @@
 package leetcode.a200;
 /**
  * 定义一个Trie树和常见操作
+ * {Trie tree}
  */
 public class _208Solution {
    
