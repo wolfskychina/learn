@@ -1,17 +1,12 @@
 package leetcode.a200;
 
+import leetcode.util.ListNode;
+
 /**
  * 反转链表
+ * {linked list}
  */
 public class _206Solution {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
 
     public ListNode reverseList(ListNode head) {
         if(head == null || head.next ==null) return head;

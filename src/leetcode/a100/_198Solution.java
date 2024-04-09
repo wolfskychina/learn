@@ -2,6 +2,7 @@ package leetcode.a100;
 
 /**
  * 不能遍历相邻的数字，求能够遍历的数字之和的最大值
+ * {dp}
  */
 public class _198Solution {
     /**

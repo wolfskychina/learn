@@ -2,6 +2,7 @@ package leetcode.a100;
 
 /**
  * Num of islands
+ * {matrix traverse}
  */
 public class _200Solution {
 

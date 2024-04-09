@@ -3,6 +3,7 @@ package leetcode.a200;
 /**
  * Count primes
  * 素数的定义
+ * {math}
  */
 public class _204Solution {
 

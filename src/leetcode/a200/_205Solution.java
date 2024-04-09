@@ -8,6 +8,7 @@ import java.util.Set;
 /**
  * 判断两个字符串是不是可映射的
  * s中的两个不同字符不能映射到同一个字符
+ * {easy}
  */
 public class _205Solution {
 
