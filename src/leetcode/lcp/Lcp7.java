@@ -7,10 +7,10 @@ import java.util.Map;
 
 /**
  * 传递信息
- * 从0号人开始，通过k次传递到达n-1号人的不同传递放阿飞
+ * 从0号人开始，通过k次传递到达n-1号人的不同传递方法
  * {dfs},{dp}
  */
-public class _7Solution {
+public class Lcp7 {
    
     private int count =0;
 
