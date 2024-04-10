@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 /**
  * 判断一个数是不是happy数
+ * {easy}
  */
 public class _202Solution {
    
