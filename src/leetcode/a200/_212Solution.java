@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 二维字母矩阵中寻找字典里的单词
+ * {trie},{dfs}
  */
 public class _212Solution {
     /**

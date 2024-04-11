@@ -4,6 +4,7 @@ package leetcode.a200;
  * 寻找数组中的最短子数组，使得子数组的和大于等于s
  * 双指针
  * 开始没看仔细，子数组是连续的区间，所以可以用双指针
+ * {two pointers}
  */
 public class _209Solution {
 
