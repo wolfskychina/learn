@@ -3,41 +3,48 @@ package leetcode.a200;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 所有和为n的k个数字之和
+ * 数字从1-9中间选择，且不能重复
+ * {backtrace}
+ */
 public class _216Solution {
     public List<List<Integer>> combinationSum3(int k, int n) {
 
-        if(n<1||n>45) return new ArrayList<>();
+        if (n < 1 || n > 45)
+            return new ArrayList<>();
 
         List<List<Integer>> res = new ArrayList<>();
 
         backtrace(res, new ArrayList<Integer>(), k, n, 1);
 
         return res;
-        
+
     }
 
-    private void backtrace(List<List<Integer>> res, List<Integer> tmpList, int nums, int remain, int start){
+    private void backtrace(List<List<Integer>> res, List<Integer> tmpList, int nums, int remain, int start) {
 
-        if(remain<0) return;
-        if(remain == 0 && nums ==0)
-         {res.add(new ArrayList<Integer>(tmpList));
-        }else {
+        if (remain < 0)
+            return;
+        if (remain == 0 && nums == 0) {
+            res.add(new ArrayList<Integer>(tmpList));
+        } else {
 
-            for(int i = start; i< 10; i++){
+            for (int i = start; i < 10; i++) {
                 tmpList.add(i);
-                backtrace(res,tmpList,nums-1,remain-i,i+1);
-                tmpList.remove(tmpList.size()-1);
+                backtrace(res, tmpList, nums - 1, remain - i, i + 1);
+                tmpList.remove(tmpList.size() - 1);
             }
         }
     }
-    
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
 
         _216Solution so = new _216Solution();
         List<List<Integer>> res = so.combinationSum3(3, 12);
-        for(List<Integer> re:res){
+        for (List<Integer> re : res) {
 
-            for(Integer i:re){
+            for (Integer i : re) {
                 System.out.print(i);
             }
             System.out.println();

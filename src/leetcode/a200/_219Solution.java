@@ -5,6 +5,7 @@ import java.util.Set;
 
 /**
  * 寻找数组中相邻的k个元素中是否有重复的元素
+ * {easy}
  */
 public class _219Solution {
 

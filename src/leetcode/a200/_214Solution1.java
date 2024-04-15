@@ -4,6 +4,7 @@ package leetcode.a200;
  * 一个字符串，最少在前面补充多少个字符可以变成回文串
  * 输出这个最短的回文串
  * 开始看错题了，以为前后补充字符都可以
+ * {parlindrome}
  */
 public class _214Solution1 {
    
