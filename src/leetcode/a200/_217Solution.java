@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * 筛选一个数组中是否有重复的元素
+ * {easy}
  */
 public class _217Solution {
   
