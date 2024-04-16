@@ -4,6 +4,7 @@ import leetcode.util.TreeNode;
 
 /**
  * 求一个完全二叉树的节点数
+ * {binary tree}
  * 
  */
 public class _222Solution {
@@ -17,7 +18,9 @@ public class _222Solution {
         int nodes = 0, h = height(root);
         while (root != null) {
             if (height(root.right) == h - 1) {
+                // 说明左侧是满的
                 nodes += 1 << h;
+                // 右侧不满，需要在右侧继续迭代
                 root = root.right;
             } else {
                 nodes += 1 << h-1;

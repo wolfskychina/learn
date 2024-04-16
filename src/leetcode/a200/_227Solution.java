@@ -4,6 +4,7 @@ import java.util.Stack;
 
 /**
  * 支持四则运算表达式的计算，不含括号
+ * {stack}
  */
 public class _227Solution {
    

@@ -4,6 +4,7 @@ import leetcode.util.TreeNode;
 
 /**
  * 将二叉树做镜像对称转换
+ * {binary tree}
  */
 public class _226Solution {
    

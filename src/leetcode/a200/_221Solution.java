@@ -2,6 +2,7 @@ package leetcode.a200;
 
 /**
  * 求一个方形矩阵中，最大的全部由1组成的正方形
+ * {dp}
  */
 public class _221Solution {
   // dp问题，关键是dp[i][j]的定义

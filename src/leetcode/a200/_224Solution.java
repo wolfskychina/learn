@@ -4,6 +4,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 /**
  * 基本计算器，只有加减法和括号的运算
+ * {math},{stack}
  */
 public class _224Solution {
    
@@ -33,9 +34,11 @@ public class _224Solution {
                 sign = -ops.peek();
                 i++;
             } else if (s.charAt(i) == '(') {
+                // 当前正负号暂存，并且当前正负号不变
                 ops.push(sign);
                 i++;
             } else if (s.charAt(i) == ')') {
+                // 弹出）括号对应的左括号时暂存的正负号
                 ops.pop();
                 i++;
             } else {
