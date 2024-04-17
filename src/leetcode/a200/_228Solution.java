@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 将一个已排序的数组转换成连续区间组合的形式
+ * {easy}
  */
 public class _228Solution {
 
