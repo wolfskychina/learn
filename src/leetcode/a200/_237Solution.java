@@ -4,6 +4,7 @@ import leetcode.util.ListNode;
 
 /**
  * 删除链表中指定的节点，但是无法从表头遍历
+ * {linked list}
  */
 public class _237Solution {
    

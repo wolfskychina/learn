@@ -4,9 +4,9 @@ import leetcode.util.ListNode;
 
 /**
  * 判断一个链表表示的字符串是不是回文串
+ * {linked list},{palindrome}
  */
 public class _234Solution {
-
 
     public boolean isPalindrome(ListNode head) {
 
@@ -15,7 +15,7 @@ public class _234Solution {
         ListNode p1 = head;
         ListNode p2 = head;
 
-        while(p2!=null && p2.next!=null){
+        while (p2 != null && p2.next != null) {
 
             p1 = p1.next;
             p2 = p2.next.next;
@@ -23,18 +23,19 @@ public class _234Solution {
 
         ListNode dummy2 = new ListNode();
         ListNode newHead = null;
-        ListNode next =null;
+        ListNode next = null;
 
-        while(p1!=null){
+        // 将后半段链表反转
+        while (p1 != null) {
             next = p1.next;
             newHead = dummy2.next;
             p1.next = newHead;
-            dummy2.next =p1;
+            dummy2.next = p1;
             p1 = next;
         }
 
-        while(dummy2.next !=null){
-            if(dummy.next.val != dummy2.next.val)
+        while (dummy2.next != null) {
+            if (dummy.next.val != dummy2.next.val)
                 return false;
 
             dummy = dummy.next;
@@ -46,7 +47,7 @@ public class _234Solution {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _234Solution so = new _234Solution();
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
@@ -54,6 +55,4 @@ public class _234Solution {
         so.isPalindrome(node1);
     }
 
-
 }
-

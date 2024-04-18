@@ -5,6 +5,7 @@ package leetcode.a200;
  * 数组各元素除自己之外的乘积
  * 首尾两次相乘，避免乘自己
  * 或者全乘起来除以元素自己，注意元素为0的情况
+ * {prefix product}
  */
 public class _238Solution {
 

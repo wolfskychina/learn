@@ -4,6 +4,7 @@ import java.util.Stack;
 
 /**
  * 使用两个栈实现队列的功能
+ * {design}
  */
 public class _232Solution {
    

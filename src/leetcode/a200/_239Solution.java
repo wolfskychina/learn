@@ -5,6 +5,7 @@ import java.util.Deque;
 
 /**
  *  输出滑动窗口滑动过程中每一时刻的最大值
+ *  {sliding window},{hard}
  *  TODO
  */
 public class _239Solution {

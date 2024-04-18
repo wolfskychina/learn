@@ -38,6 +38,8 @@ public class _229Solution {
             }
         }
         List < Integer > res=new ArrayList<>();
+        // 当前candidate1和2是前两多的数
+        // 下一步需要确认两个数是否超过总数的1/3
         count1=0;
         count2=0;
         for(int num:nums){
