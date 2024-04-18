@@ -8,6 +8,7 @@ import java.util.Map;
 /**
  * 一组包括+ - * 号的表达式，问根据不同的加括号方法，总共有多少种结果
  * 结果的值可以是重复的，数量以括号不同位置区分
+ * {binary tree}
  */
 public class _241Solution {
 
@@ -32,6 +33,7 @@ public class _241Solution {
         // recursion (divid & conquer)
         for (int i = 0; i < len; i++) {
             char c = input.charAt(i);
+            // 只有中间是符号的时候才需要计算
             if (c == '+' || c == '-' || c == '*') {
                 List<Integer> left = diffWaysToCompute(input.substring(0,i));
                 List<Integer> right = diffWaysToCompute(input.substring(i+1,len));

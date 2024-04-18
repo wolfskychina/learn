@@ -10,10 +10,7 @@ public class _243Solution {
     /**
      * 巧妙的运用了类似双指针的原理，只保留每个单词最新出现的位置（因为是逐渐向后比较的，前面出现过的
      * 相同单词肯定距离会更远
-     * @param wordsDict
-     * @param word1
-     * @param word2
-     * @return
+       on时间复杂度  {two pointers}
      */
     public int shortestDistance(String[] wordsDict, String word1, String word2) {
         int n = wordsDict.length;

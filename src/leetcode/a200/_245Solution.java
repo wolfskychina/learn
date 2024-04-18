@@ -3,6 +3,8 @@ package leetcode.a200;
 /**
  * 比较两个单词的最短距离
  * 两个单词可能相等，但是不是出现在同一个位置上，而是两个不同的位置
+ * {greedy},{two pointers}
+ * 符合贪心规则，不过两个单词相等时需要单独处理
  */
 public class _245Solution {
 

@@ -2,6 +2,7 @@ package leetcode.a200;
 /**
  * Strobogrammatic Number
  * 判断一个数字旋转180度之后是否和原数字相同
+ * {easy}
  */
 public class _246Solution {
 
