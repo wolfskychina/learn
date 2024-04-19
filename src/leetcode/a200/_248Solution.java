@@ -4,9 +4,10 @@ package leetcode.a200;
  * 求low到high之间总共有多少个strobogrammatic数
  */
 public class _248Solution {
+
     private static final char[][] PAIRS = { { '0', '0' }, { '1', '1' }, { '6', '9' }, { '8', '8' }, { '9', '6' } };
 
- int count =0;
+    int count = 0;
 
     public int strobogrammaticInRange(String low, String high) {
         for (int len = low.length(); len <= high.length(); len++) {
@@ -19,6 +20,7 @@ public class _248Solution {
     public void dfs(String low, String high, char[] c, int left, int right) {
         if (left > right) {
             String s = new String(c);
+            // 范围外的解要跳过
             if ((s.length() == low.length() && s.compareTo(low) < 0) ||
                     (s.length() == high.length() && s.compareTo(high) > 0)) {
                 return;

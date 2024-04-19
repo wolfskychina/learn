@@ -19,36 +19,35 @@ public class _249Solution {
 
         HashMap<String, List<String>> map = new HashMap<>();
         // 每个字符都减第一个字符，就是特征值
-        for(String str:strings){
-            char[] orign= str.toCharArray();
+        for (String str : strings) {
+            char[] orign = str.toCharArray();
             char o = orign[0];
-            for(int i =0; i<orign.length;i++){
+            for (int i = 0; i < orign.length; i++) {
 
-                int j=((orign[i] - o) + 26) % 26 ;           
-                orign[i] = (char)j;    
+                int j = ((orign[i] - o) + 26) % 26;
+                orign[i] = (char) j;
 
             }
             // new orign is the fingerprint;
             String str2 = new String(orign);
 
-            if(map.get(str2)==null){
+            if (map.get(str2) == null) {
                 List<String> list = new ArrayList<>();
                 list.add(str);
-                map.put(str2,list);
-            }else{
+                map.put(str2, list);
+            } else {
                 map.get(str2).add(str);
             }
 
         }
 
         List<List<String>> res = new ArrayList<>();
-        for(Map.Entry<String,List<String>> en : map.entrySet())
-        {
-                res.add(en.getValue());
+        for (Map.Entry<String, List<String>> en : map.entrySet()) {
+            res.add(en.getValue());
         }
 
         return res;
-        
+
     }
-    
+
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 返回所有n位的strobogrammatic数
+ * {two pointers},{recursive}
  */
 public class _247Solution {
     

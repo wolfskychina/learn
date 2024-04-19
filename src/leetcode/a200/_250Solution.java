@@ -3,6 +3,7 @@ package leetcode.a200;
 import leetcode.util.TreeNode;
 /**
  * 统计一棵树中有多少棵由完全相同元素组成的子树
+ * {binary tree}
  */
 public class _250Solution {
    
