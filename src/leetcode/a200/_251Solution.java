@@ -1,6 +1,8 @@
 package leetcode.a200;
 /**
- * 扁平式遍历二维数组
+ * 扁平式遍历二维向量
+ * 每一行的长度不一定相等
+ * {design}
  */
 public class _251Solution {
     
