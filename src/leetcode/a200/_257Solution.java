@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * 输出一个二叉树到叶子节点的所有路径
+ * {binary tree}
  */
 public class _257Solution {
 

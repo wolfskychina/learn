@@ -3,6 +3,10 @@ package leetcode.a200;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 输出n的所有因数乘积的组合
+ * {backtrace}
+ */
 public class _254Solution {
     public List<List<Integer>> getFactors(int n) {
         List<List<Integer>> results = new ArrayList<>();

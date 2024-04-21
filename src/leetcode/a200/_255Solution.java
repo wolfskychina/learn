@@ -1,12 +1,15 @@
 package leetcode.a200;
 
 import java.util.Stack;
+
 /**
  * 校验一个bst的先根遍历数组是否正确
+ * {bst},{TODO}
  */
 public class _255Solution {
     /**
      * 用栈模拟bst的先根遍历
+     * 
      * @param preorder
      * @return
      */
@@ -21,5 +24,5 @@ public class _255Solution {
             path.push(p);
         }
         return true;
-    } 
+    }
 }
