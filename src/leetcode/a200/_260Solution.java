@@ -3,6 +3,7 @@ package leetcode.a200;
 /**
  * 两个只出现一次的整数
  * 一个整数序列，除了两个数只出现了一次，其他数都恰好出现两次
+ * {bit manuplation}
  */
 public class _260Solution {
     /**
@@ -28,6 +29,6 @@ public class _260Solution {
                 type2 ^= num;
             }
         }
-        return new int[]{type1, type2};
+        return new int[] { type1, type2 };
     }
 }
