@@ -1,6 +1,7 @@
 package leetcode.a200;
 /**
  * 返回第n大的丑数
+ * {dp}
  */
 public class _264Solution {
    /**

@@ -1,4 +1,6 @@
 # 统计订单的取消率
+-- {sql:sum},{sql:case when}
+
 select request_at as `Day`, round(sum(case when status = 'cancelled_by_driver' or status = 'cancelled_by_client' then 1
  else 0 end) / count(*), 2)  `Cancellation Rate`
 from Trips t
