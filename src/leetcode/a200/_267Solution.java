@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 /**
  * 给一个字符串，返回所有的非重复的回文排列
  * {permutation},{back track}
  */
 public class _267Solution {
-   
+
     public List<String> generatePalindromes(String s) {
 
         if (s.length() == 0) {
@@ -52,7 +53,7 @@ public class _267Solution {
     }
 
     private void dfs(char[] chars, boolean[] visited, StringBuilder sb,
-                     List<String> resultList, Character ch) {
+            List<String> resultList, Character ch) {
 
         if (sb.length() == chars.length) {
 

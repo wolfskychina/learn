@@ -1,6 +1,7 @@
 package leetcode.a200;
 /**
  * 判断一个字符串能否通过字符重排列变成一个回文串
+ * {easy}
  */
 public class _266Solution {
    
