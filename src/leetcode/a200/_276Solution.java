@@ -3,6 +3,7 @@ package leetcode.a200;
 /**
  * 给篱笆刷颜色，要求不能有连续的三个篱笆是相同颜色的，求一共有多少种上色方法
  * 一共有n个篱笆，和k种颜色
+ * {dp}
  */
 public class _276Solution {
     /**
