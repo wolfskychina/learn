@@ -1,6 +1,7 @@
 package leetcode.a200;
 
 /**
+ * 找名人
  * n个人，有函数能够知道a,b是否认识
  * 求n个人中是否有人不认识所有人但是被其他所有人认识
  */
@@ -17,7 +18,8 @@ public class _277Solution {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (i == j) continue;
+                if (i == j)
+                    continue;
 
                 if (knows(i, j)) {
 
@@ -38,6 +40,7 @@ public class _277Solution {
 
     /**
      * 更快的方法，通过两趟扫描和o1的空间占用
+     * 推论1 一群人里面不可能有两个名人
      *
      * @param n
      * @return
@@ -54,7 +57,8 @@ public class _277Solution {
                 candidate = i;
         }
         for (int i = 0; i < n; i++) {
-            if (i != candidate && (knows(candidate, i) || !knows(i, candidate))) return -1;
+            if (i != candidate && (knows(candidate, i) || !knows(i, candidate)))
+                return -1;
         }
         return candidate;
     }
