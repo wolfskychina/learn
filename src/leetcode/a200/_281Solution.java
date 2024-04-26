@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 两个list，交替的遍历输出list中的内容
+ * {design}
  */
 public class _281Solution {
     private Iterator<Integer> i, j, tmp;

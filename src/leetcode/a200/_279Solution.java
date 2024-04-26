@@ -1,6 +1,7 @@
 package leetcode.a200;
 /**
  * 和相加等于n的最少的平方数的组合
+ * {dp}
  */
 public class _279Solution {
 

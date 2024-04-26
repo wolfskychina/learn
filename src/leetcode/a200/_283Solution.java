@@ -2,6 +2,7 @@ package leetcode.a200;
 
 /**
  * 将数组中的0移动到末尾，并且保留其他数字的相对顺序
+ * {two pointers}
  */
 public class _283Solution {
     /**
