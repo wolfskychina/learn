@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 /**
  * 传统迭代器改进，增加获取下一个值但是指针不动的操作
+ * {design}
  */
 public class _284Solution {
 
