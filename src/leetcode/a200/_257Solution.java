@@ -14,7 +14,8 @@ public class _257Solution {
     public List<String> binaryTreePaths(TreeNode root) {
 
         List<String> res = new ArrayList<>();
-        if (root == null) return res;
+        if (root == null)
+            return res;
 
         if (root.left == null && root.right == null) {
             res.add("" + root.val);
@@ -29,13 +30,16 @@ public class _257Solution {
     }
 
     private void findPaths(List<String> res, TreeNode p, String list) {
-        if (p == null) return;
+        if (p == null)
+            return;
         if (p.left == null && p.right == null) {
             res.add(list + "->" + p.val);
             return;
         }
-        if (p.left != null) findPaths(res, p.left, list + "->" + p.val);
-        if (p.right != null) findPaths(res, p.right, list + "->" + p.val);
+        if (p.left != null)
+            findPaths(res, p.left, list + "->" + p.val);
+        if (p.right != null)
+            findPaths(res, p.right, list + "->" + p.val);
         return;
 
     }
