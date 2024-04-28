@@ -4,6 +4,7 @@ package leetcode.a200;
  * 长度为n的数组，保存了[0,n]之间的n个数，没有重复数字
  * 返回缺少的数字
  * 不使用额外的空间
+ * {counting sort}
  */
 public class _268Solution {
 
