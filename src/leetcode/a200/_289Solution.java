@@ -5,7 +5,7 @@ package leetcode.a200;
  */
 public class _289Solution {
 
-    int[][] move = {{-1, -1}, {0, -1}, {1, -1}, {-1, 0}, {1, 0}, {-1, 1}, {0, 1}, {1, 1}};
+    int[][] move = { { -1, -1 }, { 0, -1 }, { 1, -1 }, { -1, 0 }, { 1, 0 }, { -1, 1 }, { 0, 1 }, { 1, 1 } };
 
     /**
      * 使用特殊状态标记由0变1和由1变0，从而使得下面的计数准确
@@ -20,9 +20,11 @@ public class _289Solution {
                 int nb = countNeighbor(board, i, j);
 
                 if (board[i][j] == 0) {
-                    if (nb == 3) board[i][j] = 2;
+                    if (nb == 3)
+                        board[i][j] = 2;
                 } else {
-                    if (nb < 2 || nb > 3) board[i][j] = -1;
+                    if (nb < 2 || nb > 3)
+                        board[i][j] = -1;
                 }
 
             }

@@ -7,13 +7,14 @@ import java.util.Set;
 
 /**
  * 判断一个类似k8s的字符串是不是在字典中唯一的
+ * {easy}
  */
 public class _288Solution {
 
     public ValidWordAbbr abbr;
 
-    public _288Solution(String[] dict){
-        abbr = new ValidWordAbbr(dict); 
+    public _288Solution(String[] dict) {
+        abbr = new ValidWordAbbr(dict);
     }
 
     public class ValidWordAbbr {
@@ -28,7 +29,7 @@ public class _288Solution {
 
                 String ab = getAbbrevation(str);
                 if (dict.containsKey(ab)) {
-                    Set set = dict.get(ab);
+                    Set<String> set = dict.get(ab);
                     if (set.contains(str))
                         continue;
                     set.add(str);
@@ -87,18 +88,18 @@ public class _288Solution {
 
             private int getAbbrIdx(String s) {
                 int length = s.length();
-                return length <= 1 ? s.charAt(0) - 'a' : 26 + (s.charAt(0) - 'a') * 494 + (length - 2) * 26 + (s.charAt(length - 1) - 'a');
+                return length <= 1 ? s.charAt(0) - 'a'
+                        : 26 + (s.charAt(0) - 'a') * 494 + (length - 2) * 26 + (s.charAt(length - 1) - 'a');
             }
         }
     }
 
-    public static void main(String[] args){
-        String[] dictionary = {"deer","door","cake","card"};
+    public static void main(String[] args) {
+        String[] dictionary = { "deer", "door", "cake", "card" };
         _288Solution so = new _288Solution(dictionary);
         System.out.println(so.abbr.isUnique("door"));
         System.out.println(so.abbr.isUnique("cart"));
         System.out.println(so.abbr.isUnique("card"));
-
 
     }
 }

@@ -12,6 +12,7 @@ public class _287Solution {
      * 直接在解空间中[0,n-1]进行二分搜索
      * 对于每一个mid值，再遍历原数组，找到小于等于mid值的元素的个数count
      * 如果count大于mid值，说明存在比mid小的值，重复了两次或以上
+     * {binary search}
      * @param nums
      * @return
      */
