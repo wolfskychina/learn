@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * 判断一个字符串是否是pattern构型，比如abba
+ * {backtrack}
  */
 public class _291Solution {
 
