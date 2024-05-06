@@ -6,6 +6,7 @@ import java.util.TreeMap;
 /**
  * 对于持续到达的整数的数据流，返回任意时刻这个数据流的中位数
  * TODO
+ * {priority queue}
  * 
  * @return
  */

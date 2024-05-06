@@ -1,5 +1,10 @@
 package leetcode.a200;
 
+/**
+ * nim游戏
+ * n个棋子，每次可以拿1-3个，两个人轮流拿，先拿的人能否保证一定能赢
+ * {dp}
+ */
 public class _292Solution {
    
     /**
