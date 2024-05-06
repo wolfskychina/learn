@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * 求几个点的曼哈顿距离的最近中间点，使得这个点到几个点的曼哈顿
  * 距离和最小
+ * {median}
  */
 public class _296Solution {
 
