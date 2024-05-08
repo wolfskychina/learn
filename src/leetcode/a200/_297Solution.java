@@ -18,69 +18,76 @@ import leetcode.util.TreeNode;
  * 因此只遍历非空节点的遍历方法无法保存树的结构
  * 必须在遍历的时候保存空的叶子节点，才能保证在恢复二叉树的时候
  * 正确识别二叉树的结构（标记子树为空）
+ * {binary tree}
  */
 public class _297Solution {
 
     public Codec codec = new Codec();
-    public Codec2 codec2= new Codec2();
-   
+    public Codec2 codec2 = new Codec2();
+
     public class Codec {
 
         // Encodes a tree to a single string.
         /**
          * 使用层次遍历二叉树，生成序列
+         * 
          * @param root
          * @return
          */
         public String serialize(TreeNode root) {
 
             // 层次遍历二叉树，层中有null的节点也需要记录下来
-            Map<Integer,Integer> map = new HashMap<>();
-            firstRoot(root,map,1);
+            Map<Integer, Integer> map = new HashMap<>();
+            firstRoot(root, map, 1);
             StringBuilder sb = new StringBuilder();
-            for(Entry<Integer,Integer> en:map.entrySet()){
+            for (Entry<Integer, Integer> en : map.entrySet()) {
 
                 sb.append(en.getKey().toString());
                 sb.append(":");
                 sb.append(en.getValue().toString());
                 sb.append(" ");
-                
+
             }
-            if(sb.length()!=0) sb.setLength(sb.length()-1); 
+            if (sb.length() != 0)
+                sb.setLength(sb.length() - 1);
 
             return sb.toString();
-            
+
         }
-    
+
         private void firstRoot(TreeNode root, Map<Integer, Integer> map, int i) {
 
-            if(root==null) return;
-            map.put(i,root.val);
-            firstRoot(root.left,map,2*i);
-            firstRoot(root.right,map,2*i+1);
+            // 标记节点的坐标
+            if (root == null)
+                return;
+            map.put(i, root.val);
+            firstRoot(root.left, map, 2 * i);
+            firstRoot(root.right, map, 2 * i + 1);
         }
 
         // Decodes your encoded data to tree.
         public TreeNode deserialize(String data) {
-            if(data.equals("")) return null;
-           String[] enList = data.split(" ");
-           Map<Integer,Integer> map = new HashMap<>();
-           for(String s:enList){
+            if (data.equals(""))
+                return null;
+            String[] enList = data.split(" ");
+            Map<Integer, Integer> map = new HashMap<>();
+            for (String s : enList) {
                 String[] en = s.split(":");
-                map.put(Integer.valueOf(en[0]),Integer.valueOf(en[1]));
-           } 
-           // rebuild the tree
-           TreeNode root =buildTree(map,1);
-           return root;
-            
+                map.put(Integer.valueOf(en[0]), Integer.valueOf(en[1]));
+            }
+            // rebuild the tree
+            TreeNode root = buildTree(map, 1);
+            return root;
+
         }
 
         private TreeNode buildTree(Map<Integer, Integer> map, int i) {
-            if(!map.containsKey(i)) return null;
+            if (!map.containsKey(i))
+                return null;
 
             TreeNode root = new TreeNode(map.get(i));
-            root.left = buildTree(map,2*i);
-            root.right = buildTree(map,2*i+1);
+            root.left = buildTree(map, 2 * i);
+            root.right = buildTree(map, 2 * i + 1);
 
             return root;
         }
@@ -98,91 +105,96 @@ public class _297Solution {
          */
         public String serialize(TreeNode root) {
 
-            Map<Integer,Integer> map = new HashMap<>();
-            firstRoot(root,map);
+            Map<Integer, Integer> map = new HashMap<>();
+            firstRoot(root, map);
             StringBuilder sb = new StringBuilder();
-            for(Entry<Integer,Integer> en:map.entrySet()){
+            for (Entry<Integer, Integer> en : map.entrySet()) {
 
                 sb.append(en.getKey().toString());
                 sb.append(":");
                 sb.append(en.getValue().toString());
                 sb.append(" ");
-                
+
             }
-            if(sb.length()!=0) sb.setLength(sb.length()-1); 
+            if (sb.length() != 0)
+                sb.setLength(sb.length() - 1);
 
             return sb.toString();
-            
+
         }
-    
+
         /**
          * 因为递归测试爆栈了，所以需要改成迭代遍历
+         * 
          * @param root
          * @param map
          * @param i
          */
         private void firstRoot(TreeNode root, Map<Integer, Integer> map) {
 
-            if(root==null) return;
+            if (root == null)
+                return;
             Stack<Integer> keyStack = new Stack<>();
             Stack<TreeNode> nStack = new Stack<>();
             nStack.push(root);
             keyStack.push(1);
-            while(!nStack.isEmpty()){
+            while (!nStack.isEmpty()) {
                 TreeNode node = nStack.pop();
                 int key = keyStack.pop();
-                map.put(key,node.val);
-                if(node.right!=null){
-                    keyStack.push(2*key+1);
+                map.put(key, node.val);
+                if (node.right != null) {
+                    keyStack.push(2 * key + 1);
                     nStack.push(node.right);
                 }
-                if(node.left!=null){
-                    keyStack.push(2*key);
+                if (node.left != null) {
+                    keyStack.push(2 * key);
                     nStack.push(node.left);
                 }
             }
-            
+
         }
 
         // Decodes your encoded data to tree.
         public TreeNode deserialize(String data) {
-            if(data.equals("")) return null;
-           String[] enList = data.split(" ");
-           Map<Integer,Integer> map = new HashMap<>();
-           for(String s:enList){
+            if (data.equals(""))
+                return null;
+            String[] enList = data.split(" ");
+            Map<Integer, Integer> map = new HashMap<>();
+            for (String s : enList) {
                 String[] en = s.split(":");
-                map.put(Integer.valueOf(en[0]),Integer.valueOf(en[1]));
-           } 
-           // rebuild the tree
-           TreeNode root =buildTree(map);
-           return root;
-            
+                map.put(Integer.valueOf(en[0]), Integer.valueOf(en[1]));
+            }
+            // rebuild the tree
+            TreeNode root = buildTree(map);
+            return root;
+
         }
 
         /**
          * 改成迭代方法构建树
          */
         private TreeNode buildTree(Map<Integer, Integer> map) {
-            if(!map.containsKey(1)) return null;
+            if (!map.containsKey(1))
+                return null;
 
             Queue<TreeNode> queue = new LinkedList<>();
             TreeNode root = new TreeNode(map.get(1));
             Queue<Integer> iq = new LinkedList<>();
             queue.offer(root);
             iq.offer(1);
-            while(!queue.isEmpty()){
+            while (!queue.isEmpty()) {
                 TreeNode node = queue.poll();
                 int i = iq.poll();
-                if(map.containsKey(2*i)){
-                    iq.offer(2*i);
-                    TreeNode n1 = new TreeNode(map.get(2*i));
+                if (map.containsKey(2 * i)) {
+                    iq.offer(2 * i);
+                    TreeNode n1 = new TreeNode(map.get(2 * i));
                     node.left = n1;
                     queue.offer(n1);
                 }
-                if(map.containsKey(2*i+1)){
-                    iq.offer(2*i+1);
-                    TreeNode n2 = new TreeNode(map.get(2*i+1));
-                    node.right =n2;
+                if (map.containsKey(2 * i + 1)) {
+                    iq.offer(2 * i + 1);
+                    TreeNode n2 = new TreeNode(map.get(2 * i + 1));
+                    node.right = n2;
                     queue.offer(n2);
                 }
             }
@@ -210,6 +222,7 @@ public class _297Solution {
      * 官方使用先根遍历的解法
      * 注意跟普通先根遍历的区别在于保存了null的叶子节点
      * 实际上只多使用的n+1的存储空间
+     * 只要遍历时保存了null的叶子节点就能通过重新遍历复原树的结构
      */
     public class Codec3 {
         public String serialize(TreeNode root) {
@@ -226,7 +239,7 @@ public class _297Solution {
             if (root == null) {
                 str += "None,";
             } else {
-                str += str.valueOf(root.val) + ",";
+                str += String.valueOf(root.val) + ",";
                 str = rserialize(root.left, str);
                 str = rserialize(root.right, str);
             }
@@ -248,11 +261,73 @@ public class _297Solution {
         }
     }
 
+    /**
+     * 一种更快的编解码器
+     */
+    public class Codec4 {
+
+        // Encodes a tree to a single string.
+        public String serialize(TreeNode root) {
+            return new Serializer().treeToString(root);
+        }
+
+        private static class Serializer {
+            private StringBuilder builder;
+
+            private String treeToString(TreeNode root) {
+                builder = new StringBuilder();
+                serializeR(root);
+                return builder.toString();
+            }
+
+            private void serializeR(TreeNode root) {
+                if (root == null) {
+                    builder.append((char) 0xFFFF);
+                    return;
+                }
+                builder.append((char) (1000 + root.val));
+                serializeR(root.left);
+                serializeR(root.right);
+            }
+        }
+
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(String data) {
+            return new Deserialize().stringToTree(data);
+        }
+
+        private static class Deserialize {
+            int index = 0;
+            char[] chars;
+
+            private TreeNode stringToTree(String tree) {
+                index = 0;
+                chars = tree.toCharArray();
+                return deserializeR();
+            }
+
+            private TreeNode deserializeR() {
+                if (index >= chars.length) {
+                    return null;
+                }
+                char c = chars[index];
+                index++;
+                if (c == 0xffff) {
+                    return null;
+                }
+                TreeNode root = new TreeNode((int) c - 1000);
+                root.left = deserializeR();
+                root.right = deserializeR();
+                return root;
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         _297Solution s = new _297Solution();
         Codec2 co = s.codec2;
-        String[] dataArray = {"1", "2", "3", "NONE", "NONE", "NONE", "NONE"};
+        String[] dataArray = { "1", "2", "3", "NONE", "NONE", "NONE", "NONE" };
         List<String> dataList = new LinkedList<String>(Arrays.asList(dataArray));
 
         TreeNode no = co.rdeserialize(dataList);
@@ -268,12 +343,10 @@ public class _297Solution {
         n1.left = n2;
         n1.right = n3;
 
-        _297Solution so =new _297Solution();
-        Codec codec =  so.codec;
+        _297Solution so = new _297Solution();
+        Codec codec = so.codec;
         String str = codec.serialize(null);
         n1 = codec.deserialize(str);
-
-
 
     }
 }

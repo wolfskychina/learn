@@ -5,6 +5,7 @@ import leetcode.util.TreeNode;
 /**
  * 求一个二叉树中，最长的连续向下递增分支的长度
  * 连续向下递增分支是指节点从上往下值依次加1
+ * {binary tree}
  */
 public class _298Solution {
     int max = 0;

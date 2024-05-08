@@ -4,22 +4,24 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
+/**
+ * {design}
+ */
 class LRUCache {
 
-    private class Node{
+    private class Node {
         int key;
         int value;
 
-        Node(int key, int value){
+        Node(int key, int value) {
             this.key = key;
             this.value = value;
         }
     }
 
-
     private LinkedList<Node> list;
 
-    private Map<Integer, Node> map ;
+    private Map<Integer, Node> map;
 
     private int capacity = 0;
 
@@ -40,14 +42,15 @@ class LRUCache {
 
     public void put(int key, int value) {
 
-        if(map.get(key)!=null){
+        if (map.get(key) != null) {
             Node a = map.get(key);
             a.value = value;
+            // linkedlist支持直接remove
             list.remove(a);
             list.addLast(a);
-        }else{
-            if(map.size()==capacity){
-                int headKey= list.get(0).key;
+        } else {
+            if (map.size() == capacity) {
+                int headKey = list.get(0).key;
                 map.remove(headKey);
                 list.remove(0);
             }

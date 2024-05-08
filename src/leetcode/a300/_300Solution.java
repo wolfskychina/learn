@@ -3,6 +3,7 @@ package leetcode.a300;
 /**
  * 数字数组中最长严格连续上升的子序列
  * 是子序列而不是子数组
+ * {lis},{dp}
  */
 public class _300Solution {
     /**
@@ -45,6 +46,7 @@ public class _300Solution {
      * d[i] 是关于 i 单调递增的
      * 在遍历nums[j]的时候，nums[j]要么>d[len],这样就发现了一个更长的上升序列
      * 要吗存在一个i<j,使得d[i-1]<nums[j]<d[i],此时d[i]可以替换成更小的nums[j]
+     * {greedy}
      */
     public int lengthOfLIS2(int[] nums) {
         int len = 1, n = nums.length;
@@ -61,6 +63,7 @@ public class _300Solution {
                 // 此时d[i]的值可以替换为nums[j]，而不改变递增性质
                 // 递增序列中相邻元素的性质
                 int l = 1, r = len + 1;
+                // 找d[]中第1个大于等于nums[i]的位置
                 while (l < r) {
                     int mid = (l + r) >> 1;
                     if (d[mid] < nums[i]) {

@@ -3,6 +3,10 @@ package leetcode.a200;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * {design},{LRU cache}
+ * 自己定义双向链表
+ */
 class LRUCache2 {
 
     private class Node {
@@ -74,6 +78,7 @@ class LRUCache2 {
         a.pre = null;
         a.next = null;
         pre.next = next;
+        // 注意需要判断next是否为空
         if (null != next)
             next.pre = pre;
     }
@@ -83,6 +88,7 @@ class LRUCache2 {
         dummy.next = a;
         a.next = head;
         a.pre = dummy;
+        // 注意需要判断pre是否为空
         if (null != head)
             head.pre = a;
     }
