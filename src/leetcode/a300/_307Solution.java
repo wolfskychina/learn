@@ -3,6 +3,7 @@ package leetcode.a300;
  * 给定一个数组，设计一组api，能够返回
  * 数组区间[i,j]之间的元素和
  * 并且能够修改元素的值
+ * {prefix sum}
  */
 public class _307Solution {
     int[] sum ;
@@ -22,12 +23,10 @@ public class _307Solution {
         for(int i =index+1;i<sum.length;i++){
             sum[i] +=d;
         }
-
     }
     
     public int sumRange(int left, int right) {
         return sum[right+1]-sum[left];
-
     } 
 
     /**

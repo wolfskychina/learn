@@ -3,7 +3,9 @@ package leetcode.a300;
 /**
  * 买卖股票
  * 股票卖出后下一工作日不能买入，叫做冷却期
+ * 求能够获得的最大利润
  * TODO
+ * {dp}
  */
 public class _309Solution {
 
