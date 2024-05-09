@@ -1,6 +1,7 @@
 package leetcode.a300;
 /**
  * 返回数组在坐标[left,right]之间的元素的和
+ * {prefix sum}
  */
 public class _303Solution {
 
@@ -15,7 +16,6 @@ public class _303Solution {
         for(int i=1;i<nums.length;i++){
             this.sums[i] += sums[i-1]+nums[i];
         }
-
     }
     
     public int sumRange(int left, int right) {

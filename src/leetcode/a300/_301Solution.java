@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * 包含左右括号和字母的字符串，删除最少的括号使字符串成为合格的括号组合的字符串
+ * 返回所有可能的解
+ * {backtrack}
+ * 
  */
 public class _301Solution {
 
@@ -12,6 +15,7 @@ public class _301Solution {
 
     /**
      * 使用回溯法，当多余的左右括号数量均降为0的时候，判断括号是不是合法的
+     * 
      * @param s
      * @return
      */
@@ -21,6 +25,7 @@ public class _301Solution {
 
         // 求多余的左右括号的数量
         // 类似于投票算法的思想
+        // 开始的时候左右应该只有一个数量不为0
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(') {
                 lremove++;
@@ -46,6 +51,7 @@ public class _301Solution {
         }
 
         for (int i = start; i < str.length(); i++) {
+            // 剪枝,避免重复搜索跟前一个一样的字符
             if (i != start && str.charAt(i) == str.charAt(i - 1)) {
                 continue;
             }
@@ -67,20 +73,25 @@ public class _301Solution {
     /**
      * 判断是否合法括号
      * 投票算法
-     *  
+     * 感觉像一个模拟栈
+     * {voting}
+     * 
      * @param str
      * @return
      */
     private boolean isValid(String str) {
         int cnt = 0;
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(') {
-                cnt++;
-            } else if (str.charAt(i) == ')') {
-                cnt--;
-                if (cnt < 0) {
-                    return false;
-                }
+            switch (str.charAt(i)) {
+                case '(':
+                    cnt++;
+                    break;
+                case ')':
+                    cnt--;
+                    if (cnt < 0)
+                        return false;
+                default:
+                    break;
             }
         }
 

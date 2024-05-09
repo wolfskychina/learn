@@ -2,6 +2,8 @@ package leetcode.a300;
 
 /**
  * 二维数组，返回(x1,y1)-(x2,y2)表示的矩形中的元素的和
+ * 二维数组的前缀和
+ * {prefix sum}
  */
 public class _304Solution {
 
@@ -19,7 +21,7 @@ public class _304Solution {
         for (int i = 0; i < sums.length; i++) {
             for (int j = 0; j < sums[0].length; j++) {
                 sums[i][j] = matrix[i][j] - ((i > 0 && j > 0) ? sums[i - 1][j - 1] : 0)
-                        + (i > 0 ? sums[i - 1][j] : 0) + (j > 0 ? sums[i][j-1] : 0);
+                        + (i > 0 ? sums[i - 1][j] : 0) + (j > 0 ? sums[i][j - 1] : 0);
 
             }
         }
@@ -32,11 +34,10 @@ public class _304Solution {
 
     }
 
-    public static void main(String[] args){
-        int[][] input = {{1,1,1},{1,1,1},{1,1,1}};
+    public static void main(String[] args) {
+        int[][] input = { { 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 } };
         _304Solution so = new _304Solution(input);
         so.sumRegion(1, 1, 2, 2);
-
     }
 
 }

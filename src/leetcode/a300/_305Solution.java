@@ -9,6 +9,7 @@ import java.util.Set;
 
 /**
  * 每次往一个网格里面填一个空，求每一步填完之后岛屿的数目
+ * {union find}
  */
 public class _305Solution {
 
