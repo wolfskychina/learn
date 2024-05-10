@@ -2,6 +2,7 @@ package leetcode.a300;
 
 /**
  * 稀疏矩阵的乘法
+ * {matrix}
  */
 public class _311Solution {
     // 改进的写法
