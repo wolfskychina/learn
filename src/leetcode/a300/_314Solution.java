@@ -10,6 +10,7 @@ import java.util.TreeMap;
 import leetcode.util.TreeNode;
 /**
  * 对一颗二叉树逐列自上而下的遍历，左右相邻接点间距一致
+ * {binary tree}
  */
 public class _314Solution {
 

@@ -3,6 +3,7 @@ package leetcode.a300;
 /**
  * 打气球得分，每打爆一个气球可以获得气球本身上的数字和左右两个气球
  * 的数字的乘积，问能够获得的最大分数.
+ * {dp}
  */
 public class _312Solution {
 
@@ -23,6 +24,8 @@ public class _312Solution {
             for (int j = i + 2; j <= n + 1; j++) {
                 // 选择k作为分划点,rec[i][k]和rec[k][j]均为之前已经求出
                 for (int k = i + 1; k < j; k++) {
+                    // i,k,j在某一时刻可能是挨着的，中间可能原来没有气球
+                    // 或者之前已经被打爆了
                     int sum = val[i] * val[k] * val[j];
                     sum += rec[i][k] + rec[k][j];
                     rec[i][j] = Math.max(rec[i][j], sum);
