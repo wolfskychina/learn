@@ -2,16 +2,19 @@ package leetcode.a300;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+
 /**
  * 新增一个建筑，求这个建筑到其他所有建筑的最短路径之和
  * 曼哈顿距离
+ * {bfs}
  */
 public class _317Solution {
     int[] dx = new int[] { 1, 0, -1, 0 };
     int[] dy = new int[] { 0, -1, 0, 1 };
 
     /**
-     * bfs
+     * 多源bfs
+     * 
      * @param grid
      * @return
      */

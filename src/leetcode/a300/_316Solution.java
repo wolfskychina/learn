@@ -39,6 +39,7 @@ public class _316Solution {
 
     /**
      * 单调栈的解法
+     * {monotonic stack}
      */
     public String removeDuplicateLetters2(String s) {
         boolean[] vis = new boolean[26];

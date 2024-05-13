@@ -6,13 +6,14 @@ import java.util.Set;
 
 /**
  * 一个字符串数组，求数组中任意两个没有相同元素的字符串的长度相乘的最大值
+ * {bit manuplation}
  */
 public class _318Solution {
-
 
     /**
      * 利用mask数组保存字符串的特征码
      * 如果两个特征码&操作==0，那么说明没有相同字符
+     * 32位长度的整形能够保存26位小写字符
      * 
      * @param words
      * @return
@@ -41,11 +42,12 @@ public class _318Solution {
 
     /**
      * 优化的方案，如果两个字符串组成的字符相同，那么他们的masks掩码特征相同
-     * 所以可以只保存长度最长的那个字符串的长度 
+     * 所以可以只保存长度最长的那个字符串的长度
+     * 
      * @param words
      * @return
      */
-     public int maxProduct2(String[] words) {
+    public int maxProduct2(String[] words) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int length = words.length;
         for (int i = 0; i < length; i++) {
@@ -72,7 +74,5 @@ public class _318Solution {
         }
         return maxProd;
     }
-
-
 
 }
