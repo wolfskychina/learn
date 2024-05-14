@@ -8,6 +8,7 @@ import java.util.*;
  * 求满足这个条件的根节点
  * aka. 找到离所有其他节点的距离和最短的节点(中心节点)
  * 路由网络中的中心节点
+ * {graph}
  */
 public class _310Solution {
 
