@@ -13,6 +13,7 @@ public class _325Solution {
      * 前缀和可以一趟循环全部做出来
      * 使用hashmap保存每一个不同的前缀和的值的坐标（如果某一个前缀和有多个坐标，那么保留
      * 最左侧的坐标
+     * {prefix sum}
      * @param nums
      * @param k
      * @return
