@@ -7,11 +7,12 @@ import java.util.Map;
 
 public class _327Solution {
 
-
     /**
      * 根据区间和等于k（325题）的解法简单修改
      * 取决于lower和upper的区间大小
-     * 有的测试用例超时了 
+     * o(n2)的时间复杂度
+     * 有的测试用例超时了
+     * 
      * @param nums
      * @param lower
      * @param upper
@@ -43,7 +44,7 @@ public class _327Solution {
                 if (preSumIndex.containsKey(preSum - j)) {
 
                     ans += preSumIndex.get(preSum - j).size();
-                    //break;
+                    // break;
                 }
             }
 
@@ -64,6 +65,7 @@ public class _327Solution {
      * 运用归并排序
      * 将前缀数组进行归并排序，前缀数组的顺序并不会影响可能的区间和的数量
      * 每一趟归并的时候，左右两组前缀和的差的可能，所有趟加起来正好遍历了所有前缀和的差得可能
+     * 
      * @param nums
      * @param lower
      * @param upper
@@ -129,6 +131,6 @@ public class _327Solution {
 
     public static void main(String[] args) {
         _327Solution so = new _327Solution();
-        //so.countRangeSum(a, -57577, 18133);
+        // so.countRangeSum(a, -57577, 18133);
     }
 }

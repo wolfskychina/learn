@@ -6,6 +6,7 @@ import java.util.LinkedList;
 /**
  * 给出一颗二叉树的前序遍历序列，空节点用#号代替
  * 判断给出的前序遍历序列是否合法
+ * {binary tree}
  */
 public class _331Solution {
 

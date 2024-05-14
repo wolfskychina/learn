@@ -1,8 +1,10 @@
 package leetcode.a300;
 
 import leetcode.util.ListNode;
+
 /**
  * 将链表的偶数位的节点移动到链表的末尾
+ * {linked list}
  */
 public class _328Solution {
 
