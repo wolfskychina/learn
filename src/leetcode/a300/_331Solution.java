@@ -76,9 +76,9 @@ public class _331Solution {
         return slots == 0;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _331Solution so = new _331Solution();
         so.isValidSerialization2("9,#,92,#,#");
-        
+
     }
 }
