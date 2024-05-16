@@ -1,5 +1,9 @@
 package leetcode.a300;
 
+/**
+ * 计算[0,n]中的每个数的二进制1的位数，返回数组
+ * {binary system},{bit count},{dp}
+ */
 public class _338Solution {
 
     public int[] countBits(int n) {
@@ -29,7 +33,7 @@ public class _338Solution {
      * @param n
      * @return
      */
-     public int[] countBits2(int n) {
+    public int[] countBits2(int n) {
         int[] bits = new int[n + 1];
         int highBit = 0;
         for (int i = 1; i <= n; i++) {
@@ -43,10 +47,11 @@ public class _338Solution {
 
     /**
      * n和n>>1的1的个数的关系仅相差最后一位是否为1
+     * 这个是最容易理解的dp解法
      * @param n
      * @return
      */
-     public int[] countBits3(int n) {
+    public int[] countBits3(int n) {
         int[] bits = new int[n + 1];
         for (int i = 1; i <= n; i++) {
             bits[i] = bits[i >> 1] + (i & 1);
@@ -54,8 +59,7 @@ public class _338Solution {
         return bits;
     }
 
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _338Solution so = new _338Solution();
         so.countBits(5);
 

@@ -37,16 +37,8 @@ public class _339Solution {
     int sum = 0;
 
     public int depthSum(List<NestedInteger> nestedList) {
-        int depth = 1;
-        for (NestedInteger nint : nestedList) {
 
-            if (nint.isInteger()) {
-                sum += nint.getInteger();
-            } else {
-                deptFind(depth + 1, nint.getList());
-            }
-
-        }
+        deptFind(1, nestedList);
 
         return sum;
 

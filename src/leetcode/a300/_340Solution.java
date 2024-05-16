@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * 340. Longest Substring with At Most K Distinct Characters
- * 
+ * {two pointers} 
  */
 public class _340Solution {
 
@@ -39,7 +39,6 @@ public class _340Solution {
         }
 
         return max;
-
     }
 
     /**
