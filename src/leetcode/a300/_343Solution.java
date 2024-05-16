@@ -2,6 +2,8 @@ package leetcode.a300;
 
 /**
  * 343. Integer Break
+ * 将一个正整数拆分成若干个正整数的和，使得这些数字的乘积最大
+ * {dp},{math}
  */
 public class _343Solution {
 

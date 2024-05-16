@@ -2,6 +2,7 @@ package leetcode.a300;
 /**
  * 342. Power of Four
  * 判断一个数不是不是4的幂
+ * {math},{binary system},{bit manuplation}
  */
 public class _342Solution {
     
@@ -20,6 +21,7 @@ public class _342Solution {
     /**
      * 4的幂的二进制的特点是只在偶数位有一个1
      * 可以构建一个所有偶数位都是1的掩码，和n进行与运算
+     * {bit mask}
      * @param n
      * @return
      */
