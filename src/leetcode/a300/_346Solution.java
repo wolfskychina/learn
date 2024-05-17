@@ -5,6 +5,7 @@ import java.util.Queue;
 
 /**
  * 346. Moving Average from Data Stream
+ * {easy}
  */
 public class _346Solution {
 
