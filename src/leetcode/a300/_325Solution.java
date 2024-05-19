@@ -3,6 +3,7 @@ package leetcode.a300;
 import java.util.HashMap;
 import java.util.Map;
 /**
+ * 和等于 k 的最长连续子数组的长度
  * nums的子区间的元素之和=k，求这样最长的子区间
  * 如果没有，返回0；
  */
