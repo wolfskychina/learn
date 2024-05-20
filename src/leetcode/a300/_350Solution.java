@@ -10,6 +10,7 @@ import java.util.Map;
  * 两个数组取交集，但是同一个数组中单个元素出现多次且
  * 另一个数组元素也出现多次时，保留共同出现的次数的元素
  * ie, 3在数组1出现4次，在数组2出现3次，那么交集里面保留3个3
+ * {intersection},{two pointers}
  */
 public class _350Solution {
 

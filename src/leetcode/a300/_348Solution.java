@@ -1,4 +1,5 @@
 package leetcode.a300;
+
 /**
  * 348. Design Tic-Tac-Toe
  * 给定一系列步骤，判断最后谁赢
@@ -13,6 +14,7 @@ public class _348Solution {
 
     /**
      * 只需要判断该元素所在的行列和对角线
+     * 
      * @param row
      * @param col
      * @param player
@@ -53,12 +55,12 @@ public class _348Solution {
         int[] cols;
         int diagonal;
         int antiDiagonal;
-     
+
         public TicTacToe(int n) {
             rows = new int[n];
             cols = new int[n];
         }
-     
+
         public int move(int row, int col, int player) {
             int currentPlayer = (player == 1) ? 1 : -1;
             // 更新 rows 和 cols 数组中的当前用户
@@ -83,6 +85,6 @@ public class _348Solution {
             // 没有人赢
             return 0;
         }
-     }
-     
+    }
+
 }

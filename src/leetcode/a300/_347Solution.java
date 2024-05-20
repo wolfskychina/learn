@@ -68,6 +68,7 @@ public class _347Solution {
                 // 右侧还有一部分（ k-(index-start+1) )大的元素需要继续查找
                 qsort(values, index + 1, end, ret, retIndex, k - (index - start + 1));
             }
+            // 如果左侧恰好等于k个最小值，那么直接返回
         }
     }
 

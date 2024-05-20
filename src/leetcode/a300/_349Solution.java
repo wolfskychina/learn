@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * 两个数组的交集，数组里面可能有重复数据
+ * {counting}
  */
 public class _349Solution {
 
@@ -31,7 +32,6 @@ public class _349Solution {
             if (sum1[i] & sum2[i]) {
                 list.add(i);
             }
-
         }
 
         int res[] = new int[list.size()];
