@@ -7,7 +7,9 @@ import java.util.Set;
 
 /**
  * 353. Design Snake Game
- * TODO 
+ * 设计贪吃蛇游戏
+ * {design}
+ * TODO
  */
 public class _353Solution {
 
@@ -71,7 +73,7 @@ public class _353Solution {
             boolean horiBoundary = newHeadRow < 0 || newHeadRow >= height;
             boolean vetiBoundary = newHeadCol < 0 || newHeadCol >= width;
 
-            // 是否走到自己身上
+            // 是否走到自己身上,走到上一步的尾巴节点没事
             boolean ifBiteSelf = this.snakeSet.contains(newHead)
                     && !(newHead.key == currTail.key && newHead.value == currTail.value);
 
