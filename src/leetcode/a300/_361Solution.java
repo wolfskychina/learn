@@ -2,6 +2,7 @@ package leetcode.a300;
 /**
  * 361. Bomb Enemy
  * 一颗炸弹能够炸死同一排和同一列的敌人，除非有墙挡着
+ * 炸弹人游戏
  * 问一颗炸弹在图中最多能炸死多少敌人
  */
 public class _361Solution {

@@ -2,11 +2,13 @@ package leetcode.a300;
 /**
  * 357. Count Numbers with Unique Digits
  * 计算小于10的n次方的整数总共有多少个是由完全不相同的位组成的
+ * {combination}
  */
 public class _357Solution {
 
    /**
     * 排列组合问题
+    * {combination}
     * @param n
     * @return
     */

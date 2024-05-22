@@ -3,7 +3,9 @@ package leetcode.a300;
 import java.util.LinkedList;
 import java.util.Queue;
 /**
- * 记录最近300次点击的时间戳
+ * 统计最近300s内的点击总次数
+ * 同一个时间戳可能发生多次点击
+ * {design}
  */
 public class _362Solution {
 

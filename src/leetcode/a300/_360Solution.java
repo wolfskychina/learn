@@ -1,7 +1,7 @@
 package leetcode.a300;
 /**
  * 360. Sort Transformed Array
- * 一个递增的数组，将其中的元素映射为一个一元二次函数之后，
+ * 一个递增的数组，将其中的元素映射到一个一元二次函数之后，
  * 返回f(x)的递增排序
  */
 public class _360Solution {

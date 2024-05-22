@@ -7,6 +7,7 @@ import java.util.HashMap;
  * 日志速率限制器
  * 同于同一种消息，最多允许每10秒钟打印一条信息
  * 原题意不清楚
+ * {design}
  */
 public class _359Solution {
 
