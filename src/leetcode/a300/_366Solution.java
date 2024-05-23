@@ -9,6 +9,7 @@ import leetcode.util.TreeNode;
  * 366. Find Leaves of Binary Tree
  * 依次输出遍历叶子结点，每趟输出叶子结点之后，将本次的叶子结点删除
  * 下次输出新形成的叶子结点
+ * {binary tree}
  */
 public class _366Solution {
 
