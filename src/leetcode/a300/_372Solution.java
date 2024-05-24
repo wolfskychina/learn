@@ -26,6 +26,7 @@ public class _372Solution {
         int res = 1;
 
         while (n != 0) {
+            // 奇数的话需要多乘一次x
             if (n % 2 != 0) {
                 res = (int) ((long) res * x % MOD);
             }

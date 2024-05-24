@@ -1,6 +1,7 @@
 package leetcode.a300;
 /**
  * 判断一个数是不是完全平方数
+ * {binary search}
  */
 public class _367Solution {
 

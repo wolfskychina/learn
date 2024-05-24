@@ -15,6 +15,7 @@ public class _366Solution {
 
     /**
      * 层次遍历稍微修改一下
+     * 遍历的过程中修改父节点的指向
      * @param root
      * @return
      */

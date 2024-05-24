@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * 整数集合中最大的能够互相整除的子集
+ * {dp}
  */
 public class _368Solution {
    
