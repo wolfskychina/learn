@@ -2,6 +2,7 @@ package leetcode.a300;
 /**
  * 猜数字大小，如果猜错就付出猜测值的代价
  * 问最少准备多少代价值，能够保证猜中结果
+ * {dp}
  */
 public class _375Solution {
  

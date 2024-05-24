@@ -2,6 +2,7 @@ package leetcode.a300;
 
 /**
  * 简单的猜数字大小
+ * {binary search}
  */
 public class _374Solution {
 
