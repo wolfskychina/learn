@@ -2,6 +2,7 @@ package leetcode.a300;
 /**
  * nums数组中，元素之和等于target的不同组合数
  * nums本身元素没有重复，但是可以重复选取相同元素
+ * {dp}
  */
 public class _377Solution {
  

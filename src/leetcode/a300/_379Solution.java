@@ -1,6 +1,7 @@
 package leetcode.a300;
 /**
  * 设计一个电话号码簿，要求有maxNumber个槽位
+ * {design}
  * TODO 
  */
 public class _379Solution {
