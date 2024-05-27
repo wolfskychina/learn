@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * 和380类似，但是需要支持插入重复元素
+ * {design}
+ */
 public class _381Solution {
 
     RandomizedCollection rc = new RandomizedCollection();

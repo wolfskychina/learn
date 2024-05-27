@@ -9,6 +9,7 @@ import java.util.Random;
 /**
  * 设计一个set类型，能够以平均o1的时间
  * 插入、删除和随机返回元素
+ * {design}
  */
 public class _380Solution {
 
