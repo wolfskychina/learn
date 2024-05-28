@@ -13,6 +13,7 @@ public class _390Solution {
      * 关键3：每次删除后的序列的首末元素都可以通过上一轮
      * 的首末元素和这一轮的等差计算出来
      * 关键4：每次删除的等差都比上次大两倍
+     * 最后剩的是长度为1的序列
      * @param n
      * @return
      */
@@ -20,6 +21,7 @@ public class _390Solution {
         int a1 = 1;
         int k = 0, cnt = n, step = 1;
         while (cnt > 1) {
+            // 实际上删除的时候只记录下一轮一端的起点即可
             if (k % 2 == 0) { // 正向
                 a1 = a1 + step;
             } else { // 反向
