@@ -1,7 +1,7 @@
 package leetcode.a300;
 /**
  * 杂志上的字母能否拼成赎金信
- * #EASY
+ * {easy} 
  */
 public class _383Solution {
    

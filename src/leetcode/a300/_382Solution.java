@@ -7,6 +7,7 @@ import leetcode.util.ListNode;
 /**
  * 382. Linked List Random Node
  * 一个链表，随机输出里面的节点的值
+ * {linked list}
  */
 public class _382Solution {
 
