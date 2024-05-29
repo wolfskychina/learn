@@ -1,6 +1,7 @@
 package leetcode.a300;
 /**
  * 判断一个字符串是不是另一个字符串的子序列
+ * {subsequence},{easy}
  */
 public class _392Solution {
 
