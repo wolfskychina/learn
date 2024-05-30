@@ -1,12 +1,15 @@
 package leetcode.a300;
+
 /**
  * 最长子串，要求子串中的所有字符至少重复出现k次
+ * {dfs}
  */
 public class _395Solution {
 
     /**
      * 先找整体上不满足出现k次的字符，然后这个字符将
      * 字符串划分成区间，然后在区间上递归的查找
+     * 
      * @param s
      * @param k
      * @return
