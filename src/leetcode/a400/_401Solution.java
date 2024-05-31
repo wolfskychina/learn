@@ -3,6 +3,13 @@ package leetcode.a400;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 二进制手表，每个灯表示一个二进制数字
+ * 时针区的灯分别表示 8,4,2,1
+ * 分针区的灯分别表示 32,16,8,4,2,1
+ * 根据亮灯的数量返回所有可能的时间组合
+ * {backtrace}
+ */
 public class _401Solution {
 
     int[] hours = new int[] { 1, 2, 4, 8, 0, 0, 0, 0, 0, 0 };
