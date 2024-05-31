@@ -3,6 +3,7 @@ package leetcode.a400;
 import leetcode.util.TreeNode;
 /**
  * 二叉树中所有左叶子节点（是父节点的左儿子的叶子结点）的和
+ * {binary tree},{easy}
  */
 public class _404Solution {
    
