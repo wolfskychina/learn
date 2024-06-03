@@ -2,6 +2,11 @@ package leetcode.a400;
 
 import java.util.HashSet;
 
+/**
+ * 给定一系列的大小写字符
+ * 求能够构成的最大回文串
+ * {palindrome},{easy}
+ */
 public class _409Solution {
 
     public int longestPalindrome(String s) {
@@ -31,19 +36,20 @@ public class _409Solution {
 
     /**
      * 相同元素互相抵消的计算方式
+     * {voting} 
      * @param s
      * @return
      */
     public int longestPalindrome2(String s) {
         HashSet<Character> set = new HashSet<>();
-        for(int i = 0 ; i < s.length();i++){
-            if(set.contains(s.charAt(i))){
+        for (int i = 0; i < s.length(); i++) {
+            if (set.contains(s.charAt(i))) {
                 set.remove(s.charAt(i));
-            }else
+            } else
                 set.add(s.charAt(i));
         }
         int res = s.length() - set.size();
-        return  set.size() == 0 ? res : res + 1;
+        return set.size() == 0 ? res : res + 1;
     }
 
     public static void main(String[] args) {

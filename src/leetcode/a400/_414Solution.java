@@ -1,6 +1,7 @@
 package leetcode.a400;
 /**
  * 给定一个数组，返回数组中非重复的第3大的数字
+ * {easy}
  */
 public class _414Solution {
 
@@ -12,6 +13,7 @@ public class _414Solution {
         long t = Long.MIN_VALUE;
 
         for (int i : nums) {
+
             if (i == f || i == s || i == t) {
                 continue;
             } else if (i > f) {

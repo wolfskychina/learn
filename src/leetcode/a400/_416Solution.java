@@ -3,6 +3,7 @@ package leetcode.a400;
 /**
  * 正整数数组，能够将其中的元素放到两个集合中，
  * 使得两个集合的元素之和相等
+ * {dp}
  */
 public class _416Solution {
 
