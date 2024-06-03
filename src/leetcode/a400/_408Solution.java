@@ -1,6 +1,7 @@
 package leetcode.a400;
 /**
  * 判断一个缩写字符串是不是另一个原串的k8s形式的缩写
+ * {easy}
  */
 public class _408Solution {
 

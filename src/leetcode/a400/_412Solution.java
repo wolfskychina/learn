@@ -2,8 +2,10 @@ package leetcode.a400;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
- * EAZY
+ * 打印3,5的倍数
+ * {easy}
  */
 public class _412Solution {
 
