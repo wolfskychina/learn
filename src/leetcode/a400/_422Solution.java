@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * 422. Valid Word Square
- * 判断一个字符矩阵，每行和对应列的字符组成是否完全一致 
+ * 判断一个字符矩阵，每行和对应列组成的字符串是否完全一致 
  */
 public class _422Solution {
 
