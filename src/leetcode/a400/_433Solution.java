@@ -9,7 +9,11 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-public class _431Solution {
+/**
+ * 两个字符串表示的基因，一个最少需要多少个突变才能变成另一个
+ * {bfs}
+ */
+public class _433Solution {
 
     public int max = 99999;
 

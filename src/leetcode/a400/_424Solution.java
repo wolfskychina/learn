@@ -6,6 +6,7 @@ public class _424Solution {
 
     /**
      * 滑动窗口，保留当前窗口中各字符出现的次数
+     * {sliding window},{greedy}
      * @param s
      * @param k
      * @return

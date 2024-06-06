@@ -8,6 +8,7 @@ import leetcode.util.narray.Node;
 
 /**
  * N叉树的层次遍历
+ * {bfs}
  */
 public class _429Solution {
 

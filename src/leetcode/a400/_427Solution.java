@@ -5,6 +5,7 @@ import leetcode.util.Node;
 /**
  * 方形矩阵转换成四叉树
  * 矩阵的边长为2的n次方
+ * {dfs}
  */
 public class _427Solution {
 
@@ -27,6 +28,7 @@ public class _427Solution {
         }
 
         if (same) {
+            // 如果全部相同，就是叶子节点
             return new Node(grid[r0][c0] == 1, true);
         }
 
