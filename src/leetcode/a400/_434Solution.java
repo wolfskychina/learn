@@ -1,7 +1,8 @@
 package leetcode.a400;
 /**
  * 434. Number of Segments in a String
- * 字符串中的字段 
+ * 字符串中的字段
+ * {easy}
  */
 public class _434Solution {
    

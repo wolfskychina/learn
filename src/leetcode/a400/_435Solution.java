@@ -1,7 +1,6 @@
 package leetcode.a400;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * 435. Non-overlapping Intervals
@@ -41,6 +40,7 @@ public class _435Solution {
      * [i,j]是任意区间,[imin,jmin]都能对[i,j]进行替代
      * 所以直接选择[imin,jmin]作为最左侧区间，因为jmin已经是最小，所以
      * 最佳方案中左侧第二个区间的左右边界一定要大于jmin
+     * 
      * @param intervals
      * @return
      */
@@ -48,8 +48,8 @@ public class _435Solution {
         if (intervals.length == 0) {
             return 0;
         }
-        
-        Arrays.sort(intervals, (o1,o2)->o1[1]-o2[1]);
+
+        Arrays.sort(intervals, (o1, o2) -> o1[1] - o2[1]);
 
         int n = intervals.length;
         int right = intervals[0][1];

@@ -11,6 +11,7 @@ import java.util.Set;
 
 /**
  * 两个字符串表示的基因，一个最少需要多少个突变才能变成另一个
+ * 只有bank中的突变才是有效的
  * {bfs}
  */
 public class _433Solution {
