@@ -15,6 +15,7 @@ public class _424Solution {
         if (s == null) {
             return 0;
         }
+        // map是在窗口中的各字母出现的次数
         int[] map = new int[26];
         char[] chars = s.toCharArray();
         int left = 0;

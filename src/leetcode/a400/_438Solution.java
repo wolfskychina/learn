@@ -6,11 +6,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * 查找一个单词s中所有的p变形词
+ */
 public class _438Solution {
 
     /**
      * 滑动窗口
      * 写的比较复杂，调式了很多次
+     * {sliding window}
      * @param s
      * @param p
      * @return

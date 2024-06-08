@@ -7,6 +7,11 @@ import java.util.Map;
 
 import leetcode.util.TreeNode;
 
+/**
+ * 二叉树中和等于targetsum的路径的数量
+ * 路径是指从某个节点开始一直向下
+ * {binary tree}
+ */
 public class _437Solution {
 
     int num = 0;
