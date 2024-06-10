@@ -3,9 +3,17 @@ package leetcode.a400;
 import leetcode.util.TreeNode;
 /**
  * BST中删除目标节点
+ * {bst}
  */
 public class _450Solution {
 
+    /**
+     * 除了需要根据key定位位置
+     * 和二叉树中删除一个节点是相同的
+     * @param root
+     * @param key
+     * @return
+     */
     public TreeNode deleteNode(TreeNode root, int key) {
 
         if (root == null)

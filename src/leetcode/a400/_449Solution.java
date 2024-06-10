@@ -9,7 +9,7 @@ import leetcode.util.TreeNode;
 
 /**
  * bst序列化和反序列化
- * {bst}
+ * {bst},{design}
  */
 public class _449Solution {
 
