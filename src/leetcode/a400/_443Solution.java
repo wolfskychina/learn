@@ -1,6 +1,7 @@
 package leetcode.a400;
 /**
  * 将字符串按照abbccc ：ab2c3的形式压缩
+ * {two pointers}
  */
 public class _443Solution {
 
@@ -33,10 +34,8 @@ public class _443Solution {
     public void reverse(char[] chars, int left, int right) {
         while (left < right) {
             char temp = chars[left];
-            chars[left] = chars[right];
-            chars[right] = temp;
-            left++;
-            right--;
+            chars[left++] = chars[right];
+            chars[right--] = temp;
         }
     }
 

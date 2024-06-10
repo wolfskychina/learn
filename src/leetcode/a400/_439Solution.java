@@ -1,13 +1,14 @@
 package leetcode.a400;
 /**
- * 模拟三元组表达式的解析
+ * 模拟嵌套三元组表达式的解析
+ * {recursive}
  * TODO
  */
 public class _439Solution {
 
     /**
      * 类似于括号，只有配对之后才能计算最右侧的表达式值
-     * ??::express , ?:express , 都是先计算express
+     * ??::express , ?:express , 都是优先计算最右侧的express
      * @param expression
      * @return
      */

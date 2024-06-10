@@ -6,12 +6,14 @@ import java.util.List;
  * 找到一个数组中所有重复的元素
  * 数组长n，元素取值范围为1...n
  * 所有元素只出现过1次或者2次，没有其他的
+ * {counting sort}
  */
 public class _442Solution {
 
     public List<Integer> findDuplicates(int[] nums) {
 
         List<Integer> res = new ArrayList<>();
+        // 将所有的元素移回到本身的位置
         for (int i = 0; i < nums.length; i++) {
             
             while (nums[i] != nums[nums[i] - 1]) {

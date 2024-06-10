@@ -3,6 +3,7 @@ package leetcode.a400;
 import leetcode.util.ListNode;
 /**
  * 链表加法，头结点是最高位
+ * {linked list}
  */
 public class _445Solution {
 

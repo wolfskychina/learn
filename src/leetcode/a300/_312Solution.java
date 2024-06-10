@@ -16,6 +16,7 @@ public class _312Solution {
         int n = nums.length;
         int[][] rec = new int[n + 2][n + 2];
         int[] val = new int[n + 2];
+        // 0和n+1位置分别是两个虚拟的挡板
         val[0] = val[n + 1] = 1;
         for (int i = 1; i <= n; i++) {
             val[i] = nums[i - 1];

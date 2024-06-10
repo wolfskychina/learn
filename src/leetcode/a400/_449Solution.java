@@ -6,8 +6,10 @@ import java.util.Deque;
 import java.util.List;
 
 import leetcode.util.TreeNode;
+
 /**
  * bst序列化和反序列化
+ * {bst}
  */
 public class _449Solution {
 
@@ -19,7 +21,7 @@ public class _449Solution {
             String str = list.toString();
             return str.substring(1, str.length() - 1);
         }
-    
+
         public TreeNode deserialize(String data) {
             if (data.isEmpty()) {
                 return null;
@@ -32,7 +34,7 @@ public class _449Solution {
             }
             return construct(Integer.MIN_VALUE, Integer.MAX_VALUE, stack);
         }
-    
+
         private void postOrder(TreeNode root, List<Integer> list) {
             if (root == null) {
                 return;
@@ -41,7 +43,7 @@ public class _449Solution {
             postOrder(root.right, list);
             list.add(root.val);
         }
-    
+
         private TreeNode construct(int lower, int upper, Deque<Integer> stack) {
             // <lower || >upper 说明到达了该层的边界，下面弹出的节点不属于当前节点的子树
             if (stack.isEmpty() || stack.peek() < lower || stack.peek() > upper) {
@@ -53,6 +55,6 @@ public class _449Solution {
             root.left = construct(lower, val, stack);
             return root;
         }
-    
+
     }
 }

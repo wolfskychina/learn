@@ -54,6 +54,7 @@ public class _448Solution {
         }
         List<Integer> ret = new ArrayList<Integer>();
         for (int i = 0; i < n; i++) {
+            // 只要大于n，说明该数值出现过
             if (nums[i] <= n) {
                 ret.add(i + 1);
             }

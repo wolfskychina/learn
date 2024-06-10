@@ -3,7 +3,31 @@ package leetcode.a400;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 回旋镖的数量
+ */
 public class _447Solution {
+
+    /**
+     * 最快的一版，使用了HashMap缓存
+     * @param points
+     * @return
+     */
+    public int numberOfBoomerangs0(int[][] points) {
+        int ans = 0;
+        // 在外面 new，比在内层循环 new 效率更高
+        HashMap<Integer, Integer> cnt = new HashMap<>();
+        for (int[] p1 : points) {
+            cnt.clear();
+            for (int[] p2 : points) {
+                int d2 = (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
+                int c = cnt.getOrDefault(d2, 0);
+                ans += c * 2;
+                cnt.put(d2, c + 1);
+            }
+        }
+        return ans;
+    }
 
     /**
      * 遍历所有的三元组，计算每个三元组中，分别以x,y,z为中点到另外两点的距离
