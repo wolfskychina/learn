@@ -2,7 +2,7 @@ package leetcode.a400;
 
 /**
  * 453. Minimum Moves to Equal Array Elements
- * 一个数字数组，每次操作都是将数组中n-1的数加1
+ * 一个数字数组，每次操作都是将数组中n-1个数加1
  * 问最少多少次操作后，能使数组中的数字全部相等
  */
 public class _453Solution {
