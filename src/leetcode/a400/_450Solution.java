@@ -18,8 +18,10 @@ public class _450Solution {
 
         if (root == null)
             return root;
+        // 除了目标节点，还需要定位他的父节点
         TreeNode p = null;
         TreeNode i = root;
+        // i是否是p的左儿子
         boolean left = false;
         while (i != null && i.val != key) {
             p = i;

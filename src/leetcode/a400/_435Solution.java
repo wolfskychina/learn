@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * 435. Non-overlapping Intervals
  * 若干区间，问最少去掉多少个区间，能使得其他区间不相交
+ * {intervel},{greedy}
  */
 public class _435Solution {
 
