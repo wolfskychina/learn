@@ -1,5 +1,8 @@
 package leetcode.a400;
-
+/**
+ * 一个字符串能否通过子串重复组成
+ * {easy}
+ */
 public class _459Solution {
    
     public boolean repeatedSubstringPattern(String s) {

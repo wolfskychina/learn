@@ -3,7 +3,9 @@ package leetcode.a400;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.TreeMap;
-
+/**
+ * 数组中是否存在132大小关系的三元组
+ */
 public class _456Solution {
 
     /**
@@ -125,6 +127,7 @@ public class _456Solution {
     /**
      * 使用单调栈，时间复杂度on
      * 遍历顺序为，对于nums[i]判断能否当3-》获取2的最大值-》下一轮比较1和上一轮找到的2和3
+     * {Monotonic Stack}
      * @param nums
      * @return
      */

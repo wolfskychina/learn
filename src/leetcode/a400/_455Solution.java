@@ -9,6 +9,12 @@ import java.util.Arrays;
  */
 public class _455Solution {
 
+    /**
+     * {greedy}
+     * @param g
+     * @param s
+     * @return
+     */
     public int findContentChildren(int[] g, int[] s) {
 
         Arrays.sort(g);

@@ -3,6 +3,10 @@ package leetcode.a400;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 循环数组里面每个元素标记前进或者后退的步数
+ * 问是否存在回路
+ */
 public class _457Solution {
 
     public boolean circularArrayLoop(int[] nums) {

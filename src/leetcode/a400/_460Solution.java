@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeSet;
 
+/**
+ * {design}
+ * 设计一个{LRU}缓存
+ */
 public class _460Solution {
 
     /**
@@ -44,7 +48,7 @@ public class _460Solution {
             cache.time = ++time;
             // 将新缓存重新放入哈希表和平衡二叉树中
             S.add(cache);
-            key_table.put(key, cache);
+            // key_table.put(key, cache);
             return cache.value;
         }
 
@@ -72,7 +76,7 @@ public class _460Solution {
                 cache.time = ++time;
                 cache.value = value;
                 S.add(cache);
-                key_table.put(key, cache);
+                // key_table.put(key, cache);
             }
         }
     }

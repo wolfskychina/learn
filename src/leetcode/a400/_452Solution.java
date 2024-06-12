@@ -2,11 +2,15 @@ package leetcode.a400;
 
 import java.util.Arrays;
 
+/**
+ * 最少需要多少次射击能打爆所有的气球
+ */
 public class _452Solution {
 
     /**
      * 435题的变种
      * TODO 需要注意两个数比较大小时候可能会溢出
+     * {greedy},{interval}
      * @param points
      * @return
      */
