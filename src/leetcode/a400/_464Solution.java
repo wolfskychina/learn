@@ -17,6 +17,7 @@ public class _464Solution {
      * 如果本次的选择之后的和能够大于等于desiredTotal,那么一定可以赢
      * 如果选择之后的和小于desiredTotal，那么对手一定可以走下一轮
      * 如果队友下一轮不存在赢的可能，就说明这一轮也一定能赢
+     * 直接解空间搜索，{dfs}
      * @param maxChoosableInteger
      * @param desiredTotal
      * @return
@@ -28,6 +29,9 @@ public class _464Solution {
         return dfs(maxChoosableInteger, 0, desiredTotal, 0);
     }
 
+    /**
+     * 因为 1 <= maxChoosableInteger <= 20，所以可以用单个整数压缩某个瞬间的选择状态
+     */
     public boolean dfs(int maxChoosableInteger, int usedNumbers, int desiredTotal, int currentTotal) {
         if (!memo.containsKey(usedNumbers)) {
             boolean res = false;
@@ -38,6 +42,7 @@ public class _464Solution {
                         res = true;
                         break;
                     }
+                    // 不能直接判定的话，就递归的求解下一个状态
                     if (!dfs(maxChoosableInteger, usedNumbers | (1 << i), desiredTotal, currentTotal + i + 1)) {
                         res = true;
                         break;
