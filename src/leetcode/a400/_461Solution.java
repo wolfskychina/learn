@@ -5,6 +5,7 @@ package leetcode.a400;
 public class _461Solution {
    
     /**
+     * 相邻海明码只有1位不同
      * 两个海明码的距离是两个编码中相同位的数不相等的位的数量和
      * @param x
      * @param y
