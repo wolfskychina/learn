@@ -1,5 +1,8 @@
 package leetcode.a400;
 
+/**
+ * 判断一个ip地址是否合法
+ */
 public class _468Solution {
 
     public String validIPAddress(String queryIP) {
@@ -65,6 +68,60 @@ public class _468Solution {
 
         return "IPv6";
 
+    }
+
+    public String validIPAddress1(String queryIP) {
+        if (queryIP.length() == 0) {
+            return "Neither";
+        }
+        if (queryIP.charAt(queryIP.length() - 1) == ':' || queryIP.charAt(queryIP.length() - 1) == '.'
+                    || queryIP.charAt(0) == ':' || queryIP.charAt(0) == '.') {
+                        return "Neither";
+                    }
+        String[] ipv4 = queryIP.split("\\.");
+        if (ipv4.length > 1) {
+            if (ipv4.length != 4) {
+                return "Neither";
+            }
+            for (String s : ipv4) {
+                for (char c : s.toCharArray()) {
+                    if (c < '0' || c > '9') {
+                        return "Neither";
+                    }
+                }
+                if (s.length() < 1 || s.length() > 3) {
+                    return "Neither";
+                }
+                int tmp = Integer.parseInt(s);
+                if (tmp < 0 || tmp > 255) {
+                    return "Neither";
+                }
+                if (s.length() > 1 && s.charAt(0) == '0') {
+                    return "Neither";
+                }
+            }
+            return "IPv4";
+        }
+        String[] ipv6 = queryIP.split(":");
+        if (ipv6.length > 1) {
+            if (ipv6.length != 8) {
+                return "Neither";
+            }
+            for (String s : ipv6) {
+                if (s.length() < 1 || s.length() > 4) {
+                    return "Neither";
+                }
+                for (char c : s.toCharArray()) {
+                    if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F') ) {
+                        
+                    } else {
+                        return "Neither";
+                    }
+                }
+            }
+            return "IPv6";
+        }
+        return "Neither";
     }
 
     public static void main(String[] args) {

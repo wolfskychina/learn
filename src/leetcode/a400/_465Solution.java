@@ -1,10 +1,15 @@
 package leetcode.a400;
 
+/**
+ * 根据一组转账关系，求如果不按照该关系进行转账
+ * 最少能通过多少次转账使得最终的账务和原转账之后相同
+ */
 public class _465Solution {
 
     /**
      * 没有考虑有多棵树的情况
      * 例如，可以优化为1,2,3之间转账之后账平、4,5之间转账账平
+     * 但是实际上4，5之间原来没有资金往来
      * 
      * @param transactions
      * @return
@@ -101,6 +106,7 @@ public class _465Solution {
         // 那么集合中可能的节点组合有2的n次方种
         final int m = 1 << n;
 
+        // f是所有解空间
         int[] f = new int[m];
         for (int i = 1; i < m; ++i) {
             int sum = 0;

@@ -10,6 +10,7 @@ public class _467Solution {
     /**
      * dp建模，dp[i]定义为以第i个字母为结尾的连续子串的最大长度
      * 只需要一趟扫描就能获取到所有字母的dp[]最大长度
+     * {dp},{classic}
      * @param p
      * @return
      */
