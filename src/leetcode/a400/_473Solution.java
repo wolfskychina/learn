@@ -3,7 +3,8 @@ package leetcode.a400;
 import java.util.Arrays;
 
 /**
- * n根线段是否能够围成正方形
+ * n根长度各异的线段,所有线段都使用的情况下，
+ * 是否能够围成正方形
  * TODO
  * 
  */
@@ -13,6 +14,8 @@ public class _473Solution {
 
     /**
      * 官方的回溯解法,比较简洁
+     * {backtrace}
+     * 
      * @param matchsticks
      * @return
      */

@@ -2,6 +2,7 @@ package leetcode.a400;
 
 /*
  * 给一个可以随机生成1-7的方法，设计一个可以随机返回1-10的方法
+ * {design}
  */
 public class _470Solution {
 
