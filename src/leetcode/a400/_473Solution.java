@@ -40,6 +40,7 @@ public class _473Solution {
         if (index == matchsticks.length) {
             return true;
         }
+        // 四个边进行遍历，对所有解空间进行搜索
         for (int i = 0; i < edges.length; i++) {
             edges[i] += matchsticks[index];
             // 因为所有的输入都要用到，所以不能跳过某一个，必须要放到某一条边上

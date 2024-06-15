@@ -1,12 +1,15 @@
 package leetcode.a400;
+
 /**
  * 求数字的反码
+ * {bit manuplation}
  */
 public class _476Solution {
 
     /**
      * 关键在于确定数字的二进制的位数
      * 同样长度的111做异或操作
+     * 
      * @param num
      * @return
      */
@@ -20,4 +23,5 @@ public class _476Solution {
         return (int) i ^ num;
 
     }
+    
 }
