@@ -10,6 +10,7 @@ public class _490Solution {
 
     /**
      * 深度优先搜索
+     * {dfs}
      * 
      * @param maze
      * @param start

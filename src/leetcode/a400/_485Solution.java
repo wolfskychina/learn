@@ -2,6 +2,7 @@ package leetcode.a400;
 /**
  * 数组中最多的连续的1的个数
  * 考察边界条件
+ * {easy}
  */
 public class _485Solution {
 

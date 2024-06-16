@@ -1,10 +1,15 @@
 package leetcode.a400;
 /**
- * 根据相邻位的大小关系确定一个最小的排列组合
+ * 根据给出的相邻位的大小关系确定一个满足要求的从1-n的最小的排列
  */
 public class _484Solution {
 
     // 注意细节有的地方如增减特性变化的时候需要回退一格
+    /**
+     * {greedy}
+     * @param s
+     * @return
+     */
     public int[] findPermutation(String s) {
 
         // s == I or D

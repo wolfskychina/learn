@@ -2,6 +2,7 @@ package leetcode.a400;
 /**
  * 给出圆心的坐标和圆的半径
  * 随机返回圆中一点的坐标
+ * {design},{easy}
  */
 public class _478Solution {
 

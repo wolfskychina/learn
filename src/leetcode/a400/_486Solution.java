@@ -6,6 +6,7 @@ import java.util.Arrays;
  * 一行正整数数列，两人轮流从两端取一张牌加到自己的总分数上
  * 问能否保证先抽牌的人一定能赢？
  * 假设两人都按照有利于自己的策略去抽牌。
+ * {game theory},{dp}
  */
 public class _486Solution {
 
