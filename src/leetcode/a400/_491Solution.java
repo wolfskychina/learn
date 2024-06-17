@@ -12,6 +12,7 @@ public class _491Solution {
 
     /**
      * 标准dfs解法，但是比较慢，只战胜了6%
+     * {dfs},{backtrace}
      * @param nums
      * @return
      */
@@ -70,13 +71,17 @@ public class _491Solution {
             }
             return;
         }
+
+        // 通过两种递归完成解空间的遍历
         // 如果大于等于就选择
+        // 进入下一层递归
         if (nums[cur] >= last) {
             temp.add(nums[cur]);
             dfs(cur + 1, nums[cur], nums);
             temp.remove(temp.size() - 1);
         }
 
+        // 平行跳转到下一个元素
         if (nums[cur] != last) {
             dfs(cur + 1, last, nums);
         }

@@ -1,6 +1,7 @@
 package leetcode.a400;
 /**
- * 对于一个面积area，返回长宽最接近的矩形的长宽 
+ * 对于一个面积area，返回长宽最接近的矩形的长宽
+ * {easy}
  */
 public class _492Solution {
 

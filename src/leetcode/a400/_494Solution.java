@@ -6,7 +6,7 @@ package leetcode.a400;
  * {dp}
  * TODO
  */
-public class _493Solution {
+public class _494Solution {
 
     int count = 0;
 
