@@ -15,6 +15,7 @@ public class _476Solution {
      */
     public int findComplement(int num) {
         long i = 1;
+        // 寻找同长度的掩码
         // 注意相等的情况也要进位
         while (i <= num) {
             i = i << 1;
