@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 元素在数组中下一个更大的元素
+ * 元素在数组中下一个更大的元素的位置
  */
 public class _496Solution {
 

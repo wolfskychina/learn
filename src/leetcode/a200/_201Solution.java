@@ -2,6 +2,7 @@ package leetcode.a200;
 
 /**
  * n个连续整数的AND结果
+ * {bit manuplation}
  */
 public class _201Solution {
 

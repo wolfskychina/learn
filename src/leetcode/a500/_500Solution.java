@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+
 /**
  * 判断字符串能否由键盘的同一行拼写出来
  */
@@ -16,19 +17,19 @@ public class _500Solution {
     char[] a2 = { 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L' };
     char[] a3 = { 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Z', 'X', 'C', 'V', 'B', 'N', 'M' };
 
-public _500Solution(){
+    public _500Solution() {
 
-       for(char c :a1){
-        set1.add(c);
-    }
-    for(char c :a2){
-        set2.add(c);
-    }
-    for(char c: a3){
-        set3.add(c);
-    }
+        for (char c : a1) {
+            set1.add(c);
+        }
+        for (char c : a2) {
+            set2.add(c);
+        }
+        for (char c : a3) {
+            set3.add(c);
+        }
 
-}
+    }
 
     public String[] findWords(String[] words) {
 
