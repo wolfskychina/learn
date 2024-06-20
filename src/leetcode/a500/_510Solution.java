@@ -1,6 +1,7 @@
 package leetcode.a500;
 /**
  * bst中序遍历的后继节点
+ * {bst}
  */
 public class _510Solution {
 

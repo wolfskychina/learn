@@ -42,7 +42,7 @@ public class _518Solution {
     }
 
     /**
-     * dp解法，定义dp[i]为和为amount的不同方案数
+     * dp解法，定义dp[i]为和为i的不同方案数
      * dp[i] 只能从dp[i-coin[k]]中得到
      * @param amount
      * @param coins

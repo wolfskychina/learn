@@ -2,6 +2,7 @@ package leetcode.a500;
 
 /**
  * 检查一个数是否是perfect数字
+ * {math}
  */
 public class _507Solution {
 

@@ -3,6 +3,7 @@ package leetcode.a500;
 import java.util.Arrays;
 /**
  * 给定元素的分数，求他们的排名
+ * {sorting},{index},{counting sort}
  */
 public class _506Solution {
 

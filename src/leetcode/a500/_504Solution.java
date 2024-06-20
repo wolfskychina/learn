@@ -1,6 +1,7 @@
 package leetcode.a500;
 /**
  * 十进制转七进制
+ * {math},{easy}
  */
 public class _504Solution {
 

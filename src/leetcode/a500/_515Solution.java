@@ -6,6 +6,7 @@ import java.util.List;
 import leetcode.util.TreeNode;
 /**
  * 返回二叉树每层值最大的节点的值
+ * {binary tree},{easy}
  */
 public class _515Solution {
 
