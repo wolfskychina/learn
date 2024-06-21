@@ -6,7 +6,7 @@ import java.util.Random;
 
 /**
  * 设计短链接发生器
- * {random},{hashmap}
+ * {random},{hashmap},{design}
  */
 public class _535Solution {
 

@@ -28,6 +28,6 @@ where t1.player_id=t2.player_id
   and t1.event_date>=t2.event_date
 group by t1.player_id,t1.event_date;
 
--- 使用partition的方法
+-- 使用partition的方法, partition带有前缀和的作用
 select player_id, event_date, sum(games_played) over(partition by player_id order by event_date) as games_played_so_far
 from activity

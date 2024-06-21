@@ -2,6 +2,7 @@ package leetcode.a500;
 
 import java.util.HashSet;
 import java.util.Set;
+
 /**
  * 531. Lonely Pixel I
  * 同一行同一列中只有一个‘B’的像素点叫做孤独点
@@ -15,6 +16,7 @@ public class _531Solution {
      * 开始返回b数为1的行数和列数的最小值是错误的
      * 因为b为1的行和b为1的列的交叉点不一定就是那个'b'的点
      * 还是要判断交叉点
+     * 
      * @param picture
      * @return
      */
@@ -61,18 +63,18 @@ public class _531Solution {
         int n = picture[0].length;
         int[] rowcount = new int[n];
         int[] colcount = new int[m];
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < n; j++) {
-                if(picture[i][j] == 'B') {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (picture[i][j] == 'B') {
                     rowcount[j]++;
                     colcount[i]++;
                 }
             }
         }
         int res = 0;
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < n; j++) {
-                if(rowcount[j] == 1 && colcount[i] == 1 && picture[i][j] == 'B') {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (rowcount[j] == 1 && colcount[i] == 1 && picture[i][j] == 'B') {
                     res++;
                 }
             }
