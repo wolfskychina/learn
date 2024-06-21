@@ -25,6 +25,7 @@ public class _525Solution {
         Map<Integer, Integer> map = new HashMap<>();
         // 前缀和为0的时候比较特殊，如果以idx=0开头的子数组前缀和为0
         // 也需要统计进来
+        // -1这个是伪指针
         map.put(0,-1);
         map.put(count, 0);
         int max = 0;

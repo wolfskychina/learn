@@ -2,6 +2,7 @@ package leetcode.a500;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * 前n个正整数的所有排列方案中，优美排列的数量
  * 优美排列是指对于任何一个i+1和num[i]
@@ -18,6 +19,7 @@ public class _526Solution {
      * 标准回溯方法
      * 先求出每一位符合条件的候选数字集合
      * 然后进行回溯
+     * 
      * @param n
      * @return
      */
@@ -56,7 +58,7 @@ public class _526Solution {
         // 用来存储中间结果，f[6] = f[000110] = 数字2、3在前两位时的完美排列数量
         int[] f = new int[1 << n];
         f[0] = 1;
-        // 通过 mask 进行枚举，最终目的是为了得到二进制 mask = (11..11)n 时，总的完美排列数 
+        // 通过 mask 进行枚举，最终目的是为了得到二进制 mask = (11..11)n 时，总的完美排列数
         for (int mask = 1; mask < (1 << n); mask++) {
             int num = Integer.bitCount(mask);
             // 遍历 mask 的每一位，仍以 mask = 100110 为例，此 mask 代表 2 3 6三个数字在排列的前三位

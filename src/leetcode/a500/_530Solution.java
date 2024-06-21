@@ -3,6 +3,7 @@ package leetcode.a500;
 import leetcode.util.TreeNode;
 /**
  * bst中两个节点值的绝对差的最小值
+ * {bst},{easy}
  */
 public class _530Solution {
 
