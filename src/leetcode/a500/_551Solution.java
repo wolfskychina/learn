@@ -1,6 +1,7 @@
 package leetcode.a500;
 /**
  * 判断出勤记录是否合格
+ * {easy}
  */
 public class _551Solution {
 

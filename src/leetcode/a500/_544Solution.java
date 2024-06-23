@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 比赛配对，要求每一轮都是比较强和比较弱的配对
+ * {easy}
  * 
  */
 public class _544Solution {
