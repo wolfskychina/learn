@@ -1,4 +1,4 @@
-package leetcode.a500;
+package leetcode.a900;
 /**
  * 有序数组的平方
  * 初始数组按照非递减排序
