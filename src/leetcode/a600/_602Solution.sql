@@ -1,5 +1,5 @@
 -- 朋友最多的用户
---{sql:full join},{sql:ifnull},{sql:union}
+-- {sql:full join},{sql:ifnull},{sql:union}
 -- mysql没有full join只能两个表分别在前面进行left join然后将结果集union
 select id, sum(num) as num from 
 (

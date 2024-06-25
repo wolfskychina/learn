@@ -1,4 +1,5 @@
 package leetcode.a500;
+
 /**
  * 分数的加减运算
  * 
@@ -17,7 +18,7 @@ public class _592Solution {
             while (s.charAt(r) != '/') {
                 r++;
             }
-            while (r<s.length() &&( s.charAt(r) != '+' && s.charAt(r) != '-'))
+            while (r < s.length() && (s.charAt(r) != '+' && s.charAt(r) != '-'))
                 r++;
             String[] tmps = s.substring(idx, r).split("/");
             num[0] = Long.parseLong(tmps[0]);
@@ -51,20 +52,21 @@ public class _592Solution {
 
     private void fractionAdd(long[] res, long[] num) {
 
-        if(res[0] ==0) {
-            res[0] =num[0];
-            res[1] =num[1];
-            return ;
+        if (res[0] == 0) {
+            res[0] = num[0];
+            res[1] = num[1];
+            return;
         }
-        if(num[0] ==0) return ;
+        if (num[0] == 0)
+            return;
 
         long tmp = res[1];
         res[1] = res[1] * num[1];
         res[0] = res[0] * num[1] + num[0] * tmp;
-        return ;
+        return;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _592Solution so = new _592Solution();
         so.fractionAddition("-1/2+1/2+1/3");
     }

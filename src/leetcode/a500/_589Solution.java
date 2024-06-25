@@ -7,6 +7,7 @@ import leetcode.util.narray.Node;
 
 /**
  * N-树先根遍历
+ * {tree},{easy}
  */
 public class _589Solution {
     List<Integer> res = new LinkedList<>();
