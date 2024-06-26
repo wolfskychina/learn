@@ -3,6 +3,7 @@ package leetcode.a600;
 /**
  * 种花问题，相邻的花盆不能种花，已经种了一部分花，
  * 问最多还能种多少棵
+ * {easy}
  */
 public class _605Solution {
 
