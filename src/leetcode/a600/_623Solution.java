@@ -2,6 +2,10 @@ package leetcode.a600;
 
 import leetcode.util.TreeNode;
 
+/**
+ * 二叉树为在一层增加一层节点
+ * {binary tree}
+ */
 public class _623Solution {
     int height = 0;
 
