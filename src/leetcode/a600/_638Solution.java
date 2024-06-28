@@ -18,9 +18,10 @@ public class _638Solution {
         int n = price.size();
 
         // 过滤不需要计算的大礼包，只保留需要计算的大礼包
+        // 所谓的大礼包里面有的商品可能是提过价的
         List<List<Integer>> filterSpecial = new ArrayList<List<Integer>>();
         for (List<Integer> sp : special) {
-            int totalCount = 0, totalPrice = 0;
+           int totalCount = 0, totalPrice = 0;
             for (int i = 0; i < n; ++i) {
                 totalCount += sp.get(i);
                 totalPrice += sp.get(i) * price.get(i);
