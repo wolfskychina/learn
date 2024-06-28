@@ -2,6 +2,7 @@ package leetcode.a600;
 
 import java.util.LinkedList;
 import java.util.List;
+
 /**
  * 统计所有函数各自累计消耗的cpu时间
  */
@@ -15,7 +16,7 @@ public class _636Solution {
      * 注意相同的函数可能递归调用，并且可能重复执行
      * 最外层的循环需要保证将logs遍历完
      * {recursive}
-     *  */ 
+     */
     public int[] exclusiveTime(int n, List<String> logs) {
 
         int res[] = new int[n];
@@ -44,11 +45,11 @@ public class _636Solution {
         int costTime = endTime - timestamp + 1 - subTime;
         res[id] += costTime;
         idx++;
-        return endTime-timestamp+1;
+        return endTime - timestamp + 1;
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _636Solution so = new _636Solution();
         List<String> logs = new LinkedList<>();
         logs.add("0:start:0");
@@ -56,8 +57,8 @@ public class _636Solution {
         logs.add("0:start:2");
         logs.add("0:end:3");
         logs.add("0:end:4");
-        logs.add("0:end:5"); 
-        so.exclusiveTime(1,logs);
+        logs.add("0:end:5");
+        so.exclusiveTime(1, logs);
     }
 
 }

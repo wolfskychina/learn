@@ -1,7 +1,7 @@
 package leetcode.a600;
 /**
  * 各个数字位相乘等于num的最小整数
- * {math}
+ * {math},{greedy}
  */
 public class _625Solution {
 

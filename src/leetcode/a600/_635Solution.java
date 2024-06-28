@@ -4,8 +4,10 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+
 /**
  * 日志存储器
+ * {design}
  */
 public class _635Solution {
 
@@ -74,15 +76,14 @@ public class _635Solution {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _635Solution so = new _635Solution();
-        LogSystem sys = so.new LogSystem(); 
-        sys.put(1,"2017:01:01:23:59:59");
-        sys.put(2,"2017:01:01:22:59:59");
-        sys.put(3,"2016:01:01:00:00:00");
-        sys.retrieve("2016:01:01:01:01:01","2017:01:01:23:00:00","Year");
-        sys.retrieve("2016:01:01:01:01:01","2017:01:01:23:00:00","Hour");
-
+        LogSystem sys = so.new LogSystem();
+        sys.put(1, "2017:01:01:23:59:59");
+        sys.put(2, "2017:01:01:22:59:59");
+        sys.put(3, "2016:01:01:00:00:00");
+        sys.retrieve("2016:01:01:01:01:01", "2017:01:01:23:00:00", "Year");
+        sys.retrieve("2016:01:01:01:01:01", "2017:01:01:23:00:00", "Hour");
 
     }
 }

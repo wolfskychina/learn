@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * 一条直线上的若干线段，求来自不同线段上的两个端点距离的最大值
- * {TODO}
+ * {greedy}
  */
 public class _624Solution {
 
