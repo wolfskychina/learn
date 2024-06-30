@@ -7,6 +7,7 @@ import java.util.Set;
 
 /**
  * 单词用最短的词根替换
+ * {trie}
  */
 public class _648Solution {
 

@@ -1,6 +1,7 @@
 package leetcode.a600;
 /**
  * 设计双向循环队列
+ * {design},{queue}
  */
 public class _641Solution {
 
@@ -43,7 +44,7 @@ public class _641Solution {
 
             if (num == size)
                 return false;
-            //
+            // 同理，当队列为空的时候往尾部插入，也需要头部指针向前移动
             if (num == 0)
                 head = (head + size - 1) % size;
             q[tail] = value;
