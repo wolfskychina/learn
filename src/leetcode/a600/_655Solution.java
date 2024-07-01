@@ -5,7 +5,8 @@ import java.util.List;
 
 import leetcode.util.TreeNode;
 /**
- * 以二维list的形式输出一颗二叉树
+ * 以二维list的形式格式化输出一颗二叉树
+ * {binary tree}
  */
 public class _655Solution {
 

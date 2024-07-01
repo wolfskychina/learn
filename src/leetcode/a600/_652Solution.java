@@ -10,6 +10,7 @@ import leetcode.util.TreeNode;
 /**
  * 找出二叉树中所有相同的子树
  * 相同的子树指结构相同且所有节点的值均相同
+ * {binary tree}
  * {TODO}
  */
 public class _652Solution {
