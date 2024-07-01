@@ -11,8 +11,9 @@ import java.util.Set;
 public class _659Solution {
 
     /**
-     * {Priority Queue},{minimum heap}
+     * {Priority Queue},{minimum heap},{greedy}
      * 每次都尝试往末尾符合条件且元素数量最少的队列里面添加
+     * 满足一种贪心性质：如果两个子序列满足条件且可以合并，那么合并之后仍然满足条件
      * 
      * @param nums
      * @return
