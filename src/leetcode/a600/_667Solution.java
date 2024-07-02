@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 /**
  * 优美的排列2
- * 选择1-n的一个序列，使得相邻两个元素差值的绝对值的数量恰好有k个
+ * 选择1-n的一个序列，使得相邻两个元素差值的绝对值的不同种类数量恰好有k个
  */
 public class _667Solution {
 
