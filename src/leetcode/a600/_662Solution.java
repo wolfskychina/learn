@@ -66,9 +66,29 @@ public class _662Solution {
     /**
      * 实际上中间的null值不需要填充新的节点，而是靠给存在的节点标记在满二叉树中的序号，直接计算宽度
      * {bfs}
+     * 
      * @param root
      * @return
      */
+    private class Pair<T, J> {
+
+        T key;
+        J value;
+
+        Pair(T key, J value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public T getKey() {
+            return key;
+        }
+
+        public J getValue() {
+            return value;
+        }
+    }
+
     public int widthOfBinaryTree1(TreeNode root) {
         int res = 1;
         List<Pair<TreeNode, Integer>> arr = new ArrayList<Pair<TreeNode, Integer>>();
@@ -97,6 +117,7 @@ public class _662Solution {
      * 深度优先，每次同一层总是最左侧的节点被访问到
      * 保存这个节点的值，每次遍历到同层的节点就和这个节点的编号做差
      * {dfs}
+     * 
      * @param root
      * @return
      */
@@ -110,7 +131,8 @@ public class _662Solution {
         }
         // 只在第一次访问到（最左侧）的时候保存
         levelMin.putIfAbsent(depth, index); // 每一层最先访问到的节点会是最左边的节点，即每一层编号的最小值
-        return Math.max(index - levelMin.get(depth) + 1, Math.max(dfs(node.left, depth + 1, index * 2), dfs(node.right, depth + 1, index * 2 + 1)));
+        return Math.max(index - levelMin.get(depth) + 1,
+                Math.max(dfs(node.left, depth + 1, index * 2), dfs(node.right, depth + 1, index * 2 + 1)));
     }
 
     public static void main(String[] args) {

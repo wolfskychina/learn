@@ -2,6 +2,7 @@ package leetcode.a600;
 /**
  * 判断一个整数数组，能够通过只修改其中的一个数字，使得
  * 数组变成非递减序列？
+ * {reverse pair}
  */
 public class _665Solution {
    

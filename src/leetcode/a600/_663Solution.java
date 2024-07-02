@@ -2,7 +2,7 @@ package leetcode.a600;
 
 import leetcode.util.TreeNode;
 /**
- * 判断能否通过去掉二叉树的一条链接，使得形成的两颗二叉树的和相同？
+ * 判断将二叉树拆成两个子树，能否使得形成的两颗二叉树的和相同？
  * {binary tree}
  */
 public class _663Solution {

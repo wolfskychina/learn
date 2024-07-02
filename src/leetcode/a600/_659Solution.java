@@ -7,6 +7,7 @@ import java.util.Set;
 
 /**
  * 非递减的整数序列能否拆成全部长度不少于3的递增子序列，且子序列严格递增1
+ * {subsequence}
  */
 public class _659Solution {
 
@@ -46,7 +47,8 @@ public class _659Solution {
 
     /**
      * {dp}很快的dp方案
-     * dp1 为以 prev 结尾的长度为 1的子序列数目， dp2 为以 prev结尾的长度为 2 的子序列数目， dp3 为以 prev 结尾的长度 ≥3
+     * dp1 为以 prev 结尾的长度为 1的子序列数目，
+     * dp2 为以 prev结尾的长度为 2 的子序列数目， dp3 为以 prev 结尾的长度 ≥3
      * 的子序列数目
      * 
      * @param nums
