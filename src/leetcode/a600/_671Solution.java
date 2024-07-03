@@ -5,6 +5,7 @@ import leetcode.util.TreeNode;
  * 一种特殊二叉树中第二小的值
  * 二叉树要么没有子节点，要么有两个子节点
  * 父节点的值 = 两个子节点值的最小值
+ * {binary tree}
  */
 public class _671Solution {
 
