@@ -1,6 +1,7 @@
 package leetcode.a600;
 /**
- * 将字符串a不断的进行拼接，
+ * 将字符串a不断的进行拼接，最少拼接多少次
+ * 能够使得b成为扩展的字符串的子串
  */
 public class _686Solution {
 
