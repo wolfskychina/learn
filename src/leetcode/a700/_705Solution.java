@@ -5,7 +5,7 @@ package leetcode.a700;
 public class _705Solution {
    
     /**
-     * {hashset}
+     * {design},{hashset},{easy}
      */
     class MyHashSet {
 
