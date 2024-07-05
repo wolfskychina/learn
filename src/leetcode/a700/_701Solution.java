@@ -1,6 +1,7 @@
 package leetcode.a700;
 
 import leetcode.util.TreeNode;
+
 /**
  * bst插入节点
  * {bst}
@@ -15,12 +16,12 @@ public class _701Solution {
         TreeNode p = null;
         int dir = 0;
         while (root != null) {
+            p = root;
+
             if (root.val < val) {
-                p = root;
                 root = root.right;
                 dir = 1;
             } else {
-                p = root;
                 root = root.left;
                 dir = -1;
             }

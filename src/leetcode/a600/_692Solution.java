@@ -2,9 +2,11 @@ package leetcode.a600;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 /**
  * 统计字符串出现的频率，然后输出出现频率最高的k个字符串
  */
@@ -49,5 +51,47 @@ public class _692Solution {
         }
         return res;
 
+    }
+
+    /**
+     * {priority queue}
+     * @param words
+     * @param k
+     * @return
+     */
+     public List<String> topKFrequent1(String[] words, int k) {
+        List<String> result = new ArrayList<>();
+        
+        Map<String, Integer> map = new HashMap<>();
+        for (String word : words) {
+            map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+        
+        PriorityQueue<String> pq = new PriorityQueue<>(new Comparator<String>(){
+            @Override
+            public int compare(String word1, String word2) {
+                int count1 = map.get(word1);
+                int count2 = map.get(word2);
+                if (count1 > count2) {
+                    return -1;
+                } else if (count1 < count2) {
+                    return 1;
+                }
+                
+                return word1.compareTo(word2);
+            }
+        });
+        
+        for (String key : map.keySet()) {
+            pq.offer(key);
+        }
+        
+        int index = 0;
+        while (index != k) {
+            result.add(pq.poll());
+            index++;
+        }
+        
+        return result;
     }
 }

@@ -2,7 +2,7 @@ package leetcode.a600;
 
 import java.util.Arrays;
 /**
- * 能否将nums数组里面的数字平均分到k个桶里面，使得每个桶里面的数字和相同
+ * 能否将nums数组里面的数字分到k个桶里面，使得每个桶里面的数字和相同
  */
 public class _698Solution {
 

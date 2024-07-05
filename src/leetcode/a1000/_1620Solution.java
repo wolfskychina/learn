@@ -1,4 +1,4 @@
-package leetcode.a600;
+package leetcode.a1000;
 /**
  * 网络信号最好的坐标
  * {brute force}

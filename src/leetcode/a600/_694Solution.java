@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+
 /**
  * 共有多少形状不同的岛屿
  * 形状相同是指岛屿平移后可以重叠，而非旋转或者镜像后重叠
@@ -19,6 +20,7 @@ public class _694Solution {
     /**
      * 标记相同访问次序的坐标点的差是否一致
      * {hashmap}
+     * 
      * @param grid
      * @return
      */
@@ -50,7 +52,7 @@ public class _694Solution {
         if (map.get(island.nums) == null) {
             List<Island> l = new ArrayList<>();
             l.add(island);
-            map.put(island.nums,l);
+            map.put(island.nums, l);
         } else {
             boolean ifnew = true;
             for (Island other : map.get(island.nums)) {
@@ -109,7 +111,7 @@ public class _694Solution {
         // 求出dfs遍历岛屿的路径字符串，上下左右分别用UDLR代表
         // 形状相同的岛屿，路径字符串相等
         // 只需要用hashSet存路径字符串即可，hashset的size即为答案
-    
+
         HashSet<String> set = new HashSet<>();
         // 求dfs岛屿的路径字符串
         int m = grid.length;
@@ -125,7 +127,7 @@ public class _694Solution {
         }
         return set.size();
     }
-    
+
     void dfs(int[][] grid, int i, int j, char dir, StringBuilder sb) {
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) {
             return;
@@ -135,7 +137,7 @@ public class _694Solution {
         }
         grid[i][j] = 2;
         sb.append(dir);
-    
+
         dfs(grid, i - 1, j, 'U', sb);
         dfs(grid, i + 1, j, 'D', sb);
         dfs(grid, i, j - 1, 'L', sb);
@@ -143,10 +145,9 @@ public class _694Solution {
         sb.append('B');
     }
 
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _694Solution so = new _694Solution();
-        int[][] grid = {{1,1,0,0,0},{1,1,0,0,0},{0,0,0,1,1},{0,0,0,1,1}};
+        int[][] grid = { { 1, 1, 0, 0, 0 }, { 1, 1, 0, 0, 0 }, { 0, 0, 0, 1, 1 }, { 0, 0, 0, 1, 1 } };
         so.numDistinctIslands(grid);
     }
 }
