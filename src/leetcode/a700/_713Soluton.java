@@ -1,7 +1,7 @@
 package leetcode.a700;
 
 /**
- * 求数组中乘积之和小于k的子数组的数量
+ * 求数组中乘积小于k的子数组的数量
  */
 public class _713Soluton {
 
@@ -99,6 +99,27 @@ public class _713Soluton {
         }
         
         return res;
+    }
+
+    /**
+     * 另外一种简洁的写法
+     * @param nums
+     * @param k
+     * @return
+     */
+    public int numSubarrayProductLessThanK2(int[] nums, int k) {
+        if (k <= 1) return 0;
+        int ans = 0;
+        int prod = 1;
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            prod *= nums[right];
+            while (prod >= k) {
+                prod /= nums[left++];
+            }
+            ans += right - left + 1;
+        }
+        return ans;
     }
 
     public static void main(String[] args) {

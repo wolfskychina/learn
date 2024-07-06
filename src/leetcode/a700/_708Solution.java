@@ -2,7 +2,8 @@ package leetcode.a700;
 
 import leetcode.util.listnode.Node;
 /**
- * 循环有序链表中插入一个val大小的节点
+ * 循环有序链表中插入一个val大小的节点,
+ * 给定的起始点head并不一定是最小值所在的点
  * {circled linkedlist}
  */
 public class _708Solution {
