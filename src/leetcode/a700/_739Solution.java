@@ -34,4 +34,24 @@ public class _739Solution {
 
         return res;
     }
+
+    /**
+     * 数组模拟单调栈，速度快很多
+     * @param temperatures
+     * @return
+     */
+    public int[] dailyTemperatures1(int[] temperatures) {
+        int n = temperatures.length;
+        int[] ans = new int[n];
+        int[] stack = new int[n]; // 使用数组模拟
+        int top = -1; // 栈顶
+        for (int i = 0; i < n; i++) { // 从左往右
+            while (top != -1 && temperatures[i] > temperatures[stack[top]]) {
+                int index = stack[top--];
+                ans[index] = i - index;
+            }
+            stack[++top] = i;
+        }
+        return ans;
+    }
 }
