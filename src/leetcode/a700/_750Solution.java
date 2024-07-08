@@ -7,7 +7,7 @@ package leetcode.a700;
 public class _750Solution {
 
     /**
-     * {dp},dp[i][j]为本行之前的行中，i和j位置都是1的行的数量
+     * {dp},dp[i][j]为本行之前的所有行中，i和j位置都是1的行的数量
      *  @param grid
      * 
      * @return
