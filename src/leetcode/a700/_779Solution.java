@@ -22,4 +22,27 @@ public class _779Solution {
         }
         return above;
     }
+
+    /**
+     * 当作一颗二叉树来处理
+     * {binary tree}
+     * @param n
+     * @param k
+     * @return
+     */
+    public int kthGrammar1(int n, int k) {
+        int left = 1, right = 1<<(n-1), mid;
+        int cur = 0;
+        while (left < right){
+            mid = (left+right)>>1;
+            if (k > mid){
+                cur = cur == 0 ? 1 : 0;
+                left = mid + 1;
+            }else{
+                cur = cur == 0 ? 0 : 1;
+                right = mid;
+            }
+        }
+        return cur;
+    }
 }
