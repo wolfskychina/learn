@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 /**
- * 有向无环图中，从起点到终点的所有路径
+ * 向无环图中，从起点到终点的所有路径
  */
 public class _797Solution {
 
