@@ -3,6 +3,7 @@ package leetcode.a700;
  * 区间子数组的个数
  * 满足条件的子数组必须包含[left,right]之间大小的数，不能包含>right的数，其他的数
  * 没有限制
+ * {two pointers}
  */
 public class _795Solution {
 

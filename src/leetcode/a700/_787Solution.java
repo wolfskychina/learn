@@ -6,6 +6,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * 最多允许k次中转，使得从src到dst的总花费最小
+ */
 public class _787Solution {
 
     int min = Integer.MAX_VALUE;
