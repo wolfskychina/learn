@@ -7,6 +7,7 @@ import java.util.Map;
  * 带因子的二叉树的数量
  * 要求生成的二叉树的节点的值必须在arr中
  * 并且父节点的值等于左右子节点的值的积
+ * {binary tree}
  */
 public class _823Solution {
 
