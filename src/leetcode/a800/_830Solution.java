@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 大分组的位置
+ * 较大分组的位置
  */
 public class _830Solution {
    

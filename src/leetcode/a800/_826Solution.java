@@ -12,6 +12,7 @@ public class _826Solution {
 
     /**
      * 记录小于等于某个难度时可以获得的最大工资。
+     * {sorting},{two pointers}
      */
     public int maxProfitAssignment(int[] difficulty, int[] profit, int[] worker) {
         int n = difficulty.length, m = worker.length;
