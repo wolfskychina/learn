@@ -1,6 +1,7 @@
 package leetcode.a800;
 /**
  * 能够离最近的人的最远距离
+ * 在已经坐了一些人的一排座位中找一个位置，使得离其他人的位置最远
  */
 public class _849Solution {
 

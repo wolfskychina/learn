@@ -1,6 +1,7 @@
 package leetcode.a800;
 
 import leetcode.util.ListNode;
+
 /**
  * 返回链表的中间节点，如果总共有偶数个节点，返回后面的中间节点
  * {linkedlist}

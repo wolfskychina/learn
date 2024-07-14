@@ -1,4 +1,5 @@
 package leetcode.a900;
+
 /**
  * 两个水果篮装水果，每个篮子只能装同一种水果
  * 从任何一点出发，开始装，遇到第三种水果就停止
@@ -8,7 +9,7 @@ public class _904Solution {
 
     /**
      * 连续子数组中的元素的某种最大和的求解
-     * {twopointers},{sliding window},{imitate}
+     * {two pointers},{sliding window},{imitate}
      * @param fruits
      * @return
      */
