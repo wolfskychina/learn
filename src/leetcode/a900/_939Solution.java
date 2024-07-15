@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
 /**
  * 二维坐标系上的点所能围成的最小矩形的面积
  * 需要四个
@@ -14,6 +15,7 @@ public class _939Solution {
 
     /**
      * {hashmap}
+     * 
      * @param points
      * @return
      */

@@ -23,7 +23,7 @@ public class _721Solution {
         for (List<String> acc : accounts) {
 
             String key = acc.get(0);
-            TreeSet<String> set = new TreeSet<>((s1, s2) -> s1.compareTo(s2));
+            TreeSet<String> set = new TreeSet<>();
             for (int i = 1; i < acc.size(); i++) {
                 set.add(acc.get(i));
             }

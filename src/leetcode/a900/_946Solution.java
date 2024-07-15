@@ -15,6 +15,8 @@ public class _946Solution {
         Stack<Integer> s = new Stack<>();
         s.push(pushed[0]);
         // 终止条件比较复杂
+        // 单纯pushidx=pushed.length的时候还不能终止
+        // 因为popped可能还没有结束，仍然可以继续弹出
         while(pushidx<pushed.length||popidx<popped.length){
             if(popidx<popped.length&&!s.isEmpty()&&s.peek()==popped[popidx]){
                 s.pop();

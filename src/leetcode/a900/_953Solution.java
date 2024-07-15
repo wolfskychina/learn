@@ -66,6 +66,7 @@ public class _953Solution {
                     flag = true;
                     break;
                 }
+                // 字符相等的情况下继续循环比较
             }
             if(!flag){
                 if(words[i].length() < words[i - 1].length())return false;
