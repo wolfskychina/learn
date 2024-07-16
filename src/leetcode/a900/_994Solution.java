@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
 /**
  * grid里面有一些橘子，有的好，有的坏了，有的是空格
  * 每个回合坏橘子都会传染旁边的四个橘子

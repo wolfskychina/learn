@@ -3,13 +3,14 @@ package leetcode.a900;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 /**
  * 数组形式的整数加法
  * {easy}
  */
 public class _989Solution {
-   
-     public List<Integer> addToArrayForm(int[] num, int k) {
+
+    public List<Integer> addToArrayForm(int[] num, int k) {
 
         List<Integer> listk = new ArrayList<>();
         while (k != 0) {
@@ -78,13 +79,13 @@ public class _989Solution {
             return listn;
         }
 
-
         return listn;
 
     }
-    public static void main(String [] args){
+
+    public static void main(String[] args) {
         _989Solution so = new _989Solution();
-        int[] num = {6};
+        int[] num = { 6 };
         so.addToArrayForm(num, 809);
     }
 }

@@ -28,8 +28,8 @@ public class _979Solution {
     private int[] dfs(TreeNode node) {
         if (node == null)
             return new int[]{0, 0};
-        int[] left = dfs(node.left);
-        int[] right = dfs(node.right);
+        var left = dfs(node.left);
+        var right = dfs(node.right);
         int coins = left[0] + right[0] + node.val; // 子树硬币个数
         int nodes = left[1] + right[1] + 1; // 子树节点数
         ans += Math.abs(coins - nodes);
