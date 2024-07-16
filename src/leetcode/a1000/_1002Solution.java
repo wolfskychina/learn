@@ -3,6 +3,7 @@ package leetcode.a1000;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 /**
  * 查找所有字符串的公用字符
  * {easy}
