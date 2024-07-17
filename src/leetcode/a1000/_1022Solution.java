@@ -41,6 +41,7 @@ public class _1022Solution {
      * @return
      */
     public int sumRootToLeaf1(TreeNode root) {
+        sum = 0;
         visit(root, 0);
         return sum;
     }
