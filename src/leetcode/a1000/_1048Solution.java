@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 /**
  * 最长字符串链的长度
+ * 最长字符串链中的每个字符串都能从前一个字符串通过增加一个字符得到
  */
 public class _1048Solution {
    

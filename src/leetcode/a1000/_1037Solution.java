@@ -1,6 +1,7 @@
 package leetcode.a1000;
 /**
  * 判断3个点是否在一条直线上
+ * 回旋镖
  * {easy}
  */
 public class _1037Solution {

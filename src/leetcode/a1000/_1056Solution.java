@@ -2,6 +2,7 @@ package leetcode.a1000;
 
 import java.util.HashSet;
 import java.util.Set;
+
 /**
  * 判断一个数是否是易混淆数
  */
@@ -10,6 +11,7 @@ public class _1056Solution {
     /**
      * 需要反转过之后跟原来的数对比，如果恰好对称的话就不算
      * 只校验单个数字位不行。
+     * 
      * @param n
      * @return
      */

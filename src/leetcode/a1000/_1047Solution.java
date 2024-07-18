@@ -1,6 +1,7 @@
 package leetcode.a1000;
 
 import java.util.Stack;
+
 /**
  * 不断循环，去掉字符串中相邻且相同的字符
  */
