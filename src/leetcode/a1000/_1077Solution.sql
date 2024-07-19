@@ -27,10 +27,11 @@ Output:
 | 2           | 1             |
 +-------------+---------------+
 
-
+-- 可能会有多个人工作年限同样最长，所以需要先查到最长时间，然后回去反查
 select  c.project_id,e.employee_id from 
 Project d, Employee e ,
-(select  project_id, max(experience_years) as max_year from Project a, Employee b where a.employee_id  =  b.employee_id group by project_id) as c 
+(select  project_id, max(experience_years) as max_year from Project a, Employee b 
+ where a.employee_id  =  b.employee_id group by project_id) as c 
 where 
     d.employee_id = e.employee_id 
     and d.project_id = c.project_id 

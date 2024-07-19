@@ -43,7 +43,7 @@ public class _1099Solution {
 
     /**
      * {two pointers}
-     * 双指针，on复杂度
+     * 双指针，onlogn复杂度
      * @param nums
      * @param k
      * @return
