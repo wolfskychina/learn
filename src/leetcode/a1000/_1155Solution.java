@@ -1,13 +1,16 @@
 package leetcode.a1000;
+
 /**
  * n个有k面的骰子，每个骰子每个面分别由1-k分，问同时掷这n个骰子，分数之和target
  * 的方案有多少种
  */
 public class _1155Solution {
-  
-    int mod = (int)1e9+7;
+
+    int mod = (int) 1e9 + 7;
+
     /**
      * {dp}, f[i][j]表示前i个骰子，组成的和是j的方案数量
+     * 
      * @param n
      * @param m
      * @param t
@@ -23,11 +26,11 @@ public class _1155Solution {
                 // 枚举决策（当前骰子所掷得的点数）
                 for (int k = 1; k <= m; k++) {
                     if (j >= k) {
-                        f[i][j] = (f[i][j] + f[i-1][j-k]) % mod;
+                        f[i][j] = (f[i][j] + f[i - 1][j - k]) % mod;
                     }
                 }
             }
-        } 
+        }
         return f[n][t];
     }
 

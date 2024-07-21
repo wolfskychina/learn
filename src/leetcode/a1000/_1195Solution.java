@@ -12,8 +12,9 @@ import java.util.function.IntConsumer;
 public class _1195Solution {
 
     /**
-     * {multitread}
+     * {multi thread}
      * CyclicBarrier的使用，同一组的所有线程满足条件后开始下一轮
+     * 因为四种输出的条件是互斥的，不存在同时触发某两个条件的情况
      */
     public class FizzBuzz {
 
@@ -83,7 +84,7 @@ public class _1195Solution {
 
 
     /**
-     * 另外一种使用synchronized关键字和notifyAll()的方法，更快
+     * 另外一种使用synchronized关键字和notifyAll()的方法
      * {synchronized}
      */
     class FizzBuzz1 {

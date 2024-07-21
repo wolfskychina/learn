@@ -1,36 +1,29 @@
 package leetcode.a1000;
-
-import java.util.Arrays;
 /**
- * 数组中的最长等差数列序列的长度
+ * 独一无二的出现次数
  */
 public class _1207Solution {
    
     /**
-     * {dp}
-     * TODO\
-     * 记 f[i][d][num] 表示使用数组 nums 中下标小于等于 i 的元素，
-     * 构造公差为 d 的等差数列，并且最后一个元素为 num 时，等差数列长度的最大值。
-     * @param nums
+     * {counting sort}
+     * @param arr
      * @return
      */
-    public int longestArithSeqLength(int[] nums) {
-        int minv = Arrays.stream(nums).min().getAsInt();
-        int maxv = Arrays.stream(nums).max().getAsInt();
-        int diff = maxv - minv;
-        int ans = 1;
-        for (int d = -diff; d <= diff; ++d) {
-            int[] f = new int[maxv + 1];
-            Arrays.fill(f, -1);
-            for (int num : nums) {
-                int prev = num - d;
-                if (prev >= minv && prev <= maxv && f[prev] != -1) {
-                    f[num] = Math.max(f[num], f[prev] + 1);
-                    ans = Math.max(ans, f[num]);
-                }
-                f[num] = Math.max(f[num], 1);
-            }
+    public boolean uniqueOccurrences(int[] arr) {
+
+        int count1 [] = new int[2001];
+        for(int i:arr){
+            count1[i+1000]++;
         }
-        return ans;
+        int count2 [] = new int[1001];
+        for(int i:count1){
+
+            count2[i]++;
+        }
+        for(int i=1;i<count2.length;i++){
+            if(count2[i]>1)
+                return false;
+        }
+        return true;
     }
 }
