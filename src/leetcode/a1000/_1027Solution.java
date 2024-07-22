@@ -1,16 +1,18 @@
 package leetcode.a1000;
 
 import java.util.Arrays;
+
 /**
  * 数组中的最长等差数列序列的长度
  */
-public class _1218Solution {
-   
+public class _1027Solution {
+
     /**
      * {dp}
      * TODO\
      * 记 f[i][d][num] 表示使用数组 nums 中下标小于等于 i 的元素，
      * 构造公差为 d 的等差数列，并且最后一个元素为 num 时，等差数列长度的最大值。
+     * 
      * @param nums
      * @return
      */

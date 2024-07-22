@@ -42,4 +42,38 @@ public class _1222Solution {
             }
         }
     }
+
+    int[][] dirs={{1,0},{-1,0},{0,1},{0,-1},{1,1},{-1,-1},{-1,1},{1,-1}};
+
+    /**
+     * 优化的数据结构 boolean[][] isQueen 来标记是否已经访问
+     * 速度更快
+     * @param queens
+     * @param king
+     * @return
+     */
+    public List<List<Integer>> queensAttacktheKing1(int[][] queens, int[] king) {
+
+        List<List<Integer>> res=new ArrayList<>();
+        boolean[][] isQueen=new boolean[8][8];
+        for(int[] queen:queens){
+            isQueen[queen[0]][queen[1]]=true;
+        }
+        for(int i=0;i<8;i++){
+            List<Integer> path=dfs(king[0]+dirs[i][0],king[1]+dirs[i][1],isQueen,i);
+            if(path!=null){
+                res.add(path);
+            }
+        }
+        return res;
+    }
+    public List<Integer> dfs(int x,int y,boolean[][] isQueen,int index){
+        if(x<0||x>=8||y<0||y>=8){
+            return null;
+        }
+        if(isQueen[x][y]){
+            return List.of(x,y);
+        }
+        return dfs(x+dirs[index][0],y+dirs[index][1],isQueen,index);
+    }
 }
