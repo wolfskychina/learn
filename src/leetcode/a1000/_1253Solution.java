@@ -2,6 +2,7 @@ package leetcode.a1000;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * 重新构建2行的二进制矩阵
  */
@@ -9,6 +10,7 @@ public class _1253Solution {
 
     /**
      * {greedy}
+     * 
      * @param upper
      * @param lower
      * @param colsum
