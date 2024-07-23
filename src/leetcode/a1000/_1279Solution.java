@@ -1,4 +1,5 @@
 package leetcode.a1000;
+
 /**
  * 设计红绿灯
  * {multi thread},{synchronized}
