@@ -2,6 +2,7 @@ package leetcode.a1000;
 
 import java.util.LinkedList;
 import java.util.List;
+
 /**
  * 按照既定顺序创建目标数组
  * 
