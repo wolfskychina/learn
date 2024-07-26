@@ -13,19 +13,21 @@ public class _1469Solution {
     public List<Integer> getLonelyNodes(TreeNode root) {
 
         List<Integer> res = new ArrayList<>();
-        findLonelyChild(root,res);
+        findLonelyChild(root, res);
         return res;
+    }
+
+    private void findLonelyChild(TreeNode p, List<Integer> res) {
+
+        if (p.left == null && p.right != null) {
+            res.add(p.right.val);
         }
-    
-        private void findLonelyChild(TreeNode p,List<Integer> res){
-            
-            if(p.left==null&&p.right!=null){
-                res.add(p.right.val);
-            }
-            if(p.left!=null&&p.right==null){
-                res.add(p.left.val);
-            }
-            if(p.left!=null) findLonelyChild(p.left, res);
-            if(p.right!=null) findLonelyChild(p.right, res);
+        if (p.left != null && p.right == null) {
+            res.add(p.left.val);
         }
+        if (p.left != null)
+            findLonelyChild(p.left, res);
+        if (p.right != null)
+            findLonelyChild(p.right, res);
+    }
 }

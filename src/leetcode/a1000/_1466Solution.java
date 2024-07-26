@@ -53,4 +53,43 @@ public class _1466Solution {
         }
         return count;
     }
+
+    /**
+     * 
+     * @param n
+     * @param connections
+     * @return
+     */
+    public int minReorder1(int n, int[][] connections) {
+        boolean[] connected = new boolean[n];
+        connected[0] = true;
+        List<Integer> noConnect = new ArrayList<>();
+        int ans = 0;
+        for(int i = 0; i < connections.length; i++){
+            int from = connections[i][0], to = connections[i][1];
+            if(connected[to]){
+                connected[from] = true;
+            }else if(connected[from]){
+                ans++;
+                connected[to] = true;
+            }else{
+                noConnect.add(i);
+            }
+        }
+        while(!noConnect.isEmpty()){
+            int size = noConnect.size();
+            for(int i = size - 1; i >= 0; i--){
+                int from = connections[noConnect.get(i)][0], to = connections[noConnect.get(i)][1];
+                if(connected[to]){
+                    connected[from] = true;
+                    noConnect.remove(i);
+                }else if(connected[from]){
+                    ans++;
+                    connected[to] = true;
+                    noConnect.remove(i);
+                }
+            }
+        }
+        return ans;
+    }
 }
