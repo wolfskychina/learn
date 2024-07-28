@@ -2,11 +2,12 @@ package leetcode.a1000;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * 圆形赛道上经过次数最多的磁道
  */
 public class _1560Solution {
-   
+
     public List<Integer> mostVisited(int n, int[] rounds) {
         List<Integer> ret = new ArrayList<Integer>();
         int length = rounds.length;
