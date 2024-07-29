@@ -5,12 +5,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 /**
  * 按照频率将数组升序排序
  * {easy}
  */
 public class _1636Solution {
-   
+
     public int[] frequencySort(int[] nums) {
         Map<Integer, Integer> cnt = new HashMap<Integer, Integer>();
         for (int num : nums) {
@@ -20,6 +21,7 @@ public class _1636Solution {
         for (int num : nums) {
             list.add(num);
         }
+        // 按照辅助数组的大小对主数组进行排序
         Collections.sort(list, (a, b) -> {
             int cnt1 = cnt.get(a), cnt2 = cnt.get(b);
             return cnt1 != cnt2 ? cnt1 - cnt2 : b - a;

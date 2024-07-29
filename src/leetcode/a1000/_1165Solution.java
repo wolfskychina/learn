@@ -3,7 +3,7 @@ package leetcode.a1000;
  * 单行键盘，拼写一个单词需要移动的距离
  * {easy}
  */
-public class _1665Solution {
+public class _1165Solution {
    
     public int calculateTime(String keyboard, String word) {
 
