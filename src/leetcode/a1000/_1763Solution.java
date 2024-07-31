@@ -1,4 +1,5 @@
 package leetcode.a1000;
+
 /**
  * 最长的美好字符串
  */
@@ -29,6 +30,7 @@ public class _1763Solution {
         }
         return idx == -1 ? "" : s.substring(idx, idx + len);
     }
+
     boolean check(int[] a, int[] b) {
         for (int i = 0; i < 26; i++) {
             int low = b[i] - a[i], up = b[i + 32] - a[i + 32]; // 'A' = 65、'a' = 97
