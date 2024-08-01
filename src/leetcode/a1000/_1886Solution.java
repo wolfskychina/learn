@@ -1,6 +1,6 @@
 package leetcode.a1000;
 /**
- * 判断矩阵经轮转后是否一致
+ * 判断矩阵经旋转后是否一致
  * {easy}
  */
 public class _1886Solution {
