@@ -1,4 +1,5 @@
 package leetcode.a1000;
+
 /**
  * 检查是否区间内的所有整数都被字段覆盖了
  * {easy}
