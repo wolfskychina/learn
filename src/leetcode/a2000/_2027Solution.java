@@ -2,7 +2,7 @@ package leetcode.a2000;
 /**
  * 转换字符串所需要的最小步数
  * 每次可以转换3个连续的字符，将字符串中的‘x’转成‘o'
- * {greedy}
+ * {greedy},{easy}
  */
 public class _2027Solution {
    
