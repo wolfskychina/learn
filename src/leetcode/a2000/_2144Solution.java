@@ -1,6 +1,7 @@
 package leetcode.a2000;
 
 import java.util.Arrays;
+
 /**
  * 三赠一的优惠条件下购买所有糖果所需要的最小花费
  * {easy}
