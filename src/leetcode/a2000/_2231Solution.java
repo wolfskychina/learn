@@ -1,13 +1,15 @@
 package leetcode.a2000;
 
 import java.util.PriorityQueue;
+
 /**
- * 数字的奇偶位上的数字单独交换后所能得到的最大数字
+ * 数字的奇偶相同的数字单独交换后所能得到的最大数字
  */
 public class _2231Solution {
-   
+
     /**
      * 基于堆
+     * 
      * @param num
      * @return
      */
@@ -34,27 +36,28 @@ public class _2231Solution {
         }
         return Integer.parseInt(sb.toString());
     }
-    
+
     /**
      * 奇偶独立的冒泡排序
+     * 
      * @param num
      * @return
      */
-     public int largestInteger1(int num) {
+    public int largestInteger1(int num) {
         String str = String.valueOf(num);
         char[] chs = str.toCharArray();
-        for(int i=0;i<chs.length-1;i++){
-            for(int j=i+1;j<chs.length;j++){
-                if((chs[i]-chs[j])%2==0&&chs[j]>chs[i]){
-                    char t=chs[i];
-                    chs[i]=chs[j];
-                    chs[j]=t;
+        for (int i = 0; i < chs.length - 1; i++) {
+            for (int j = i + 1; j < chs.length; j++) {
+                if ((chs[i] - chs[j]) % 2 == 0 && chs[j] > chs[i]) {
+                    char t = chs[i];
+                    chs[i] = chs[j];
+                    chs[j] = t;
                 }
             }
         }
-        int res=0;
-        for(char ch:chs){
-            res=res*10+ch-'0';
+        int res = 0;
+        for (char ch : chs) {
+            res = res * 10 + ch - '0';
         }
         return res;
     }

@@ -1,10 +1,11 @@
 package leetcode.a2000;
+
 /**
  * 强密码检验器II
  * {easy}
  */
 public class _2299Solution {
-   
+
     public boolean strongPasswordCheckerII(String password) {
         if (password.length() < 8)
             return false;

@@ -1,4 +1,5 @@
 package leetcode.a2000;
+
 /**
  * 网格中的最小路径代价
  */
@@ -6,6 +7,7 @@ public class _2304Solution {
 
     /**
      * {dp}
+     * 
      * @param grid
      * @param moveCost
      * @return
@@ -31,12 +33,11 @@ public class _2304Solution {
             cost = newcost;
         }
         int min = Integer.MAX_VALUE;
-        for(int i:cost){
-            min = Math.min(min,i);
+        for (int i : cost) {
+            min = Math.min(min, i);
         }
 
         return min;
-
 
     }
 }
