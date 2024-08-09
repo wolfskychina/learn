@@ -1,4 +1,5 @@
 package leetcode.a2000;
+
 /**
  * 通过移动LR字符能否得到另外一个字符串
  * L只能往左移动，R只能往右移动
@@ -7,6 +8,7 @@ public class _2337Solution {
 
     /**
      * {two pointers} 当比较的是特定字符串时，比较相对的位置
+     * 
      * @param start
      * @param target
      * @return
