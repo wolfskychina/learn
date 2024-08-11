@@ -1,14 +1,9 @@
 package leetcode.a2000;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
+
 /**
  * 各地议员到首都开会，所需要消耗的最少汽油
  */
@@ -19,6 +14,7 @@ public class _2477Solution {
      * roads满足一颗最小连通树
      * 转换为经过每一条边所需要的最少车的数量来计算
      * 递归计算
+     * 
      * @param roads
      * @param seats
      * @return
