@@ -4,6 +4,13 @@ package leetcode.a2000;
  */
 public class _2661Solution {
 
+
+    /**
+     * {index} 建立反向查找索引
+     * @param arr
+     * @param mat
+     * @return
+     */
     public int firstCompleteIndex(int[] arr, int[][] mat) {
 
         int[] m = new int[mat.length];

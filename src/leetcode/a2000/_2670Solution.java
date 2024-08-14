@@ -1,6 +1,7 @@
 package leetcode.a2000;
+
 /**
- * 数组中各元素前后的不同元素数量的差的数组
+ * 数组中各元素前后形成的set中元素数量的差的数组
  * {prefix sum}
  */
 public class _2670Solution {
