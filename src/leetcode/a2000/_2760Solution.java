@@ -1,4 +1,5 @@
 package leetcode.a2000;
+
 /**
  * 最长奇偶子数组
  */
