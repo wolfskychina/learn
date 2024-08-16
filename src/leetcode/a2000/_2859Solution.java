@@ -12,9 +12,10 @@ public class _2859Solution {
         int sum =0;
         for(int i=0;i<nums.size();i++){
 
-            if(numOfOne(i)==k){
+            // 内置函数更快
+            if(Integer.bitCount(i)==k){
                 sum+=nums.get(i);
-            }
+            }           
             
         }
         return sum;
