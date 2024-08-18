@@ -15,7 +15,7 @@ public class _3010Solution {
             if (nums[i] <= min1) {
                 min2 = min1;
                 min1 = nums[i];
-            } else if (nums[i] > min1 && nums[i] < min2) {
+            } else if (nums[i] < min2) {
                 min2 = nums[i];
             }
         }

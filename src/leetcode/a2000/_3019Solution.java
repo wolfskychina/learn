@@ -16,4 +16,15 @@ public class _3019Solution {
         }
         return count;
     }
+
+    public int countKeyChanges1(String s) {
+        int ans=0;
+        for(int i=1;i<s.length();i++){
+            // 将最高位置0,从而忽略大小写差异
+            if((s.charAt(i)&31)!=(s.charAt(i-1)&31)){
+                ans++;
+            }
+        }
+        return ans;
+    }
 }

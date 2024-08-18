@@ -19,6 +19,7 @@ public class _3005Solution {
             if (count[i] != count[i - 1])
                 break;
         }
+        while(i>0&&count[i]==count[i-1]) i--;
         return (count.length - i) * count[i];
     }
 
