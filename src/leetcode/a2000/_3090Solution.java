@@ -1,10 +1,11 @@
 package leetcode.a2000;
+
 /**
  * 每个字符最多出现两次的最长字符串
  * {two pointers}
  */
 public class _3090Solution {
-   
+
     public int maximumLengthSubstring(String S) {
         char[] s = S.toCharArray();
         int ans = 0;
