@@ -50,14 +50,14 @@ public class Lcp7 {
     }
 
     public int numWays1(int n, int[][] relation, int k) {
-        int[][] dp=new int[10][15];//第k轮传到n的方案数
-        dp[0][0]=1;
+        int[][] dp = new int[6][11];// 第k轮传到n的方案数
+        dp[0][0] = 1;
 
-        for(int i=0;i<k;i++){
-            for(int[] r:relation){
-                dp[i+1][r[1]]+=dp[i][r[0]];
+        for (int i = 0; i < k; i++) {
+            for (int[] r : relation) {
+                dp[i + 1][r[1]] += dp[i][r[0]];
             }
         }
-        return dp[k][n-1];
+        return dp[k][n - 1];
     }
 }
