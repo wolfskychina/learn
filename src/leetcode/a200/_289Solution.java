@@ -2,6 +2,7 @@ package leetcode.a200;
 
 /**
  * 细胞自动机的下一个状态
+ * {matrix}
  */
 public class _289Solution {
 
@@ -21,9 +22,11 @@ public class _289Solution {
 
                 if (board[i][j] == 0) {
                     if (nb == 3)
+                        // 状态2 表示由0变成1，上一轮是0
                         board[i][j] = 2;
                 } else {
                     if (nb < 2 || nb > 3)
+                        // -1表示由1变成0，上一轮是1
                         board[i][j] = -1;
                 }
 

@@ -35,6 +35,7 @@ public class _402Solution {
 
         int left = 0;
 
+        // 去掉前导0
         while (left < index_stack && stack[left] == '0')
             left++;
 
