@@ -1,6 +1,7 @@
 package leetcode.lcp;
 
 import java.util.Arrays;
+
 /**
  * 从nums数组中任选两个，和小于target的方案数
  */
@@ -36,7 +37,7 @@ public class Lcp28 {
                 rec[num]++;
             }
         }
-        
+
         for (int i = 1; i < target; i++) {
             rec[i] += rec[i - 1];
         }

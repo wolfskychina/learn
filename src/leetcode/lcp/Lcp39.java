@@ -8,7 +8,6 @@ public class Lcp39 {
     public int minimumSwitchingTimes(int[][] source, int[][] target) {
         int res = 0;
         int[] array =  new int[10001];
-        
 
         for (int[] arr : source) {
             for (int i = 0; i < arr.length; i++) {
