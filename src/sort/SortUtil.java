@@ -182,6 +182,7 @@ public class SortUtil {
      */
     private static void buildHeap(int[] a) {
 
+        // 相当于 heapSize/2 -1
         for (int i = (heapSize - 2) >> 1; i >= 0; i--) {
 
             maintainHeap(a, i);
