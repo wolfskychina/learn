@@ -2,7 +2,7 @@ package leetcode.a1000;
 
 /**
  * 从纸牌的前后一共抽取k张牌，能够获取到的最大分数
- * {prefix sum}
+ * {prefix sum},{sliding window}
  */
 public class _1423Solution {
 
