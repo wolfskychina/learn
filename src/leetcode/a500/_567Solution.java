@@ -99,9 +99,8 @@ public class _567Solution {
             }
 
             while (left <= right && refer[next] > base[next]) {
-                int r = s2.charAt(left) - 'a';
+                int r = s2.charAt(left++) - 'a';
                 refer[r]--;
-                left++;
             }
         }
         return false;

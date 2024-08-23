@@ -130,6 +130,7 @@ public class _438Solution {
             ++sCount[s.charAt(i + pLen) - 'a'];
 
             // 使用了Arrays.equals()判断两个数组是否相同
+            //  TODO
             if (Arrays.equals(sCount, pCount)) {
                 ans.add(i + 1);
             }
