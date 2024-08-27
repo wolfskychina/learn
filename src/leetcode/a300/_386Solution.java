@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 将[1,n]的整数按照字典顺序排序
  * 要求时间复杂度on，空间复杂度o1
- * {sorting},{dfs},{}
+ * {sorting},{dfs},{recursing}
  */
 public class _386Solution {
 

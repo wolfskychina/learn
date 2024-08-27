@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class _698Solution {
 
     /**
-     * {backtrack}
+     * {backtrack},{dfs}共有k层递归,对解空间进行搜索
      * @param nums
      * @param k
      * @return
@@ -38,6 +38,7 @@ public class _698Solution {
             return true;
         for (int i = 0; i < k; i++) {
             // 优化点二
+            // 避免重复答案
             if (i > 0 && bucket[i] == bucket[i - 1])
                 continue;
             // 剪枝
