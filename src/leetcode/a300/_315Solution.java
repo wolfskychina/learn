@@ -2,9 +2,10 @@ package leetcode.a300;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * 寻找数组中每个元素右侧比这个元素小的元素的个数
- * TODO 
+ * TODO
  */
 public class _315Solution {
 
@@ -52,7 +53,8 @@ public class _315Solution {
             if (a[i] <= a[j]) {
                 temp[p] = a[i];
                 tempIndex[p] = index[i];
-                //a[i] <= a[j]时，a[i]和a[mid+1]...a[j-1]均为逆序对 
+                // a[i] <= a[j]时，a[i]和a[mid+1]...a[j-1]均为逆序对
+                // 每个半区里面内部已经是相对有序的，所以不存在逆序对
                 ans[index[i]] += (j - mid - 1);
                 ++i;
                 ++p;
@@ -63,7 +65,7 @@ public class _315Solution {
                 ++p;
             }
         }
-        while (i <= mid)  {
+        while (i <= mid) {
             temp[p] = a[i];
             tempIndex[p] = index[i];
             // 最后前半段有多余元素的话
@@ -84,15 +86,13 @@ public class _315Solution {
         }
     }
 
-   
+    public static void main(String[] args) {
 
-    public static void main(String[] args){
-
-        int [] a = {1,2,3,7,8,9,4,5,6,10,11,12};
+        int[] a = { 1, 2, 3, 7, 8, 9, 4, 5, 6, 10, 11, 12 };
         _315Solution so = new _315Solution();
         List<Integer> list = so.countSmaller2(a);
-        for(Integer i :list){
-            System.out.print(i+" ");
+        for (Integer i : list) {
+            System.out.print(i + " ");
         }
 
     }

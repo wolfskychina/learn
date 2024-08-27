@@ -15,46 +15,45 @@ import java.util.Queue;
 public class _207Solution {
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        int count =0;
+        int count = 0;
 
         int[] inDegree = new int[numCourses];
 
         List[] neighbor = new ArrayList[numCourses];
-        for(int i=0;i<neighbor.length;i++){
+        for (int i = 0; i < neighbor.length; i++) {
             neighbor[i] = new ArrayList<Integer>();
         }
 
         Queue<Integer> queue = new LinkedList<Integer>();
 
-        for(int i=0 ;i< prerequisites.length; i++){
+        for (int i = 0; i < prerequisites.length; i++) {
 
             inDegree[prerequisites[i][1]]++;
             neighbor[prerequisites[i][0]].add(prerequisites[i][1]);
         }
 
         // 所有入度为0的节点入队，起点
-        for(int i=0; i<inDegree.length;i++){
-            if(inDegree[i] == 0){
+        for (int i = 0; i < inDegree.length; i++) {
+            if (inDegree[i] == 0) {
                 queue.add(i);
                 count++;
             }
         }
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int node = queue.poll();
-            for(int i=0; i< neighbor[node].size();i++){
+            for (int i = 0; i < neighbor[node].size(); i++) {
 
-                int index = (int)neighbor[node].get(i);
+                int index = (int) neighbor[node].get(i);
                 inDegree[index]--;
-                if(inDegree[index] ==0 ){
+                if (inDegree[index] == 0) {
                     queue.add(index);
                     count++;
                 }
             }
         }
 
-        return count==numCourses?true:false;
-
+        return count == numCourses ? true : false;
 
     }
 }
