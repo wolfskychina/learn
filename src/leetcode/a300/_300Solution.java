@@ -29,9 +29,7 @@ public class _300Solution {
                     count[i] = Math.max(count[i], count[j] + 1);
                 }
             }
-        }
 
-        for (int i = 0; i < count.length; i++) {
             max = Math.max(max, count[i]);
         }
 

@@ -2,6 +2,7 @@ package leetcode.a0;
 
 import java.util.LinkedList;
 import java.util.List;
+
 /**
  * 返回n个数字的全排列中的第k个数字
  * {hard}
