@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 生成N对括号的所有可能组合
+ * {backtrack}
  */
 public class _22Solution {
 
@@ -30,6 +31,8 @@ public class _22Solution {
 
         }
 
+        // 通过右括号数量比左括号数量少来进行剪枝
+        // 避免出现右括号在左括号前面的情况
         if(close<open){
             backtrace(ans, cur+")",open,close+1);
         }

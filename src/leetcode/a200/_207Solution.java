@@ -32,6 +32,8 @@ public class _207Solution {
             neighbor[prerequisites[i][0]].add(prerequisites[i][1]);
         }
 
+        // 多点bfs，入度为0的点说明已经没有其他课程依赖它
+        // 可以加入队列进行搜索
         // 所有入度为0的节点入队，起点
         for (int i = 0; i < inDegree.length; i++) {
             if (inDegree[i] == 0) {
@@ -53,6 +55,7 @@ public class _207Solution {
             }
         }
 
+        // count是拓扑培训能够到达的节点
         return count == numCourses ? true : false;
 
     }

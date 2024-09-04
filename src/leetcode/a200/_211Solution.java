@@ -51,14 +51,19 @@ public class _211Solution {
                         index = index.next[w[i] - 'a'];
                     }
                 } else {
-                    boolean wres = false;
+                    // boolean wres = false;
                     for (int j = 0; j < 26; j++) {
-                        if (index.next[j] != null) {
-                            wres |= index.next[j].search(word.substring(i + 1));
+                        // 原逻辑全部解空间搜索，没有必要
+                        //if (index.next[j] != null) {
+                        //    wres |= index.next[j].search(word.substring(i + 1));
+                        //}
+                        // 可以剪枝
+                        if(index.next[j].search(word.substring(i+1))){
+                            return true;
                         }
                     }
 
-                    return wres;
+                    return false;
                 }
 
             }
