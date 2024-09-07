@@ -28,6 +28,7 @@ public class _373Solution {
         List<List<Integer>> ans = new ArrayList<>();
         int m = nums1.length;
         int n = nums2.length;
+        // 相当于分段，每一段都从(i,0)开始
         for (int i = 0; i < Math.min(m, k); i++) {
             pq.offer(new int[] { i, 0 });
         }
