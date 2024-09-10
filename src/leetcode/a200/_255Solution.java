@@ -9,6 +9,7 @@ import java.util.Stack;
 public class _255Solution {
     /**
      * 用栈模拟bst的先根遍历
+     * 先根遍历前面已经遍历过得节点一定是某个子树根
      * 
      * @param preorder
      * @return

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 给出一些会议时间安排，问最少需要多少间会议室
- * {greedy},{star}
+ * {greedy},{two pointers}
  */
 public class _253Solution {
     /**
