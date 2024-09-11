@@ -142,6 +142,7 @@ public class _694Solution {
         dfs(grid, i + 1, j, 'D', sb);
         dfs(grid, i, j - 1, 'L', sb);
         dfs(grid, i, j + 1, 'R', sb);
+        // 需要最后加一个标记层次关系，否则不知道递归的层次
         sb.append('B');
     }
 
