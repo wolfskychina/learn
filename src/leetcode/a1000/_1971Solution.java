@@ -140,7 +140,13 @@ public class _1971Solution {
                 }
             }
         }
-    
+   
+        /**
+         * 这种find方法不能在查找时压缩层次
+         * 是只读的查找
+         * @param x
+         * @return
+         */
         public int find(int x) {
             if (parent[x] != x) {
                 x = find(parent[x]);
