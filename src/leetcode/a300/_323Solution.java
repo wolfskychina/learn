@@ -1,7 +1,7 @@
 package leetcode.a300;
 /**
  * 无向图中连通分量的数量
- * {graph},{union-find}
+ * {graph},{union find}
  */
 public class _323Solution {
    

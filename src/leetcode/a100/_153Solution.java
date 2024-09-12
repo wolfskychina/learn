@@ -7,7 +7,7 @@ package leetcode.a100;
  */
 public class _153Solution {
    
-    // 二分查找
+    // 闭区间二分查找
     public int findMin(int[] nums) {
         
         int low =0;
@@ -24,7 +24,8 @@ public class _153Solution {
                 high = mid;
             }
         }
-        
+       
+        // 替换成nums[low]也可以，因为必定有最小值
         return nums[high];
     }
 }

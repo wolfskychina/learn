@@ -138,7 +138,7 @@ public class _3991Solution {
     }
 
     /**
-     * {union-find}
+     * {union find}
      * union-find算法更快
      */
     public double[] calcEquation2(List<List<String>> equations, double[] values, List<List<String>> queries) {

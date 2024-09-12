@@ -2,7 +2,7 @@ package leetcode.a200;
 
 /**
  * 判断一个邻接矩阵表示的无向图是不是一颗树
- * {graph},{union-find}
+ * {graph},{union find}
  */
 public class _261Solution {
     /**

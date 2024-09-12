@@ -96,7 +96,7 @@ public class _1971Solution {
     }
 
     /**
-     * {union-find}速度最快
+     * {union find}速度最快
      * @param n
      * @param edges
      * @param source

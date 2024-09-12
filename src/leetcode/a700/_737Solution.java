@@ -13,7 +13,7 @@ public class _737Solution {
     private int[] parent; // parent[i] 记录并查集中节点 i 的父节点。
 
     /**
-     * {union-find} 并查集
+     * {union find} 并查集
      * TODO
      * @param sentence1
      * @param sentence2

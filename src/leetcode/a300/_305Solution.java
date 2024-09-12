@@ -78,6 +78,7 @@ public class _305Solution {
 
     /**
      * 一个更快的算法，使用了unionfind
+     * {union find}
      */
     public List<Integer> numIslands22(int m, int n, int[][] positions) {
         int[][] grid = new int[m][n];
