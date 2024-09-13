@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 
 /**
  * 能否将数组分为不存在相同元素的两个部分

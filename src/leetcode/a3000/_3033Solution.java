@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 /**
  * 修改矩阵的值
  * {easy}

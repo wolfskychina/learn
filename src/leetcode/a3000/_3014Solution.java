@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 /**
  * 在允许重新映射电话号码键的情况下
  * 输入不同的字符所需要的最少按键次数

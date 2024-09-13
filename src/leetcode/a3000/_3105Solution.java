@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 
 /**
  * 最长的严格递增或递减子数组

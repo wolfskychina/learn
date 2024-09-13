@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 /**
  * 相同分数的最大操作数目
  */

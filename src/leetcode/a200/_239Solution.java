@@ -25,6 +25,7 @@ public class _239Solution {
             while (!q.isEmpty() && q.peek() < i - k + 1) {
                 q.poll();
             }
+            // 这样能保证队列里面元素大小是单调递增的
             // remove smaller numbers in k range as they are useless
             while (!q.isEmpty() && a[q.peekLast()] < a[i]) {
                 q.pollLast();

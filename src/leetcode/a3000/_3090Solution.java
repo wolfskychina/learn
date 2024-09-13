@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 
 /**
  * 每个字符最多出现两次的最长字符串

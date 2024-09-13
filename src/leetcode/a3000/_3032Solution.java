@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 
 /**
  * 统计[a,b]区间内，自身各数位都不相同的数字的数量

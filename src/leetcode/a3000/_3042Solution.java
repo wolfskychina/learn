@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 /**
  * 统计前后缀的下标对
  * {easy}

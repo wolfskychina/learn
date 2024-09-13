@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 /**
  * 字符串及其反转中是否存在同一两位的子串
  * {bit count}

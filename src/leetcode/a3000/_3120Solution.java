@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a3000;
 
 /**
  * 大小写同时出现过的字符的数量
