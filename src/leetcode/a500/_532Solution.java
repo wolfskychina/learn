@@ -48,13 +48,10 @@ public class _532Solution {
                     }
 
                     res++;
-                    l++;
                 }
                 if (r == nums.length)
                     break;
-                if (nums[r] - nums[l] > k) {
-                    l++;
-                }
+                l++;
 
             }
 
