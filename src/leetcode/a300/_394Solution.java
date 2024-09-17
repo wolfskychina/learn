@@ -5,6 +5,7 @@ package leetcode.a300;
  */
 public class _394Solution {
 
+    // 每次递归都使用最新的全局变量
     int idx = 0;
 
     /**
