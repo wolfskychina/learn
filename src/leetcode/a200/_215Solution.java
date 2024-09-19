@@ -25,6 +25,13 @@ public class _215Solution {
         return nums[k];
     }
 
+    /**
+     * 分划方法的一个优点是返回的索引是全局的位置
+     * @param a
+     * @param lo
+     * @param hi
+     * @return
+     */
     private int partition(int[] a, int lo, int hi) {
         int i = lo;
         // j = hi+1 是为了正确处理只有两个元素的情况
