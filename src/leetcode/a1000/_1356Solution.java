@@ -11,11 +11,11 @@ public class _1356Solution {
         int[] map = new int[arr.length];
         // 使用更高的位
         for (int i = 0; i < arr.length; i++) {
-            map[i] = Integer.bitCount(arr[i]) * 10000000 + arr[i];
+            map[i] = Integer.bitCount(arr[i]) * 100000 + arr[i];
         }
         Arrays.sort(map);
         for (int i = 0; i < map.length; i++) {
-            map[i] = map[i] % 10000000;
+            map[i] = map[i] % 100000;
         }
         return map;
     }
