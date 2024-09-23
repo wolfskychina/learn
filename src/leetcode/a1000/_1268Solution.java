@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a1000;
 
 import java.util.ArrayList;
 import java.util.Arrays;
