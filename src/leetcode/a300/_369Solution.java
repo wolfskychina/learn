@@ -5,7 +5,7 @@ import leetcode.util.ListNode;
 /**
  * 链表表示的整数加1
  * 链表是从高位向低位表示的
- * {linked list},{easy}
+ * {linked list},{TODO}
  */
 public class _369Solution {
 
@@ -28,6 +28,7 @@ public class _369Solution {
             p = p.next;
         }
 
+        // 找最右侧的非9的数字非常巧妙
         // start is the right most none 9 digit
         p = start;
         p.val = p.val + 1;

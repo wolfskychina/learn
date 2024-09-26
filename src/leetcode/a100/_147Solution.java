@@ -33,4 +33,40 @@ public class _147Solution {
 
         return helper.next;
     }
+
+    /**
+     * 用归并的思想对链表进行排序
+     * 
+     * @param head
+     * @return
+     */
+    public ListNode insertionSortList1(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode slow = head, fast = head.next;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode right = head;
+        ListNode left = slow.next;
+        // 归并前将链表的前后两部分断开
+        slow.next = null;
+        ListNode sortLeft = insertionSortList(left);
+        ListNode sortRight = insertionSortList(right);
+        ListNode sortedList = new ListNode(0), res = sortedList;
+        while (sortRight != null && sortLeft != null) {
+            if (sortLeft.val < sortRight.val) {
+                sortedList.next = sortLeft;
+                sortLeft = sortLeft.next;
+            } else {
+                sortedList.next = sortRight;
+                sortRight = sortRight.next;
+            }
+            sortedList = sortedList.next;
+        }
+        sortedList.next = sortLeft == null ? sortRight : sortLeft;
+        return res.next;
+    }
 }
