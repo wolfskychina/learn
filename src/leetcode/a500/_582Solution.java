@@ -15,6 +15,7 @@ public class _582Solution {
     /**
      * 超时的解，队列中的每一个元素都需要遍历一遍ppid
      * {queue},{hashmap},{bfs}
+     * 实质上是把一个图拿住主进程的节点然后抖成一颗N叉树
      */
     public List<Integer> killProcess(List<Integer> pid, List<Integer> ppid, int kill) {
 
