@@ -25,10 +25,8 @@ public class _1087Solution {
 
     private void backtrace(String ori, char[] s) {
 
-        while (true) {
+        while (start<s.length) {
 
-            if (start == s.length)
-                return;
             if (s[start] >= 'a' && s[start] <= 'z') {
                 for (int i = 0; i < res.size(); i++) {
                     res.set(i, res.get(i) + s[start]);
