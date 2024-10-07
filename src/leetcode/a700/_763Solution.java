@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+
 /**
  * 将字符串分成子串的组合，问最多能划分成多少子串，使得一个子串里面的字母不会存在于别的子串中
  */
@@ -14,6 +15,7 @@ public class _763Solution {
     /**
      * 模拟划分，使用队列保存需要扫描的字符，不断的扩展已有字符的最右侧的边界
      * {queue}
+     * 
      * @param s
      * @return
      */
@@ -61,6 +63,7 @@ public class _763Solution {
                 } // l<=max 边界不增加，也没有新的未搜索字符
 
             }
+            // q每空一次，说明一段符合条件的字段搜索完成
             // max 现在是右边界，下一轮start从max+1开始
             res.add(max - start + 1);
             start = max + 1;
@@ -70,7 +73,7 @@ public class _763Solution {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         _763Solution so = new _763Solution();
         so.partitionLabels("ababcbacadefegdehijhklij");
     }
