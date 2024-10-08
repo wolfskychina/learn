@@ -15,7 +15,10 @@ public class _5Solution {
             int len2 = expandAroundCenter(s, i, i + 1);
             int len = Math.max(len1, len2);
             if (len > end - start) {
+                // 统一奇偶数的处理方法
+                // 左侧这么处理，奇偶不受影响
                 start = i - (len - 1) / 2;
+                // 右侧这么处理，len偶数的时候比奇数长度多一
                 end = i + len / 2;
             }
         }
