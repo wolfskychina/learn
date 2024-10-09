@@ -1,30 +1,26 @@
 package leetcode.a1000;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * 商品折扣后的最终价格
  * {monotonic stack}
  */
 public class _1475Solution {
    
-    public int[] finalPrices(int[] prices) {
-        int [] idx = new int[prices.length];
-        int [] value = new int[prices.length];
-        int j=0;
-        value[0] = prices[0];
-        idx[0] = 0;
-        
-        for(int i=1;i<prices.length;i++){
-               
-                while(j>=0 && prices[i]<=value[j]){
-                    prices[idx[j]] -= prices[i];
-                    j--;
-                }
-            
-            value[++j] = prices[i];
-            idx[j] = i;
-                
+    public int[] finalPrices(int[] ps) {
+        int n = ps.length;
+        int[] ans = new int[n];
+        Deque<Integer> d = new ArrayDeque<>();
+        for (int i = 0; i < n; i++) {
+            while (!d.isEmpty() && ps[d.peekLast()] >= ps[i]) {
+                int idx = d.pollLast();
+                ans[idx] = ps[idx] - ps[i];
+            }
+            d.addLast(i); ans[i] = ps[i];
         }
-        return prices;
-
+        return ans;
     }
 
     public static void main(String[] args){
