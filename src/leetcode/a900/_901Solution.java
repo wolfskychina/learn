@@ -1,6 +1,7 @@
 package leetcode.a900;
 
 import java.util.Stack;
+
 /**
  * 股票价格跨度
  * 截止当前时刻之前价格小于当前价格的连续天数
@@ -24,6 +25,7 @@ public class _901Solution {
             int count = 1;
             while (!s.isEmpty() && s.peek().price <= price) {
 
+                // 最小栈同时保存累计量，类似与前缀和
                 Node node = s.pop();
                 count += node.count;
             }

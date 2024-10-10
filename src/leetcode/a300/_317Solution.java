@@ -13,7 +13,7 @@ public class _317Solution {
     int[] dy = new int[] { 0, -1, 0, 1 };
 
     /**
-     * 多源bfs
+     * 不是普通多点bfs，而是对单独
      * 
      * @param grid
      * @return
