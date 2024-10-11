@@ -7,6 +7,7 @@ public class _402Solution {
 
     /**
      * {greedy},{monotonic stack}
+     * 单调上升的序列一定不能删除
      * 
      * @param num
      * @param k
