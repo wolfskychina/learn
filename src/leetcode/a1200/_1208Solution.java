@@ -1,4 +1,4 @@
-package leetcode.a1100;
+package leetcode.a1200;
 
 /**
  * 在maxCost限制下，能够使s变成t的最长的子串的长度
