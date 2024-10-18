@@ -6,7 +6,7 @@ import java.util.Set;
 
 /**
  * 一个字符串数组，求数组中任意两个没有相同元素的字符串的长度相乘的最大值
- * {bit manuplation}
+ * {bit manipulation}
  */
 public class _318Solution {
 

@@ -2,7 +2,7 @@ package leetcode.a300;
 
 /**
  * 计算[0,n]中的每个数的二进制1的位数，返回数组
- * {binary system},{bit count},{dp}
+ * {binary system},{bit count},{dp},{bit manuplation}
  */
 public class _338Solution {
 
