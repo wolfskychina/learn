@@ -6,6 +6,12 @@ package leetcode.a2000;
  */
 public class _2429Solution {
 
+    /**
+     * {bit manipulation}
+     * @param num1
+     * @param num2
+     * @return
+     */
     public int minimizeXor(int num1, int num2) {
         var c1 = Integer.bitCount(num1);
         var c2 = Integer.bitCount(num2);
