@@ -1,4 +1,4 @@
-package leetcode.a1100;
+package leetcode.a1500;
 /**
  * 再来一瓶问题
  * 注意每一轮无法兑换的空瓶，攒到后来也许可以兑换
