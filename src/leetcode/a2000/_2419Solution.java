@@ -7,7 +7,7 @@ public class _2419Solution {
 
     /**
      * 一定是全部都是最大值的最长子数组
-     * {two pointers}
+     * {two pointers},{bit manipulation}
      * @param nums
      * @return
      */
