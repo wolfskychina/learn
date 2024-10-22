@@ -1,6 +1,7 @@
 package leetcode.a1800;
 /**
  * 所有子集的异或总和
+ * 解空间比较大,整个解空间搜索
  * {backtrace}
  */
 public class _1863Solution {
@@ -12,6 +13,12 @@ public class _1863Solution {
         return sum;
     }
 
+    /**
+     * 解空间指数增长
+     * @param nums
+     * @param idx
+     * @param tmp
+     */
     private void backtrack(int[] nums, int idx, int tmp) {
 
         if (idx == nums.length) {

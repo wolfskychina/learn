@@ -18,10 +18,11 @@ public class _3133Solution {
         long ans = x;
         int i = 0, j = 0;
         while ((n >> j) > 0) {
-            // x 的第 i 个比特值是 0，即「空位」
+            // x的第 i 个比特值是 0，即「空位」
             // 只填空位，非0位要跳过去
             if ((ans >> i & 1) == 0) {
                 // 空位填入 n 的第 j 个比特值
+                // 注意or的是上一步操作的ans，
                 ans |= (long) (n >> j & 1) << i;
                 j++;
             }
