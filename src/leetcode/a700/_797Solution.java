@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 /**
  * 向无环图中，从起点到终点的所有路径
+ * 输入是数组表示的邻接表
+ * {graph}
  */
 public class _797Solution {
 
@@ -13,6 +16,7 @@ public class _797Solution {
 
     /**
      * {dag},{dfs}
+     * 
      * @param graph
      * @return
      */
@@ -55,9 +59,9 @@ public class _797Solution {
 
     }
 
-
     /**
      * 因为已经是有向无环图，实际上不需要set来限制回路
+     * 
      * @param graph
      * @return
      */
@@ -85,7 +89,6 @@ public class _797Solution {
         }
         for (int next : graph[i]) {
 
-            
             list.add(next);
             dfs1(next, graph, list, tar);
             list.remove(list.size() - 1);

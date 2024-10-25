@@ -10,7 +10,7 @@ import java.util.Queue;
 public class _547Solution {
 
     /**
-     * {bfs},{queue}
+     * {bfs},{queue},{graph}
      * 
      * @param isConnected
      * @return
@@ -122,6 +122,8 @@ public class _547Solution {
             // 在查找的同时，有一个拉平的操作
             parent[index] = find(parent, parent[index]);
         }
+        // 不能返回index因为index没变，而parent[index]因为递归
+        // 可能拉平，所以可能会变成新的根节点
         return parent[index];
     }
 }

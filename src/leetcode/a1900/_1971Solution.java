@@ -153,6 +153,18 @@ public class _1971Solution {
             }
             return x;
         }
+
+        /**
+         * 带路径压缩的查找
+         * @param x
+         * @return
+         */
+        public int findWithCompassion(int x){
+            if(parent[x] !=x){
+                parent[x] = find(parent[x]);
+            }
+            return parent[x];
+        }
     
         public boolean connect(int x, int y) {
             return find(x) == find(y);
