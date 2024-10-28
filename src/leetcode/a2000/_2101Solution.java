@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * 不同炸弹的爆炸范围不一样，炸弹可以连环的引爆
  * 问一次最多能够引爆的炸弹的数量
- * 有向图
- * {gragh},{bfs}
+ * 本质是有向图
+ * {gragh},{dfs}
  */
 public class _2101Solution {
 
@@ -23,6 +23,8 @@ public class _2101Solution {
                 long dy = y - bombs[j][1];
                 if (dx * dx + dy * dy <= r * r) {
                     g[i].add(j); // i 可以引爆 j
+                    // 但是反过来，j不一定能引爆i
+                    // 所以本质上是有向图
                 }
             }
         }
