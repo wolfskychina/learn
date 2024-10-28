@@ -10,7 +10,7 @@ import java.util.List;
 public class _2192Solution {
 
     /**
-     * {graph},{dfs}
+     * {graph},{dfs},{dag}
      * 先考虑最简单的dfs能否解决问题,没有必要用拓扑排序
      * @param n
      * @param edges
