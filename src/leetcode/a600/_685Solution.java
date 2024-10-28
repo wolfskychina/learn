@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * 寻找有向图中的最后一个冗余边
  * 并且该有向图中只有每个节点最多只有一个后继节点
+ * 题目限定了一定有符合条件的情况
  * {graph},{union-find}
  */
 public class _685Solution {
@@ -33,6 +34,7 @@ public class _685Solution {
         int[] res = {};
         // 先判断是否存在入度为 2 的顶点
         for (int[] e : edges) {
+            // res保存的是入度为2的点对应的第二条边
             if (++in[e[1]] == 2) {
                 res = e;
             }
@@ -45,6 +47,7 @@ public class _685Solution {
                 return res;
             else {
                 for (int[] e : edges)
+                    // 另外一条边肯定出现在res之前
                     if (e[1] == res[1])
                         return e;
             }
