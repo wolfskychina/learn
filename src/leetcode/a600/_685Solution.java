@@ -25,6 +25,7 @@ public class _685Solution {
 
     /**
      * 关键在于有两个限制条件，一是不能有环，二是不能有入度为2的情况
+     * 
      * @param edges
      * @return
      */
@@ -59,6 +60,10 @@ public class _685Solution {
         }
         for (int[] e : edges) {
             // 删除加入形成环的边
+            // 为什么这里两个节点指向同一个祖先就能判断？
+            // 而不需要考虑e边的方向
+            // 因为前面已经判断不存在入度为2的情况
+            // 所以这里必定是环路
             if (find(e[0]) == find(e[1]))
                 return e;
             else
@@ -78,6 +83,8 @@ public class _685Solution {
             if (Arrays.equals(e, remove))
                 continue;
             // 删除之后构成的图案不为树
+            // 因为删掉一条边了，所以肯定不是入度为2的情况
+            // 所以必定是一条环路
             if (find(e[0]) == find(e[1]))
                 return false;
             else
