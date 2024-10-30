@@ -47,6 +47,7 @@ public class _1311Solution {
                 for (int next : friends[node]) {
                     if (!visited[next]) {
                         // 为了防止重复添加，需要在入队之前标记已访问
+                        // 否则当存在环的时候，可能导致重复入队
                         visited[next] = true;
 
                         q.offer(next);
