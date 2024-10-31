@@ -34,8 +34,10 @@ public class _269Solution {
                 // 这里是个坑 要防止 abc -> ab 这种情况
                 if (j == words[i].length())
                     // 如果是ab,abc两个单词，那么推断不出任何相对关系
+                    // 但是是允许出现的顺序
                     break;
                 if (j == words[i + 1].length())
+                    // abc,ab是不应该出现的顺序
                     return "";
 
                 if (words[i].charAt(j) == words[i + 1].charAt(j)) {
