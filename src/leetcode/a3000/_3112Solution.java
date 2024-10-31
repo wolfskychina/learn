@@ -11,29 +11,31 @@ import java.util.PriorityQueue;
  * {dijkstra}
  */
 public class _3112Solution {
-    
+
     public int[] minimumTime(int n, int[][] edges, int[] disappear) {
         // 稀疏图用邻接表
-        List<int[]>[] g = new ArrayList[n]; 
+        List<int[]>[] g = new ArrayList[n];
         Arrays.setAll(g, i -> new ArrayList<>());
         for (int[] e : edges) {
             int x = e[0];
             int y = e[1];
             int wt = e[2];
-            g[x].add(new int[]{y, wt});
-            g[y].add(new int[]{x, wt});
+            g[x].add(new int[] { y, wt });
+            g[y].add(new int[] { x, wt });
         }
 
         int[] dis = new int[n];
         Arrays.fill(dis, -1);
         dis[0] = 0;
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> (a[0] - b[0]));
-        pq.offer(new int[]{0, 0});
+        pq.offer(new int[] { 0, 0 });
         while (!pq.isEmpty()) {
             int[] p = pq.poll();
             int dx = p[0];
             int x = p[1];
             if (dx > dis[x]) { // x 之前出堆过
+                // 或者被其他选中节点更新了更小的距离
+
                 continue;
             }
             for (int[] e : g[x]) {
@@ -41,7 +43,7 @@ public class _3112Solution {
                 int newDis = dx + e[1];
                 if (newDis < disappear[y] && (dis[y] < 0 || newDis < dis[y])) {
                     dis[y] = newDis; // 更新 x 的邻居的最短路
-                    pq.offer(new int[]{newDis, y});
+                    pq.offer(new int[] { newDis, y });
                 }
             }
         }

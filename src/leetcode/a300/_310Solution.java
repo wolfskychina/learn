@@ -39,8 +39,10 @@ public class _310Solution {
         int[] parent = new int[n];
         Arrays.fill(parent, -1);
         /* 找到与节点 0 最远的节点 x */
+        // x必然是图的最长路径上的一个端点，可以用反证法证明
         int x = findLongestNode(0, parent, adj);
         /* 找到与节点 x 最远的节点 y */
+        // x-y必然是最长路径，y是另外一端点
         int y = findLongestNode(x, parent, adj);
         /* 求出节点 x 到节点 y 的路径 */
         List<Integer> path = new ArrayList<Integer>();
@@ -50,6 +52,7 @@ public class _310Solution {
             y = parent[y];
         }
         int m = path.size();
+        // 最长路径长度是偶数的时候中间两个节点都可以当做定点
         if (m % 2 == 0) {
             ans.add(path.get(m / 2 - 1));
         }
