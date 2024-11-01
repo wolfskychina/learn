@@ -65,7 +65,7 @@ public class _802Solution {
 
     /**
      * 使用拓扑排序解决这个问题
-     * {bfs},{topologic sorting}
+     * {bfs},{topologic sorting},{reverse thinking}
      * @param g
      * @return
      */

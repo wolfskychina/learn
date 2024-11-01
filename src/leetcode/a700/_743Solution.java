@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
+
 /**
  * 从一个节点传递信息到达其他所有节点的最短时间，如果有的节点不可达，返回-1
  */
@@ -11,6 +12,7 @@ public class _743Solution {
 
     /**
      * {Dijkstra},{priority queue},{graph}
+     * 
      * @param times
      * @param n
      * @param k
@@ -24,6 +26,7 @@ public class _743Solution {
         }
         for (int[] t : times) {
             int x = t[0], y = t[1];
+            // 带权重的邻接表
             g[x].add(new int[] { y, t[2] });
         }
 
@@ -36,12 +39,15 @@ public class _743Solution {
         while (!pq.isEmpty()) {
             int[] p = pq.poll();
             int time = p[0], x = p[1];
+            // 说明是无用的数据
             if (dist[x] < time) {
                 continue;
             }
+            // 否则把x节点纳入到已经选择的范围中
             for (int[] e : g[x]) {
                 int y = e[0], d = dist[x] + e[1];
                 if (d < dist[y]) {
+                    // 潜在距离变小的节点进入候选的队列
                     dist[y] = d;
                     pq.offer(new int[] { d, y });
                 }
