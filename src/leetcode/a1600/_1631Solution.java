@@ -12,6 +12,7 @@ public class _1631Solution {
 
     /**
      * {matrix},{union-find},{TODO}
+     * 用图的思想解决矩阵问题
      * @param mat
      * @return
      */
