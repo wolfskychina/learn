@@ -1,12 +1,14 @@
 package leetcode.a1700;
+
 /**
  * 任意子数组和的绝对值的最大值
  */
 public class _1749Solution {
-   
+
     /**
      * {subarray},{dp}
      * 对于最大值，如果区间和变为小于0，那么这个区间可以直接跳过
+     * 
      * @param nums
      * @return
      */
@@ -22,19 +24,23 @@ public class _1749Solution {
 
     /**
      * {prefix sum}直接使用前缀和更加直接
+     * 
      * @param nums
      * @return
      */
     public int maxAbsoluteSum1(int[] nums) {
         int s = 0, mx = 0, mn = 0;
-              for (int x : nums) {
-                  s += x;
-                  // mx = Math.max(mx, s);
-                  // mn = Math.min(mn, s);
-                  if (s > mx) mx = s;
-                  else if (s < mn) mn = s; // 效率更高的写法
-              }
-              return mx - mn;
-      
-          }
+        for (int x : nums) {
+            s += x;
+            // mx = Math.max(mx, s);
+            // mn = Math.min(mn, s);
+            if (s > mx)
+                mx = s;
+            else if (s < mn)
+                mn = s; // 效率更高的写法
+        }
+        // 最大区间等于最大前缀和最小前缀的差，或者绝对值
+        return mx - mn;
+
+    }
 }
