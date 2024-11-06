@@ -7,7 +7,7 @@ package leetcode.a2000;
 public class _2321Solution {
 
     /**
-     * 将两个数组对应位置做差后，问题转换为求差分数组的最大子数组
+     * 将两个数组对应位置做差后，问题转换为求差分数组（增量）的最大子数组
      * @param nums1
      * @param nums2
      * @return
