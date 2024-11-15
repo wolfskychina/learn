@@ -30,6 +30,8 @@ public class _1027Solution {
                     f[num] = Math.max(f[num], f[prev] + 1);
                     ans = Math.max(ans, f[num]);
                 }
+                // 如果是1，说明f[num]是等差数列的第一个元素
+                // 元素num要么是之前数列的后继元素，要么是开头的元素
                 f[num] = Math.max(f[num], 1);
             }
         }

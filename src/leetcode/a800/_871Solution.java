@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 public class _871Solution {
    
     /**
-     * {greedy},{PriorityQueue}
+     * {greedy},{PriorityQueue},{dp}
      * @param target
      * @param startFuel
      * @param stations
@@ -27,8 +27,9 @@ public class _871Solution {
             // 每到达一个加油站都计算两站之间需要加油的次数，从还能选的队列中选油量最多的站点
             // 从而保证需要加油的次数最少，也体现了动态规划的思想
             // 有可能油箱内已经加进去的油量是足够的，那么有已经经过但是没有加油的加油站也不用加油
-            while (!fuelHeap.isEmpty() && curFuel < 0) { // 没油了
-                curFuel += fuelHeap.poll(); // 选油量最多的油桶
+            while (!fuelHeap.isEmpty() && curFuel < 0) { // 如果中间不加油无法到达该点
+                curFuel += fuelHeap.poll(); // 选油量最多的油桶,使得加油次数最少
+                // 局部最优
                 ans++;
             }
             if (curFuel < 0) { // 无法到达
