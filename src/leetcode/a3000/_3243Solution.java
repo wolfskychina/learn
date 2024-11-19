@@ -46,6 +46,7 @@ public class _3243Solution {
                     if (y == n - 1) {
                         return step;
                     }
+                    // 巧妙的在每一轮复用visit数组而不用重新初始化
                     if (vis[y] != i) {
                         vis[y] = i;
                         q.add(y);

@@ -26,6 +26,7 @@ public class _337Solution {
         }
         int[] l = dfs(node.left);
         int[] r = dfs(node.right);
+        // 状态1-不选 状态0-选
         int selected = node.val + l[1] + r[1];
         int notSelected = Math.max(l[0], l[1]) + Math.max(r[0], r[1]);
         return new int[] { selected, notSelected };
