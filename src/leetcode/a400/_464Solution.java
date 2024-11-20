@@ -4,10 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 轮流从编号为1-maxChoosableInteger的牌中抽取一张牌，将牌号依次相加
- * 谁先得到和为desiredTotal谁获胜
+ * 轮流从编号为1-maxChoosableInteger的牌中任意抽取一张牌，将牌号依次相加
+ * 谁先得到和为desiredTotal或者超过这个值谁获胜
  * 给定两个条件并且你先走，问是否一定能够获胜？
  * TODO
+ * {dp},{bitmask},{game theory}
  */
 public class _464Solution {
 
@@ -18,6 +19,7 @@ public class _464Solution {
      * 如果选择之后的和小于desiredTotal，那么对手一定可以走下一轮
      * 如果队友下一轮不存在赢的可能，就说明这一轮也一定能赢
      * 直接解空间搜索，{dfs}
+     * 
      * @param maxChoosableInteger
      * @param desiredTotal
      * @return
@@ -49,13 +51,14 @@ public class _464Solution {
                     }
                 }
             }
-            System.out.println("found the result of this usedNumbers: "+ Integer.toBinaryString(usedNumbers)+" result is: "+res);
+            System.out.println("found the result of this usedNumbers: " + Integer.toBinaryString(usedNumbers)
+                    + " result is: " + res);
             memo.put(usedNumbers, res);
         }
         return memo.get(usedNumbers);
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         _464Solution so = new _464Solution();
         System.out.println(so.canIWin(16, 100));

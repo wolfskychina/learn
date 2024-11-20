@@ -57,6 +57,12 @@ public class _42Solution {
         return max * height.length - sum - sum2;
     }
 
+    /**
+     * {monotonic stack}
+     * 单调栈，木桶原理
+     * @param height
+     * @return
+     */
     public int trap2(int[] height) {
         Stack<Integer> s = new Stack<Integer>();
         int i = 0, n = height.length, res = 0;
@@ -64,9 +70,11 @@ public class _42Solution {
             if (s.isEmpty() || height[i] <= height[s.peek()]) {
                 // 只有这种情况下i才向右移动
                 // 一个挡板当完右挡板还可以当左挡板
+                // 如果一直是这个条件说明没法形成容纳雨水的凹槽
                 s.push(i++);
             } else {
                 // 这个分支中i不会增加,会一直出栈，直到把左边的容量全部计算出来
+                // t是本次计算的底部
                 int t = s.pop();
                 if (s.isEmpty()) continue;
                 System.out.println("left height is :"+ height[s.peek()]);

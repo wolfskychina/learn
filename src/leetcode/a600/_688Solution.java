@@ -62,7 +62,7 @@ public class _688Solution {
     private static final int[][] DIRS = {{1, 2}, {2, 1}, {-1, 2}, {2, -1}, {1, -2}, {-2, 1}, {-1, -2}, {-2, -1}};
 
     /**
-     * {dp} 倒过来思考，从x,y节点n步走到棋盘内的概率相当于，从棋盘内任意节点n步走到x,y节点的概率
+     * {dp} 倒过来思考，从x,y节点k步走到棋盘内的概率相当于，从棋盘内任意节点k步走到x,y节点的概率
      * @param n
      * @param k
      * @param row

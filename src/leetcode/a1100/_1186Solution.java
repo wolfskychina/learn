@@ -33,7 +33,6 @@ public class _1186Solution {
     }
 
     /**
-     * {dp}
      * @param arr
      * @return
      */
