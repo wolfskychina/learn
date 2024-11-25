@@ -1,4 +1,4 @@
-package leetcode.a2000;
+package leetcode.a900;
 
 /**
  * 让二进制字符串变成非递减二进制串所需要的最少操作
@@ -12,6 +12,7 @@ public class _926Solution {
      * 转折点前面必须全是0，后面必须全是1
      * 那么以该位为转折点的最少flip次数就是前面需要反转的最小次数加后面需要
      * 反转的最小次数
+     * 
      * @param s
      * @return
      */

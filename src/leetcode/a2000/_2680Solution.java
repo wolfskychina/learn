@@ -7,7 +7,7 @@ package leetcode.a2000;
 public class _2680Solution {
 
     /**
-     * {bit manipulation},{greedy}
+     * {bit manipulation},{greedy},{prefix sum}
      * 将x2分配给多个字，不如分配给同一个数，让位数尽可能多
      * 采用前后缀的方式，遍历单个数字k次x2
      * @param nums
