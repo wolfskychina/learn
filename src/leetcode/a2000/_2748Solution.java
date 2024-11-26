@@ -42,6 +42,8 @@ public class _2748Solution {
 
     /**
      * 更快的方式
+     * 保留已经遍历过的最左侧位为i（i为[1,9]）的数字的个数
+     * {counting}
      * @param nums
      * @return
      */
