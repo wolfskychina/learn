@@ -22,7 +22,7 @@ public class _3152Solution {
         boolean[] ans = new boolean[queries.length];
         for (int i = 0; i < queries.length; i++) {
             int[] q = queries[i];
-            // 区间前缀和没有增加，说明奇偶性相同
+            // 区间前缀和没有增加，说明奇偶性依次出现没有连续相同的奇偶性
             ans[i] = s[q[0]] == s[q[1]];
         }
         return ans;

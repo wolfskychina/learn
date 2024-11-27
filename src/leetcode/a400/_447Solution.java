@@ -21,7 +21,10 @@ public class _447Solution {
             cnt.clear();
             for (int[] p2 : points) {
                 int d2 = (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
+                // 缓存每一条边的长度，并且查找之前相同长度的边的数量
+                // 而不是简单的两两比较
                 int c = cnt.getOrDefault(d2, 0);
+                // 遍历的同时产生对结果数量的贡献
                 ans += c * 2;
                 cnt.put(d2, c + 1);
             }
@@ -142,8 +145,10 @@ public class _447Solution {
      */
     public int numberOfBoomerangs2(int[][] points) {
         int ans = 0;
+        Map<Integer, Integer> cnt = new HashMap<Integer, Integer>();
+
         for (int[] p : points) {
-            Map<Integer, Integer> cnt = new HashMap<Integer, Integer>();
+            cnt.clear();
             for (int[] q : points) {
                 int dis = (p[0] - q[0]) * (p[0] - q[0]) + (p[1] - q[1]) * (p[1] - q[1]);
                 cnt.put(dis, cnt.getOrDefault(dis, 0) + 1);
