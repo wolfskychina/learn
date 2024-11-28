@@ -10,8 +10,8 @@ public class _525Solution {
 
     /**
      * 将0变成-1，满足条件的子数组元素之和为0，对应的两个前缀序列和的差为0
-     * 
-     * {subarray},{prefix sum}
+     * 投票算法，互相抵消的思想 
+     * {subarray},{prefix sum},{voting}
      * @param nums
      * @return
      */

@@ -7,7 +7,7 @@ package leetcode.a1400;
 public class _1477Solution {
 
     /**
-     * {dp},{two pointers}
+     * {dp},{two pointers},{prefix sum}
      * 双指针遍历，遍历的时候记下之前遍历过的最短数组
      * 比用两组指针遍历相当于空间换时间
      * @param arr

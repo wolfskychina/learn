@@ -8,12 +8,13 @@ import java.util.Map;
  * {subarray},{prefix sum}
  */
 public class _523Solution {
-   
+
     /**
      * 0是k的整数倍
      * 用前缀和快速计算子数组的和
      * c = a - b ，如果c%k == 0 那么 a%k - b%k ==0
      * 也就是说 a%k == b%k
+     * 
      * @param nums
      * @param k
      * @return
@@ -31,15 +32,18 @@ public class _523Solution {
             remainder = (remainder + nums[i]) % k;
             if (map.containsKey(remainder)) {
                 int prevIndex = map.get(remainder);
+                // 两个模相等的坐标不能相邻
+                // 相邻说明是单个元素的和是k的倍数
+                // 不符合题目要求
                 if (i - prevIndex >= 2) {
                     return true;
                 }
             } else {
+                // 保存的是上一个相等前缀和的坐标位置，而不是个数
                 map.put(remainder, i);
             }
         }
         return false;
     }
-
 
 }

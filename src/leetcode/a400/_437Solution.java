@@ -10,7 +10,7 @@ import leetcode.util.TreeNode;
 /**
  * 二叉树中和等于targetsum的路径的数量
  * 路径是指从某个节点开始一直向下
- * {binary tree}
+ * {binary tree},{prefix sum}
  */
 public class _437Solution {
 
@@ -83,6 +83,7 @@ public class _437Solution {
                 root.val == targetSum)
             return 1;
 
+        // 所有路径上的不同长度前缀和的数量做缓存
         Map<Long, Integer> preMap = new HashMap<>();
         preMap.put(0L, 1);
 

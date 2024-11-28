@@ -42,6 +42,8 @@ public class _560Solution {
     public int subarraySum1(int[] nums, int k) {
         int count = 0, pre = 0;
         HashMap<Integer, Integer> mp = new HashMap<>();
+        // 0比较特殊，如果单个数字==k的情况，也是一个合法解
+        // 很容易落掉初始值0
         mp.put(0, 1);
         for (int i = 0; i < nums.length; i++) {
             pre += nums[i];
