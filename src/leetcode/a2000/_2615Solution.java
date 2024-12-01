@@ -1,49 +1,44 @@
 package leetcode.a2000;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
+/**
+ * 相等值的元素的坐标绝对值之和
+ * {prefix sum}
+ * 
+ */
 public class _2615Solution {
 
     /**
-     * TODO 1129
+     * TODO 20241129 prefix sum
+     * 相等值的元素归类记录坐标，然后使用前缀和计算
+     * 
      * @param nums
      * @return
      */
     public long[] distance(int[] nums) {
 
-        Map<Integer, Pair> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
+        int n = nums.length;
+        var groups = new HashMap<Integer, List<Integer>>();
+        for (int i = 0; i < n; ++i) // 相同元素分到同一组，记录下标
+            groups.computeIfAbsent(nums[i], k -> new ArrayList<>()).add(i);
 
-            Pair p = map.get(nums[i]);
-            if (p == null) {
-
-                p = new Pair(1, 0L, i);
-                map.put(nums[i], p);
-            } else {
-                p.sum += (p.count + 1) * (i - p.last);
-                p.count++;
-                p.last = i;
+        var ans = new long[n];
+        var s = new long[n + 1];
+        for (var a : groups.values()) {
+            int m = a.size();
+            for (int i = 0; i < m; ++i)
+                s[i + 1] = s[i] + a.get(i); // 前缀和
+            for (int i = 0; i < m; ++i) {
+                int target = a.get(i);
+                long left = (long) target * i - s[i]; // 蓝色面积
+                long right = s[m] - s[i] - (long) target * (m - i); // 绿色面积
+                ans[target] = left + right;
             }
         }
-        long[] res = new long[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            res[i] = map.get(nums[i]).sum;
-        }
-
-        return res;
-    }
-
-    class Pair {
-        Long sum;
-        int count;
-        int last;
-
-        public Pair(int count, Long sum, int last) {
-            this.sum = sum;
-            this.count = count;
-            this.last = last;
-        }
+        return ans;
     }
 
     public static void main(String[] args) {
