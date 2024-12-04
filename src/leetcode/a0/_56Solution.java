@@ -45,27 +45,32 @@ public class _56Solution {
         return merged;
     }
 
+    /**
+     * {two pointers}快慢指针
+     * @param intervals
+     * @return
+     */
     public int[][] merge(int[][] intervals) {
 
         Arrays.sort(intervals, (o1, o2) -> o1[0] - o2[0]);
 
-        int res[][] = new int[intervals.length][2];
+        // int res[][] = new int[intervals.length][2];
 
         int i = 0;
         for (int j = 0; j < intervals.length; j++) {
 
-            // 遍历到的区间需要和之前遍历过的上一个区间融合
-            if (i == 0 || res[i - 1][1] < intervals[j][0]) {
+            if (i == 0 || intervals[i - 1][1] < intervals[j][0]) {
 
-                res[i++] = intervals[j];
+                intervals[i++] = intervals[j];
             } else {
-                res[i - 1][1] = Math.max(res[i - 1][1], intervals[j][1]);
+
+                intervals[i - 1][1] = Math.max(intervals[i - 1][1], intervals[j][1]);
             }
         }
 
         int ret[][] = new int[i][2];
-        for (int k = 0; k < i - 1; k++) {
-            ret[k] = res[k];
+        for (int k = 0; k < i; k++) {
+            ret[k] = intervals[k];
         }
 
         return ret;

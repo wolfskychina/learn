@@ -27,6 +27,7 @@ public class _1895Solution {
                 diagPre[i + 1][j + 1] = diagPre[i][j] + grid[i][j];
                 // TODO 反对角线的前缀和计算
                 // 反对角线的递推比较难理解，由于是先遍历上面的行，所以因为上一行遍历完了
+                // 下一行的和依赖上一行已经计算过的结果
                 // 所以j即使往小的方向遍历也不影响前缀和的计算
                 antiDiagPre[i + 1][j] = antiDiagPre[i][j+1] + grid[i][j];
             }

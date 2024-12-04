@@ -23,8 +23,11 @@ public class _57Solution {
 
             // start 和 end 是一直向后遍历的指针
             if(curEnd<start){
+                // 非重叠区间，要求小的在前面
+                // 所以添加curStart,curEnd
                 list.add(new int[]{curStart, curEnd});
             }else if(curStart>end){
+                // 非重叠区间，[start,end]在前面
                 list.add(new int[]{start, end});
                 start = curStart;
                 end = curEnd;
@@ -34,7 +37,6 @@ public class _57Solution {
                 start = Math.min(start, curStart);
                 end = Math.max(end, curEnd);
                 // 先融合成一个新的区间，但是暂时不加到list中
-
             }
         }
 
