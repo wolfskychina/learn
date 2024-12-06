@@ -6,6 +6,7 @@ public class _844Solution {
 
     /**
      * 从右向左
+     * 虽然是简单题，但是从后往前回退的思路比较巧妙
      * {greedy}
      * @param S
      * @param T
