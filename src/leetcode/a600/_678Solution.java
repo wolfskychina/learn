@@ -1,6 +1,7 @@
 package leetcode.a600;
 
 import java.util.Stack;
+
 /**
  * 判断一个括号序列是否是合法序列
  * 除了()还有*号，*号可以表示(,),和空
@@ -8,10 +9,11 @@ import java.util.Stack;
 public class _678Solution {
 
     /**
-     * {stack} 两轮处理
+     * {stack},{greedy} 两轮处理
      * 第一轮遍历的时候对于右括号，对栈里面的(和*进行匹配出栈，其中(的优先级更高，匹配栈最上部的(
      * 如果没有(，才匹配*
      * 对于遍历完一遍的栈，再依次出栈，判断剩下的(能否由*来匹配
+     * 
      * @param s
      * @return
      */
@@ -69,13 +71,14 @@ public class _678Solution {
         }
         if (leftNum == 0)
             return true;
-        else 
+        else
             return false;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         _678Solution so = new _678Solution();
-        so.checkValidString("((((()(()()()*()(((((*)()*(**(())))))(())()())(((())())())))))))(((((())*)))()))(()((*()*(*)))(*)()");
+        so.checkValidString(
+                "((((()(()()()*()(((((*)()*(**(())))))(())()())(((())())())))))))(((((())*)))()))(()((*()*(*)))(*)()");
     }
 }
