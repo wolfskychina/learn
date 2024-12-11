@@ -2,6 +2,7 @@ package leetcode.a300;
 
 /**
  * 设计一个电话号码簿，要求能支持maxNumber个电话号码
+ * 发号器
  * {design}
  * TODO
  */
@@ -20,7 +21,6 @@ public class _379Solution {
             nums = new int[maxNumbers];
             used = new boolean[maxNumbers];
             max = maxNumbers;
-            // nums可以是0-maxNumbers-1排列的任何顺序
             for (int i = 0; i < nums.length; i++) {
                 nums[i] = nums.length - 1 - i;
             }
@@ -29,13 +29,11 @@ public class _379Solution {
         public int get() {
             if (k == max)
                 return -1;
-            int res = nums[k++];
-            // k指向下一个可以分配的序列号
-            // 所有在k索引之前的nums存的数据已经完全没有用处
-            // 存成任何值都不会影响结果
-            nums[k - 1] = -999;
-            used[res] = true;
-            return res;
+            // int res = nums[k++];
+            // nums[k-1] = -999;
+            // 坐标k是当前待分配的号码，右侧是未来可分配号码
+            used[nums[k]] = true;
+            return nums[k++];
 
         }
 
@@ -49,6 +47,7 @@ public class _379Solution {
 
         public void release(int number) {
             if (number < max && used[number]) {
+                // k往左移动，存还回来的号码
                 used[number] = false;
                 nums[--k] = number;
             }

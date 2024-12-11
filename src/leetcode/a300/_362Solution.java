@@ -2,6 +2,7 @@ package leetcode.a300;
 
 import java.util.LinkedList;
 import java.util.Queue;
+
 /**
  * 统计最近300s内的点击总次数
  * 同一个时间戳可能发生多次点击
@@ -36,14 +37,8 @@ public class _362Solution {
          * @param timestamp - The current timestamp (in seconds granularity).
          */
         public int getHits(int timestamp) {
-            if (q.size() == 0)
-                return 0;
-            int peek = q.peek();
-            while (peek < timestamp - 299) {
+            while (!q.isEmpty() && q.peek() < timestamp - 299) {
                 q.poll();
-                if (q.isEmpty())
-                    return 0;
-                peek = q.peek();
             }
             return q.size();
         }
@@ -56,11 +51,11 @@ public class _362Solution {
 
         int[] times = new int[300];
         int[] hits = new int[300];
-    
+
         public HitCounter2() {
-    
+
         }
-       
+
         /**
          * 
          */
@@ -76,7 +71,7 @@ public class _362Solution {
                 hits[index]++;
             }
         }
-        
+
         public int getHits(int timestamp) {
             int res = 0;
             for (int i = 0; i < 300; i++) {
@@ -88,5 +83,5 @@ public class _362Solution {
             return res;
         }
     }
-    
+
 }
