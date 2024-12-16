@@ -1,6 +1,7 @@
 package leetcode.a700;
 
 import java.util.Arrays;
+
 /**
  * 一个字符串，能否通过重新排列使得字符串中所有相同字符均不相邻
  */
@@ -55,6 +56,7 @@ public class _767Solution {
      * 观察规律，只要保证出现最多次数的数字的个数-1个组即可
      * 其余的数字只要不少于出现最多次数的数字的个数-1，就一定能够将所有相同数字隔开
      * {combination math}
+     * 
      * @param s
      * @return
      */
@@ -79,7 +81,7 @@ public class _767Solution {
 
         char tar = (char) ('a' + idx);
         Arrays.sort(array);
-
+        // 所有字母tar分到不同的盒子里面
         StringBuilder sb[] = new StringBuilder[max];
         for (int i = 0; i < sb.length; i++) {
             sb[i] = new StringBuilder();
@@ -90,6 +92,9 @@ public class _767Solution {
             sb[i].append(tar);
         }
 
+        // 剩下的元素直接排好序依次分配
+        // 因为其他元素不会比tar更多
+        // 所以依次分配保证不会相同字符分到同一个盒子里面
         while (idx < array.length) {
 
             for (int i = 0; i < max; i++) {
