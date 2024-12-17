@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
  * 一个逐行和逐列均为非降序排列的矩阵
  * 找出这个矩阵中第k小的元素
  * TODO 递增矩阵的性质
- * {binary search}
+ * {binary search},{priority queue}
  */
 public class _378Solution {
    
@@ -79,6 +79,7 @@ public class _378Solution {
         int num = 0;
         while (i >= 0 && j < n) {
             if (matrix[i][j] <= mid) {
+                // 只小于等于的时候才计数
                 num += i + 1;
                 j++;
             } else {
