@@ -110,6 +110,7 @@ public class _76Solution {
                 tKind--;
             }
             while (tKind == 0) {
+                // 将最左侧的无关字符全部移出窗口
                 if (r - l < ansR - ansL) {
                     ansL = l;
                     ansR = r;
