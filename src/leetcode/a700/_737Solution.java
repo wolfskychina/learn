@@ -90,4 +90,39 @@ public class _737Solution {
         }
     }
 
+    Map<String, String> map = new HashMap<>();
+
+    /**
+     * 另外一种解法
+     * @param words1
+     * @param words2
+     * @param pairs
+     * @return
+     */
+    public boolean areSentencesSimilarTwo1(String[] words1, String[] words2, List<List<String>> pairs) {
+        if(words1.length != words2.length)
+            return false;
+        for(List<String> pair: pairs)
+            union2(pair.get(0), pair.get(1));
+        for(int i = 0; i < words1.length; i++)
+        {
+            if(!find(words1[i]).equals(find(words2[i])))
+                return false;
+        }
+        return true;
+    }
+    
+    public void union2(String word1, String word2) {
+        String x = find(word1);
+        String y = find(word2);
+        if(!x.equals(y))
+            map.put(x, y);
+    }
+    
+    public String find(String word) {
+        while(map.containsKey(word) && map.get(word) != word)
+            word = map.get(word);
+        return word;
+    }
+
 }
