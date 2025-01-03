@@ -68,4 +68,5 @@ public class _2400Solution {
 
         return numerator.divide(denominator).mod(BigInteger.valueOf(MOD)).intValue();
     }
+
 }
