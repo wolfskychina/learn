@@ -9,6 +9,7 @@ import java.util.Map;
  * 两个人轮流将 连续 的两个 "++" 反转成 "--" 。
  * 当一方无法进行有效的翻转时便意味着游戏结束，则另一方获胜。
  * 默认每个人都会采取最优策略。
+ * {game theory},{Memoization}
  */
 public class _294Solution {
 
