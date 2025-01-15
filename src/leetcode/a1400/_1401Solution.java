@@ -2,12 +2,14 @@ package leetcode.a1400;
 
 /**
  * 判断二维平面上一个圆形和方形是否有相交的点
- * {graphics}
+ * {Geometry},{math}
  */
 public class _1401Solution {
 
     /**
      * 自己的解法需要遍历方形边上的所有点
+     * 有问题，因为判断的实际上是离散点，在离散点之间实际上可能有重叠的地方
+     * 但是整数点的测试用例测不出重叠的情况
      */
     public boolean checkOverlap(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2) {
         // 有交点的情况
@@ -49,7 +51,7 @@ public class _1401Solution {
 
     /**
      * 按照矩形的四条边将二维空间分割成9个象限
-     * 分别考虑圆心在这9个象限的情况，只需要判断9次
+     * 分别考虑圆心在这9个象限的情况，只需要判断9次, 也覆盖了所有的点
      * TODO 
      */
     public boolean checkOverlap1(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2) {

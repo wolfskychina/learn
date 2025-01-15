@@ -8,8 +8,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * 二维坐标系上的点所能围成的最小矩形的面积
- * 需要四个
+ * 二维坐标系上的点当作四个顶点所能围成的最小矩形的面积
+ * 需要四个作为顶点
+ * {geometry},{math},{classic}
  */
 public class _939Solution {
 
