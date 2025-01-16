@@ -9,7 +9,7 @@ import java.util.Random;
 /**
  * 设计一个set类型，能够以平均o1的时间
  * 插入、删除和随机返回元素
- * {design}
+ * {design},{Randomized}
  */
 public class _380Solution {
 
@@ -19,6 +19,7 @@ public class _380Solution {
         Random random;
 
         public RandomizedSet() {
+            // 使用ArrayList反而比LinkedList更快
             nums = new ArrayList<Integer>();
             indices = new HashMap<Integer, Integer>();
             random = new Random();

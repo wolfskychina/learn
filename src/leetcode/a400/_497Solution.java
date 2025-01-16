@@ -70,6 +70,7 @@ public class _497Solution {
             this.rects = rects;
             for (int[] rect : rects) {
                 int a = rect[0], b = rect[1], x = rect[2], y = rect[3];
+                // 当前矩形大小所占据的区间的终点
                 arr.add(arr.get(arr.size() - 1) + (x - a + 1) * (y - b + 1));
             }
         }
