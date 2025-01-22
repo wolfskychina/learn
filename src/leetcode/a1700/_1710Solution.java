@@ -29,4 +29,31 @@ public class _1710Solution {
         }
         return max;
     }
+
+    /**
+     * 直接用计数法，不需要排序
+     * @param boxTypes
+     * @param truckSize
+     * @return
+     */
+    public int maximumUnits1(int[][] boxTypes, int truckSize) {
+
+        int count[] = new int[1001];
+        for (int[] b : boxTypes) {
+            count[b[1]] += b[0];
+        }
+        int res = 0;
+        for (int i = 1000; i >= 0; i--) {
+            
+            if(count[i]==0) continue;
+            if (truckSize - count[i] >= 0) {
+                truckSize -= count[i];
+                res += i * count[i];
+            } else {
+                res += truckSize * i;
+                break;
+            }
+        }
+        return res;
+    }
 }
