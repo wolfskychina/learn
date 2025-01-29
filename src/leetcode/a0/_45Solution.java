@@ -24,7 +24,7 @@ public class _45Solution {
     public static void main(String[] args) {
 
         _45Solution so = new _45Solution();
-        int[] a = { 2, 3, 1, 1, 4 };
+        int[] a = { 2, 3, 1, 1, 0 };
         so.jump(a);
     }
 }
