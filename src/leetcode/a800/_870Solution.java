@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 
 /**
  * 优势洗牌
+ * 田忌赛马
  */
 public class _870Solution {
     /**
@@ -33,6 +34,11 @@ public class _870Solution {
                 ++left;
             } else {
                 // 不满足条件的话，就填充到右侧
+                // 此处nums1在idx1[i]处的元素在nums2里面没有比他小的了
+                // 是一个没用的元素，就从nums2里面最大元素处依次填充
+                // 因为nums2里面越大的元素越难在nums1里面找到比他大的元素
+                // 所以nums2应该保留小的元素，填充大的位置
+                // 田忌赛马策略
                 // 因为两边元素相同，所以如果不满足要求
                 // 那么最大的数一定不满足要求
                 ans[idx2[right]] = nums1[idx1[i]];

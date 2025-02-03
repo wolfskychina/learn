@@ -15,7 +15,7 @@ public class _826Solution {
      * {sorting},{two pointers}
      */
     public int maxProfitAssignment(int[] difficulty, int[] profit, int[] worker) {
-        int n = difficulty.length, m = worker.length;
+        int n = difficulty.length;
         Pair<Integer, Integer>[] jobs = new Pair[n];
         for (int i = 0; i < n; i++)
             jobs[i] = new Pair<Integer, Integer>(difficulty[i], profit[i]);
@@ -31,4 +31,5 @@ public class _826Solution {
         }
         return ans;
     }
+
 }
