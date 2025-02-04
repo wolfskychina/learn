@@ -7,7 +7,7 @@ package leetcode.a2000;
 public class _2571Solution {
 
     /**
-     * {greddy},{bit manipulation}
+     * {greddy},{bit manipulation},{classic}
      * 如果有连续的1，那么加1更省，如果是单个的1，直接减掉更省
      * @param n
      * @return
