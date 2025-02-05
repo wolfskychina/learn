@@ -29,4 +29,33 @@ public class _2171Solution {
         }
         return pre - res;
     }
+
+    /**
+     * 因为数据集不大，可以直接使用counting代替排序
+     * 速度更快
+     * {counting}
+     * @param beans
+     * @return
+     */
+    public long minimumRemoval1(int[] beans) {
+        int n = beans.length;
+        int min = beans[0],max = beans[0];
+        long sum = 0;
+        for(int b:beans){
+            min = Math.min(b,min);
+            max = Math.max(b,max);
+            sum += b;
+        }
+        int c[] = new int[max - min + 1];
+        for(int b:beans){
+            c[b-min]++;
+        }
+
+        long maxSave = 0, lc = 0;
+        for(int i=0;i<=max - min;i++){
+            maxSave = Math.max(maxSave,(min + i)*(n-lc));
+            lc += c[i];
+        }
+        return sum-maxSave;
+    }
 }
