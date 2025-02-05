@@ -1,45 +1,58 @@
 package leetcode.a0;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
- * 数字转字符的编码方式
- * 1->a 26->z
- * {dp}
+ * 有可能存在重复元素的数组
+ * 生成全部子数组集合
+ * {backtrace}
+ * 
  */
 public class _90Solution {
 
-    public int numDecodings(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-        int n = s.length();
-        int[] dp = new int[n + 1];
+    /**
+     * 正向生成
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
 
-        // dp[0]这里是一个trick，主要是为了计算dp[2]
-        // 因为下面递推式dp[i] += dp[i-2]; 当i=2时且前两位能解码时，相当于新增了一种解码方式
-        // 因此dp[0]需要等于1，否则根据递推式，少了一种解码方式
-        // 这个递推的边界条件有点trick
-        dp[0] = 1;
+        Arrays.sort(nums);
 
-        dp[1] = s.charAt(0) != '0' ? 1 : 0;
-        if (n >= 2) {
-            dp[2] += (Integer.valueOf(s.substring(0, 2)) >= 10 &&
-                    Integer.valueOf(s.substring(0, 2)) <= 26) ? 1 : 0;
-            dp[2] += (Integer.valueOf(s.substring(1, 2)) >= 1 &&
-                    Integer.valueOf(s.substring(1, 2)) <= 9) ? dp[1] : 0;
-        }
+        List<List<Integer>> res = new ArrayList<>();
+        res.add(new ArrayList<Integer>());
 
-        for (int i = 3; i <= n; i++) {
-            // 截出来的是第i个字符
-            int first = Integer.valueOf(s.substring(i - 1, i));
-            // 截出来的是第i-1 - i个字符
-            int second = Integer.valueOf(s.substring(i - 2, i));
-            if (first >= 1 && first <= 9) {
-                dp[i] = dp[i - 1];
-            }
-            if (second >= 10 && second <= 26) {
-                dp[i] += dp[i - 2];
+        int p = 1;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int length = res.size();
+
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                // 如果和前一个元素相同那么只能复制扩展后p位
+                // 后p位之前的元素全部被第一个相同的元素扩展过了
+                // 避免重复生成
+                addNew(res, length - p, length, nums, i);
+
+            } else {
+                // 如果不同的话需要将前一个结果中的全部都加后缀
+                // 本次的结果集应该只生成一次
+                addNew(res, 0, length, nums, i);
+                p = length;
             }
         }
-        return dp[n];
+        return res;
     }
+
+    private void addNew(List<List<Integer>> res, int k, int length, int[] nums, int i) {
+        for (int j = k; j < length; j++) {
+            List<Integer> list = new ArrayList<Integer>(res.get(j));
+            list.add(nums[i]);
+            res.add(list);
+        }
+        return;
+    }
+
 }
