@@ -21,6 +21,9 @@ public class _1546Solution {
         int size = nums.length;
         int ret = 0;
         int i = 0;
+        // 双花括号初始化
+        // 过程是创建匿名内部类，会使得外部类无法序列化
+        // 可能存在内存泄漏的问题
         Set<Integer> set = new HashSet<Integer>() {
             {
                 add(0);
@@ -33,6 +36,7 @@ public class _1546Solution {
             int sum = 0;
             while (i < size) {
                 sum += nums[i];
+                // 不是简单的前缀和，而是前缀和之差
                 if (set.contains(sum - target)) {
                     ret++;
                     // 找到一个之后跳出循环，当前累计的前缀和需要清空
