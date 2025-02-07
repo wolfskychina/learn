@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * 给定的区间列表中，非重叠的区间的最多的组合中区间的数量
+ * 同435题
  */
 public class _646Solution {
 

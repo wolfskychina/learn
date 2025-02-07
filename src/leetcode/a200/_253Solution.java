@@ -4,11 +4,13 @@ import java.util.Arrays;
 
 /**
  * 给出一些会议时间安排，问最少需要多少间会议室
+ * 最大并发问题
  * {greedy},{two pointers}
  */
 public class _253Solution {
     /**
      * 为了求最少会议室，只需要知道某一时间段同时开会的会议的数量
+     * 的最大可能值
      * 
      * @param intervals
      * @return

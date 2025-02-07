@@ -20,7 +20,9 @@ public class _452Solution {
             return 0;
         }
 
-        Arrays.sort(points, (o1, o2) -> (long) o1[1] - (long) o2[1] >= 0 ? 1 : -1);
+        // 直接比大小，不要做减法，避免溢出
+        Arrays.sort(points, (o1, o2) ->o1[1] >= (long) o2[1]? 1 : -1);
+        // Arrays.sort(points, (o1, o2) -> (long) o1[1] - (long) o2[1] >= 0 ? 1 : -1);
 
         int n = points.length;
         int right = points[0][1];
