@@ -35,4 +35,26 @@ public class _253Solution {
         }
         return rooms;
     }
+
+    /**
+     * 使用差分数组，但是因为区间的取值范围比较大10的6次方，所以耗时很长
+     * 这种情况下不适合使用差分数组
+     * 
+     * @param intervals
+     * @return
+     */
+    public int minMeetingRooms1(int[][] intervals) {
+
+        int count[] = new int[1000001];
+        for (int i[] : intervals) {
+            count[i[0]]++;
+            count[i[1]]--;
+        }
+        int max = 1;
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+            max = Math.max(count[i], max);
+        }
+        return max;
+    }
 }
