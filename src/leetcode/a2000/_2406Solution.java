@@ -3,7 +3,8 @@ package leetcode.a2000;
 /**
  * 一些可能存在重叠的区间，能将这些区间分到不同组确保组内没有重叠
  * 的最少组数
- * {delta counting},{prefix sum}
+ * 差分数组
+ * {difference array},{prefix sum}
  */
 public class _2406Solution {
 
