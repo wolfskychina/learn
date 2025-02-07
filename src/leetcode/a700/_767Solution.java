@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * 一个字符串，能否通过重新排列使得字符串中所有相同字符均不相邻
+ * {hard}
  */
 public class _767Solution {
 

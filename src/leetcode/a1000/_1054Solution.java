@@ -2,7 +2,8 @@ package leetcode.a1000;
 
 /**
  * 让相等的条形码不相邻
- * {counting},{greedy},{}
+ * 类似767题
+ * {counting},{greedy},{TODO}
  */
 public class _1054Solution {
 
