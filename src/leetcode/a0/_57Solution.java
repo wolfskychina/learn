@@ -2,13 +2,14 @@ package leetcode.a0;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * 往一个不重合的区间集合中插入一个新的闭区间
  * 返回合并后的新的区间集合
  */
 public class _57Solution {
-  
-    public int[][] insert(int[][] intervals, int[] newInterval){
+
+    public int[][] insert(int[][] intervals, int[] newInterval) {
 
         int start = newInterval[0];
         int end = newInterval[1];
@@ -16,23 +17,23 @@ public class _57Solution {
         List<int[]> list = new ArrayList<>();
 
         // 核心是从头开始将所有的区间重新插入
-        for(int[] interval:intervals){
+        for (int[] interval : intervals) {
 
             int curStart = interval[0];
             int curEnd = interval[1];
 
             // start 和 end 是一直向后遍历的指针
-            if(curEnd<start){
+            if (curEnd < start) {
                 // 非重叠区间，要求小的在前面
                 // 所以添加curStart,curEnd
-                list.add(new int[]{curStart, curEnd});
-            }else if(curStart>end){
+                list.add(new int[] { curStart, curEnd });
+            } else if (curStart > end) {
                 // 非重叠区间，[start,end]在前面
-                list.add(new int[]{start, end});
+                list.add(new int[] { start, end });
                 start = curStart;
                 end = curEnd;
                 // {curStart, curEnd} 这次没有加入list，下次需要比较
-            }else{
+            } else {
                 // 存在重叠的情况
                 start = Math.min(start, curStart);
                 end = Math.max(end, curEnd);
@@ -41,7 +42,15 @@ public class _57Solution {
         }
 
         // start和end是一直向后移动的，最后一组在循环中没有加到最终结果
-        list.add(new int[]{start, end});
+        list.add(new int[] { start, end });
         return list.toArray(new int[intervals.length][2]);
+    }
+
+    public static void main(String[] args) {
+        _57Solution so = new _57Solution();
+
+        int[][] intervals = {{1,2},{3,5},{6,7},{8,10},{12,16}};
+        int[] newInterval = {4,8};
+        so.insert(intervals, newInterval);
     }
 }

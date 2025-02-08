@@ -4,6 +4,8 @@ import java.util.*;
 
 /**
  * 一个数组的闭区间，重复的闭区间进行合并，返回合并后的闭区间
+ * {intervals}
+ * 因为数据范围不大，也可以用差分数组{difference array}
  */
 public class _56Solution {
 
@@ -46,7 +48,7 @@ public class _56Solution {
     }
 
     /**
-     * {two pointers}快慢指针
+     * {two pointers},{greedy}快慢指针
      * @param intervals
      * @return
      */

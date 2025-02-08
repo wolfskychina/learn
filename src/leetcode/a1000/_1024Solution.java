@@ -42,8 +42,10 @@ public class _1024Solution {
                 maxn[clip[0]] = Math.max(maxn[clip[0]], clip[1]);
             }
         }
+        // time时刻不遍历
         for (int i = 0; i < time; i++) {
             last = Math.max(last, maxn[i]);
+            // 无法继续扩展
             if (i == last) {
                 return -1;
             }
