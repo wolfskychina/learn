@@ -1,4 +1,4 @@
-package leetcode.a1900;
+package leetcode.a1400;
 
 /**
  * 能够组成的最长快乐字符串
