@@ -39,13 +39,15 @@ public class _743Solution {
         while (!pq.isEmpty()) {
             int[] p = pq.poll();
             int time = p[0], x = p[1];
-            // 说明是无用的数据
+            // 说明是无用的数据，直接出堆
+            // 懒更新导致堆里面可能出现同一个点不同距离的数据
             if (dist[x] < time) {
                 continue;
             }
             // 否则把x节点纳入到已经选择的范围中
             for (int[] e : g[x]) {
                 int y = e[0], d = dist[x] + e[1];
+                // 懒更新，只入堆不更新堆内元素
                 if (d < dist[y]) {
                     // 潜在距离变小的节点进入候选的队列
                     dist[y] = d;
