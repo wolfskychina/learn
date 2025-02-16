@@ -1,5 +1,7 @@
 package leetcode.a2000;
 
+import java.util.Arrays;
+
 /**
  * 使得网格中的所有数相同的最小操作数
  * 每次可以将网格中的任意数 +- x
