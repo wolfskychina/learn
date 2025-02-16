@@ -2,6 +2,7 @@ package leetcode.a700;
 /**
  * 从坐标0开始，每次可以向左右两个方向移动，每次移动步数为1,2,3...
  * 依次递增，问最少多少步，才能到达target处
+ * {greedy}
  */
 public class _754Solution {
 

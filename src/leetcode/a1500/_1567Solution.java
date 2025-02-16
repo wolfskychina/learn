@@ -52,7 +52,7 @@ public class _1567Solution {
     }
 
     /**
-     * {dp} 题解的dp解法
+     * {greedy},{dp} 题解的dp解法
      * 定义两个数组 positive和 negative，其中 positive[i]表示以下标 i 结尾的乘积为正数的最长子数组长度，
      * negative[i]表示乘积为负数的最长子数组长度。
      * 然后根据nums[i-1]的正负值分类讨论递推关系
