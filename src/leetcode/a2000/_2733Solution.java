@@ -1,7 +1,9 @@
 package leetcode.a2000;
 
+import java.util.Arrays;
+
 /**
- * 数组中既不是最大也不是最小的值
+ * 非重复数组中既不是最大也不是最小的值
  * {easy}
  */
 public class _2733Solution {
@@ -26,35 +28,17 @@ public class _2733Solution {
         return -1;
     }
 
+    /**
+     * 题目的前提是数组中的数字都是非重复的，所以只需要看前三个数字
+     * 里面就一定有非最大和非最小的数
+     * @param nums
+     * @return
+     */
     public int findNonMinOrMax1(int[] nums) {
-        int min = nums[0];
-        int max = nums[0];
-        for (int i = 0; i < nums.length; i++) {
+      
+        if (nums.length < 3) return -1;
+        Arrays.sort(nums, 0, 3); // 只对前三个数排序
+        return nums[1];
 
-            // 是否之内
-            int n = nums[i];
-            if (min < n && n < max) {
-                return n;
-            }
-
-            int old_min = min;
-            int old_max = max;
-            min = Math.min(min, n);
-            max = Math.max(max, n);
-
-            // 左边界是否之内
-            if (min < old_min && old_min < max) {
-                return old_min;
-            }
-            // 右边界是否之内
-            if (min < old_max && old_max < max) {
-                return old_max;
-            }
-
-            // System.out.println(min + " " + max);
-
-        }
-
-        return -1;
     }
 }
