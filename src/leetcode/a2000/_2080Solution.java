@@ -5,10 +5,13 @@ import java.util.List;
 
 /**
  * 找出数组中[left,right]子数组中value值出现的次数
- * {binary search},
+ * {binary search},{design}
  */
 public class _2080Solution {
 
+    /**
+     * 设计方便区间统计特定数字的数据结构
+     */
     class RangeFreqQuery {
         List<List<Integer>> all = new ArrayList<>();
 
@@ -28,6 +31,8 @@ public class _2080Solution {
             // 当前值对应的下标集合
             List<Integer> now = all.get(value);
             // 第一次二分找左端点下标
+            // a是最左侧在[left,right]区间内的坐标
+            // b是最右侧在[left,right]区间内的坐标
             int a = binarySearch(now, 0, now.size() - 1, left);
             // 不存在这样的左端点
             if (now.get(a) > right || now.get(a) < left)
@@ -43,6 +48,7 @@ public class _2080Solution {
         }
 
         // 找到大于等于target的第一个位置
+        // 这里用的是全闭区间的二分查找
         public int binarySearch(List<Integer> nums, int l, int r, int target) {
             while (l < r) {
                 int mid = (r - l) / 2 + l;
