@@ -5,6 +5,8 @@ import java.util.List;
 
 /**
  * 设计有序流
+ * 考察对流Steam的定义
+ * 流只能从左往右移动，不能回退和跳跃
  * {easy}
  */
 public class _1656Solution {
