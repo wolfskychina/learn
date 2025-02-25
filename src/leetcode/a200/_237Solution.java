@@ -11,20 +11,15 @@ public class _237Solution {
     /**
      * 只能从目标节点开始逐个向前移动值
      * 需要保存指针的前一位指向
-     * TODO 想一次性写对也不容易
      */
-    public void deleteNode(ListNode node) {
-
-        ListNode pre  = new ListNode();
-        while(node !=null ){
-            if(node.next!=null){
-                node.val = node.next.val;
-                pre = node;
-            }
-                
+    public void deleteNode1(ListNode node) {
+        
+        ListNode last = node;
+        while(node.next!=null){
+            node.val = node.next.val;
+            last = node;
             node = node.next;
         }
-        pre.next = null;
-
+        last.next =null;
     }
 }

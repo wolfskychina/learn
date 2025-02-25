@@ -44,4 +44,34 @@ public class _82Solution {
 
         return dummy.next;
     }
+
+    /**
+     * 5年重写优雅版
+     * @param head
+     * @return
+     */
+    public ListNode deleteDuplicates1(ListNode head) {
+
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode p = dummy;
+
+        while (p.next != null && p.next.next != null) {
+
+            if (p.next.val == p.next.next.val) {
+                ListNode tmp = p.next;
+                while (tmp != null && tmp.next != null && tmp.val == tmp.next.val) {
+                    tmp = tmp.next;
+                }
+                // tmp is the node to be deleted
+                p.next = tmp.next;
+            } else {
+                p = p.next;
+            }
+
+        }
+
+        return dummy.next;
+
+    }
 }

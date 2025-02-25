@@ -4,6 +4,7 @@ import leetcode.util.ListNode;
 
 /**
  * 删除链表中的冗余元素，只保留一份
+ * {linkedlist}
  */
 public class _83Solution {
 
@@ -26,7 +27,6 @@ public class _83Solution {
                     p = p.next;
                 }
 
-                // 和上一题只有这里不一样
                 newEnd.next.next = p;
                 newEnd = newEnd.next;
 
@@ -43,6 +43,26 @@ public class _83Solution {
         }
 
         return dummy.next;
+    }
+
+    /**
+     * 5年后的优雅写法
+     * @param head
+     * @return
+     */
+    public ListNode deleteDuplicates1(ListNode head) {
+        
+        ListNode dummy = new ListNode(-1);
+        ListNode p = dummy;
+        dummy.next = head;
+        while(p.next!=null&&p.next.next!=null){
+            if(p.next.val!=p.next.next.val)
+                p = p.next;
+            else
+                p.next = p.next.next;
+        }
+        return dummy.next;
+
     }
 
 }
