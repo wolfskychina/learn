@@ -1,6 +1,7 @@
 package leetcode.a700;
 
 import leetcode.util.listnode.Node;
+
 /**
  * 循环有序链表中插入一个val大小的节点,
  * 给定的起始点head并不一定是最小值所在的点
@@ -26,7 +27,11 @@ public class _708Solution {
         while (p.next != head && p.val <= p.next.val) {
             p = p.next;
         }
+        // 此时p.next是环中的最小节点
 
+        // 当前只有1种值
+        // 题目没要求返回最小节点，所以返回任意节点即可
+        // 这个if可以去掉
         if (p.next == head && p.val == p.next.val) {
             Node node = new Node(insertVal);
             node.next = p.next;

@@ -35,6 +35,39 @@ public class _147Solution {
     }
 
     /**
+     * 对于相对有序的测试用例减少重复遍历的次数
+     * 对给出的测试用例能显著减少时间
+     * 
+     * @param head
+     * @return
+     */
+    public ListNode insertionSortList2(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode curr = head.next;
+        ListNode lastSorted = head;
+        while (curr != null) {
+            // 减少不必要的遍历
+            if (lastSorted.val <= curr.val) {
+                lastSorted = lastSorted.next;
+            } else {
+                ListNode prev = dummy;
+                while (prev.next.val <= curr.val) {
+                    prev = prev.next;
+                }
+                lastSorted.next = curr.next;
+                curr.next = prev.next;
+                prev.next = curr;
+            }
+            curr = lastSorted.next;
+        }
+        return dummy.next;
+    }
+
+    /**
      * 用归并的思想对链表进行排序
      * 
      * @param head
