@@ -10,12 +10,15 @@ import leetcode.a800.Pair;
 
 /**
  * 设计菜品评分系统
- * {lazy heap},{priority queue}
+ * 本质上是一种索引，使用了懒删除技术，类似于乐观锁
+ * {lazy heap},{priority queue},{design},{index}
  */
 public class _2353Solution {
 
     class FoodRatings {
+        // 特定食物的得分信息 foodRatingIdx
         Map<String, Pair<Integer, String>> fs = new HashMap<>();
+        // 每个品类的单独排行榜
         Map<String, Queue<Pair<Integer, String>>> cs = new HashMap<>();
 
         public FoodRatings(String[] foods, String[] cuisines, int[] ratings) {

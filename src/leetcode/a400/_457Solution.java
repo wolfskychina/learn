@@ -6,6 +6,7 @@ import java.util.Set;
 /**
  * 循环数组里面每个元素标记前进或者后退的步数
  * 问是否存在回路
+ * {linkedlist}
  */
 public class _457Solution {
 
@@ -18,6 +19,8 @@ public class _457Solution {
             if (failSet.contains(i))
                 continue;
             // 关键，两个地方都需要取余(i + nums[i] % nums.length + nums.length) % nums.length
+            // 题目要求环至少有两个元素
+            // 两个地方都要取余主要是java里面取余操作可能出现负数
             if (i == (i + nums[i] % nums.length + nums.length) % nums.length)
                 continue;
             Set<Integer> tmpSucc = new HashSet<>();
@@ -30,6 +33,7 @@ public class _457Solution {
                         (nums[idx] < 0 && flag < 0)) {
                     int newidx = (idx + nums[idx] % nums.length + nums.length) % nums.length;
                     if (failSet.contains(newidx) || idx == newidx) {
+                        // 如果指向了一个自旋的点，那么一定是不会形成环的 
                         for (int node : tmpSucc) {
                             failSet.add(node);
                         }
@@ -42,6 +46,7 @@ public class _457Solution {
                     }
 
                 } else {
+                    // 路径上出现了反向操作，全部不合格
                     for (int node : tmpSucc) {
                         failSet.add(node);
                     }
@@ -58,6 +63,7 @@ public class _457Solution {
 
     /**
      * 快慢指针
+     * {two pointers}
      * @param nums
      * @return
      */
@@ -71,6 +77,7 @@ public class _457Solution {
             // 判断非零且方向相同
             while (nums[slow] * nums[fast] > 0 && nums[slow] * nums[next(nums, fast)] > 0) {
                 if (slow == fast) {
+                    // 不能是指向自己的那种
                     if (slow != next(nums, slow)) {
                         return true;
                     } else {
@@ -80,6 +87,7 @@ public class _457Solution {
                 slow = next(nums, slow);
                 fast = next(nums, next(nums, fast));
             }
+            // 将不能构成环的元素全部置0,减少重复访问
             int add = i;
             while (nums[add] * nums[next(nums, add)] > 0) {
                 int tmp = add;
