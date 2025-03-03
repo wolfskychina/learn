@@ -34,12 +34,22 @@ public class _2353Solution {
             }
         }
 
+        /**
+         * 无脑添加，适合修改多但是访问少的情况
+         * @param food
+         * @param newRating
+         */
         public void changeRating(String food, int newRating) {
             var c = fs.get(food).getValue();
             cs.get(c).offer(new Pair<>(newRating, food)); // 直接添加新数据，后面 highestRated 再删除旧的
             fs.put(food, new Pair<>(newRating, c));
         }
 
+        /**
+         * 访问的时候进行确认，旧的数据删除
+         * @param cuisine
+         * @return
+         */
         public String highestRated(String cuisine) {
             var q = cs.get(cuisine);
             // 懒删除堆

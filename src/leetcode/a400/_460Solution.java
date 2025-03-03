@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.TreeSet;
 
 /**
- * {design}
- * 设计一个{LRU}缓存
+ * {design},{classic},{hard},{index}
+ * 设计一个{LFU}缓存
  */
 public class _460Solution {
 
