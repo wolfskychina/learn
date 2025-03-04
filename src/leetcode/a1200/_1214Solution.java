@@ -36,8 +36,10 @@ public class _1214Solution {
     }
 
     /**
+     * TODO 关键点，二叉查找树中没有重复元素
      * 类似二分查找的思路，往不同的方向进行查找
      * 但是运行速度比较慢
+     * {binary search}
      * @param root1
      * @param root2
      * @param target
@@ -51,5 +53,31 @@ public class _1214Solution {
                             (root2.left!=null?twoSumBSTs1(root1, root2.left, target):false);
         return (root1.right!=null?twoSumBSTs1(root1.right, root2, target):false)||
         (root2.right!=null?twoSumBSTs1(root1, root2.right, target):false);
+    }
+
+    /**
+     * 同样是二分，为什么这个这么快
+     * @param root1
+     * @param root2
+     * @param target
+     * @return
+     */
+    public boolean twoSumBSTs2(TreeNode root1, TreeNode root2, int target) {
+        if (root2 == null) {
+            return false;
+        }
+        int newTarget = target - root2.val;
+        TreeNode curr = root1;
+        while (curr != null) {
+            if (curr.val == newTarget) {
+                return true;
+            }
+            if (curr.val > newTarget) {
+                curr = curr.left;
+            } else {
+                curr = curr.right;
+            }
+        }
+        return twoSumBSTs(root1, root2.left, target) || twoSumBSTs(root1, root2.right, target);
     }
 }

@@ -30,7 +30,8 @@ public class _671Solution {
             min =p.val;
         }else if(p.val>min && (min2 ==-1 || p.val<min2)){
             min2 =p.val;
-        }else if(p.val>min){
+        }else if(p.val!=min){
+            // 如果节点值是最小值，不能直接返回，后续可能有次小值
             return;
         }
 
