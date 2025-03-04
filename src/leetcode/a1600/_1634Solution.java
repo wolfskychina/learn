@@ -2,6 +2,9 @@ package leetcode.a1600;
 
 import leetcode.util.listnode.PolyNode;
 
+/**
+ * {linkedlist},{easy}
+ */
 public class _1634Solution {
 
     public PolyNode addPoly(PolyNode poly1, PolyNode poly2) {
