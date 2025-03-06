@@ -21,6 +21,7 @@ public class _101Solution {
             return false;
         }
         
-        return (p.val ==q.val)&&isSameTree(p.left, q.right)&&isSameTree(p.right, q.left);
+        // == 的优先级高于 &&,所以这里不加括号也可以
+        return p.val ==q.val &&isSameTree(p.left, q.right)&&isSameTree(p.right, q.left);
     }
 }
