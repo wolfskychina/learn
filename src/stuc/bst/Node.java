@@ -7,14 +7,14 @@ public class Node<T> {
 
 
     // Children Nodes
-    private Node<T> left;
-    private Node<T> right;
+    public Node<T> left;
+    public Node<T> right;
 
     // Parent Node
     private Node<T> parent;
 
     // Value, can be any kind
-    private T value;
+    public T value;
 
     public Node(Node<T> left,Node<T> right,Node<T> parent,T value) {
 
