@@ -78,9 +78,9 @@ public class _538Solution {
         if (root == null) {
             return;
         }
-        convertBST1(root.right);
+        convert(root.right);
         sum += root.val;
         root.val = sum;
-        convertBST1(root.left);
+        convert(root.left);
     }
 }
