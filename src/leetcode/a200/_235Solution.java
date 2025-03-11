@@ -4,7 +4,7 @@ import leetcode.util.TreeNode;
 
 /**
  * 寻找一个bst里面两个节点的lca最近祖父
- * {bst},{lca}
+ * {bst},{lca},{binary tree}
  */
 public class _235Solution {
 

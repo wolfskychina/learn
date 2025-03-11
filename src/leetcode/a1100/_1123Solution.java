@@ -4,6 +4,7 @@ import leetcode.util.TreeNode;
 
 /**
  * 所有最深叶节点的最低公共祖先节点
+ * {binary tree}{lca}
  */
 public class _1123Solution {
 
@@ -18,6 +19,7 @@ public class _1123Solution {
     /**
      * 在同一个向下递归调用和返回过程中，完成节点左右子树最大深度的计算和
      * 当前节点是否是最大深度子节点的公共祖先
+     * 最后一个更新的ans反而是所有最大深度节点的最低公共祖先
      * 
      * @param node
      * @param depth
