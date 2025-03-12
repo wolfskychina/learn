@@ -3,6 +3,7 @@ package leetcode.util;
 public class Node {
     public boolean val;
     public boolean isLeaf;
+    public Node parent;
     public Node topLeft;
     public Node topRight;
     public Node bottomLeft;
