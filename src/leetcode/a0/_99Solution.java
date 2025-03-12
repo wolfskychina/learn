@@ -83,17 +83,18 @@ public class _99Solution {
 
         traverse(root.left);
 
+        // 如果有两组逆序的话，交换第一组的前一个值和第二组的后一个值
         if (prevElement != null) {
             // Start of "do some business",
             // If first element has not been found, assign it to prevElement (refer to 6 in
             // the example above)
-            if (firstElement == null && prevElement.val >= root.val) {
+            if (firstElement == null && prevElement.val > root.val) {
                 firstElement = prevElement;
             }
 
             // If first element is found, assign the second element to the root (refer to 2
             // in the example above)
-            if (firstElement != null && prevElement.val >= root.val) {
+            if (firstElement != null && prevElement.val > root.val) {
                 secondElement = root;
             }
         }

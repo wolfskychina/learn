@@ -4,7 +4,7 @@ import leetcode.util.TreeNode;
 
 /**
  * 查找bst的第k大的节点
- * {bst}
+ * {bst},{binary tree}
  */
 public class _230Solution {
 

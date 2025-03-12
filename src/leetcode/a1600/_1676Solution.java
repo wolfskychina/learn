@@ -34,8 +34,11 @@ public class _1676Solution {
             return 0;
         if (p.left == null && p.right == null) {
             if (set.contains(p)) {
-                if (tar == 1)
+                if (tar == 1) {
                     res = p;
+                    return 0;
+                }
+                return 1;
             }
             return 0;
         }
@@ -46,6 +49,38 @@ public class _1676Solution {
             return 0;
         } else {
             return l + r + (set.contains(p) ? 1 : 0);
+        }
+    }
+
+    /**
+     * 题目假设隐含了所有的目标nodes，所以只需要返回最后找到的节点
+     * 或者最下层的公共节点即可
+     * 代码比较简洁
+     * 
+     * @param root
+     * @param nodes
+     * @return
+     */
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode[] nodes) {
+        if (root == null) {
+            return root;
+        }
+
+        for (TreeNode n : nodes) {
+            if (root == n) {
+                return root;
+            }
+        }
+
+        TreeNode left = lowestCommonAncestor1(root.left, nodes);
+        TreeNode right = lowestCommonAncestor1(root.right, nodes);
+
+        if (left != null && right != null) {
+            return root;
+        } else if (left == null) {
+            return right;
+        } else {
+            return left;
         }
     }
 }

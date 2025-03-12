@@ -9,6 +9,8 @@ import leetcode.util.TreeNode;
 /**
  * 寻找bst中的众数，众数可能有多个
  * 进阶要求不使用额外的空间
+ * 这里的bst不是正规的bst
+ * 正规的bst里面不允许有相同大小的数字
  * {bst}
  */
 public class _501Solution {

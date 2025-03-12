@@ -8,11 +8,11 @@ import leetcode.util.TreeNode;
  */
 public class _285Solution {
 
-    public TreeNode findNext(TreeNode root, TreeNode p){
+    public TreeNode findNext(TreeNode root, TreeNode p) {
 
-        if(p.right!=null){
+        if (p.right != null) {
             p = p.right;
-            while(p.left!=null){
+            while (p.left != null) {
                 p = p.left;
             }
             return p;
@@ -21,11 +21,12 @@ public class _285Solution {
         // 需要向上判断
         // 注意p有可能是最大的节点，没有后继节点
         TreeNode pre = null;
-        while(root.val!=p.val){
-            if(root.val > p.val){
+        while (root.val != p.val) {
+            if (root.val > p.val) {
+                // p往上离他最近的通过左子树下来的祖先级节点
                 pre = root;
                 root = root.left;
-            }else{
+            } else {
                 root = root.right;
             }
         }
