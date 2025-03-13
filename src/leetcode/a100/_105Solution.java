@@ -7,7 +7,7 @@ import leetcode.util.TreeNode;
 
 /**
  * 根据二叉树的先根序列和中根序列还原一棵二叉树
- * {binary tree}
+ * {binary tree},{classic}
  */
 public class _105Solution {
 

@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * 满足数量要求的元音和辅音字符的子串的数量
  * 要求子串中有全部的元音字符和k个辅音字符
- * {sliding window},{hard}
+ * {sliding window},{hard},{greedy}
  */
 public class _3305Solution {
 
@@ -17,7 +17,7 @@ public class _3305Solution {
      * 存在至少k个辅音字符的子串的数量-存在至少k+1个辅音字符的子串的数量
      * 两次滑动窗口
      * 关键点2：采取遍历左端点，然后每次遍历的时候右端点向右侧滑动，直到直到恰好存在k个辅音字符
-     * 这样每轮至少k个辅音字符的子串数量都可以求出
+     * 这样每轮至少k个辅音字符的子串数量都可以求出,也是一种贪心的思想
      * @param word
      * @param k
      * @return
