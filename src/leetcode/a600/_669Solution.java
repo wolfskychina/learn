@@ -4,7 +4,7 @@ import leetcode.util.TreeNode;
 /**
  * 将bst瘦身成值的区间为[low,high]的新bst
  * 注意有可能根节点会被trim掉
- * {bst}
+ * {bst},{classic}
  */
 public class _669Solution {
 

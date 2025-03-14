@@ -29,6 +29,8 @@ public class _536Solution {
 
         TreeNode node = new TreeNode(Integer.parseInt(s.substring(l, idx)));
 
+        // 这种遍历顺序恰好对应适配()()得情况,在同一层会有两次调用
+        // 一次是左子树得(),一次是右子树得()
         if (idx < s.length() && s.charAt(idx) == '(') {
             idx++;
             node.left = buildTree(s);

@@ -20,6 +20,11 @@ public class _515Solution {
 
     }
 
+    /**
+     * 不用逐层遍历，只需要直到当前节点在哪层即可
+     * @param node
+     * @param level
+     */
     private void traverse(TreeNode node, int level) {
 
         if (node == null)
