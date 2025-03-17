@@ -91,6 +91,7 @@ public class _662Solution {
     public int widthOfBinaryTree1(TreeNode root) {
         int res = 1;
         List<Pair<TreeNode, Integer>> arr = new ArrayList<Pair<TreeNode, Integer>>();
+        // 因为是同一层的编号做差值，所以root节点编号是0也可以
         arr.add(new Pair<TreeNode, Integer>(root, 1));
         while (!arr.isEmpty()) {
             List<Pair<TreeNode, Integer>> tmp = new ArrayList<Pair<TreeNode, Integer>>();
@@ -113,7 +114,8 @@ public class _662Solution {
     Map<Integer, Integer> levelMin = new HashMap<Integer, Integer>();
 
     /**
-     * 深度优先，每次同一层总是最左侧的节点被访问到
+     * 思想巧妙
+     * 深度优先，每次同一层总是左侧的节点先被访问到
      * 保存这个节点的值，每次遍历到同层的节点就和这个节点的编号做差
      * {dfs}
      * 

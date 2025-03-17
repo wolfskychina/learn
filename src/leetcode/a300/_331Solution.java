@@ -4,9 +4,9 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 /**
- * 给出一颗二叉树的前序遍历序列，空节点用#号代替
+ * 给出一颗二叉树的前序遍历序列，前序访问到null节点用#号代替
  * 判断给出的前序遍历序列是否合法
- * {binary tree}
+ * {binary tree},{classic}
  */
 public class _331Solution {
 
@@ -31,7 +31,12 @@ public class _331Solution {
                 i++;
             } else {
 
-                while (stack.size() > 0 && "#".equals(stack.peek())) { // 遇到'#'，当前栈顶也是'#'，弹出2个字符，压入1个'#'
+                // 模拟的是叶子节点访问完后递归的返回
+                while (stack.size() > 0 && "#".equals(stack.peek())) { 
+                    
+                    // 遇到'#'，当前栈顶也是'#'，弹出2个字符，压入1个'#'
+                    // 这个#是将遍历完左右null的叶子节点置为其父节点的#，表示该节点已经遍历完
+                    // 返回
                     stack.pop();
                     if (stack.isEmpty())
                         return false;
