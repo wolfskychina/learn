@@ -3,6 +3,8 @@ package leetcode.a1400;
 import java.util.ArrayList;
 import java.util.List;
 
+import leetcode.util.narray.Node;
+
 /**
  * 克隆N叉树
  * {n-array tree},{easy}
@@ -28,25 +30,6 @@ public class _1490Solution {
         p.children = list;
         return p;
 
-    }
-
-    class Node {
-        public int val;
-        public List<Node> children;
-
-        public Node() {
-            children = new ArrayList<Node>();
-        }
-
-        public Node(int _val) {
-            val = _val;
-            children = new ArrayList<Node>();
-        }
-
-        public Node(int _val, ArrayList<Node> _children) {
-            val = _val;
-            children = _children;
-        }
     }
 
 }

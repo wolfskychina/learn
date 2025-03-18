@@ -46,31 +46,35 @@ public class _1261Solution {
                 return true;
             }
 
+            // 超出范围及时返回
+            if (p.val > tar)
+                return false;
+
             return (p.left != null && find(p.left, tar)) || (p.right != null && find(p.right, tar));
 
         }
     }
 
     /**
-     * 把所有存在的val都存到一个数组中，查询复杂度降低为o1 
+     * 把所有存在的val都存到一个数组中，查询复杂度降低为o1
      */
     class FindElements1 {
 
         private final boolean[] nodes;
-    
-        FindElements1(TreeNode root) {
+
+        public FindElements1(TreeNode root) {
             int height = getHeight(root);
             this.nodes = new boolean[2 << height];
             dfs(root, 0);
         }
-    
+
         int getHeight(TreeNode node) {
             if (node == null) {
                 return 0;
             }
             return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
         }
-    
+
         void dfs(TreeNode node, int val) {
             nodes[val] = true;
             if (node.left != null) {
@@ -80,7 +84,7 @@ public class _1261Solution {
                 dfs(node.right, (val + 1) << 1);
             }
         }
-    
+
         boolean find(int target) {
             return target >= 0 && target < nodes.length && nodes[target];
         }

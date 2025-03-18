@@ -18,7 +18,7 @@ import leetcode.util.TreeNode;
  * 因此只遍历非空节点的遍历方法无法保存树的结构
  * 必须在遍历的时候保存空的叶子节点，才能保证在恢复二叉树的时候
  * 正确识别二叉树的结构（标记子树为空）
- * {binary tree}
+ * {binary tree},{classic},{design}
  */
 public class _297Solution {
 
@@ -271,6 +271,11 @@ public class _297Solution {
             return new Serializer().treeToString(root);
         }
 
+        /**
+         * 只用一个全局的StringBuilder对象
+         * 使用一个char表示一个节点
+         * 所以比较快
+         */
         private static class Serializer {
             private StringBuilder builder;
 

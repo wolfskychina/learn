@@ -1,7 +1,8 @@
 package leetcode.a1500;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import leetcode.util.narray.Node;
 
 /**
  * 给出N叉树所有节点的列表，找到N叉树的根节点
@@ -14,6 +15,7 @@ public class _1506Solution {
      * {math},{Pigeonhole Principle}抽屉原理
      * 将所有子节点累加，比所有节点值累加少的部分就是根节点
      * {TODO}
+     * 
      * @param tree
      * @return
      */
@@ -38,22 +40,4 @@ public class _1506Solution {
         return root;
     }
 
-    class Node {
-        public int val;
-        public List<Node> children;
-
-        public Node() {
-            children = new ArrayList<Node>();
-        }
-
-        public Node(int _val) {
-            val = _val;
-            children = new ArrayList<Node>();
-        }
-
-        public Node(int _val, ArrayList<Node> _children) {
-            val = _val;
-            children = _children;
-        }
-    }
 }

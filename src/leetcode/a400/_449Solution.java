@@ -57,4 +57,120 @@ public class _449Solution {
         }
 
     }
+
+    /**
+     * 用char保存节点速度明显更快
+     */
+    public class Codec1 {
+        char NL = 'x';
+        char spliter = '#';
+
+        // Encodes a tree to a single string.
+        public String serialize(TreeNode root) {
+            StringBuilder sb = new StringBuilder();
+            sHelper(root, sb);
+            return sb.toString();
+        }
+
+        public void sHelper(TreeNode root, StringBuilder sb) {
+            if (root == null) {
+                sb.append(NL);
+                sb.append(spliter);
+                return;
+            }
+            sb.append(root.val);
+            sb.append(spliter);
+            sHelper(root.left, sb);
+            sHelper(root.right, sb);
+
+        }
+
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(String data) {
+            int[] arr = new int[1];
+            return dHelper(data, arr);
+
+        }
+
+        /**
+         * 把arr[0]用作保存当前遍历到的位置
+         * 
+         * @param data
+         * @param arr
+         * @return
+         */
+        public TreeNode dHelper(String data, int[] arr) {
+            char first = data.charAt(arr[0]);
+            if (first == NL) {
+                arr[0] += 2;
+                return null;
+            } else {
+                int num = 0;
+                int currIdx = arr[0];
+                while (currIdx < data.length() && data.charAt(currIdx) != spliter) {
+                    num = num * 10 + (data.charAt(currIdx++) - '0');
+                }
+                arr[0] = currIdx + 1;
+                TreeNode root = new TreeNode(num);
+                root.left = dHelper(data, arr);
+                root.right = dHelper(data, arr);
+                return root;
+            }
+        }
+    }
+
+    /**
+     * 直接用单个字符保存节点的值
+     * 占用空间最小
+     */
+    public class Codec2 {
+
+        // 空树不能使用普通字符表示，否则正常节点可能被解析为空直接返回
+        // 树的结构会不完整
+        // char NL = 'x';
+        char NL = '\uFFFF';
+        // char spliter = '#';
+
+        // Encodes a tree to a single string.
+        public String serialize(TreeNode root) {
+            StringBuilder sb = new StringBuilder();
+            sHelper(root, sb);
+            return sb.toString();
+        }
+
+        public void sHelper(TreeNode root, StringBuilder sb) {
+            if (root == null) {
+                sb.append(NL);
+                // sb.append(spliter);
+                return;
+            }
+            sb.append((char)('0'+root.val));
+            // sb.append(spliter);
+            sHelper(root.left, sb);
+            sHelper(root.right, sb);
+
+        }
+
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(String data) {
+            int[] arr = new int[1];
+            return dHelper(data, arr);
+
+        }
+
+        public TreeNode dHelper(String data, int[] arr) {
+            char first = data.charAt(arr[0]);
+            if (first == NL) {
+                arr[0] += 1;
+                return null;
+            } else {
+
+                int num = data.charAt(arr[0]++) - '0';
+                TreeNode root = new TreeNode(num);
+                root.left = dHelper(data, arr);
+                root.right = dHelper(data, arr);
+                return root;
+            }
+        }
+    }
 }
