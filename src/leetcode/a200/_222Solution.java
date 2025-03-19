@@ -43,7 +43,7 @@ public class _222Solution {
     }
 
     /**
-     * 
+     * 这个解法最清晰直观 
      * @param root
      * @return
      */
