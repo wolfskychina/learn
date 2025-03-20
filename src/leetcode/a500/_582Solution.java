@@ -45,24 +45,24 @@ public class _582Solution {
 
         List<Integer> res = new LinkedList<>();
         // res.add(kill);
-        Map<Integer,List<Integer>> map = new HashMap<>();
-        for(int i=0;i<ppid.size();i++){
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for (int i = 0; i < ppid.size(); i++) {
 
             List<Integer> list = map.getOrDefault(ppid.get(i), new LinkedList<>());
             list.add(i);
-            map.put(ppid.get(i),list);
-            
+            map.put(ppid.get(i), list);
+
         }
 
         Queue<Integer> q = new LinkedList<>();
         q.add(kill);
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             int cur = q.poll();
             res.add(cur);
-            if(map.containsKey(cur)){
+            if (map.containsKey(cur)) {
                 List<Integer> m = map.get(cur);
-                for(Integer i:m){
-                    q.offer(i);
+                for (Integer i : m) {
+                    q.offer(pid.get(i));
                 }
             }
         }

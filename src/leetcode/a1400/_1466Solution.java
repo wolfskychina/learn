@@ -11,7 +11,13 @@ import java.util.Queue;
  * {graph},{bfs}
  */
 public class _1466Solution {
-   
+  
+    /**
+     * 按照无向图的bfs进行遍历，但是在遍历的时候根据当前边的方向决定是否反转
+     * @param n
+     * @param connections
+     * @return
+     */
     public int minReorder(int n, int[][] connections) {
 
         Map<Integer, List<Integer>> out = new HashMap<>();
