@@ -2,6 +2,7 @@ package leetcode.a300;
 
 /**
  * 判断一个字符串是不是斐波那契数拼出来的
+ * {backtrace},{dfs}
  */
 public class _306Solution {
 
