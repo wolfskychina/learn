@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * 通过给num的各个位之间插入+-*号，能否使得计算结果等于target
  * 返回所有符合条件的组合
+ * {backtrace}
  * TODO 
  */
 public class _282Solution {
@@ -14,6 +15,12 @@ public class _282Solution {
         int target;
         List<String> ans;
     
+        /**
+         * 注意组成的数字溢出
+         * @param num
+         * @param target
+         * @return
+         */
         public List<String> addOperators(String num, int target) {
             this.n = num.length();
             this.num = num;
@@ -24,7 +31,7 @@ public class _282Solution {
             return ans;
         }
     
-        public void backtrack(StringBuilder expr, int i, long res, long mul) {
+        public void backtrack(StringBuilder expr, int i, long res, long last) {
             if (i == n) {
                 if (res == target) {
                     ans.add(expr.toString());
@@ -51,7 +58,7 @@ public class _282Solution {
                     expr.setCharAt(signIndex, '-');
                     backtrack(expr, j + 1, res - val, -val);
                     expr.setCharAt(signIndex, '*');
-                    backtrack(expr, j + 1, res - mul + mul * val, mul * val);
+                    backtrack(expr, j + 1, res - last + last * val, last * val);
                 }
             }
             expr.setLength(signIndex);

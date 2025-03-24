@@ -187,6 +187,10 @@ public class _679Solution {
         for(int i = 0; i < n; i++) {
             for(int j = i + 1; j < n; j++) {
                 double a = A[i], b = A[j];
+                // A[i]保存本次计算结果
+                // A[j]保存没有参与运算的字符，同时已经运算过的A[j]放到最后
+                // 每一次递归，本次参与运算的字符就不再参与运算
+                // 非常巧妙
                 A[j] = A[n-1];
                 A[i] = a + b;
                 if(backtrack(A, n - 1)) return true;

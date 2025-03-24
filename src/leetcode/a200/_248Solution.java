@@ -2,6 +2,8 @@ package leetcode.a200;
 
 /**
  * 求low到high之间总共有多少个strobogrammatic数
+ * {two pointers},{backtrack}
+ * 和247类似
  */
 public class _248Solution {
 

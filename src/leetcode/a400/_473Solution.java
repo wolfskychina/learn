@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * n根长度各异的线段,所有线段都使用的情况下，
  * 是否能够围成正方形
+ * 所有段都需要使用降低了难度
  * TODO
  * 
  */
@@ -14,7 +15,7 @@ public class _473Solution {
 
     /**
      * 官方的回溯解法,比较简洁
-     * {backtrace}
+     * {backtrace},{dfs}
      * 
      * @param matchsticks
      * @return

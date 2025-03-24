@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 /**
  * 组合使用折扣所需要花费的最小值
  */
@@ -21,7 +22,7 @@ public class _638Solution {
         // 所谓的大礼包里面有的商品可能是提过价的
         List<List<Integer>> filterSpecial = new ArrayList<List<Integer>>();
         for (List<Integer> sp : special) {
-           int totalCount = 0, totalPrice = 0;
+            int totalCount = 0, totalPrice = 0;
             for (int i = 0; i < n; ++i) {
                 totalCount += sp.get(i);
                 totalPrice += sp.get(i) * price.get(i);
