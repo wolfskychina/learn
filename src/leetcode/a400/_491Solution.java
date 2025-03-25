@@ -81,6 +81,7 @@ public class _491Solution {
             temp.remove(temp.size() - 1);
         }
 
+        // 这个dfs的巧妙之处在于支持平级的跳转
         // 平行跳转到下一个元素
         if (nums[cur] != last) {
             dfs(cur + 1, last, nums);
