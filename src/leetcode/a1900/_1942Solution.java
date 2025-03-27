@@ -6,6 +6,14 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/**
+ * 最小未被占用的椅子的编号
+ * 已知每个人的到达时间和离开时间，有无数把从0开始编号的椅子
+ * 每次有人来的时候，就分配一把空闲的编号最小的椅子
+ * 离开的时候椅子还回去
+ * 问第k个人到达的时候分配到的椅子编号
+ * {priority queue}
+ */
 public class _1942Solution {
 
     public int smallestChair(int[][] times, int targetFriend) {
@@ -51,6 +59,8 @@ public class _1942Solution {
 
     /**
      * 最小堆
+     * 输入按照进场离场分类，优先按照时间排序
+     * 需要已经入座的人id和椅子id的映射
      * @param times
      * @param targetFriend
      * @return
