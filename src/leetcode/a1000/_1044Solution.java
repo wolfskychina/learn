@@ -5,6 +5,9 @@ import java.util.Set;
 
 /**
  * 最长的重复子串
+ * 跟187类似，187是定长重复子串，这个是最长重复子串
+ * 因为长的重复子串必然包含更短的重复子串，所以可以用二分搜索来解
+ * {binary search},{string hash}
  * 
  */
 public class _1044Solution {
