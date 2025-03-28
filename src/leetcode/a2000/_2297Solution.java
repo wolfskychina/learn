@@ -55,7 +55,7 @@ public class _2297Solution {
     }
 
     /**
-     * 使用两个单调栈，150ms
+     * TODO 使用两个单调栈，150ms
      * 遍历每个元素，对于每个元素，往前看栈中的元素
      * 已经出栈的元素无需再进栈
      * 假设a,b,c，b和c都是满足单调栈出栈的元素，先遇到b的时候就必须要跳跃
@@ -71,6 +71,9 @@ public class _2297Solution {
         dp[0] = 0;
 
         Stack<Integer> maxStack = new Stack<>(), minStack = new Stack<>();
+        // 对于某一个点，从栈顶开始有满足条件的全部出栈进行判断
+        // 栈里面的元素一旦出栈就不再入栈,也就是说比较过一次之后（满足一次跳跃之后）
+        // 以后（和后面的元素）就不会再比较了，之后的比较都是更早的元素，或者栈空后是更晚的元素
         for (int j = 0; j < n; j++) {
             while (!minStack.isEmpty() && nums[minStack.peek()] <= nums[j]) {
                 int i = minStack.pop();
