@@ -61,6 +61,7 @@ public class _1942Solution {
      * 最小堆
      * 输入按照进场离场分类，优先按照时间排序
      * 需要已经入座的人id和椅子id的映射
+     * 进厂绑定人和椅子的编号，离场释放人绑定的椅子
      * @param times
      * @param targetFriend
      * @return
