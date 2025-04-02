@@ -58,7 +58,7 @@ public class _42Solution {
     }
 
     /**
-     * {monotonic stack}
+     * {monotonic stack},{classic}
      * 单调栈，木桶原理
      * @param height
      * @return
@@ -76,6 +76,8 @@ public class _42Solution {
                 // 这个分支中i不会增加,会一直出栈，直到把左边的容量全部计算出来
                 // t是本次计算的底部
                 int t = s.pop();
+                // t和当前栈顶的位置一定是相邻的
+                // 如果是连续的底部位置，那么本次计算增加值为0，然后每次出栈一个底部，直到遇到左侧的挡板
                 if (s.isEmpty()) continue;
                 System.out.println("left height is :"+ height[s.peek()]);
                 System.out.println("right height is :"+ height[i]);
