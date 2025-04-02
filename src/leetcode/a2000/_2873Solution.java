@@ -26,12 +26,18 @@ public class _2873Solution {
         return max;
     }
 
+    /**
+     * 一趟循环的遍历
+     */
     public long maximumTripletValue1(int[] nums) {
         long ans = 0;
         int maxDiff = 0, preMax = 0;
         for (int x : nums) {
+            // 在第三个元素时计算第一个最大值
             ans = Math.max(ans, (long) maxDiff * x);
+            // maxDiff在遍历完第二个元素后有值
             maxDiff = Math.max(maxDiff, preMax - x);
+            // preMax在遍历完第一个元素后有值
             preMax = Math.max(preMax, x);
         }
         return ans;
