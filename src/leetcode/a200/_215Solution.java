@@ -59,4 +59,40 @@ public class _215Solution {
     private boolean less(int v, int w) {
         return v < w;
     }
+
+    /**
+     * 更快的版本
+     * @param nums
+     * @param k
+     * @return
+     */
+    public int findKthLargest1(int[] nums, int k) {
+        int targetIndex=nums.length-k;
+        int l=0,r=nums.length-1;
+        while(l<=r){
+            int idx=partition1(nums,l,r);
+            if(idx==targetIndex)return nums[idx];
+            else if(idx<targetIndex)l=idx+1;
+            else r=idx-1;
+        }
+        return -1;
+    }
+    int partition1(int[] nums, int left, int right){
+        int l=left+1,r=right,pivot=nums[left];
+        while(true){
+            while(l<=r&&pivot>nums[l])l++;
+            while(l<=r&&pivot<nums[r])r--;
+            if(l>=r)break;
+            swap(nums,l,r);
+            l++;
+            r--;
+        }
+        swap(nums,r,left);
+        return r;
+    }
+    void swap(int[] nums, int l, int r){
+        int t=nums[l];
+        nums[l]=nums[r];
+        nums[r]=t;
+    }
 }
