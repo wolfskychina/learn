@@ -29,3 +29,19 @@ from
     from student
 ) t
 group by rk;
+
+-- 使用left join的版本，题目给出的数据保证最左边的列数据最多
+-- left join需要使用row_number关联
+select America,Asia,Europe 
+from(
+    select row_number() over(order by name) as rn,name as America from student
+    where continent='America'
+) a
+left join(
+    select row_number() over(order by name) as rn,name as Asia from student
+    where continent='Asia'
+) b on a.rn=b.rn
+left join(
+    select row_number() over(order by name) as rn,name as Europe from student
+    where continent='Europe'
+) c on a.rn=c.rn
