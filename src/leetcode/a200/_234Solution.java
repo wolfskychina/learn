@@ -9,40 +9,30 @@ import leetcode.util.ListNode;
 public class _234Solution {
 
     public boolean isPalindrome(ListNode head) {
-
-        ListNode dummy = new ListNode();
-        dummy.next = head;
-        ListNode p1 = head;
-        ListNode p2 = head;
-
-        while (p2 != null && p2.next != null) {
-
-            p1 = p1.next;
-            p2 = p2.next.next;
+        ListNode slow = head, fast = head, temp;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        ListNode dummy2 = new ListNode();
-        ListNode newHead = null;
-        ListNode next = null;
+        // 链表反转用头插法改造了一下，更便于理解
+        ListNode prev = new ListNode(-1);
 
-        // 将后半段链表反转
-        while (p1 != null) {
-            next = p1.next;
-            newHead = dummy2.next;
-            p1.next = newHead;
-            dummy2.next = p1;
-            p1 = next;
+        while (slow != null) {
+            temp = slow.next;
+            slow.next = prev.next;
+            prev.next = slow;
+            slow = temp;
         }
 
-        while (dummy2.next != null) {
-            if (dummy.next.val != dummy2.next.val)
+        fast = head;
+        slow = prev.next;
+        while (slow != null) {
+            if (fast.val != slow.val)
                 return false;
-
-            dummy = dummy.next;
-            dummy2 = dummy2.next;
-
+            fast = fast.next;
+            slow = slow.next;
         }
-
         return true;
 
     }
