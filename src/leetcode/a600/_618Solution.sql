@@ -30,6 +30,7 @@ from
 ) t
 group by rk;
 
+
 -- 使用left join的版本，题目给出的数据保证最左边的列数据最多
 -- left join需要使用row_number关联
 select America,Asia,Europe 
