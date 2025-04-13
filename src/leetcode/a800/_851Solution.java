@@ -101,6 +101,10 @@ public class _851Solution {
             int cur = q.poll();
             for (int next : nei[cur]) {
                 indegree[next]--;
+                // res[]数组有点dp的意思
+                // 拓扑排序保证比较的节点一定是按照富有排序
+                // 通过拓扑的传递性保证，所有更富有的相连节点一定先遍历到
+                // 携带的是至今为止最安静的更富裕节点
                 if(quiet[res[cur]]<quiet[res[next]]){
                     res[next] = res[cur];
                 }

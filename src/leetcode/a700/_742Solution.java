@@ -70,66 +70,63 @@ public class _742Solution {
         }
     }
 
-    int min = Integer.MAX_VALUE;
-
     /**
-     * 尝试递归求解，太复杂了，代码有问题
+     * 尝试递归求解
+     * 
      * @param root
      * @param k
      * @return
      */
+    private int minDist = Integer.MAX_VALUE;
+    private int closestLeaf = -1;
+
     public int findClosestLeaf1(TreeNode root, int k) {
-
         traverse(root, k);
-        return min;
+        return closestLeaf;
     }
 
-    private int traverse(TreeNode p, int tar) {
+    // 返回值为 K 到当前节点 root 的距离（若无则返回 -1）
+    private int traverse(TreeNode root, int k) {
+        if (root == null)
+            return -1;
 
-        if (p.val == tar) {
-            if (p.left == null && p.right == null) {
-                min = 0;
-            } else {
+        // 找到 K 节点，开始搜索其子树中的叶节点
+        if (root.val == k) {
+            searchClosestLeaf(root, 0);
+            return 1; // K 到父节点的距离为1 题目的意思
+        }
+        int leftDist = traverse(root.left, k);
+        int rightDist = traverse(root.right, k);
 
-                if (p.left != null) {
-                    traversedown(p.left, 1);
-                }
-                if (p.right != null) {
-                    traversedown(p.right, 1);
-                }
-            }
-
-            return 0;
+        if (leftDist != -1) {// K在noderoot的左子树中
+            // K 在左子树中，检查右子树的叶节点（距离为 leftDist + 1）
+            searchClosestLeaf(root.right, leftDist + 1);
+            return leftDist + 1; // 返回 K 到当前 root 的距离
         }
 
-        int l = -1;
-        int r = -1;
-        if (p.left != null) {
-            l = traverse(p.left, tar);
-            if (l >= 0 && p.right != null)
-                traversedown(p.right, l + 1);
+        if (rightDist != -1) {
+            // K 在右子树中，检查左子树的叶节点（距离为 rightDist + 1）
+            searchClosestLeaf(root.left, rightDist + 1);
+            return rightDist + 1;
         }
-        if (p.right != null) {
-            r = traverse(p.right, tar);
-            if (r >= 0 && p.left != null)
-                traversedown(p.left, r + 1);
-        }
-
-        if (l == -1)
-            return r + 1;
-        return l + 1;
+        return -1;
     }
 
-    private void traversedown(TreeNode p, int dept) {
-
-        if (p.left == null && p.right == null) {
-            min = Math.min(min, dept);
+    // 搜索当前子树中所有叶节点，更新最近距离
+    private void searchClosestLeaf(TreeNode node, int dist) {
+        if (node == null || dist >= minDist)
             return;
-        } else {
-            if (p.left != null)
-                traversedown(p.left, dept + 1);
-            if (p.right != null)
-                traversedown(p.right, dept + 1);
+
+        // 找到叶节点，更新结果
+        if (node.left == null && node.right == null) {
+            if (dist < minDist) {
+                minDist = dist;
+                closestLeaf = node.val;
+            }
+            return;
         }
+
+        searchClosestLeaf(node.left, dist + 1);
+        searchClosestLeaf(node.right, dist + 1);
     }
 }

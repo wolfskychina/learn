@@ -1,37 +1,41 @@
 package leetcode.a900;
 
-import java.util.HashSet;
-import java.util.Set;
+
 /**
  * 找到小镇的法官
- * {easy}
+ * 法官不相信任何人，其他所有人都相信法官
+ * 符合这两个条件的必须只有一个人
+ * {graph}
  */
 public class _997Solution {
 
+    /**
+     * 将信任关系转换为出入度，只有入度为n-1且出度为0的节点才符合法官要求
+     * 这种节点必须只有一个
+     * @param n
+     * @param trust
+     * @return
+     */
     public int findJudge(int n, int[][] trust) {
         if (trust.length < n - 1)
             return -1;
-        int betruestednum[] = new int[n + 1];
-        Set<Integer> set = new HashSet<>();
-        for (int i = 1; i <= n; i++) {
-            set.add(i);
+        int[] in = new int[n + 1];
+        int[] out = new int[n + 1];
+        for (int[] i : trust) {
+            in[i[1]]++;
+            out[i[0]]++;
         }
-        for (int[] t : trust) {
-            betruestednum[t[1]]++;
-            set.remove(t[0]);
-        }
-        if (set.size() == 0)
-            return -1;
-        int count = 0;
-        int res = -1;
-        for (int i : set) {
-            if (count > 1)
-                return -1;
-            if (betruestednum[i] == n - 1) {
-                count++;
-                res = i;
+        int num = 0;
+        int can = -1;
+        for (int i = 1; i < in.length; i++) {
+
+            if (in[i] == n - 1 && out[i] == 0) {
+                num++;
+                if (num > 1)
+                    return -1;
+                can = i;
             }
         }
-        return res;
+        return can;
     }
 }
