@@ -16,11 +16,13 @@ public class _1044Solution {
     long[] h, p;
 
     public String longestDupSubstring(String s) {
+        // 没有碰撞检测的rolling hash
         int P = 1313131, n = s.length();
         h = new long[n + 10];
         p = new long[n + 10];
         p[0] = 1;
         for (int i = 0; i < n; i++) {
+            // 保存p的i次幂
             p[i + 1] = p[i] * P;
             h[i + 1] = h[i] * P + s.charAt(i);
         }
