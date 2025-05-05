@@ -68,7 +68,7 @@ public class _1457Solution {
         if (root == null) {
             return;
         }
-        // 把 第root.val位 与之前的取反; 1代表奇数次 0代表偶数次
+        // 把 第root.val位 做异或操作; 1代表奇数次 0代表偶数次
         int curVal = 1 << root.val;
         path ^= curVal;
         if (root.left == null && root.right == null) {
