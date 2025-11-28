@@ -20,7 +20,7 @@ public class _210Solution {
         }
 
         // 构建邻接列表
-        List[] neighber = new ArrayList[numCourses];
+        List<Integer>[] neighber = new ArrayList[numCourses];
         for (int i = 0; i < numCourses; i++) {
             neighber[i] = new ArrayList<Integer>();
         }
