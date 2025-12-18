@@ -98,9 +98,11 @@ public class _399Solution {
             return false;
         }
         if (cur.v.equals(target)) {
-            // found
             // 错误写法，java值传递无法更改原来对象的指向
             // resList = new LinkedList<>(tmpList);
+            // resList在这里是方法里面的形式参数
+            // 而不是调用者的实参即全局变量resList
+            // 所以全局变量resList并没有被赋值
             for (Edge e : tmpList) {
                 resList.add(e);
             }
