@@ -111,4 +111,43 @@ public class _1268Solution {
         }
         return ans;
     }
+
+    /**
+     * 改为更加习惯的左闭右开二分查找
+     * @param ps
+     * @param w
+     * @return
+     */
+    public List<List<String>> suggestedProducts2(String[] ps, String w) {
+        Arrays.sort(ps);
+        int n = ps.length;
+        List<List<String>> ans = new ArrayList<>();
+        for (int i = 0; i < w.length(); i++) {
+            String cur = w.substring(0, i + 1);
+            int l = 0, r = n;
+            // 找符合条件的最左端
+            while (l < r) {
+                int mid = l + r >> 1;
+                if (ps[mid].compareTo(cur) >= 0) r = mid;
+                else l = mid + 1;
+            }
+            List<String> list = new ArrayList<>();
+            // 改成使用l作为最终位置
+            // 下面会判断l的位置的子串是否符合条件
+            // 不然的话需要额外判断l的位置是否满足条件
+            if(l==n) {
+                ans.add(list);
+                continue;
+            } else if (ps[l].compareTo(cur) >= 0) {
+                for (int j = l; j < Math.min(n, l + 3); j++) {
+                    if (ps[j].length() < cur.length()) break;
+                    if (!ps[j].substring(0, i + 1).equals(cur)) break;
+                    list.add(ps[j]);
+                }
+            }
+            ans.add(list);
+        }
+        return ans;
+    }
+
 }

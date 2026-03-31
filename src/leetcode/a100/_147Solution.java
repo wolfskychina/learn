@@ -18,6 +18,7 @@ public class _147Solution {
         ListNode pre = helper; // insert node between pre and pre.next
         ListNode next = null; // the next node will be inserted
         // not the end of input list
+        // 这个在第一次遍历的时候是head自己和自己比较
         while (cur != null) {
             next = cur.next;
             // find the right place to insert
@@ -27,6 +28,7 @@ public class _147Solution {
             // insert between pre and pre.next
             cur.next = pre.next;
             pre.next = cur;
+            // reset pre to the helper node
             pre = helper;
             cur = next;
         }
