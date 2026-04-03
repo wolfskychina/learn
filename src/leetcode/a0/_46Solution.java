@@ -2,9 +2,11 @@ package leetcode.a0;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * 给定一个互不相同的数组，生成这个数组的全排列
  * {permutation},{combination math}
+ * {medium}
  */
 public class _46Solution {
 

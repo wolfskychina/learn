@@ -4,6 +4,7 @@ import leetcode.util.ListNode;
 
 /**
  * 将链表中第m和n之间的节点进行反转
+ * {medium}
  */
 public class _92Solution {
 

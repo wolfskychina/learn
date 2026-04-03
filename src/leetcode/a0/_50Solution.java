@@ -3,6 +3,7 @@ package leetcode.a0;
 /**
  * 实现pow(double x, int n)函数，计算n次方
  * {math}
+ * {medium}
  */
 public class _50Solution {
 

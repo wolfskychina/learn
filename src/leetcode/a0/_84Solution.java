@@ -1,6 +1,8 @@
 package leetcode.a0;
+
 /**
  * 柱状图中的连续的最大矩形
+ * {hard}
  */
 public class _84Solution {
 

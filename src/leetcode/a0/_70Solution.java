@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 爬台阶
  * {dp}
+ * {easy}
  */
 public class _70Solution {
 

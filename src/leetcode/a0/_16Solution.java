@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 import java.util.Arrays;
 
 public class _16Solution {

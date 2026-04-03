@@ -1,4 +1,4 @@
-package leetcode.a100;
+﻿package leetcode.a100;
 
 import leetcode.util.TreeNode;
 
@@ -6,6 +6,7 @@ import leetcode.util.TreeNode;
  * 判断两棵BST是否相同，只要值和结构相同就认为相同
  * 类似的任何二叉树也可以这么判断
  * {bst},{binary tree}
+ * {easy}
  */
 public class _100Solution {
 

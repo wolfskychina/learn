@@ -1,8 +1,10 @@
 package leetcode.a0;
+
 /**
  * 大整数乘法
  * num1 num2 均是从高位到低位的表示
  * 
+ * {medium}
  */
 public class _43Solution {
 

@@ -5,6 +5,7 @@ package leetcode.a0;
  * 最长回文子串
  * 中心向两侧生成的方式，有两种生成的模式
  * 时间复杂度为n2
+ * {medium}
  */
 public class _5Solution {
 

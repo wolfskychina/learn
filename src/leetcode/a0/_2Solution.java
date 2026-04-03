@@ -4,6 +4,7 @@ import leetcode.util.ListNode;
 /**
  * 链表表示的两数相加
  * {linkedlist}
+ * {medium}
  */
 public class _2Solution {
 

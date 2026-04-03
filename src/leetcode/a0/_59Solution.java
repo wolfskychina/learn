@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 从外层往内填充方形矩阵
  * {matrix traverse}
+ * {medium}
  */
 public class _59Solution {
 

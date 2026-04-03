@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 public class _38Solution {
 
     public String countAndSay(int n){

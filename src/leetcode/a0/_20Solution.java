@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {easy}
+ */
+
 import java.util.Stack;
 
 /**

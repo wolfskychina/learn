@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 检查棋盘中是否目标单词
  * {backtrace}
+ * {medium}
  */
 public class _79Solution {
 

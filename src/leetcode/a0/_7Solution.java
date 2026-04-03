@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 public class _7Solution {
     public int reverse(int x) {
         int rev = 0;

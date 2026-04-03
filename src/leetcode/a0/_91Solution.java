@@ -4,6 +4,7 @@ package leetcode.a0;
  * 数字序列解码成字母有多少种可能
  * 1-A 2-B 。。。26-Z
  * {dp}
+ * {medium}
  */
 public class _91Solution {
 

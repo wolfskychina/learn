@@ -1,4 +1,5 @@
 package leetcode.a0;
+
 /**
  * Find First and Last Position of Element in Sorted Array
  * 在已排序数组中寻找目标元素的最左侧和最右侧位置
@@ -6,6 +7,7 @@ package leetcode.a0;
  * 
  * 类似的变体还有寻找目标元素的最左插入位置或者最右插入位置
  * {binary search}
+ * {medium}
  */
 public class _34Solution {
 

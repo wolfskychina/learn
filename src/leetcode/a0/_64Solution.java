@@ -3,6 +3,7 @@ package leetcode.a0;
 /**
  * 从矩阵左上角到右下角的最短路径和
  * {dp}
+ * {medium}
  */
 public class _64Solution {
 

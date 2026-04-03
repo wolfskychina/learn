@@ -1,8 +1,10 @@
 package leetcode.a0;
+
 /**
  * 一个字符串能够最少通过多少次删除、增加、替换字符的方式
  * 变成另外一个字符串
  * {dp}
+ * {medium}
  */
 public class _72Solution {
 

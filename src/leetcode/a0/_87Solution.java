@@ -2,6 +2,7 @@ package leetcode.a0;
 
 /**
  * {dp}
+ * {hard}
  */
 public class _87Solution {
 

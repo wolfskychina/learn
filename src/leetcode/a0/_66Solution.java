@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 数组模拟加法
  * 进位处理
+ * {easy}
  */
 public class _66Solution {
 

@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 import leetcode.util.ListNode;
 
 public class _24Solution {

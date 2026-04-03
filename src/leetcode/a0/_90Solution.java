@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

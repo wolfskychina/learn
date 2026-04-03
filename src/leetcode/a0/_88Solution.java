@@ -2,6 +2,7 @@ package leetcode.a0;
 
 /**
  * 将两个数组合并，其中数组A的空间足够大
+ * {easy}
  */
 public class _88Solution {
    

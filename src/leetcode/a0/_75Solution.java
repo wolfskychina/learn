@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 按照颜色排序
  * {insert sorting}
+ * {medium}
  */
 public class _75Solution {
 

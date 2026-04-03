@@ -1,6 +1,8 @@
 package leetcode.a0;
+
 /**
  * 字符串匹配方法
+ * {easy}
  */
 public class _28Solution {
 

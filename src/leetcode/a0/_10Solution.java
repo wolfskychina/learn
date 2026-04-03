@@ -1,9 +1,11 @@
 package leetcode.a0;
+
 /**
  * 字符串能否和模式匹配
  * 通配符有*，表示前面的字符出现任何次数（0到无限多）,和.能够匹配一个字符
  * *号的前面必须有字符
  * {dp}
+ * {hard}
  */
 public class _10Solution {
 

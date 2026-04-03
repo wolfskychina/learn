@@ -2,6 +2,7 @@ package leetcode.a0;
 
 /**
  * rotate image
+ * {medium}
  */
 public class _48Solution {
 

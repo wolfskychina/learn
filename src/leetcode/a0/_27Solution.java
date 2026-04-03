@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {easy}
+ */
+
 public class _27Solution {
 
     public int removeElement(int[] nums, int val){

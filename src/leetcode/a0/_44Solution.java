@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 模式匹配,包含？和*号的通配符
  * {pattern matching},{wildcard matching}
+ * {hard}
  */
 public class _44Solution {
 

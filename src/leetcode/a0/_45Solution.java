@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 能够跳跃到末尾位置所需要的最少次数
  * {greedy}
+ * {medium}
  */
 public class _45Solution {
 

@@ -1,6 +1,8 @@
 package leetcode.a0;
+
 /**
  * 数字是否是回文的
+ * {easy}
  */
 public class _9Solution {
     public boolean isPalindrome(int x) {

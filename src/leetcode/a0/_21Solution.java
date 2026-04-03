@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {easy}
+ */
+
 import leetcode.util.ListNode;
 
 public class _21Solution {

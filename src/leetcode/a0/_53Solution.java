@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 最大子数组和
  * {classic}
+ * {medium}
  */
 public class _53Solution {
    

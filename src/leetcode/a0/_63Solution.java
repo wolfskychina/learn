@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 带有障碍格子的棋盘最多有多少种路径
  * {dp}
+ * {medium}
  */
 public class _63Solution {
 

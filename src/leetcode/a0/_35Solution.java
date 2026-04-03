@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 寻找目标元素在数组中最左侧的插入位置
  * {binary search}
+ * {easy}
  */
 public class _35Solution {
 

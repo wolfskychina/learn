@@ -6,6 +6,7 @@ import java.util.*;
  * 一个数组的闭区间，重复的闭区间进行合并，返回合并后的闭区间
  * {intervals}
  * 因为数据范围不大，也可以用差分数组{difference array}
+ * {medium}
  */
 public class _56Solution {
 

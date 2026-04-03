@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 public class _33Solution {
 
     public int search(int[] nums, int target){

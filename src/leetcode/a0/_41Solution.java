@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {hard}
+ */
+
 public class _41Solution {
 
     public int firstMissingPositive(int[] nums){

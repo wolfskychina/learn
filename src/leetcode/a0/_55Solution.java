@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 跳跃问题
  * {greedy}
+ * {medium}
  */
 public class _55Solution {
     public boolean canJump(int[] nums) {

@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 public class _74Solution {
 
     public boolean searchMatrix(int[][] matrix, int target){

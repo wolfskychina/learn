@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {hard}
+ */
+
 public class _4Solution {
 
     public double findMedianSortedArrays(int[] A,int[] B){

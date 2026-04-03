@@ -3,6 +3,7 @@ package leetcode.a0;
 /**
  * 罗马数字转换成整数
  * 从往右转换
+ * {easy}
  */
 public class _13Solution {
    

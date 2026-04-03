@@ -8,6 +8,7 @@ import leetcode.util.TreeNode;
 /**
  * 生成所有可能的bst
  * {binary tree},{bst}
+ * {medium}
  */
 public class _95Solution {
 

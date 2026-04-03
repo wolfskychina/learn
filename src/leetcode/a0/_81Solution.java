@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 public class _81Solution {
    
     public boolean search(int[] nums, int target) {

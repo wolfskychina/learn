@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {easy}
+ */
+
 public class _26Solution {
     public int removeDuplicates(int[] nums){
 

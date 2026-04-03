@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {hard}
+ */
+
 import leetcode.util.ListNode;
 
 public class _25Solution {

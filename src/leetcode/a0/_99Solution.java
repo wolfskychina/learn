@@ -8,6 +8,7 @@ import leetcode.util.TreeNode;
  * 一个bst中，有两个节点对换了位置，破坏了bst的性质
  * 需要恢复bst的特性，但是不能改变bst的结构
  * {bst}
+ * {medium}
  */
 public class _99Solution {
 

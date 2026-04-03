@@ -4,6 +4,7 @@ package leetcode.a0;
  * 1-n的数字组成的不同结构的bst共有多少种
  * 跟上一题不同，这题只需要知道数量
  * {dp}
+ * {medium}
  */
 public class _96Solution {
 

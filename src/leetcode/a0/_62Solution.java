@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 public class _62Solution {
 
     public int uniquePaths(int m, int n) {

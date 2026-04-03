@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 import leetcode.util.ListNode;
 /**
  * 删除链表中的倒数第n个元素，要求只遍历一次链表

@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 import java.util.LinkedList;
 /**
  * 将路径字符串简化

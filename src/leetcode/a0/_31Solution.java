@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 寻找数字排列的下一个顺序
  * 寻找逆序对的过程
+ * {medium}
  */
 public class _31Solution {
 

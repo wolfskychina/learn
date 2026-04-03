@@ -1,7 +1,9 @@
 package leetcode.a0;
+
 /**
  * 实现sqrt()函数
  * {binary search}
+ * {easy}
  */
 public class _69Solution {
 

@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 判断一个字符串表示的ip地址是否合法
+ * {medium}
  */
 public class _93Solution {
     public List<String> restoreIpAddresses(String s) {

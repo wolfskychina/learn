@@ -1,6 +1,8 @@
 package leetcode.a0;
+
 /**
  * 模拟二进制相加
+ * {easy}
  */
 public class _67Solution {
 

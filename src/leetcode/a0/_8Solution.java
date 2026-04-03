@@ -1,5 +1,9 @@
 package leetcode.a0;
 
+/**
+ * {medium}
+ */
+
 public class _8Solution {
    
     public static int myAtoi(String str) {

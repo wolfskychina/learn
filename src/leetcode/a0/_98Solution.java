@@ -7,6 +7,7 @@ import leetcode.util.TreeNode;
 /**
  * 判断一个bst是否合法
  * {bst}
+ * {medium}
  */
 public class _98Solution {
 
