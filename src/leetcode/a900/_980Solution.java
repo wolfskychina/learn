@@ -74,9 +74,10 @@ public class _980Solution {
         if (grid[x][y] == 2) // 到达终点
             return vis == (1 << m * n) - 1 ? 1 : 0; // 必须访问所有的无障碍方格
         int key = (p << m * n) | vis; // 把参数压缩成一个整数（左移 m*n 是因为 vis 至多有 m*n 个比特）
+        // 可以找个3*4的矩阵，容易找到两条路径使得memo能够匹配
         if (memo.containsKey(key)) return memo.get(key); // 之前算过
-        int ans = dfs(grid, x - 1, y, vis) + dfs(grid, x, y - 1, vis) +
-                  dfs(grid, x + 1, y, vis) + dfs(grid, x, y + 1, vis);
+        int ans = dfs1(grid, x - 1, y, vis) + dfs1(grid, x, y - 1, vis) +
+                  dfs1(grid, x + 1, y, vis) + dfs1(grid, x, y + 1, vis);
         memo.put(key, ans);
         return ans;
     }
