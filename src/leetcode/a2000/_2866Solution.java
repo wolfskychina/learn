@@ -9,7 +9,7 @@ import java.util.List;
 public class _2866Solution {
 
     /**
-     * {monotonic stack}
+     * {monotonic stack},{hard},{classic}
      * 跟之前累计前缀和的单调栈更进一步
      * 遍历到更小的值以后，还需要减去已经累计的前缀和
      * 然后根据木桶原理，重新计算能够累计的前缀和

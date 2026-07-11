@@ -6,7 +6,7 @@ package leetcode.a1600;
 public class _1673Solution {
 
     /**
-     * {monotic stack}
+     * {monotic stack},{classic}
      * 注意要保证算上剩下字符还能够组成k的长度，否则不能进行出栈操作
      * @param nums
      * @param k

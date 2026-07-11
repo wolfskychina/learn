@@ -13,6 +13,7 @@ public class _1124Solution {
      * 根据前缀和的差，某段区间差大于0则是符合条件的时间段
      * 问题转换成求区间差大于0的最长区间
      * 同962问题完全一样
+     * 还是没有完全理解
      * {monotonic stack}，{prefix sum}
      * @param hours
      * @return
