@@ -1,0 +1,25 @@
+{
+  "name": "review-counter",
+  "displayName": "Review Counter",
+  "description": "统计并管理每个源代码文件的 Review 次数",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*",
+    "onLanguage:java"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "reviewCounter.increment",
+        "title": "增加 Review 次数"
+      }
+    ]
+  }
+}
