@@ -8,8 +8,8 @@ package leetcode.a2000;
 public class _2241Solution {
 
     class ATM {
-        private static final int[] DENOMINATIONS = { 20, 50, 100, 200, 500 };
-        private static final int KINDS = DENOMINATIONS.length;
+        private final int[] DENOMINATIONS = { 20, 50, 100, 200, 500 };
+        private final int KINDS = DENOMINATIONS.length;
 
         private final int[] banknotes = new int[KINDS];
 

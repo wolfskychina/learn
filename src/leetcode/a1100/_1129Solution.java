@@ -39,7 +39,7 @@ public class _1129Solution {
         }
 
         // 初始队列中同时含有蓝色源点和红色源点，并且我们也将相应颜色存入队列。
-        Queue<int[]> q = new LinkedList<>();
+        Queue<int[]> q = new ArrayDeque<>();
         q.offer(new int[] {RED, 0});
         q.offer(new int[] {BLUE, 0});
 
