@@ -14,7 +14,7 @@ public class _1129Solution {
 
     /**
      * 将节点抽象成两种颜色，从而将两种颜色路径的可能放到一起进行bfs
-     * 自己的解法过于复杂
+     * 自己的解法过于复杂.
      * @param n
      * @param redEdges
      * @param blueEdges
